@@ -1,0 +1,14 @@
+# StarvellBot Dependencies
+
+# Telegram Bot
+aiogram==3.4.1
+
+# Async HTTP
+aiohttp==3.9.1
+
+# Database
+aiosqlite==0.19.0
+
+# Logging (встроен в Python)
+
+# JSON (встроен в Python)
