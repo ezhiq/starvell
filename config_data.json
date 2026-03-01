@@ -460,9 +460,9 @@
         }
     },
     "fragment": {
-        "fragment_hash": "e9d358a27d800e13c1",
-        "fragment_cookie": "stel_ssid=a989aa1653d6e4baf2_9419036171977432371; stel_dt=-180; stel_token=9c307cdedd2fde15f54a6346f427d0589c307cc59c307edeabca5ac3440feb23ce5a1; stel_ton_token=5je6Jd87cTz1o2Ndjp7ap1D5onOKENnIY4LnqRrSGtg3dHEyPzSYgXy9kXZHhpu6eRSIbErmaPDg0TycXrlLkZ-3tdx37jxAib8GSX_YvW_3w3Mu7NlTIA9nKNUpVyH3zgKfVniJ3mMbieJDUiP9H7mkFpn1u25msorC2sBP4KNqEiBIXvwh4amZJlvjtjm4wdEb2ijV",
-        "fragment_show_sender": "1"
+        "fragment_hash": "",
+        "fragment_cookie": "",
+        "fragment_show_sender": ""
     },
     "ton": {
         "ton_api_key": "AFWDXEXAX4CHNGQAAAAKC2HIGGVIXDJVPP6FRBDFGJVWPXZFWLGKE4OMJEP2XUR3MJ2A2ZY",
