@@ -1,0 +1,117 @@
+14:36:36 - StarvellBot - INFO - ✅ Логирование настроено
+14:36:36 - StarvellBot - INFO - ============================================================
+14:36:36 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+14:36:36 - StarvellBot - INFO - ============================================================
+14:36:36 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+14:36:36 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+14:36:38 - pyrogram.crypto.aes - WARNING - TgCrypto is missing! Pyrogram will work the same, but at a much slower speed. More info: https://docs.pyrogram.org/topics/speedups
+14:36:39 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+14:36:39 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+14:36:39 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+14:36:39 - StarvellBot - INFO - ============================================================
+14:36:39 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+14:36:39 - StarvellBot - INFO - ============================================================
+14:36:39 - StarvellBot - INFO - 
+14:36:39 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+14:36:39 - StarvellBot - INFO - 🎛️ Доступные команды:
+14:36:39 - StarvellBot - INFO -    /start - начать работу
+14:36:39 - StarvellBot - INFO -    /services - управление службами
+14:36:39 - StarvellBot - INFO -    /config - редактирование настроек
+14:36:39 - StarvellBot - INFO -    /status - статус служб
+14:36:39 - StarvellBot - INFO -    /help - справка
+14:36:39 - StarvellBot - INFO - 
+14:36:39 - StarvellBot - INFO - ============================================================
+14:36:39 - aiogram.dispatcher - INFO - Start polling
+14:36:39 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<StarsAPIGiver.init_sessions() done, defined at C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py:23> exception=TypeError("'NoneType' object is not iterable")>
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 25, in init_sessions
+    for session in sessions:
+                   ^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+14:36:39 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+14:36:39 - aiogram.event - INFO - Update id=826343735 is handled. Duration 238 ms by bot id=8298689795
+14:36:43 - aiogram.event - INFO - Update id=826343736 is handled. Duration 249 ms by bot id=8298689795
+14:37:12 - aiogram.event - INFO - Update id=826343737 is handled. Duration 155 ms by bot id=8298689795
+14:37:13 - aiogram.event - INFO - Update id=826343738 is handled. Duration 157 ms by bot id=8298689795
+14:37:15 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+14:37:15 - aiogram.event - INFO - Update id=826343739 is handled. Duration 88 ms by bot id=8298689795
+14:37:24 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+14:37:24 - aiogram.event - INFO - Update id=826343740 is handled. Duration 84 ms by bot id=8298689795
+14:37:30 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+14:37:30 - aiogram.event - INFO - Update id=826343741 is handled. Duration 86 ms by bot id=8298689795
+14:37:38 - aiogram.event - INFO - Update id=826343742 is not handled. Duration 0 ms by bot id=8298689795
+14:37:38 - aiogram.event - ERROR - Cause exception while process update id=826343742 by bot id=8298689795
+AttributeError: 'list' object has no attribute 'replace'
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\telegram_manager.py", line 558, in process_config_value_advanced_message
+    result, ok = process_add_msg(keys, field, raw_value)
+                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\telegram_manager.py", line 227, in process_add_msg
+    ok, result = cc.edit_dict(cur, key_type, value_type, result)
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\config_manager.py", line 284, in edit_dict
+    cast_val, ok = cast(raw_value, val_type)
+                   ~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\config_manager.py", line 93, in cast
+    rez = value.replace(',', '')
+          ^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'replace'
+14:58:58 - aiogram.dispatcher - INFO - Polling stopped

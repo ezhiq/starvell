@@ -1,0 +1,179 @@
+20:10:09 - StarvellBot - INFO - ✅ Логирование настроено
+20:10:09 - StarvellBot - INFO - ============================================================
+20:10:09 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+20:10:09 - StarvellBot - INFO - ============================================================
+20:10:09 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+20:10:09 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+20:10:10 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+20:10:10 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+20:10:10 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+20:10:10 - StarvellBot - INFO - ============================================================
+20:10:10 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+20:10:10 - StarvellBot - INFO - ============================================================
+20:10:10 - StarvellBot - INFO - 
+20:10:10 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+20:10:10 - StarvellBot - INFO - 🎛️ Доступные команды:
+20:10:10 - StarvellBot - INFO -    /start - начать работу
+20:10:10 - StarvellBot - INFO -    /services - управление службами
+20:10:10 - StarvellBot - INFO -    /config - редактирование настроек
+20:10:10 - StarvellBot - INFO -    /status - статус служб
+20:10:10 - StarvellBot - INFO -    /help - справка
+20:10:10 - StarvellBot - INFO - 
+20:10:10 - StarvellBot - INFO - ============================================================
+20:10:10 - aiogram.dispatcher - INFO - Start polling
+20:10:10 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+20:10:11 - aiogram.event - INFO - Update id=826344840 is handled. Duration 690 ms by bot id=8298689795
+20:10:12 - aiogram.event - INFO - Update id=826344839 is handled. Duration 916 ms by bot id=8298689795
+20:10:13 - aiogram.event - INFO - Update id=826344841 is handled. Duration 156 ms by bot id=8298689795
+20:10:15 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+20:10:15 - StarvellBot - INFO - 🟢 WebSocket connected
+20:10:15 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+20:10:15 - StarvellBot - INFO - ⬅️  0{"sid":"7dTzKOtHPz2dvyewAeCN","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+20:10:15 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+20:10:15 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+20:10:15 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+20:10:15 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+20:10:15 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+20:10:15 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"HVE-RMbHvOhf5a3RAeCO"}
+20:10:15 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"gUAADG2bd75TNKVxAeCP"}
+20:10:15 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"eIYjmpf_uU_8HTKtAeCQ"}
+20:10:15 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"CSHdbAlxx3UeAllnAeCR"}
+20:10:15 - StarvellBot - INFO - ⬅️  40/online,{"sid":"OsPdfI8b-FMziwtGAeCS"}
+20:10:15 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+20:10:16 - aiogram.event - INFO - Update id=826344842 is handled. Duration 819 ms by bot id=8298689795
+20:10:17 - aiogram.event - INFO - Update id=826344843 is handled. Duration 231 ms by bot id=8298689795
+20:10:18 - aiogram.event - INFO - Update id=826344844 is handled. Duration 187 ms by bot id=8298689795
+20:10:19 - service_manager - INFO - ▶️ Запуск службы Price Dumper...
+20:10:19 - StarvellBot - INFO - ✅ WebSocket готов, запускаем автопонижение цен
+20:10:19 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:10:19 - service_manager - INFO - ✅ Служба Price Dumper запущена
+20:10:20 - StarvellBot - INFO - Успешно парсили ордеры
+20:10:20 - aiogram.event - INFO - Update id=826344845 is handled. Duration 696 ms by bot id=8298689795
+20:10:20 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:20 - StarvellBot - ERROR - отсутствует категория демпинге
+20:10:20 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:10:20 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:10:20 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:10:20 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:10:40 - StarvellBot - INFO - ⬅️  2
+20:10:52 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:10:52 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:10:53 - StarvellBot - INFO - Успешно парсили ордеры
+20:10:53 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:10:53 - StarvellBot - ERROR - отсутствует категория демпинге
+20:10:53 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:10:53 - StarvellBot - INFO - Успешно парсили ордеры
+20:10:53 - StarvellBot - WARNING - ⚠️ Не удалось извлечь количество звёзд из 'Другое количество'
+20:10:53 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:10:53 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:10:53 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:11:05 - StarvellBot - INFO - ⬅️  2
+20:11:23 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:11:24 - StarvellBot - INFO - Успешно парсили ордеры
+20:11:24 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:11:24 - StarvellBot - ERROR - отсутствует категория демпинге
+20:11:24 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:11:24 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:11:24 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:11:24 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:11:30 - StarvellBot - INFO - ⬅️  2
+20:11:59 - StarvellBot - INFO - ⬅️  2
+20:11:59 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:11:59 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:12:00 - StarvellBot - INFO - Успешно парсили ордеры
+20:12:00 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:00 - StarvellBot - ERROR - отсутствует категория демпинге
+20:12:00 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:12:00 - StarvellBot - INFO - Успешно парсили ордеры
+20:12:00 - StarvellBot - WARNING - ⚠️ Не удалось извлечь количество звёзд из 'Другое количество'
+20:12:00 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:12:00 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:12:00 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:12:24 - StarvellBot - INFO - ⬅️  2
+20:12:30 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:12:31 - StarvellBot - INFO - Успешно парсили ордеры
+20:12:31 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:12:31 - StarvellBot - ERROR - отсутствует категория демпинге
+20:12:31 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:12:31 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:12:31 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:12:31 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:12:49 - StarvellBot - INFO - ⬅️  2
+20:13:07 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:13:07 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:13:08 - StarvellBot - INFO - Успешно парсили ордеры
+20:13:08 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:08 - StarvellBot - ERROR - отсутствует категория демпинге
+20:13:08 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:13:08 - StarvellBot - INFO - Успешно парсили ордеры
+20:13:08 - StarvellBot - WARNING - ⚠️ Не удалось извлечь количество звёзд из 'Другое количество'
+20:13:08 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:13:08 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:13:08 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:13:14 - StarvellBot - INFO - ⬅️  2
+20:13:38 - StarvellBot - INFO - 🔄 Проверяем цены...
+20:13:39 - StarvellBot - INFO - Успешно парсили ордеры
+20:13:39 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+20:13:39 - StarvellBot - ERROR - отсутствует категория демпинге
+20:13:39 - StarvellBot - INFO - 📊 Обрабатываем предложение 181438: 85 звёзд по 101.3₽
+20:13:39 - StarvellBot - INFO - 📊 Получено 10 предложений конкурентов
+20:13:39 - StarvellBot - INFO -    advgifts: отфильтровали конкурентов по 85 звёзд → 3 шт.
+20:13:39 - StarvellBot - ERROR - ❌ Ошибка в dumper: cannot access local variable 'him_price' where it is not associated with a value
+20:13:39 - StarvellBot - INFO - ⬅️  2
+20:13:46 - aiogram.dispatcher - INFO - Polling stopped

@@ -1,0 +1,92 @@
+02:04:06 - StarvellBot - INFO - ✅ Логирование настроено
+02:04:06 - StarvellBot - INFO - ============================================================
+02:04:06 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+02:04:06 - StarvellBot - INFO - ============================================================
+02:04:06 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+02:04:06 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+02:04:07 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+02:04:07 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+02:04:07 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+02:04:07 - StarvellBot - INFO - ============================================================
+02:04:07 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+02:04:07 - StarvellBot - INFO - ============================================================
+02:04:07 - StarvellBot - INFO - 
+02:04:07 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+02:04:07 - StarvellBot - INFO - 🎛️ Доступные команды:
+02:04:07 - StarvellBot - INFO -    /start - начать работу
+02:04:07 - StarvellBot - INFO -    /services - управление службами
+02:04:07 - StarvellBot - INFO -    /config - редактирование настроек
+02:04:07 - StarvellBot - INFO -    /status - статус служб
+02:04:07 - StarvellBot - INFO -    /help - справка
+02:04:07 - StarvellBot - INFO - 
+02:04:07 - StarvellBot - INFO - ============================================================
+02:04:07 - aiogram.dispatcher - INFO - Start polling
+02:04:07 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+02:04:08 - aiogram.event - INFO - Update id=826343529 is handled. Duration 202 ms by bot id=8298689795
+02:04:09 - aiogram.event - INFO - Update id=826343530 is handled. Duration 151 ms by bot id=8298689795
+02:04:10 - aiogram.event - INFO - Update id=826343531 is not handled. Duration 66 ms by bot id=8298689795
+02:04:10 - aiogram.event - ERROR - Cause exception while process update id=826343531 by bot id=8298689795
+AttributeError: 'NoneType' object has no attribute 'items'
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\telegram_manager.py", line 386, in cb_config_edit
+    for key, value in pre_look.items():
+                      ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'items'
+02:05:51 - aiogram.dispatcher - INFO - Polling stopped

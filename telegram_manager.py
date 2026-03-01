@@ -1,643 +1,735 @@
 # -*- coding: utf-8 -*-
-"""
-Telegram Bot для управления StarvellBot
-Позволяет запускать/останавливать службы и редактировать конфигурацию
-"""
-
 import asyncio
-import logging
 import json
+import logging
+import re
 import traceback
 from datetime import datetime
-from typing import Dict, Optional
 
-from aiogram import Bot, Dispatcher, F
+from aiogram import Bot, Dispatcher, Router, F
 from aiogram.filters import Command, StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from config_manager import ConfigManager
-from service_manager import ServiceManager
+from config import cc
+import config as gi
+from config_manager import cast, validate_by_schema, parse_schema, parse_value
+from constants import allowed_fields
+from datatypes import get_label
 
-# Настройка логирования
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
+router = Router()
 
-# Состояния FSM для редактирования конфига
+
 class ConfigEditStates(StatesGroup):
     waiting_for_value = State()
+    waiting_for_value_advanced = State()
 
 
-class TelegramManager:
-    def __init__(self, bot_token: str, admin_ids: list):
-        """
-        :param bot_token: Токен Telegram бота
-        :param admin_ids: Список ID администраторов
-        """
-        self.bot = Bot(token=bot_token)
-        self.dp = Dispatcher(storage=MemoryStorage())
-        self.admin_ids = admin_ids
-        
-        self.config_manager = ConfigManager()
-        self.service_manager = ServiceManager()
-        
-        # Хранилище для состояний редактирования
-        self.edit_context: Dict[int, dict] = {}
-        
-        # Регистрация обработчиков
-        self._register_handlers()
-    
-    def _register_handlers(self):
-        """Регистрация всех обработчиков команд и callback'ов"""
-        
-        # Команды
-        self.dp.message(Command("start"))(self.cmd_start)
-        self.dp.message(Command("status"))(self.cmd_status)
-        self.dp.message(Command("config"))(self.cmd_config)
-        self.dp.message(Command("services"))(self.cmd_services)
-        self.dp.message(Command("help"))(self.cmd_help)
-        
-        # Callback кнопки для служб
-        self.dp.callback_query(F.data.startswith("service_"))(self.callback_service_control)
-        
-        # Callback кнопки для конфига
-        self.dp.callback_query(F.data.startswith("config_"))(self.callback_config_action)
-        
-        # Обработка ввода значений конфига
-        self.dp.message(StateFilter(ConfigEditStates.waiting_for_value))(self.process_config_value)
-    
-    def _check_admin(self, user_id: int) -> bool:
-        """Проверка прав администратора"""
-        return user_id in self.admin_ids
-    
-    async def cmd_start(self, message: Message):
-        """Обработчик команды /start"""
-        if not self._check_admin(message.from_user.id):
-            await message.answer("❌ У вас нет прав для использования этого бота")
-            return
-        
-        await message.answer(
-            "🤖 <b>StarvellBot Manager</b>\n\n"
-            "Добро пожаловать в панель управления!\n\n"
-            "Доступные команды:\n"
-            "/services - управление службами\n"
-            "/config - редактирование конфигурации\n"
-            "/status - статус всех служб\n"
-            "/help - справка",
-            parse_mode="HTML"
-        )
-    
-    async def cmd_help(self, message: Message):
-        """Обработчик команды /help"""
-        if not self._check_admin(message.from_user.id):
-            return
-        
-        help_text = """
-🤖 <b>Справка по командам</b>
+# ----------------------------------------------------------
+# HELPERS
+# ----------------------------------------------------------
 
-<b>Управление службами:</b>
-/services - открыть панель управления службами
-/status - показать статус всех служб
+def _check_admin(user_id: int, admin_ids: list) -> bool:
+    return user_id in admin_ids
 
-<b>Конфигурация:</b>
-/config - редактировать настройки
+def _build_advanced_back(section_id) -> InlineKeyboardMarkup:
+    keyboard = InlineKeyboardBuilder()
+    keyboard.row(InlineKeyboardButton(text="◀️ Назад", callback_data=f"adv_back_{section_id}"))
+    return keyboard.as_markup()
 
-<b>Службы:</b>
-• <b>Orders Monitor</b> - получение и обработка заказов (WebSocket + резервная проверка)
-• <b>Dumper</b> - автоматическое понижение цен
-• <b>Bumper</b> - поднятие предложений
+def _build_services_keyboard() -> InlineKeyboardMarkup:
+    status = gi.service_manager.get_all_status()
+    buttons = []
+    for service_id, info in status.items():
+        emoji = "🟢" if info['running'] else "🔴"
+        buttons.append([InlineKeyboardButton(
+            text=f"{emoji} {info['name']}",
+            callback_data=f"service_select_{service_id}"
+        )])
+    buttons.append([InlineKeyboardButton(text="🔄 Обновить", callback_data="service_refresh")])
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
-<b>Управление службами:</b>
-✅ Запустить - запускает выбранную службу
-⏸ Остановить - останавливает службу
-🔄 Перезапустить - перезапускает службу
-📊 Статус - показывает текущее состояние
+def _build_service_control_keyboard(service_id: str, is_running: bool) -> InlineKeyboardMarkup:
+    buttons = []
+    if is_running:
+        buttons.append([InlineKeyboardButton(text="⏸ Остановить",    callback_data=f"service_stop_{service_id}")])
+        buttons.append([InlineKeyboardButton(text="🔄 Перезапустить", callback_data=f"service_restart_{service_id}")])
+    else:
+        buttons.append([InlineKeyboardButton(text="▶️ Запустить",     callback_data=f"service_start_{service_id}")])
+    buttons.append([InlineKeyboardButton(text="◀️ Назад", callback_data="service_back")])
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
-<b>Редактирование конфига:</b>
-В разделе /config вы можете изменить:
-• Токены и API ключи
-• Настройки безопасности
-• Сообщения для клиентов
-• Параметры производительности
-        """
-        
-        await message.answer(help_text, parse_mode="HTML")
-    
-    async def cmd_status(self, message: Message):
-        """Показать статус всех служб"""
-        if not self._check_admin(message.from_user.id):
-            return
-        
-        status = self.service_manager.get_all_status()
-        
-        status_text = "📊 <b>Статус служб:</b>\n\n"
-        
-        for service_name, info in status.items():
-            emoji = "🟢" if info['running'] else "🔴"
-            status_text += f"{emoji} <b>{service_name}</b>\n"
-            status_text += f"   Статус: {'Запущена' if info['running'] else 'Остановлена'}\n"
-            
-            if info['running'] and info['started_at']:
-                uptime = datetime.now() - info['started_at']
-                hours = int(uptime.total_seconds() // 3600)
-                minutes = int((uptime.total_seconds() % 3600) // 60)
-                status_text += f"   Uptime: {hours}ч {minutes}м\n"
-            
-            if info['last_error']:
-                status_text += f"   ⚠️ Последняя ошибка: {info['last_error']}\n"
-            
-            status_text += "\n"
-        
-        await message.answer(status_text, parse_mode="HTML")
-    
-    async def cmd_services(self, message: Message):
-        """Панель управления службами"""
-        if not self._check_admin(message.from_user.id):
-            return
-        
-        keyboard = self._build_services_keyboard()
-        
-        await message.answer(
-            "⚙️ <b>Управление службами</b>\n\n"
-            "Выберите службу для управления:",
-            reply_markup=keyboard,
-            parse_mode="HTML"
-        )
-    
-    def _build_services_keyboard(self) -> InlineKeyboardMarkup:
-        """Построить клавиатуру для управления службами"""
-        status = self.service_manager.get_all_status()
-        
-        buttons = []
-        
-        for service_id, info in status.items():
-            emoji = "🟢" if info['running'] else "🔴"
-            name = info['name']
-            buttons.append([
-                InlineKeyboardButton(
-                    text=f"{emoji} {name}",
-                    callback_data=f"service_select_{service_id}"
-                )
-            ])
-        
-        buttons.append([
-            InlineKeyboardButton(
-                text="🔄 Обновить статус",
-                callback_data="service_refresh"
-            )
-        ])
-        
-        return InlineKeyboardMarkup(inline_keyboard=buttons)
-    
-    def _build_service_control_keyboard(self, service_id: str, is_running: bool) -> InlineKeyboardMarkup:
-        """Построить клавиатуру управления конкретной службой"""
-        buttons = []
-        
-        if is_running:
-            buttons.append([
-                InlineKeyboardButton(
-                    text="⏸ Остановить",
-                    callback_data=f"service_stop_{service_id}"
-                )
-            ])
-            buttons.append([
-                InlineKeyboardButton(
-                    text="🔄 Перезапустить",
-                    callback_data=f"service_restart_{service_id}"
-                )
-            ])
+def _build_advanced_keyboard_config() -> InlineKeyboardMarkup:
+    buttons = []
+    for section_id, dic in cc.fields_adv.items():
+        buttons.append([InlineKeyboardButton(
+            text=f"{dic['label']}",
+            callback_data=f"adv_1_section_{section_id}"
+        )])
+    buttons.append([InlineKeyboardButton(
+        text="◀️ Назад",         callback_data="config_back"
+    )])
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
+
+def make_path(keys):
+    return "-".join(str(key) for key in keys)
+
+def _build_advanced_keyboard(keys, actions=None) -> InlineKeyboardMarkup:
+    """
+    ЕДИНЫЙ ФОРМАТ КНОПКИ adv_action_path
+    :param keys:
+    :param actions:
+    :return:
+    """
+    path = make_path(keys)
+    back_path = make_path(keys[:-1])  # убираем последний элемент
+
+    keyboard = InlineKeyboardBuilder()
+    meta = cc.data.copy()
+
+    if actions is None:
+        for key in keys:
+            try:
+                meta = meta[key]
+            except KeyError:
+                traceback.print_exc()
+                keyboard.row(InlineKeyboardButton(text="Не удалось загрузить данные - несуществующий путь по ключам", callback_data=f"adv_back_{back_path}"))
+                return keyboard.as_markup()
+
+        data = meta['data']
+        others = meta.copy()
+        del others['data']
+
+        if cc.get_type(data['type'][1]) == [dict]:
+            for section in others.keys():
+                keyboard.row(InlineKeyboardButton(
+                    text=f"{section}", callback_data=f"adv_section_{path}-{section}"
+                ))
+
+        for action in data['actions']:
+            keyboard.row(InlineKeyboardButton(
+                text=f"{get_label(action[0])}", callback_data=f"adv_{action[0]}_{path}"
+            ))
+
+
+        if keys == ['advanced']:
+            keyboard.row(InlineKeyboardButton(
+                text="◀️ Назад", callback_data="config_back"
+            ))
+
         else:
-            buttons.append([
-                InlineKeyboardButton(
-                    text="▶️ Запустить",
-                    callback_data=f"service_start_{service_id}"
-                )
-            ])
-        
-        buttons.append([
-            InlineKeyboardButton(
-                text="◀️ Назад",
-                callback_data="service_back"
-            )
-        ])
-        
-        return InlineKeyboardMarkup(inline_keyboard=buttons)
-    
-    async def callback_service_control(self, callback: CallbackQuery):
-        """Обработчик callback'ов управления службами"""
-        if not self._check_admin(callback.from_user.id):
-            await callback.answer("❌ Нет прав", show_alert=True)
-            return
-        
-        data = callback.data
-        
-        # Обновить список служб
-        if data == "service_refresh":
-            keyboard = self._build_services_keyboard()
-            await callback.message.edit_reply_markup(reply_markup=keyboard)
-            await callback.answer("✅ Обновлено")
-            return
-        
-        # Вернуться к списку
-        if data == "service_back":
-            keyboard = self._build_services_keyboard()
+            keyboard.row(InlineKeyboardButton(
+                text="◀️ Назад", callback_data=f"adv_back_{back_path}"
+            ))
+
+    else:
+
+        for action in actions:
+            if action[0] == 'remove' and action[1] == 'Подтверждение':
+                keyboard.row(InlineKeyboardButton(
+                    text=f"Да", callback_data=f"adv_{action[0]}true_{path}"
+                ))
+
+                keyboard.row(InlineKeyboardButton(
+                    text="Нет", callback_data=f"adv_section_{path}"
+                ))
+
+            else:
+                keyboard.row(InlineKeyboardButton(
+                    text=get_label(action[0]), callback_data=f"adv_{action[0]}_{path}"
+                ))
+
+    return keyboard.as_markup()
+
+
+def _build_advanced_menu(section_id) -> InlineKeyboardMarkup:
+    keyboard = InlineKeyboardBuilder()
+    keyboard.row(InlineKeyboardButton(text="➕ Добавить", callback_data=f"adv_add_{section_id}"))
+    keyboard.row(InlineKeyboardButton(text="➖ Удалить",  callback_data=f"adv_remove_{section_id}"))
+    keyboard.row(InlineKeyboardButton(text="◀️ Назад",         callback_data="config_back"))
+    return keyboard.as_markup()
+
+
+def _build_config_keyboard() -> InlineKeyboardMarkup:
+    buttons = []
+    for section_id, section_label in cc.section_labels.items():
+        buttons.append([InlineKeyboardButton(
+            text=section_label,
+            callback_data=f"config_section_{section_id}"
+        )])
+    buttons.append([InlineKeyboardButton(
+        text='Продвинутые настройки',
+        callback_data=f"adv_section_advanced"
+    )])
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
+
+def _build_section_keyboard(section_id: str) -> InlineKeyboardMarkup:
+    buttons = []
+    for key, meta in cc.fields_in_section(section_id).items():
+        buttons.append([InlineKeyboardButton(
+            text=meta["label"],
+            callback_data=f"edit_field:{key}"
+        )])
+    buttons.append([InlineKeyboardButton(text="◀️ Назад", callback_data="config_back")])
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
+
+def get_add_msg(step, field, hint, unique_hints=None):
+
+    if unique_hints is None:
+        unique_hints = {}
+
+    msg_text = (f'Добавление нового поля <b>{field}</b>\n\n'
+                f'Подсказка - {hint}\n\n'
+                f'{f'Уникальная подсказка:\n<code>{unique_hints[field]}</code>\n\n' if field in unique_hints else ''}'
+                f'Оставить без значения: none или -')
+
+    return msg_text
+
+def process_add_msg(keys, field, value, pos=None):
+
+    fields_types = {
+        'actions': list,
+        'special_data': dict,
+        'label': str,
+        'schema': dict,
+        'hint': str,
+        'id': str,
+    }
+
+    key_type = str
+    cur = keys.copy()
+
+    if value.lower() in ('none', '-'):
+        return 'Отсутствует', True
+
+    if field == 'id':
+
+        if cc.find_by_key(value) is not None:
+            return f'Имя {value!r} уже существует в конфиге', False
+
+        if '_' in value:
+            return 'Недопустимый формат - нельзя использовать _ в ключах', False
+
+        default_data = {
+            "type": [["string"], ["dict"]],
+            "label": value,
+            "hint": "",
+            "actions": [
+                ["add", "Добавить"],
+                ["remove", "Удалить"]
+            ],
+            "special_data": {}
+        }
+        cur.append(value)
+        cur.append('data')
+        ok, result = cc.edit_dict(cur, key_type, dict, default_data)
+        if ok:
+            return value, True
+        else:
+            return 'Ошибка при создании раздела', False
+
+    # для остальных полей путь: keys + [pos, 'data', field]
+    if pos is None:
+        return 'Отсутствует pos', False
+
+    cur.append(pos)
+    cur.append('data')
+    cur.append(field)
+
+    if field == 'actions':
+        actions = []
+        for line in value.strip().splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            parts = line.split(" - ", 1)
+            if len(parts) != 2:
+                return f'Неверный формат строки: {line!r}\nОжидается: "action - описание"', False
+            action, description = parts[0].strip(), parts[1].strip()
+            if action not in {'add', 'remove'}:
+                return f'Неизвестное действие: {action!r}', False
+            if not description:
+                return f'Пустое описание для {action!r}', False
+            actions.append([action, description])
+
+        ok, result = cc.edit_dict(cur, key_type, list, actions)
+
+    elif field == 'special_data':
+        cast_val, ok = parse_value(value)
+        if not ok:
+            return f'Ошибка парсинга: {cast_val}', False
+        if not isinstance(cast_val, dict):
+            return 'Ожидается словарь. Пример: stars: 50, mask: [0,0,1,0]', False
+
+        # Читаем схему
+        schema = None
+        try:
+            node = cc.data.copy()
+            for k in keys:
+                node = node[k]
+            schema = node['data'].get('schema')
+        except (KeyError, TypeError):
+            pass
+
+        if schema:
+            valid, err = validate_by_schema(cast_val, schema)
+            if not valid:
+                return f'Ошибка валидации: {err}', False
+
+        ok, result = cc.edit_dict(cur, str, dict, cast_val)
+        if ok:
+            return cast_val, True
+        return f'Ошибка записи: {result}', False
+
+    elif field == 'schema':
+        schema_val, ok = parse_schema(value)
+        if not ok:
+            return 'Неверный формат схемы. Пример: stars:int mask:list[int] ids:list[list]', False
+        ok, result = cc.edit_dict(cur, key_type, dict, schema_val)
+
+    else:
+        ok, result = cc.edit_dict(cur, key_type, fields_types[field], value)
+
+    if ok:
+        return result, True
+    else:
+        return 'Ошибка при записи данных в конфиг', False
+
+# ----------------------------------------------------------
+# КОМАНДЫ
+# ----------------------------------------------------------
+
+@router.message(Command("start"))
+async def cmd_start(message: Message):
+    await message.answer(
+        "🤖 <b>StarvellBot Manager</b>\n\n"
+        "Добро пожаловать в панель управления!\n\n"
+        "/services — управление службами\n"
+        "/config — редактирование конфигурации\n"
+        "/status — статус всех служб\n"
+        "/help — справка",
+        parse_mode="HTML"
+    )
+
+@router.message(Command("help"))
+async def cmd_help(message: Message):
+    await message.answer(
+        "🤖 <b>Справка по командам</b>\n\n"
+        "<b>Управление службами:</b>\n"
+        "/services — панель управления службами\n"
+        "/status — статус всех служб\n\n"
+        "<b>Конфигурация:</b>\n"
+        "/config — редактировать настройки\n\n"
+        "<b>Редактирование конфига:</b>\n"
+        "Выберите раздел → параметр → введите новое значение.\n"
+        "Изменения сохраняются автоматически.",
+        parse_mode="HTML"
+    )
+
+@router.message(Command("status"))
+async def cmd_status(message: Message):
+    status = gi.service_manager.get_all_status()
+    text = "📊 <b>Статус служб:</b>\n\n"
+
+    for service_name, info in status.items():
+        emoji = "🟢" if info['running'] else "🔴"
+        text += f"{emoji} <b>{service_name}</b>\n"
+        text += f"   Статус: {'Запущена' if info['running'] else 'Остановлена'}\n"
+
+        if info['running'] and info['started_at']:
+            uptime = datetime.now() - info['started_at']
+            h = int(uptime.total_seconds() // 3600)
+            m = int((uptime.total_seconds() % 3600) // 60)
+            text += f"   Uptime: {h}ч {m}м\n"
+
+        if info['last_error']:
+            text += f"   ⚠️ Ошибка: {info['last_error']}\n"
+        text += "\n"
+
+    await message.answer(text, parse_mode="HTML")
+
+@router.message(Command("services"))
+async def cmd_services(message: Message):
+    await message.answer(
+        "⚙️ <b>Управление службами</b>\n\nВыберите службу:",
+        reply_markup=_build_services_keyboard(),
+        parse_mode="HTML"
+    )
+
+@router.message(Command("config"))
+async def cmd_config(message: Message):
+    await message.answer(
+        "⚙️ <b>Редактирование конфигурации</b>\n\nВыберите раздел:",
+        reply_markup=_build_config_keyboard(),
+        parse_mode="HTML"
+    )
+
+
+# ----------------------------------------------------------
+# СЛУЖБЫ
+# ----------------------------------------------------------
+
+@router.callback_query(F.data == "service_refresh")
+async def cb_service_refresh(callback: CallbackQuery):
+    await callback.message.edit_reply_markup(reply_markup=_build_services_keyboard())
+    await callback.answer("✅ Обновлено")
+
+@router.callback_query(F.data == "service_back")
+async def cb_service_back(callback: CallbackQuery):
+    await callback.message.edit_text(
+        "⚙️ <b>Управление службами</b>\n\nВыберите службу:",
+        reply_markup=_build_services_keyboard(),
+        parse_mode="HTML"
+    )
+    await callback.answer()
+
+@router.callback_query(F.data.startswith("service_select_"))
+async def cb_service_select(callback: CallbackQuery):
+    service_id = callback.data.removeprefix("service_select_")
+    status = gi.service_manager.get_status(service_id)
+    if not status:
+        await callback.answer("❌ Служба не найдена", show_alert=True)
+        return
+
+    emoji = "🟢" if status['running'] else "🔴"
+    text = f"{emoji} <b>{status['name']}</b>\n\nСтатус: {'Запущена' if status['running'] else 'Остановлена'}\n"
+    if status['running'] and status['started_at']:
+        uptime = datetime.now() - status['started_at']
+        h = int(uptime.total_seconds() // 3600)
+        m = int((uptime.total_seconds() % 3600) // 60)
+        text += f"Uptime: {h}ч {m}м\n"
+    if status['last_error']:
+        text += f"\n⚠️ Последняя ошибка:\n{status['last_error']}"
+
+    await callback.message.edit_text(
+        text, reply_markup=_build_service_control_keyboard(service_id, status['running']), parse_mode="HTML"
+    )
+    await callback.answer()
+
+@router.callback_query(F.data.startswith("service_start_"))
+async def cb_service_start(callback: CallbackQuery):
+    service_id = callback.data.removeprefix("service_start_")
+    try:
+        success = await gi.service_manager.start_service(service_id)
+        if success:
+            status = gi.service_manager.get_status(service_id)
             await callback.message.edit_text(
-                "⚙️ <b>Управление службами</b>\n\n"
-                "Выберите службу для управления:",
-                reply_markup=keyboard,
+                f"🟢 <b>{status['name']}</b>\n\nСтатус: Запущена",
+                reply_markup=_build_service_control_keyboard(service_id, True),
                 parse_mode="HTML"
             )
-            await callback.answer()
-            return
-        
-        # Выбор службы
-        if data.startswith("service_select_"):
-            service_id = data.replace("service_select_", "")
-            status = self.service_manager.get_status(service_id)
-            
-            if not status:
-                await callback.answer("❌ Служба не найдена", show_alert=True)
-                return
-            
-            emoji = "🟢" if status['running'] else "🔴"
-            status_text = f"{emoji} <b>{status['name']}</b>\n\n"
-            status_text += f"Статус: {'Запущена' if status['running'] else 'Остановлена'}\n"
-            
-            if status['running'] and status['started_at']:
-                uptime = datetime.now() - status['started_at']
-                hours = int(uptime.total_seconds() // 3600)
-                minutes = int((uptime.total_seconds() % 3600) // 60)
-                status_text += f"Uptime: {hours}ч {minutes}м\n"
-            
-            if status['last_error']:
-                status_text += f"\n⚠️ Последняя ошибка:\n{status['last_error']}"
-            
-            keyboard = self._build_service_control_keyboard(service_id, status['running'])
-            
+            await callback.answer("✅ Запущена", show_alert=True)
+        else:
+            await callback.answer("❌ Не удалось запустить", show_alert=True)
+    except Exception as e:
+        logger.error(f"Ошибка запуска {service_id}: {e}")
+        await callback.answer(f"❌ Ошибка: {e}", show_alert=True)
+
+@router.callback_query(F.data.startswith("service_stop_"))
+async def cb_service_stop(callback: CallbackQuery):
+    service_id = callback.data.removeprefix("service_stop_")
+    try:
+        success = await gi.service_manager.stop_service(service_id)
+        if success:
+            status = gi.service_manager.get_status(service_id)
             await callback.message.edit_text(
-                status_text,
-                reply_markup=keyboard,
+                f"🔴 <b>{status['name']}</b>\n\nСтатус: Остановлена",
+                reply_markup=_build_service_control_keyboard(service_id, False),
                 parse_mode="HTML"
             )
-            await callback.answer()
-            return
-        
-        # Запуск службы
-        if data.startswith("service_start_"):
-            service_id = data.replace("service_start_", "")
-            
-            try:
-                success = await self.service_manager.start_service(service_id)
-                
-                if success:
-                    await callback.answer("✅ Служба запущена", show_alert=True)
-                    
-                    # Обновить информацию
-                    status = self.service_manager.get_status(service_id)
-                    keyboard = self._build_service_control_keyboard(service_id, True)
-                    
-                    await callback.message.edit_text(
-                        f"🟢 <b>{status['name']}</b>\n\nСтатус: Запущена",
-                        reply_markup=keyboard,
-                        parse_mode="HTML"
-                    )
-                else:
-                    await callback.answer("❌ Не удалось запустить службу", show_alert=True)
-            
-            except Exception as e:
-                logger.error(f"Ошибка запуска службы {service_id}: {e}")
-                await callback.answer(f"❌ Ошибка: {str(e)}", show_alert=True)
-            
-            return
-        
-        # Остановка службы
-        if data.startswith("service_stop_"):
-            service_id = data.replace("service_stop_", "")
-            
-            try:
-                success = await self.service_manager.stop_service(service_id)
-                
-                if success:
-                    await callback.answer("✅ Служба остановлена", show_alert=True)
-                    
-                    # Обновить информацию
-                    status = self.service_manager.get_status(service_id)
-                    keyboard = self._build_service_control_keyboard(service_id, False)
-                    
-                    await callback.message.edit_text(
-                        f"🔴 <b>{status['name']}</b>\n\nСтатус: Остановлена",
-                        reply_markup=keyboard,
-                        parse_mode="HTML"
-                    )
-                else:
-                    await callback.answer("❌ Не удалось остановить службу", show_alert=True)
-            
-            except Exception as e:
-                logger.error(f"Ошибка остановки службы {service_id}: {e}")
-                await callback.answer(f"❌ Ошибка: {str(e)}", show_alert=True)
-            
-            return
-        
-        # Перезапуск службы
-        if data.startswith("service_restart_"):
-            service_id = data.replace("service_restart_", "")
-            
-            try:
-                await callback.answer("🔄 Перезапуск...", show_alert=False)
-                
-                success = await self.service_manager.restart_service(service_id)
-                
-                if success:
-                    status = self.service_manager.get_status(service_id)
-                    keyboard = self._build_service_control_keyboard(service_id, True)
-                    
-                    await callback.message.edit_text(
-                        f"🟢 <b>{status['name']}</b>\n\nСтатус: Перезапущена",
-                        reply_markup=keyboard,
-                        parse_mode="HTML"
-                    )
-                else:
-                    await callback.answer("❌ Не удалось перезапустить", show_alert=True)
-            
-            except Exception as e:
-                logger.error(f"Ошибка перезапуска службы {service_id}: {e}")
-                await callback.answer(f"❌ Ошибка: {str(e)}", show_alert=True)
-            
-            return
-    
-    async def cmd_config(self, message: Message):
-        """Панель редактирования конфигурации"""
-        if not self._check_admin(message.from_user.id):
-            return
-        
-        keyboard = self._build_config_keyboard()
-        
+            await callback.answer("✅ Остановлена", show_alert=True)
+        else:
+            await callback.answer("❌ Не удалось остановить", show_alert=True)
+    except Exception as e:
+        logger.error(f"Ошибка остановки {service_id}: {e}")
+        await callback.answer(f"❌ Ошибка: {e}", show_alert=True)
+
+@router.callback_query(F.data.startswith("service_restart_"))
+async def cb_service_restart(callback: CallbackQuery):
+    service_id = callback.data.removeprefix("service_restart_")
+    try:
+        await callback.answer("🔄 Перезапуск...")
+        success = await gi.service_manager.restart_service(service_id)
+        if success:
+            status = gi.service_manager.get_status(service_id)
+            await callback.message.edit_text(
+                f"🟢 <b>{status['name']}</b>\n\nСтатус: Перезапущена",
+                reply_markup=_build_service_control_keyboard(service_id, True),
+                parse_mode="HTML"
+            )
+        else:
+            await callback.answer("❌ Не удалось перезапустить", show_alert=True)
+    except Exception as e:
+        logger.error(f"Ошибка перезапуска {service_id}: {e}")
+        await callback.answer(f"❌ Ошибка: {e}", show_alert=True)
+
+
+# ----------------------------------------------------------
+# КОНФИГ — навигация
+# ----------------------------------------------------------
+
+@router.callback_query(F.data == "config_back")
+async def cb_config_back(callback: CallbackQuery):
+    await callback.message.edit_text(
+        "⚙️ <b>Редактирование конфигурации</b>\n\nВыберите раздел:",
+        reply_markup=_build_config_keyboard(),
+        parse_mode="HTML"
+    )
+    await callback.answer()
+
+@router.callback_query(F.data.startswith("config_section_"))
+async def cb_config_section(callback: CallbackQuery):
+    section_id = callback.data.removeprefix("config_section_")
+    section_label = cc.section_labels.get(section_id, section_id)
+    await callback.message.edit_text(
+        f"⚙️ <b>{section_label}</b>\n\nВыберите параметр:",
+        reply_markup=_build_section_keyboard(section_id),
+        parse_mode="HTML"
+    )
+    await callback.answer()
+
+
+# ----------------------------------------------------------
+# КОНФИГ — редактирование поля (единый хендлер)
+# ----------------------------------------------------------
+
+@router.callback_query(F.data.startswith("edit_field:"))
+async def cb_edit_field(callback: CallbackQuery, state: FSMContext):
+    key = callback.data.removeprefix("edit_field:")
+    meta = cc.fields.get(key)
+    if not meta:
+        await callback.answer(f"❌ Неизвестное поле: {key}", show_alert=True)
+        return
+
+    current = cc.get(key)
+    display = ("*" * 20) if meta.get("sensitive") else str(current)
+
+    await state.update_data(field_key=key, section_id=meta["section"])
+    await state.set_state(ConfigEditStates.waiting_for_value)
+
+    await callback.message.edit_text(
+        f"✏️ <b>{meta['label']}</b>\n\n"
+        f"Текущее значение: <code>{display}</code>\n\n"
+        f"{meta.get('hint', 'Введите новое значение')}:",
+        parse_mode="HTML"
+    )
+    await callback.answer()
+
+@router.message(StateFilter(ConfigEditStates.waiting_for_value))
+async def process_config_value(message: Message, state: FSMContext):
+    data = await state.get_data()
+    key        = data.get("field_key")
+    section_id = data.get("section_id")
+
+    if not key:
+        await message.answer("❌ Контекст редактирования потерян")
+        await state.clear()
+        return
+
+    ok, result = cc.edit(key, message.text.strip())
+
+    if ok:
+        meta = cc.fields.get(key, {})
+        await message.answer(f"✅ <b>{meta.get('label', key)}</b> сохранено", parse_mode="HTML")
         await message.answer(
-            "⚙️ <b>Редактирование конфигурации</b>\n\n"
-            "Выберите раздел для редактирования:",
-            reply_markup=keyboard,
+            f"⚙️ <b>{cc.section_labels.get(section_id, section_id)}</b>\n\nВыберите параметр:",
+            reply_markup=_build_section_keyboard(section_id),
             parse_mode="HTML"
         )
-    
-    def _build_config_keyboard(self) -> InlineKeyboardMarkup:
-        """Построить клавиатуру разделов конфигурации"""
-        sections = self.config_manager.get_sections()
-        
-        buttons = []
-        
-        for section_id, section_name in sections.items():
-            buttons.append([
-                InlineKeyboardButton(
-                    text=section_name,
-                    callback_data=f"config_section_{section_id}"
-                )
-            ])
-        
-        buttons.append([
-            InlineKeyboardButton(
-                text="💾 Сохранить и применить",
-                callback_data="config_save"
-            )
-        ])
-        
-        return InlineKeyboardMarkup(inline_keyboard=buttons)
-    
-    def _build_section_keyboard(self, section_id: str) -> InlineKeyboardMarkup:
-        """Построить клавиатуру параметров раздела"""
-        params = self.config_manager.get_section_params(section_id)
-        
-        buttons = []
-        
-        for param_id, param_info in params.items():
-            buttons.append([
-                InlineKeyboardButton(
-                    text=param_info['name'],
-                    callback_data=f"config_edit_{section_id}_{param_id}"
-                )
-            ])
-        
-        buttons.append([
-            InlineKeyboardButton(
-                text="◀️ Назад",
-                callback_data="config_back"
-            )
-        ])
-        
-        return InlineKeyboardMarkup(inline_keyboard=buttons)
-    
-    async def callback_config_action(self, callback: CallbackQuery, state: FSMContext):
-        """Обработчик callback'ов конфигурации"""
-        if not self._check_admin(callback.from_user.id):
-            await callback.answer("❌ Нет прав", show_alert=True)
-            return
-        
-        data = callback.data
-        
-        # Вернуться к списку разделов
-        if data == "config_back":
-            keyboard = self._build_config_keyboard()
-            await callback.message.edit_text(
-                "⚙️ <b>Редактирование конфигурации</b>\n\n"
-                "Выберите раздел для редактирования:",
-                reply_markup=keyboard,
-                parse_mode="HTML"
-            )
-            await callback.answer()
-            return
-        
-        # Сохранить конфигурацию
-        if data == "config_save":
-            try:
-                self.config_manager.save()
-                await callback.answer("✅ Конфигурация сохранена!", show_alert=True)
-                
-                # Перезапустить все службы для применения
-                restart_text = "\n\n⚠️ Необходимо перезапустить службы для применения изменений"
-                
-                keyboard = InlineKeyboardMarkup(inline_keyboard=[
-                    [InlineKeyboardButton(
-                        text="🔄 Перезапустить все службы",
-                        callback_data="config_restart_all"
-                    )],
-                    [InlineKeyboardButton(
-                        text="◀️ Назад",
-                        callback_data="config_back"
-                    )]
-                ])
-                
-                await callback.message.edit_text(
-                    "✅ Конфигурация сохранена!" + restart_text,
-                    reply_markup=keyboard,
-                    parse_mode="HTML"
-                )
-            
-            except Exception as e:
-                logger.error(f"Ошибка сохранения конфига: {e}")
-                await callback.answer(f"❌ Ошибка: {str(e)}", show_alert=True)
-            
-            return
-        
-        # Перезапустить все службы
-        if data == "config_restart_all":
-            await callback.answer("🔄 Перезапуск служб...", show_alert=False)
-            
-            try:
-                results = await self.service_manager.restart_all()
-                
-                success_count = sum(1 for r in results.values() if r)
-                total_count = len(results)
-                
-                await callback.answer(
-                    f"✅ Перезапущено {success_count}/{total_count} служб",
-                    show_alert=True
-                )
-                
-                keyboard = self._build_config_keyboard()
-                await callback.message.edit_text(
-                    "⚙️ <b>Редактирование конфигурации</b>\n\n"
-                    "Выберите раздел для редактирования:",
-                    reply_markup=keyboard,
-                    parse_mode="HTML"
-                )
-            
-            except Exception as e:
-                logger.error(f"Ошибка перезапуска служб: {e}")
-                await callback.answer(f"❌ Ошибка: {str(e)}", show_alert=True)
-            
-            return
-        
-        # Выбор раздела
-        if data.startswith("config_section_"):
-            section_id = data.replace("config_section_", "")
-            section_name = self.config_manager.get_section_name(section_id)
-            
-            keyboard = self._build_section_keyboard(section_id)
-            
-            await callback.message.edit_text(
-                f"⚙️ <b>{section_name}</b>\n\n"
-                f"Выберите параметр для редактирования:",
-                reply_markup=keyboard,
-                parse_mode="HTML"
-            )
-            await callback.answer()
-            return
-        
-        # Редактирование параметра
-        if data.startswith("config_edit_"):
-            parts = data.replace("config_edit_", "").split("_", 1)
-            section_id = parts[0]
-            param_id = parts[1]
-            
-            param_info = self.config_manager.get_param_info(section_id, param_id)
-            current_value = self.config_manager.get_value(section_id, param_id)
-            
-            # Сохраняем контекст редактирования
-            self.edit_context[callback.from_user.id] = {
-                'section_id': section_id,
-                'param_id': param_id,
-                'message_id': callback.message.message_id
-            }
-            
-            # Маскируем чувствительные данные
-            display_value = current_value
-            if param_info.get('sensitive'):
-                display_value = "*" * 20
-            
-            await state.set_state(ConfigEditStates.waiting_for_value)
-            
-            await callback.message.edit_text(
-                f"✏️ <b>{param_info['name']}</b>\n\n"
-                f"Описание: {param_info['description']}\n\n"
-                f"Текущее значение:\n<code>{display_value}</code>\n\n"
-                f"Отправьте новое значение:",
-                parse_mode="HTML"
-            )
-            await callback.answer()
-            return
-    
-    async def process_config_value(self, message: Message, state: FSMContext):
-        """Обработка нового значения параметра конфигурации"""
-        if not self._check_admin(message.from_user.id):
-            return
-        
-        user_id = message.from_user.id
-        
-        if user_id not in self.edit_context:
-            await message.answer("❌ Контекст редактирования потерян")
-            await state.clear()
-            return
-        
-        context = self.edit_context[user_id]
-        section_id = context['section_id']
-        param_id = context['param_id']
-        new_value = message.text.strip()
-        
-        try:
-            # Валидация и установка нового значения
-            self.config_manager.set_value(section_id, param_id, new_value)
-            
-            await message.answer(
-                "✅ Значение обновлено!\n\n"
-                "💾 Не забудьте сохранить изменения через /config → Сохранить"
-            )
-            
-            # Показать обновленный раздел
-            keyboard = self._build_section_keyboard(section_id)
-            section_name = self.config_manager.get_section_name(section_id)
-            
-            await self.bot.edit_message_text(
-                chat_id=message.chat.id,
-                message_id=context['message_id'],
-                text=f"⚙️ <b>{section_name}</b>\n\n"
-                     f"Выберите параметр для редактирования:",
-                reply_markup=keyboard,
-                parse_mode="HTML"
-            )
-        
-        except ValueError as e:
-            await message.answer(f"❌ Ошибка валидации: {str(e)}")
-        
-        except Exception as e:
-            logger.error(f"Ошибка установки значения: {e}")
-            await message.answer(f"❌ Ошибка: {str(e)}")
-        
-        finally:
-            del self.edit_context[user_id]
-            await state.clear()
-    
-    async def start(self):
-        """Запустить бота"""
-        logger.info("🚀 Запуск Telegram Manager...")
-        
-        try:
-            await self.dp.start_polling(self.bot)
-        except Exception as e:
-            logger.error(f"Ошибка при запуске бота: {e}")
-            traceback.print_exc()
-        finally:
-            await self.bot.session.close()
+        await state.clear()
+    else:
+        await message.answer(f"❌ {result}")
+        # не сбрасываем state — пользователь вводит заново
 
+# ----------------------------------------------------------
+# СЛОЖНЫЕ ДАННЫЕ
+# ----------------------------------------------------------
 
-async def main():
-    """Точка входа"""
-    
-    # Загрузка настроек из файла или переменных окружения
-    BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"  # Замените на ваш токен
-    ADMIN_IDS = [123456789]  # Замените на ваши Telegram ID
-    
-    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
-        print("❌ Укажите BOT_TOKEN в коде или переменных окружения")
+@router.callback_query(F.data.startswith("adv_"))
+async def cb_config_edit(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
+    data = callback.data.removeprefix("adv_")
+    action, keys = data.split("_")
+    await state.update_data(keys=keys)
+    keys = keys.split("-")
+
+    meta = cc.data.copy()
+    for key in keys:
+        try:
+            meta = meta[key]
+        except KeyError:
+            await callback.message.edit_text('Ошибка - ключ отсутствует')
+
+    data = meta["data"]
+    if action == "section" or action == "back":
+        await callback.message.edit_text(
+            f"<code>{keys[-1]}</code>\n\n"
+            f"✏️ <b>{data['label']}</b>"
+            f"{f'\n\nПодсказка: <code>{data['hint']}</code>\n\n' if data['hint'] else ''}"
+            f"{f'\n\nДанные для кодинга: <code>{data['special_data']}</code>' if data['special_data'] else ''}",
+            reply_markup=_build_advanced_keyboard(keys),
+            parse_mode="HTML"
+        )
+
+        if action == "back":
+            await state.clear()
         return
-    
-    manager = TelegramManager(bot_token=BOT_TOKEN, admin_ids=ADMIN_IDS)
-    await manager.start()
+
+    else:
+        if action == 'add':
+            step = 0
+
+            cur_data = allowed_fields[step]
+
+            for field, hint in cur_data.items():
+                await callback.message.edit_text(get_add_msg(step, field, hint), reply_markup=_build_advanced_keyboard(keys, actions=[['back', 'Назад']]), parse_mode="HTML")
+                await state.update_data(step=0)
+
+        elif action == 'remove':
+            await callback.message.edit_text('Вы уверены, что хотите удалить поле?', reply_markup=_build_advanced_keyboard(keys, actions=[['remove', 'Подтверждение']]), parse_mode="HTML")
+
+        elif action == 'removetrue':
+            ok, result = cc.edit_dict(keys, str, None, None)
+            del keys[-1]
+            await state.update_data(keys=keys)
+            if ok:
+                await callback.message.edit_text(f'Успешно удалили поле {data['label']}', reply_markup=_build_advanced_keyboard(keys, actions=[['back', 'Назад']]), parse_mode="HTML")
+            else:
+                await callback.message.edit_text(f'Не удалось удалить поле {data['label']}', reply_markup=_build_advanced_keyboard(keys, actions=[['back', 'Назад']]), parse_mode="HTML")
+            await state.clear()
+            return
+
+        await state.set_state(ConfigEditStates.waiting_for_value_advanced)
+        await state.update_data(action=action)
+
+
+@router.message(StateFilter(ConfigEditStates.waiting_for_value_advanced))
+async def process_config_value_advanced_message(message: Message, state: FSMContext):
+    data = await state.get_data()
+    keys_str = data.get("keys")
+    action = data.get("action")
+
+    if not keys_str:
+        await message.answer("❌ Контекст редактирования потерян")
+        await state.clear()
+        return
+
+    keys = keys_str.split("-")  # ← фикс 1: строку → список
+
+    meta = cc.data.copy()
+    for key in keys:
+        try:
+            meta = meta[key]
+        except KeyError:
+            await message.answer('Ошибка - ключ отсутствует')  # ← фикс 2: answer вместо edit_text
+            await state.clear()
+            return
+
+    if action == "add":
+        step = data.get("step")
+        field = ''
+        result, ok = None, False
+        for field, hint in allowed_fields[step].items():
+
+            if field == 'id':
+                pos = None
+            else:
+                pos = data.get('pos')
+
+                if pos is None:
+                    await message.answer("❌ Контекст редактирования потерян")
+                    await state.clear()
+                    return
+
+            raw_value = message.text.strip()
+            result, ok = process_add_msg(keys, field, raw_value, pos=pos)
+
+            if field == 'id':
+                await state.update_data(pos=result)
+
+        if ok:
+
+            new_step = step + 1
+
+            try:
+                allowed_fields[new_step]
+            except (IndexError, KeyError):
+                await message.answer('Успешно добавили все новые значения, возвращаем..', reply_markup=_build_advanced_keyboard(keys), parse_mode="HTML")
+                await state.clear()
+                return
+
+            await state.update_data(step=new_step)
+
+            unique_hints = {
+                'special_data': meta['data']['schema']
+            }
+            for field, hint in allowed_fields[new_step].items():
+                text_msg = get_add_msg(new_step, field, hint, unique_hints=unique_hints)
+                await message.answer(text_msg, reply_markup=_build_advanced_keyboard(keys, actions=[['back', 'Назад']]), parse_mode="HTML")
+
+        else:
+            await message.answer('Ошибка - возвращаем в конфиг и очищаем состояние', reply_markup=_build_advanced_keyboard(keys), parse_mode="HTML")
+            await state.clear()
+
+
+@router.callback_query(StateFilter(ConfigEditStates.waiting_for_value_advanced))
+async def process_config_value_advanced_callback(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
+    data = await state.get_data()
+    keys = data.get("keys")
+    action = data.get("action")
+
+    if not keys:
+        await callback.message.answer("❌ Контекст редактирования потерян")
+        await state.clear()
+        return
+
+    if action == "remove":
+        ok, result = cc.edit_dict(keys, str, None, None)
+
+        if ok:
+            rez = keys.copy()
+            del rez[-1]
+            await callback.message.edit_text('Успешно удалили значение', reply_markup=_build_advanced_keyboard(rez),
+                                             parse_mode="HTML")
+        else:
+            await callback.message.edit_text('Ошибка при удалении - возвращаем обратно',
+                                             reply_markup=_build_advanced_keyboard(keys), parse_mode="HTML")
+
+
+# ----------------------------------------------------------
+# ЗАПУСК
+# ----------------------------------------------------------
+
+async def main(bot_token: str, admin_ids: list):
+    bot = Bot(token=bot_token)
+    dp  = Dispatcher(storage=MemoryStorage())
+    dp.include_router(router)
+
+    logger.info("🚀 Запуск Telegram Manager...")
+    try:
+        await dp.start_polling(bot)
+    except Exception as e:
+        logger.error(f"Ошибка запуска бота: {e}")
+        traceback.print_exc()
+    finally:
+        await bot.session.close()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+    ADMIN_IDS = [123456789]
+
+    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
+        print("❌ Укажите BOT_TOKEN")
+    else:
+        asyncio.run(main(BOT_TOKEN, ADMIN_IDS))

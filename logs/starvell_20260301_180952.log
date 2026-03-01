@@ -1,0 +1,92 @@
+18:09:52 - StarvellBot - INFO - ✅ Логирование настроено
+18:09:52 - StarvellBot - INFO - ============================================================
+18:09:52 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+18:09:52 - StarvellBot - INFO - ============================================================
+18:09:52 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+18:09:52 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+18:09:53 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+18:09:53 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+18:09:53 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+18:09:53 - StarvellBot - INFO - ============================================================
+18:09:53 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+18:09:53 - StarvellBot - INFO - ============================================================
+18:09:53 - StarvellBot - INFO - 
+18:09:53 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+18:09:53 - StarvellBot - INFO - 🎛️ Доступные команды:
+18:09:53 - StarvellBot - INFO -    /start - начать работу
+18:09:53 - StarvellBot - INFO -    /services - управление службами
+18:09:53 - StarvellBot - INFO -    /config - редактирование настроек
+18:09:53 - StarvellBot - INFO -    /status - статус служб
+18:09:53 - StarvellBot - INFO -    /help - справка
+18:09:53 - StarvellBot - INFO - 
+18:09:53 - StarvellBot - INFO - ============================================================
+18:09:53 - aiogram.dispatcher - INFO - Start polling
+18:09:53 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+18:09:53 - aiogram.event - INFO - Update id=826344667 is handled. Duration 327 ms by bot id=8298689795
+18:09:59 - aiogram.event - INFO - Update id=826344668 is handled. Duration 315 ms by bot id=8298689795
+18:10:02 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:02 - aiogram.event - INFO - Update id=826344669 is handled. Duration 117 ms by bot id=8298689795
+18:10:16 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:16 - aiogram.event - INFO - Update id=826344670 is handled. Duration 104 ms by bot id=8298689795
+18:10:18 - aiogram.event - INFO - Update id=826344671 is handled. Duration 104 ms by bot id=8298689795
+18:10:21 - aiogram.event - INFO - Update id=826344672 is handled. Duration 325 ms by bot id=8298689795
+18:10:23 - aiogram.event - INFO - Update id=826344673 is handled. Duration 262 ms by bot id=8298689795
+18:10:24 - aiogram.event - INFO - Update id=826344674 is handled. Duration 237 ms by bot id=8298689795
+18:10:25 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:25 - aiogram.event - INFO - Update id=826344675 is handled. Duration 204 ms by bot id=8298689795
+18:10:26 - aiogram.event - INFO - Update id=826344676 is handled. Duration 255 ms by bot id=8298689795
+18:10:27 - aiogram.event - INFO - Update id=826344677 is handled. Duration 214 ms by bot id=8298689795
+18:10:32 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:32 - aiogram.event - INFO - Update id=826344678 is handled. Duration 97 ms by bot id=8298689795
+18:10:36 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:36 - aiogram.event - INFO - Update id=826344679 is handled. Duration 115 ms by bot id=8298689795
+18:10:39 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:40 - aiogram.event - INFO - Update id=826344680 is handled. Duration 170 ms by bot id=8298689795
+18:10:44 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:44 - aiogram.event - INFO - Update id=826344681 is handled. Duration 112 ms by bot id=8298689795
+18:10:56 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:10:56 - aiogram.event - INFO - Update id=826344682 is handled. Duration 93 ms by bot id=8298689795
+18:11:02 - aiogram.event - INFO - Update id=826344683 is handled. Duration 315 ms by bot id=8298689795
+18:12:29 - aiogram.event - INFO - Update id=826344684 is handled. Duration 202 ms by bot id=8298689795
+18:13:13 - aiogram.event - INFO - Update id=826344685 is handled. Duration 175 ms by bot id=8298689795
+18:13:14 - aiogram.event - INFO - Update id=826344686 is handled. Duration 274 ms by bot id=8298689795
+18:13:24 - aiogram.event - INFO - Update id=826344687 is handled. Duration 223 ms by bot id=8298689795
+18:13:25 - aiogram.event - INFO - Update id=826344688 is handled. Duration 147 ms by bot id=8298689795
+18:13:26 - aiogram.event - INFO - Update id=826344689 is handled. Duration 147 ms by bot id=8298689795
+18:13:29 - aiogram.event - INFO - Update id=826344690 is handled. Duration 430 ms by bot id=8298689795
+18:13:32 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:13:32 - aiogram.event - INFO - Update id=826344691 is handled. Duration 102 ms by bot id=8298689795
+18:13:39 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:13:39 - aiogram.event - INFO - Update id=826344692 is handled. Duration 101 ms by bot id=8298689795
+18:14:11 - aiogram.event - INFO - Update id=826344693 is handled. Duration 105 ms by bot id=8298689795
+18:14:17 - aiogram.event - INFO - Update id=826344694 is handled. Duration 175 ms by bot id=8298689795
+18:14:19 - aiogram.event - INFO - Update id=826344695 is handled. Duration 163 ms by bot id=8298689795
+18:14:21 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:14:21 - aiogram.event - INFO - Update id=826344696 is handled. Duration 198 ms by bot id=8298689795
+18:14:22 - aiogram.event - INFO - Update id=826344697 is handled. Duration 212 ms by bot id=8298689795
+18:14:23 - aiogram.event - INFO - Update id=826344698 is handled. Duration 189 ms by bot id=8298689795
+18:14:30 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:14:30 - aiogram.event - INFO - Update id=826344699 is handled. Duration 167 ms by bot id=8298689795
+18:14:32 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:14:32 - aiogram.event - INFO - Update id=826344700 is handled. Duration 113 ms by bot id=8298689795
+18:14:33 - aiogram.event - INFO - Update id=826344701 is handled. Duration 89 ms by bot id=8298689795
+18:14:38 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:14:38 - aiogram.event - INFO - Update id=826344702 is handled. Duration 128 ms by bot id=8298689795
+18:14:42 - aiogram.event - INFO - Update id=826344703 is handled. Duration 106 ms by bot id=8298689795
+18:16:08 - aiogram.event - INFO - Update id=826344704 is handled. Duration 156 ms by bot id=8298689795
+18:16:09 - aiogram.event - INFO - Update id=826344705 is handled. Duration 152 ms by bot id=8298689795
+18:16:10 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:16:10 - aiogram.event - INFO - Update id=826344706 is handled. Duration 338 ms by bot id=8298689795
+18:16:11 - aiogram.event - INFO - Update id=826344707 is handled. Duration 162 ms by bot id=8298689795
+18:16:11 - aiogram.event - INFO - Update id=826344708 is handled. Duration 158 ms by bot id=8298689795
+18:16:15 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:16:15 - aiogram.event - INFO - Update id=826344709 is handled. Duration 85 ms by bot id=8298689795
+18:16:19 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:16:19 - aiogram.event - INFO - Update id=826344710 is handled. Duration 90 ms by bot id=8298689795
+18:16:22 - aiogram.event - INFO - Update id=826344711 is handled. Duration 110 ms by bot id=8298689795
+18:16:24 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:16:24 - aiogram.event - INFO - Update id=826344712 is handled. Duration 157 ms by bot id=8298689795
+18:16:32 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:16:32 - aiogram.event - INFO - Update id=826344713 is handled. Duration 210 ms by bot id=8298689795
+18:16:34 - aiogram.event - INFO - Update id=826344714 is handled. Duration 161 ms by bot id=8298689795
+18:18:02 - aiogram.dispatcher - INFO - Polling stopped

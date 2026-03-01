@@ -1,0 +1,29 @@
+17:22:18 - StarvellBot - INFO - ✅ Логирование настроено
+17:22:18 - StarvellBot - INFO - ============================================================
+17:22:18 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+17:22:18 - StarvellBot - INFO - ============================================================
+17:22:18 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+17:22:18 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+17:22:18 - config_manager - INFO - ✅ config.py сгенерирован: config.py
+17:22:20 - StarvellBot - INFO - 📱 Инициализация Telegram Manager...
+17:22:20 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+17:22:20 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+17:22:20 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+17:22:20 - StarvellBot - INFO - ============================================================
+17:22:20 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+17:22:20 - StarvellBot - INFO - ============================================================
+17:22:20 - StarvellBot - INFO - 
+17:22:20 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+17:22:20 - StarvellBot - INFO - 🎛️ Доступные команды:
+17:22:20 - StarvellBot - INFO -    /start - начать работу
+17:22:20 - StarvellBot - INFO -    /services - управление службами
+17:22:20 - StarvellBot - INFO -    /config - редактирование настроек
+17:22:20 - StarvellBot - INFO -    /status - статус служб
+17:22:20 - StarvellBot - INFO -    /help - справка
+17:22:20 - StarvellBot - INFO - 
+17:22:20 - StarvellBot - INFO - ============================================================
+17:22:20 - telegram_manager - INFO - 🚀 Запуск Telegram Manager...
+17:22:20 - aiogram.dispatcher - INFO - Start polling
+17:22:20 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+17:22:32 - aiogram.event - INFO - Update id=826343419 is handled. Duration 217 ms by bot id=8298689795
+17:26:21 - aiogram.dispatcher - INFO - Polling stopped

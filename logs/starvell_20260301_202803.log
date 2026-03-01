@@ -1,0 +1,30 @@
+20:28:03 - StarvellBot - INFO - ✅ Логирование настроено
+20:28:03 - StarvellBot - INFO - ============================================================
+20:28:03 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+20:28:03 - StarvellBot - INFO - ============================================================
+20:28:03 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+20:28:03 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+20:28:04 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+20:28:04 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+20:28:04 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+20:28:04 - StarvellBot - INFO - ============================================================
+20:28:04 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+20:28:04 - StarvellBot - INFO - ============================================================
+20:28:04 - StarvellBot - INFO - 
+20:28:04 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+20:28:04 - StarvellBot - INFO - 🎛️ Доступные команды:
+20:28:04 - StarvellBot - INFO -    /start - начать работу
+20:28:04 - StarvellBot - INFO -    /services - управление службами
+20:28:04 - StarvellBot - INFO -    /config - редактирование настроек
+20:28:04 - StarvellBot - INFO -    /status - статус служб
+20:28:04 - StarvellBot - INFO -    /help - справка
+20:28:04 - StarvellBot - INFO - 
+20:28:04 - StarvellBot - INFO - ============================================================
+20:28:04 - aiogram.dispatcher - INFO - Start polling
+20:28:04 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+20:30:07 - service_manager - INFO - 🔄 Перезапуск службы dumper...
+20:30:07 - service_manager - INFO - ▶️ Запуск службы Price Dumper...
+20:30:07 - service_manager - INFO - ✅ Служба Price Dumper запущена
+20:30:08 - aiogram.event - INFO - Update id=826344858 is handled. Duration 880 ms by bot id=8298689795
+20:30:14 - aiogram.event - INFO - Update id=826344859 is handled. Duration 275 ms by bot id=8298689795
+20:33:59 - aiogram.dispatcher - INFO - Polling stopped

@@ -1,0 +1,92 @@
+17:37:56 - StarvellBot - INFO - ✅ Логирование настроено
+17:37:56 - StarvellBot - INFO - ============================================================
+17:37:56 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+17:37:56 - StarvellBot - INFO - ============================================================
+17:37:56 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+17:37:56 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+17:37:56 - config_manager - INFO - ✅ config.py сгенерирован: config.py
+17:37:57 - StarvellBot - INFO - 📱 Инициализация Telegram Manager...
+17:37:57 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+17:37:57 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+17:37:57 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+17:37:57 - StarvellBot - INFO - ============================================================
+17:37:57 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+17:37:57 - StarvellBot - INFO - ============================================================
+17:37:57 - StarvellBot - INFO - 
+17:37:57 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+17:37:57 - StarvellBot - INFO - 🎛️ Доступные команды:
+17:37:57 - StarvellBot - INFO -    /start - начать работу
+17:37:57 - StarvellBot - INFO -    /services - управление службами
+17:37:57 - StarvellBot - INFO -    /config - редактирование настроек
+17:37:57 - StarvellBot - INFO -    /status - статус служб
+17:37:57 - StarvellBot - INFO -    /help - справка
+17:37:57 - StarvellBot - INFO - 
+17:37:57 - StarvellBot - INFO - ============================================================
+17:37:57 - telegram_manager - INFO - 🚀 Запуск Telegram Manager...
+17:37:57 - aiogram.dispatcher - INFO - Start polling
+17:37:57 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+17:38:40 - aiogram.event - INFO - Update id=826343438 is handled. Duration 316 ms by bot id=8298689795
+17:38:41 - aiogram.event - INFO - Update id=826343439 is handled. Duration 173 ms by bot id=8298689795
+17:38:42 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+17:38:42 - StarvellBot - INFO - 🟢 WebSocket connected
+17:38:42 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+17:38:42 - StarvellBot - INFO - ⬅️  0{"sid":"Y6vE5r8KHZHTHeqIADL8","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+17:38:42 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+17:38:42 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+17:38:42 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+17:38:42 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+17:38:42 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+17:38:42 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"XjG0C_rvX7M2cxn0ADL9"}
+17:38:42 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"jeo5Ki1e2-DPFSuHADL-"}
+17:38:42 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"ks6a0toZoF6DOMoPADL_"}
+17:38:42 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"qXBnt4fK0peDxtrOADMA"}
+17:38:42 - StarvellBot - INFO - ⬅️  40/online,{"sid":"_v59nFiJovOcfKHjADMB"}
+17:38:43 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+17:38:43 - aiogram.event - INFO - Update id=826343440 is handled. Duration 671 ms by bot id=8298689795
+17:38:44 - aiogram.event - INFO - Update id=826343441 is handled. Duration 169 ms by bot id=8298689795
+17:38:46 - aiogram.event - INFO - Update id=826343442 is handled. Duration 231 ms by bot id=8298689795
+17:38:46 - service_manager - INFO - ▶️ Запуск службы Price Dumper...
+17:38:46 - StarvellBot - INFO - ✅ WebSocket готов, запускаем автопонижение цен
+17:38:46 - StarvellBot - INFO - 🔄 Проверяем цены...
+17:38:47 - service_manager - INFO - ✅ Служба Price Dumper запущена
+17:38:47 - StarvellBot - INFO - Успешно парсили ордеры
+17:38:47 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+17:38:47 - StarvellBot - INFO - 📊 Обрабатываем предложение 158557: 150 звёзд по 181.4₽
+17:38:47 - aiogram.event - INFO - Update id=826343443 is handled. Duration 786 ms by bot id=8298689795
+17:38:47 - StarvellBot - INFO - 📊 Получено 17 предложений конкурентов
+17:38:47 - StarvellBot - INFO - 💰 Оптимизируем первое место: 181.4₽ → 203.8₽
+17:38:47 - StarvellBot - INFO - ✅ Цена обновлена: 203.8₽ (ID: 158557)
+17:38:48 - StarvellBot - INFO - 📊 Обрабатываем предложение 158564: 300 звёзд по 363.6₽
+17:38:48 - StarvellBot - INFO - 📊 Получено 11 предложений конкурентов
+17:38:48 - StarvellBot - INFO - 💰 Оптимизируем первое место: 363.6₽ → 359.9₽
+17:38:49 - StarvellBot - INFO - ✅ Цена обновлена: 359.9₽ (ID: 158564)
+17:38:50 - StarvellBot - INFO - 📊 Обрабатываем предложение 134677: 100 звёзд по 126.9₽
+17:38:50 - StarvellBot - INFO - 📊 Получено 20 предложений конкурентов
+17:38:50 - StarvellBot - INFO - 💰 Оптимизируем первое место: 126.9₽ → 127.9₽
+17:38:50 - StarvellBot - INFO - ✅ Цена обновлена: 127.9₽ (ID: 134677)
+17:38:51 - StarvellBot - INFO - 📊 Обрабатываем предложение 158563: 250 звёзд по 307.5₽
+17:38:51 - StarvellBot - INFO - 📊 Получено 16 предложений конкурентов
+17:38:51 - StarvellBot - INFO - 📊 Обрабатываем предложение 158565: 350 звёзд по 429.9₽
+17:38:51 - StarvellBot - INFO - 📊 Получено 11 предложений конкурентов
+17:38:51 - StarvellBot - INFO - 📊 Обрабатываем предложение 158566: 500 звёзд по 644.9₽
+17:38:52 - StarvellBot - INFO - 📊 Получено 16 предложений конкурентов
+17:38:52 - StarvellBot - INFO - 📊 Обрабатываем предложение 158567: 1000 звёзд по 1356.9₽
+17:38:52 - StarvellBot - INFO - 📊 Получено 13 предложений конкурентов
+17:38:52 - StarvellBot - INFO - 💰 Оптимизируем первое место: 1356.9₽ → 1357.9₽
+17:38:52 - StarvellBot - INFO - ✅ Цена обновлена: 1357.9₽ (ID: 158567)
+17:38:53 - StarvellBot - INFO - 📊 Обрабатываем предложение 158568: 2500 звёзд по 3359.9₽
+17:38:53 - StarvellBot - INFO - 📊 Получено 7 предложений конкурентов
+17:38:53 - StarvellBot - INFO - 📊 Обрабатываем предложение 158555: 75 звёзд по 90.6₽
+17:38:54 - StarvellBot - INFO - 📊 Получено 13 предложений конкурентов
+17:38:54 - StarvellBot - INFO - 💰 Оптимизируем первое место: 90.6₽ → 95.9₽
+17:38:54 - StarvellBot - INFO - ✅ Цена обновлена: 95.9₽ (ID: 158555)
+17:38:55 - StarvellBot - INFO - 📊 Обрабатываем предложение 158562: 200 звёзд по 240.7₽
+17:38:55 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+17:38:55 - StarvellBot - INFO - 💰 Оптимизируем первое место: 240.7₽ → 256.5₽
+17:38:55 - StarvellBot - INFO - ✅ Цена обновлена: 256.5₽ (ID: 158562)
+17:38:56 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 50 звёзд по 60.6₽
+17:38:57 - StarvellBot - INFO - 📊 Получено 17 предложений конкурентов
+17:38:57 - StarvellBot - INFO - 💰 Оптимизируем первое место: 60.6₽ → 64.9₽
+17:38:57 - StarvellBot - INFO - ✅ Цена обновлена: 64.9₽ (ID: 158554)
+17:38:58 - StarvellBot - INFO - ✅ Проверка цен завершена
+17:39:00 - aiogram.dispatcher - INFO - Polling stopped

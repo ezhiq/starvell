@@ -1,0 +1,36 @@
+14:08:02 - StarvellBot - INFO - ✅ Логирование настроено
+14:08:02 - StarvellBot - INFO - ============================================================
+14:08:02 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+14:08:02 - StarvellBot - INFO - ============================================================
+14:08:02 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+14:08:02 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+14:08:04 - pyrogram.crypto.aes - WARNING - TgCrypto is missing! Pyrogram will work the same, but at a much slower speed. More info: https://docs.pyrogram.org/topics/speedups
+14:08:05 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+14:08:05 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+14:08:05 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+14:08:05 - StarvellBot - INFO - ============================================================
+14:08:05 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+14:08:05 - StarvellBot - INFO - ============================================================
+14:08:05 - StarvellBot - INFO - 
+14:08:05 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+14:08:05 - StarvellBot - INFO - 🎛️ Доступные команды:
+14:08:05 - StarvellBot - INFO -    /start - начать работу
+14:08:05 - StarvellBot - INFO -    /services - управление службами
+14:08:05 - StarvellBot - INFO -    /config - редактирование настроек
+14:08:05 - StarvellBot - INFO -    /status - статус служб
+14:08:05 - StarvellBot - INFO -    /help - справка
+14:08:05 - StarvellBot - INFO - 
+14:08:05 - StarvellBot - INFO - ============================================================
+14:08:05 - aiogram.dispatcher - INFO - Start polling
+14:08:05 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<StarsAPIGiver.init_sessions() done, defined at C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py:23> exception=TypeError("'NoneType' object is not iterable")>
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 25, in init_sessions
+    for session in sessions:
+                   ^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+14:08:05 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+14:08:05 - aiogram.event - INFO - Update id=826343699 is handled. Duration 209 ms by bot id=8298689795
+14:08:05 - aiogram.event - INFO - Update id=826343698 is handled. Duration 229 ms by bot id=8298689795
+14:08:06 - aiogram.event - INFO - Update id=826343700 is handled. Duration 186 ms by bot id=8298689795
+14:24:42 - aiogram.dispatcher - INFO - Polling stopped

@@ -40,6 +40,7 @@ from typing import Optional
 import aiosqlite
 import aiohttp
 
+from config import cc
 # Новые импорты для Fragment
 from fragment_api import FragmentConfig
 from stars_distributor import StarsDistributor, TONWalletConfig
@@ -56,7 +57,8 @@ class StarvellBotUpdated:
         """Инициализация бота"""
         
         # ===== ВАШ СУЩЕСТВУЮЩИЙ КОД =====
-        from config import cookie_session, my_id
+        cookie_session = cc.get('cookie_session')
+        my_id = cc.get('my_id')
         
         if cookie_session is None:
             raise ValueError('No session cookie provided')

@@ -1,0 +1,21 @@
+14:46:23 - StarvellBot - INFO - ✅ Логирование настроено
+14:46:23 - pyrogram.connection.connection - INFO - Connecting...
+14:46:23 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+14:46:23 - pyrogram.session.session - INFO - NetworkTask started
+14:46:23 - pyrogram.client - INFO - Time synced: 2026-02-28 14:46:24.340776
+14:46:23 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+14:46:23 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+14:46:23 - pyrogram.session.session - INFO - System: Windows 10 (en)
+14:46:23 - pyrogram.session.session - INFO - Session started
+14:46:23 - pyrogram.session.session - INFO - PingTask started
+14:46:24 - pyrogram.dispatcher - INFO - Started 20 HandlerTasks
+14:46:24 - pyrogram.dispatcher - INFO - Stopped 20 HandlerTasks
+14:46:24 - pyrogram.session.session - INFO - PingTask stopped
+14:46:24 - pyrogram.session.session - INFO - NetworkTask stopped
+14:46:24 - pyrogram.connection.connection - INFO - Disconnected
+14:46:24 - pyrogram.session.session - INFO - Session stopped
+14:46:24 - StarvellBot - INFO - ✅ Сессии инициализированы: ['my_account']
+14:46:24 - StarvellBot - INFO - 📦 Начинаем заказ: ezhiqq | 2 шт. | 26 звёзд всего
+14:46:24 - StarvellBot - INFO -    Маска: {13: 1, 21: 0, 43: 0, 85: 0}
+14:46:24 - StarvellBot - INFO -    Сессия: None
+14:46:24 - StarvellBot - INFO -    🔄 Итерация 1/2

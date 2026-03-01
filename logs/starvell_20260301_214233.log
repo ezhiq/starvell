@@ -1,0 +1,167 @@
+21:42:33 - StarvellBot - INFO - ✅ Логирование настроено
+21:42:33 - StarvellBot - INFO - ============================================================
+21:42:33 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+21:42:33 - StarvellBot - INFO - ============================================================
+21:42:33 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+21:42:33 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+21:42:34 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+21:42:34 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+21:42:34 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+21:42:34 - StarvellBot - INFO - ============================================================
+21:42:34 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+21:42:34 - StarvellBot - INFO - ============================================================
+21:42:34 - StarvellBot - INFO - 
+21:42:34 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+21:42:34 - StarvellBot - INFO - 🎛️ Доступные команды:
+21:42:34 - StarvellBot - INFO -    /start - начать работу
+21:42:34 - StarvellBot - INFO -    /services - управление службами
+21:42:34 - StarvellBot - INFO -    /config - редактирование настроек
+21:42:34 - StarvellBot - INFO -    /status - статус служб
+21:42:34 - StarvellBot - INFO -    /help - справка
+21:42:34 - StarvellBot - INFO - 
+21:42:34 - StarvellBot - INFO - ============================================================
+21:42:34 - aiogram.dispatcher - INFO - Start polling
+21:42:34 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+21:42:35 - aiogram.event - INFO - Update id=826344889 is handled. Duration 215 ms by bot id=8298689795
+21:42:36 - aiogram.event - INFO - Update id=826344890 is handled. Duration 196 ms by bot id=8298689795
+21:42:42 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+21:42:43 - StarvellBot - INFO - 🟢 WebSocket connected
+21:42:43 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+21:42:43 - StarvellBot - INFO - ⬅️  0{"sid":"f3XOSYRNepaXNQWkAfGO","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+21:42:43 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+21:42:43 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+21:42:43 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+21:42:43 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+21:42:43 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+21:42:43 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"hmNHOB-rnDXcDnRHAfGP"}
+21:42:43 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"IbA3VislXq7qQ4BHAfGQ"}
+21:42:43 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"-rJlSxANF8Jj3KwBAfGR"}
+21:42:43 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"eMSnIV8k3kSMIXkeAfGS"}
+21:42:43 - StarvellBot - INFO - ⬅️  40/online,{"sid":"pgwGCFWNbXcNXOnHAfGT"}
+21:42:43 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+21:42:43 - aiogram.event - INFO - Update id=826344891 is handled. Duration 747 ms by bot id=8298689795
+21:42:59 - aiogram.event - INFO - Update id=826344892 is handled. Duration 276 ms by bot id=8298689795
+21:43:00 - aiogram.event - INFO - Update id=826344893 is handled. Duration 325 ms by bot id=8298689795
+21:43:03 - aiogram.event - INFO - Update id=826344894 is handled. Duration 272 ms by bot id=8298689795
+21:43:08 - StarvellBot - INFO - ⬅️  2
+21:43:22 - aiogram.event - INFO - Update id=826344895 is handled. Duration 226 ms by bot id=8298689795
+21:43:26 - service_manager - INFO - ▶️ Запуск службы Price Dumper...
+21:43:26 - StarvellBot - INFO - ✅ WebSocket готов, запускаем автопонижение цен
+21:43:26 - StarvellBot - INFO - 🔄 Проверяем цены...
+21:43:27 - service_manager - INFO - ✅ Служба Price Dumper запущена
+21:43:27 - StarvellBot - INFO - Успешно парсили ордеры
+21:43:27 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:27 - StarvellBot - INFO - 📊 Обрабатываем предложение 134567: 25 звёзд по 35.9₽
+21:43:27 - StarvellBot - INFO - 📊 Получено 7 предложений конкурентов
+21:43:27 - StarvellBot - INFO - ✅ Наше предложение 134567 единственное в категории
+21:43:27 - StarvellBot - INFO - ✅ Проверка цен завершена
+21:43:27 - aiogram.event - INFO - Update id=826344896 is handled. Duration 788 ms by bot id=8298689795
+21:43:33 - StarvellBot - INFO - ⬅️  2
+21:43:57 - StarvellBot - INFO - 🔄 Проверяем цены...
+21:43:58 - StarvellBot - INFO - Успешно парсили ордеры
+21:43:58 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:43:58 - StarvellBot - INFO - 📊 Обрабатываем предложение 134567: 25 звёзд по 35.9₽
+21:43:58 - StarvellBot - INFO - ⬅️  2
+21:43:58 - StarvellBot - INFO - 📊 Получено 7 предложений конкурентов
+21:43:58 - StarvellBot - INFO - ✅ Наше предложение 134567 единственное в категории
+21:43:58 - StarvellBot - INFO - ✅ Проверка цен завершена
+21:44:01 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019caab6-f373-bdf9-502b-6ecb83928388","delta":1}]
+21:44:01 - StarvellBot - INFO - 🛒 NEW ORDER!
+21:44:01 - StarvellBot - INFO - Order ID: 019caab6-f373-bdf9-502b-6ecb83928388
+21:44:01 - StarvellBot - INFO - ⚙️  Processing order 019caab6-f373-bdf9-502b-6ecb83928388...
+21:44:02 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab6-f389-2847-0746-f74ff65c948f","content":"","type":"NOTIFICATION","metadata":{"orderId":"019caab6-f373-bdf9-502b-6ecb83928388","notificationType":"ORDER_PAYMENT"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:44:02.538Z","updatedAt":"2026-03-01T18:44:02.538Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":null,"admin":null,"order":{"id":"019caab6-f373-bdf9-502b-6ecb83928388","quantity":1,"totalPrice":4021,"status":"CREATED","refundedAt":null,"refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[{"id":"ef9a8163-b1a9-4558-bd04-362b1dfe43e1","width":289,"height":291,"extension":"jpg"},{"id":"18da3a42-7827-426c-9e23-27e70f5a8203","width":248,"height":294,"extension":"jpg"}],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"9abe5573-3184-401c-8bec-de0d8dd38529","nameRu":"Подарком"},"nameRu":"Способ получения"}],"subCategory":{"id":642,"name":"21 звезда"},"availability":99999979,"deliveryTime":{"to":{"unit":"MINUTES","value":5},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"⭐Вы получаете любой подарок за 25 звёзд на ваш выбор (Подарок или Розу)\n\nПроцесс выполнения:\n1️⃣ Оплачиваете заказ\n2️⃣ Пишите ваш юзернейм @username в чат и какой подарок вы хотите\n3️⃣ Я выполняю пополнение\n4️⃣ Проверяете → Подтверждаете\n\n⚠️ Важно: Проверьте правильность введённого @username. Ошибки могут привести к зачислению звёзд на другой аккаунт, и возврат средств будет невозможен.\n\nid: 21stars"}},"instantDelivery":false}},"dispute":null}]
+21:44:02 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab6-f397-889c-e338-f4a6e71f7775","content":"е","type":"DEFAULT","metadata":{"isAutoResponse":true},"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:44:02.583Z","updatedAt":"2026-03-01T18:44:02.538Z","author":{"id":139527,"username":"Bronto","roles":[]}}]
+21:44:02 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:44:03.035Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:44:02 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab6-f7ab-532f-4ff5-91033ed6ec76","content":"К вашему заказу скоро подключится администратор 👤","type":"DEFAULT","metadata":null,"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:44:03.626Z","updatedAt":"2026-03-01T18:44:03.626Z","author":{"id":139527,"username":"Bronto","roles":[]},"buyer":null,"seller":null,"admin":null,"order":null,"dispute":null}]
+21:44:02 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:44:03.729Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:44:09 - StarvellBot - INFO - пропустили
+21:44:20 - StarvellBot - INFO - пропустили
+21:44:23 - StarvellBot - INFO - ⬅️  2
+21:44:28 - StarvellBot - INFO - 🔄 Проверяем цены...
+21:44:28 - StarvellBot - INFO - Успешно парсили ордеры
+21:44:28 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:28 - StarvellBot - INFO - 📊 Обрабатываем предложение 134567: 25 звёзд по 35.9₽
+21:44:29 - StarvellBot - INFO - 📊 Получено 7 предложений конкурентов
+21:44:29 - StarvellBot - INFO - ✅ Наше предложение 134567 единственное в категории
+21:44:29 - StarvellBot - INFO - ✅ Проверка цен завершена
+21:44:31 - StarvellBot - INFO - пропустили
+21:44:42 - StarvellBot - INFO - пропустили
+21:44:48 - StarvellBot - INFO - ⬅️  2
+21:44:52 - StarvellBot - INFO - пропустили
+21:44:59 - StarvellBot - INFO - 🔄 Проверяем цены...
+21:44:59 - StarvellBot - INFO - Успешно парсили ордеры
+21:44:59 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:44:59 - StarvellBot - INFO - 📊 Обрабатываем предложение 134567: 25 звёзд по 35.9₽
+21:45:00 - StarvellBot - INFO - 📊 Получено 7 предложений конкурентов
+21:45:00 - StarvellBot - INFO - ✅ Наше предложение 134567 единственное в категории
+21:45:00 - StarvellBot - INFO - ✅ Проверка цен завершена
+21:45:03 - StarvellBot - INFO - пропустили
+21:45:13 - StarvellBot - INFO - ⬅️  2
+21:45:14 - StarvellBot - INFO - пропустили
+21:45:24 - StarvellBot - INFO - пропустили
+21:45:30 - StarvellBot - INFO - 🔄 Проверяем цены...
+21:45:30 - StarvellBot - INFO - Успешно парсили ордеры
+21:45:30 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+21:45:30 - StarvellBot - INFO - 📊 Обрабатываем предложение 134567: 25 звёзд по 35.9₽
+21:45:30 - StarvellBot - INFO - 📊 Получено 7 предложений конкурентов
+21:45:30 - StarvellBot - INFO - ✅ Наше предложение 134567 единственное в категории
+21:45:30 - StarvellBot - INFO - ✅ Проверка цен завершена
+21:45:35 - StarvellBot - INFO - пропустили
+21:45:38 - StarvellBot - INFO - ⬅️  2
+21:45:46 - StarvellBot - INFO - пропустили
+21:45:47 - aiogram.dispatcher - INFO - Polling stopped

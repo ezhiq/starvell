@@ -1,0 +1,32 @@
+16:54:25 - StarvellBot - INFO - ✅ Логирование настроено
+16:54:25 - StarvellBot - INFO - ============================================================
+16:54:25 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+16:54:25 - StarvellBot - INFO - ============================================================
+16:54:25 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+16:54:25 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+16:54:27 - pyrogram.crypto.aes - WARNING - TgCrypto is missing! Pyrogram will work the same, but at a much slower speed. More info: https://docs.pyrogram.org/topics/speedups
+16:54:27 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+16:54:27 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+16:54:27 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+16:54:27 - StarvellBot - INFO - ============================================================
+16:54:27 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+16:54:27 - StarvellBot - INFO - ============================================================
+16:54:27 - StarvellBot - INFO - 
+16:54:27 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+16:54:27 - StarvellBot - INFO - 🎛️ Доступные команды:
+16:54:27 - StarvellBot - INFO -    /start - начать работу
+16:54:27 - StarvellBot - INFO -    /services - управление службами
+16:54:27 - StarvellBot - INFO -    /config - редактирование настроек
+16:54:27 - StarvellBot - INFO -    /status - статус служб
+16:54:27 - StarvellBot - INFO -    /help - справка
+16:54:27 - StarvellBot - INFO - 
+16:54:27 - StarvellBot - INFO - ============================================================
+16:54:27 - aiogram.dispatcher - INFO - Start polling
+16:54:28 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+16:54:28 - aiogram.event - INFO - Update id=826343673 is handled. Duration 214 ms by bot id=8298689795
+16:54:28 - aiogram.event - INFO - Update id=826343674 is handled. Duration 240 ms by bot id=8298689795
+16:54:29 - aiogram.event - INFO - Update id=826343675 is handled. Duration 82 ms by bot id=8298689795
+19:02:58 - aiogram.dispatcher - INFO - Polling stopped
+19:02:58 - StarvellBot - INFO - 👋 Завершение работы...
+19:02:58 - aiogram.dispatcher - INFO - Polling stopped for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+19:02:58 - StarvellBot - INFO - ⏸ Остановка по Ctrl+C

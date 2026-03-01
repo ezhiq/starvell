@@ -1,44 +1,27 @@
 # -*- coding: utf-8 -*-
 """
-SOFT BY @ezhiqq / @xezzq
-
-ПО ВОПРОСАМ И ЗАКАЗАМ ОБРАЩАЙТЕСЬ
-"""
-"""
-SOFT BY @ezhiqq / @xezzq
-
-ПО ВОПРОСАМ И ЗАКАЗАМ ОБРАЩАЙТЕСЬ 
-"""
-"""
-SOFT BY @ezhiqq / @xezzq
-
-ПО ВОПРОСАМ И ЗАКАЗАМ ОБРАЩАЙТЕСЬ 
+Главный файл запуска StarvellBot с Telegram управлением
 """
 
 import asyncio
 import logging
 import sys
 from pathlib import Path
+import traceback
+from aiogram import Bot, Dispatcher
 
-from telegram_manager import TelegramManager
+from logger import setup_logging
 from service_manager import ServiceManager
 from config_manager import ConfigManager
+from stars_api_giver import StarsAPIGiver
+from telegram_manager import router
 
-# Настройка логирования
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('bot.log', encoding='utf-8')
-    ]
-)
-logger = logging.getLogger(__name__)
-
+import config as gi
+logger = setup_logging()
 
 async def main():
     """Главная функция запуска"""
-    
+
     logger.info("=" * 60)
     logger.info("🚀 StarvellBot Manager Starting...")
     logger.info("=" * 60)
@@ -76,9 +59,6 @@ async def main():
         logger.info("📋 Загрузка конфигурации...")
         config_manager = ConfigManager()
         
-        # Генерируем config.py для совместимости со старым кодом
-        config_manager.generate_config_py()
-        
         # Импортируем StarvellBot только после генерации config.py
         try:
             from starvell_bot import StarvellBot
@@ -87,16 +67,18 @@ async def main():
             logger.error("Убедитесь что все зависимости установлены")
             return
 
-        # Telegram Manager
-        logger.info("📱 Инициализация Telegram Manager...")
-        telegram_manager = TelegramManager(
-            bot_token=BOT_TOKEN,
-            admin_ids=ADMIN_IDS
-        )
+        bot = Bot(token=BOT_TOKEN)
+        dp = Dispatcher()
+        dp.include_router(router)
+
+        gi.bot = bot
+        gi.dp = dp
+
+        logger.info("🚀 Запуск Telegram Manager...")
 
         # Создаём экземпляр бота
         logger.info("🤖 Инициализация StarvellBot...")
-        starvell_bot = StarvellBot(telegram_manager, ADMIN_IDS[0])
+        starvell_bot = StarvellBot(ADMIN_IDS[0])
         
         # Менеджер служб
         logger.info("⚙️ Инициализация Service Manager...")
@@ -104,8 +86,8 @@ async def main():
         service_manager.set_bot_instance(starvell_bot)
         
         # Привязываем service_manager к telegram_manager
-        telegram_manager.service_manager = service_manager
-        telegram_manager.config_manager = config_manager
+        gi.service_manager = service_manager
+        gi.config_manager = config_manager
         
         logger.info("=" * 60)
         logger.info("✅ Все компоненты инициализированы успешно!")
@@ -120,9 +102,8 @@ async def main():
         logger.info("   /help - справка")
         logger.info("")
         logger.info("=" * 60)
-        
-        # Запускаем Telegram Manager
-        await telegram_manager.start()
+
+        await dp.start_polling(bot)
     
     except KeyboardInterrupt:
         logger.info("\n⏸ Получен сигнал остановки...")
@@ -139,7 +120,7 @@ async def main():
         # Останавливаем все службы если они запущены
         try:
             if 'service_manager' in locals():
-                await service_manager.stop_all()
+                await gi.service_manager.stop_all()
         except Exception as e:
             logger.error(f"Ошибка при остановке служб: {e}")
 

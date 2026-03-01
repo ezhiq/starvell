@@ -1,4 +1,5 @@
 import traceback
+from asyncio import CancelledError
 from datetime import timezone
 
 import aiohttp
@@ -8,89 +9,23 @@ import logging
 import re
 
 import aiosqlite
+import ccxt
 from aiohttp import ContentTypeError
-from config import universal, my_id, refund_msg, hello
+from config import cc
+from datatypes import FragmentOrder, StarGiftOrder, StarGiftMask
 from fragment_api import FragmentConfig
+from stars_api_giver import StarsAPIGiver
 from stars_distributor import StarsDistributor, TONWalletConfig
-from telegram_manager import TelegramManager
-
+import config as gi
 from bs4 import BeautifulSoup
 import re
 
-class Order:
-    def __init__(self, order_id: str, amount: int, quantity: int, user_id: int, username: str, chat_id: str = None):
-        self.order_id = order_id
-        self.amount = amount
-        self.quantity = quantity
-        self.user_id = user_id
-        self.username = username
-        self.chat_id = chat_id
-        self.status = "оплачен"  # CREATED, PROCESSING, COMPLETED, REFUNDED
-        self.created_at = None
-        self.completed_at = None
-        self.refunded_at = None
-
-    def __repr__(self):
-        return f"Order(id={self.order_id}, amount={self.amount}, user={self.username}, status={self.status})"
-
-    def to_dict(self):
-        """Преобразовать в словарь для JSON или БД"""
-        return {
-            "order_id": self.order_id,
-            "amount": self.amount,
-            "quantity": self.quantity,
-            "user_id": self.user_id,
-            "username": self.username,
-            "chat_id": self.chat_id,
-            "status": self.status,
-            "created_at": self.created_at,
-            "completed_at": self.completed_at,
-            "refunded_at": self.refunded_at
-        }
-
-    def mark_completed(self):
-        """Пометить заказ как выполненный"""
-        self.status = "закрыт"
-        from datetime import datetime
-        self.completed_at = datetime.now().isoformat()
-
-    def mark_refunded(self):
-        """Пометить заказ как возвращенный"""
-        self.status = "возврат"
-        from datetime import datetime
-        self.refunded_at = datetime.now().isoformat()
-
-# Настройка цветного логгера
-class ColoredFormatter(logging.Formatter):
-    COLORS = {
-        'DEBUG': '\033[36m',
-        'INFO': '\033[32m',
-        'WARNING': '\033[33m',
-        'ERROR': '\033[31m',
-        'CRITICAL': '\033[35m',
-    }
-    RESET = '\033[0m'
-
-    def format(self, record):
-        log_color = self.COLORS.get(record.levelname, self.RESET)
-        record.levelname = f"{log_color}{record.levelname}{self.RESET}"
-        record.msg = f"{log_color}{record.msg}{self.RESET}"
-        return super().format(record)
-
-
-logger = logging.getLogger("StarvellBot")
-logger.setLevel(logging.INFO)
-
-handler = logging.StreamHandler()
-handler.setFormatter(ColoredFormatter('%(levelname)s | %(message)s'))
-logger.addHandler(handler)
-
-
 class StarvellBot:
-    def __init__(self, tg_manager, admin):
+    def __init__(self, admin):
 
-        from config import cookie_session
+        cookie_session = cc.get('cookie_session')
 
+        self.logger = logging.getLogger('StarvellBot')
         self.admin = admin
         self.ws_url = "wss://starvell.com/socket.io/?EIO=4&transport=websocket"
         self.headers = {
@@ -103,8 +38,7 @@ class StarvellBot:
             )
         }
 
-        self.telegram_manager = tg_manager
-        self.bot = self.telegram_manager.bot
+        self.bot = gi.bot
         # Все нужные namespace'ы
         self.namespaces = [
             "/chats",
@@ -130,6 +64,7 @@ class StarvellBot:
         self.orders = {}
 
         self._init_fragment_distributor()
+        self._init_gift_distributor()
 
         self.ws_connected = asyncio.Event()
 
@@ -138,6 +73,12 @@ class StarvellBot:
         self.categories = []
         self.game_id = None
 
+    def get_id(self, text):
+        id_match = re.search(r'id:\s*([a-zA-Z0-9_]+)', text)
+        return id_match.group(1) if id_match else None
+
+    def _init_gift_distributor(self):
+        self.api_giver = StarsAPIGiver()
 
     async def bumping(self, game_id, categories):
 
@@ -150,14 +91,14 @@ class StarvellBot:
 
                     if response:
                         if 200 <= response.status < 300:
-                            logger.info('Успешно подняли предложения')
+                            self.logger.info('Успешно подняли предложения')
                             return True
                         else:
-                            logger.warning('Не удалось поднять предложения - скорее всего они уже подняты')
+                            self.logger.warning('Не удалось поднять предложения - скорее всего они уже подняты')
 
         except Exception as e:
             traceback.print_exc()
-            logger.error('Не удалось поднять предложения')
+            self.logger.error('Не удалось поднять предложения')
 
 
     async def bumper(self):
@@ -182,16 +123,26 @@ class StarvellBot:
     #             if 200 <= response.status < 300:
     #                 return True
     #             else:
-    #                 logger.error('ошибочка')
+    #                 self.logger.error('ошибочка')
     #                 traceback.print_exc()
     #                 return None
 
     async def dumping(self, queue):
         """Автопонижение цен на наши предложения"""
-        from config import min_star_rate, is_online
 
         offers = queue['pageProps']['offers']
         for my_offer in offers:
+            description = my_offer['descriptions']['rus']['description']
+
+            id = self.get_id(description)
+            if id is None:
+                self.logger.error('Отсутствует айди в описании предложения при демпинге')
+                continue
+
+            game = cc.get_parent(id)
+            if game is None:
+                self.logger.error('отсутствует категория демпинге')
+                continue
 
             # Пропускаем неактивные
             if not my_offer.get("isActive"):
@@ -215,165 +166,204 @@ class StarvellBot:
             else:
                 not_raised = True
 
-            # Извлекаем количество звёзд из названия подкатегории
-            stars_match = re.search(r'(\d+)', sub_category_name)
-            if not stars_match:
-                logger.warning(f"⚠️ Не удалось извлечь количество звёзд из '{sub_category_name}'")
-                continue
+            if game in ['stars', 'advstars', 'advgifts', 'giftsapi']:
+                min_star_rate = cc.get('min_star_rate')
+                is_online = cc.get('is_online')
+                my_id = cc.get('my_id')
 
-            stars_count = int(stars_match.group(1))
+                # Извлекаем количество звёзд из названия подкатегории
+                data = cc.find_by_key(id)['data']['special_data']
 
-            if stars_count == 43:
-                stars_count = 50
-            elif stars_count == 21:
-                stars_count = 25
-            elif stars_count == 13:
-                stars_count = 15
+                stars_count = int(data['stars'])
 
-            my_course = my_price / stars_count
+                if stars_count == 43:
+                    stars_count = 50
+                elif stars_count == 21:
+                    stars_count = 25
+                elif stars_count == 13:
+                    stars_count = 15
 
-            if my_course < min_star_rate:
-                await self.update_order_price(my_offer, round(min_star_rate * stars_count * 1.01, 1))
-                await asyncio.sleep(1)
-                continue
+                my_course = my_price / stars_count
 
-            logger.info(f"📊 Обрабатываем предложение {my_offer_id}: {stars_count} звёзд по {my_price}₽")
+                #СЕЙВИМ ПРЕДЛОЖЕНИЕ
 
-            # Получаем конкурентов (до 10 предложений)
-            competitors = await self.get_him_offers(game_id, category_id, sub_category_id)
-
-            if not competitors:
-                logger.warning(f"⚠️ Не удалось получить конкурентов для {my_offer_id}")
-                continue
-
-            raw_competitors = competitors[:30]
-
-            if is_online:
-                raw_competitors = [c for c in competitors if c.get("user", {}).get("isOnline") == True]
-
-            competitors = raw_competitors
-            competitors = [c for c in competitors if c.get("user", {}).get("id") != my_id]
-
-            if not competitors:
-                logger.info(f"✅ Наше предложение {my_offer_id} единственное в категории")
-                continue
-
-            # === ЛОГИКА ПОНИЖЕНИЯ ===
-
-            our_position = None
-            cheaper_competitor = None
-            first_competitor = raw_competitors[0] if competitors else None
-            second_competitor = raw_competitors[1] if len(competitors) > 1 else None
-
-            # Определяем нашу позицию
-
-            if not not_raised:
-                for idx, competitor in enumerate(raw_competitors):
-                    if competitor.get("user", {}).get("id") == my_id:
-                        our_position = idx
-
-            else:
-                minimum = 10e9
-                our_position = 0
-                for idx, comp in enumerate(competitors):
-                    comp_price = float(comp.get('price', 0))
-
-                    if abs(comp_price - my_price) < minimum:  # Это мы
-                        minimum = abs(comp_price - my_price)
-                        our_position = idx
-
-            cheaper_competitors = []
-            # Ищем первого конкурента дешевле нас
-            for comp in competitors:
-                if comp.get("id") == my_id:
-                    break
-
-                comp_price = float(comp.get('price', 0))
-
-                if comp_price < my_price:
-                    cheaper_competitors.append(comp)
-
-            # === СЛУЧАЙ 1: Мы первые ===
-            if our_position == 0 and second_competitor:
-
-                if not_raised:
-                    second_price = float(first_competitor.get('price', 0))
-                    convert_price = second_price
-                    him_price = round(convert_price, 1)
-
-                else:
-                    second_price = float(second_competitor.get('price', 0))
-                    convert_price = second_price
-                    him_price = round(convert_price, 1)
-
-            # === СЛУЧАЙ 2: Есть конкурент дешевле ===
-            elif cheaper_competitors:
-                fixed = False
-                for comp in cheaper_competitors:
-                    comp_price = float(comp.get('price', 0))
-                    convert_price = comp_price
-                    optimal_price = round(convert_price - 0.1, 1)
-                    seller = comp.get("id")
-
-                    # Проверяем курс
-                    star_rate = convert_price / stars_count
-
-                    if star_rate < min_star_rate:
-                        logger.warning(f"⚠️ Не перебиваем {seller}: курс {star_rate:.2f}₽ < минимум {min_star_rate}₽")
-                        continue
-
-                    logger.info(f"🎯 Перебиваем конкурента: {my_price}₽ → {optimal_price}₽ (курс {star_rate:.2f}₽)")
-                    await self.update_order_price(my_offer, optimal_price)
-                    fixed = True
+                if my_course < min_star_rate:
+                    await self.update_order_price(my_offer, round(min_star_rate * stars_count * 1.01, 1))
                     await asyncio.sleep(1)
-                    break
+                    continue
 
-                if not fixed:
-                    try:
-                        him_price = round(float(raw_competitors[our_position + 1].get("price", 0)), 1)
-                    except:
-                        him_price = my_price
+                if my_course > min_star_rate*1.5:
+                    await self.update_order_price(my_offer, round(min_star_rate * stars_count * 1.1, 1))
+                    await asyncio.sleep(1)
+                    continue
+
+
+                self.logger.info(f"📊 Обрабатываем предложение {my_offer_id}: {stars_count} звёзд по {my_price}₽")
+
+                # Получаем конкурентов
+                competitors = await self.get_him_offers(game_id, category_id, sub_category_id)
+
+                if not competitors:
+                    self.logger.warning(f"⚠️ Не удалось получить конкурентов для {my_offer_id}")
+                    continue
+
+                raw_competitors = competitors
+
+                # Для advstars и advgifts — фильтруем по количеству звёзд
+                if game in ['advstars', 'advgifts']:
+                    STARS_ATTR_ID = '6a2ce94f-d18a-46b5-8adc-73ded5fa965e'
+
+                    def get_stars_count(offer):
+                        for attr in offer.get('attributes', []):
+                            if attr.get('id') == STARS_ATTR_ID:
+                                return attr.get('numericValue')
+                        return None
+
+                    raw_competitors = [c for c in competitors if get_stars_count(c) == stars_count]
+                    self.logger.info(
+                        f"   advgifts: отфильтровали конкурентов по {stars_count} звёзд → {len(raw_competitors)} шт.")
+
+                if is_online:
+                    raw_competitors = [c for c in raw_competitors if c.get("user", {}).get("isOnline") == True]
+
+                competitors = raw_competitors
+                competitors = [c for c in competitors if c.get("user", {}).get("id") != my_id]
+
+
+                if not competitors:
+                    self.logger.info(f"✅ Наше предложение {my_offer_id} единственное в категории")
+                    continue
+
+                # === ЛОГИКА ПОНИЖЕНИЯ ===
+                if game in ['stars', 'giftsapi', 'advstars', 'advgifts']:
+
+                    our_position = None
+                    cheaper_competitor = None
+                    first_competitor = raw_competitors[0] if competitors else None
+                    second_competitor = competitors[0] if len(competitors) >= 1 else None
+
+                    # Определяем нашу позицию
+
+                    if not not_raised:
+                        for idx, competitor in enumerate(raw_competitors):
+                            if competitor.get("user", {}).get("id") == my_id:
+                                our_position = idx
+
+                    else:
+                        minimum = 10e9
+                        our_position = 0
+                        for idx, comp in enumerate(competitors):
+                            comp_price = float(comp.get('price', 0))
+
+                            if abs(comp_price - my_price) < minimum:  # Это мы
+                                minimum = abs(comp_price - my_price)
+                                our_position = idx
+
+                    cheaper_competitors = []
+                    # Ищем первого конкурента дешевле нас
+                    for comp in competitors:
+                        if comp.get("id") == my_id:
+                            break
+
+                        comp_price = float(comp.get('price', 0))
+
+                        if comp_price < my_price:
+                            cheaper_competitors.append(comp)
+
+                    # === СЛУЧАЙ 1: Мы первые ===
+                    if our_position == 0 and second_competitor:
+
+                        if not_raised:
+                            second_price = float(first_competitor.get('price', 0))
+                            convert_price = second_price
+                            him_price = round(convert_price, 1)
+
+                        else:
+                            second_price = float(second_competitor.get('price', 0))
+                            convert_price = second_price
+                            him_price = round(convert_price, 1)
+
+                    # === СЛУЧАЙ 2: Есть конкурент дешевле ===
+                    elif cheaper_competitors:
+
+                        fixed = False
+                        for comp in cheaper_competitors:
+                            comp_price = float(comp.get('price', 0))
+                            convert_price = comp_price
+                            optimal_price = round(convert_price - 0.1, 1)
+                            seller = comp.get("id")
+
+                            seller_id = comp["user"]["id"]
+                            friends = cc.get("friends")
+
+                            if seller_id in friends:
+                                self.logger.info(f'Не перебиваем друга {seller_id}')
+                                continue
+
+                            # Проверяем курс
+                            star_rate = convert_price / stars_count
+
+                            if star_rate < min_star_rate:
+                                self.logger.warning(f"⚠️ Не перебиваем {seller}: курс {star_rate:.2f}₽ < минимум {min_star_rate}₽")
+                                continue
+
+                            self.logger.info(f"🎯 Перебиваем конкурента: {my_price}₽ → {optimal_price}₽ (курс {star_rate:.2f}₽)")
+                            await self.update_order_price(my_offer, optimal_price)
+                            fixed = True
+                            await asyncio.sleep(1)
+                            break
+
+                        if not fixed:
+                            try:
+                                him_price = round(float(raw_competitors[our_position + 1].get("price", 0)), 1)
+                            except:
+                                him_price = my_price
+
+                        else:
+                            continue
+
+                    # Если наша цена не оптимальна - обновляем
+                    if abs(round(my_price - him_price, 1)) != 0.1:
+                        self.logger.info(f"💰 Оптимизируем первое место: {my_price}₽ → {him_price - 0.1}₽")
+                        await self.update_order_price(my_offer, round(him_price - 0.1, 1))
+                        await asyncio.sleep(1)  # Защита от rate limit
 
                 else:
                     continue
-
-            # Если наша цена не оптимальна - обновляем
-            if abs(round(my_price - him_price, 1)) != 0.1:
-                logger.info(f"💰 Оптимизируем первое место: {my_price}₽ → {him_price - 0.1}₽")
-                await self.update_order_price(my_offer, round(him_price - 0.1, 1))
-                await asyncio.sleep(1)  # Защита от rate limit
+            else:
+                continue
 
     async def dumper(self):
         """Периодическая проверка и обновление цен"""
 
         # Ждём подключения WebSocket
         await self.ws_connected.wait()
-        logger.info("✅ WebSocket готов, запускаем автопонижение цен")
+        self.logger.info("✅ WebSocket готов, запускаем автопонижение цен")
 
         while True:
             try:
-                logger.info("🔄 Проверяем цены...")
+                self.logger.info("🔄 Проверяем цены...")
 
                 # Получаем наши предложения
                 data = await self.get_my_offers()
 
                 if not data:
-                    logger.warning("⚠️ Не удалось получить наши предложения")
+                    self.logger.warning("⚠️ Не удалось получить наши предложения")
                     await asyncio.sleep(300)
                     continue
 
                 # Парсим предложения
                 queue = data
 
-                logger.info(f"📦 Найдено {len(queue)} наших предложений")
+                self.logger.info(f"📦 Найдено {len(queue)} наших предложений")
 
                 # Обрабатываем
                 await self.dumping(queue)
 
-                logger.info("✅ Проверка цен завершена")
+                self.logger.info("✅ Проверка цен завершена")
 
             except Exception as e:
-                logger.error(f"❌ Ошибка в dumper: {e}")
+                self.logger.error(f"❌ Ошибка в dumper: {e}")
                 traceback.print_exc()
 
             # Проверяем каждые 5 минут
@@ -391,16 +381,16 @@ class StarvellBot:
                 async with session.post(url, headers=self.headers, json=payload) as response:
 
                     if 200 <= response.status < 300:
-                        logger.info(f"✅ Цена обновлена: {price}₽ (ID: {order_id})")
+                        self.logger.info(f"✅ Цена обновлена: {price}₽ (ID: {order_id})")
                         return True
                     else:
                         resp_text = await response.text()
-                        logger.error(f"❌ Ошибка обновления цены {order_id}: HTTP {response.status}")
-                        logger.error(f"Response: {resp_text}")
+                        self.logger.error(f"❌ Ошибка обновления цены {order_id}: HTTP {response.status}")
+                        self.logger.error(f"Response: {resp_text}")
                         return False
 
         except Exception as e:
-            logger.error(f"❌ Ошибка при обновлении цены {order_id}: {e}")
+            self.logger.error(f"❌ Ошибка при обновлении цены {order_id}: {e}")
             traceback.print_exc()
             return False
 
@@ -415,16 +405,16 @@ class StarvellBot:
                 async with session.post(url, headers=self.headers, json=payload) as response:
 
                     if 200 <= response.status < 300:
-                        logger.info(f"✅ Статус обновлен: {status} (ID: {id})")
+                        self.logger.info(f"✅ Статус обновлен: {status} (ID: {id})")
                         return True
                     else:
                         resp_text = await response.text()
-                        logger.error(f"❌ Ошибка обновления статуса {id}: HTTP {response.status}")
-                        logger.error(f"Response: {resp_text}")
+                        self.logger.error(f"❌ Ошибка обновления статуса {id}: HTTP {response.status}")
+                        self.logger.error(f"Response: {resp_text}")
                         return False
 
         except Exception as e:
-            logger.error(f"❌ Ошибка при обновлении цены {id}: {e}")
+            self.logger.error(f"❌ Ошибка при обновлении цены {id}: {e}")
             traceback.print_exc()
             return False
 
@@ -441,22 +431,20 @@ class StarvellBot:
                     try:
                         json_data = await response.json()
                     except Exception as e:
-                        logger.info(f"{e}")
+                        self.logger.info(f"{e}")
+
                     if 200 <= response.status < 300:
 
-                        logger.info('Успешно парсили ордеры')
+                        self.logger.info('Успешно парсили ордеры')
                         json_data = await response.json()
                         return json_data
                     else:
-                        logger.warning(f'Не удалось парсить ордеры - обновляем build_id и пробуем снова - atttempt {attempt}')
+                        self.logger.warning(f'Не удалось парсить ордеры - обновляем build_id и пробуем снова - atttempt {attempt}')
                         continue
 
 
     def _init_fragment_distributor(self):
-        from config import (
-            fragment_hash, fragment_cookie, fragment_show_sender,
-            ton_api_key, mnemonic, destination_address, is_testnet
-        )
+        fragment_hash, fragment_cookie, fragment_show_sender, ton_api_key, mnemonic, destination_address = cc.get('fragment_hash'), cc.get('fragment_cookie'), cc.get('fragment_show_sender'), cc.get('ton_api_key'), cc.get('mnemonic'), cc.get('destination_address')
 
         fragment_config = FragmentConfig(
             hash=fragment_hash,
@@ -468,48 +456,20 @@ class StarvellBot:
             api_key=ton_api_key,
             mnemonic=mnemonic,
             destination_address=destination_address,
-            is_testnet=is_testnet
+            is_testnet=False
         )
 
         self.stars_distributor = StarsDistributor(
             fragment_config, ton_config
         )
 
-    async def fragment_giver(self, order):
-        '''Выдача Stars (НОВАЯ РЕАЛИЗАЦИЯ)'''
-
-        success, error, tx_data = await self.stars_distributor.distribute_stars(
-            username=order.username,
-            quantity=order.amount,
-            order_id=order.order_id
-        )
-
-        if success:
-            # Успех
-            await self.send_chat_message(
-                order.chat_id,
-                f"✅ Заказ выполнен!\n"
-                f"🔗 {tx_data['tonviewer_url']}\n"
-                f"⭐️ Stars: {order.amount}\n"
-                f"🔑 Ref ID: {tx_data['ref_id']}"
-            )
-            order.mark_completed()
-            return True
-        else:
-            # Ошибка - вернуть деньги
-            await self.send_chat_message(
-                order.chat_id,
-                f"❌ Ошибка, возвращаем деньги на баланс StarVell"
-            )
-            await self.refund_order(order.order_id)
-            return False
-
     async def get_updates(self):
+        await self.api_giver.init_sessions()
         while True:
             try:
                 async with aiohttp.ClientSession(headers=self.headers) as session:
                     async with session.ws_connect(self.ws_url, heartbeat=25) as ws:
-                        logger.info("🟢 WebSocket connected")
+                        self.logger.info("🟢 WebSocket connected")
                         self.ws_connected.set()
 
                         async for msg in ws:
@@ -517,19 +477,19 @@ class StarvellBot:
                                 await self.handle(ws, msg.data)
 
             except Exception as e:
-                logger.error(f"🔴 WebSocket disconnected: {e}")
+                self.logger.error(f"🔴 WebSocket disconnected: {e}")
                 self.ws_connected.clear()
                 await asyncio.sleep(5)  # Ждем перед переподключением
-                logger.info("🔄 Reconnecting...")
+                self.logger.info("🔄 Reconnecting...")
 
     async def handle(self, ws, data: str):
-        logger.info(f"⬅️  {data}")
+        self.logger.info(f"⬅️  {data}")
 
         # Engine.IO handshake
         if data.startswith("0"):
             for ns in self.namespaces:
                 await ws.send_str(f"40{ns}")
-                logger.warning(f"➡️  Connecting to namespace: {ns}")
+                self.logger.warning(f"➡️  Connecting to namespace: {ns}")
             return
 
         # ping
@@ -554,10 +514,10 @@ class StarvellBot:
                     await self.route_event(event, content, namespace)
 
                 except Exception as e:
-                    logger.error(f"⚠️  Parse error: {e}")
-                    logger.error(f"Raw: {data}")
+                    self.logger.error(f"⚠️  Parse error: {e}")
+                    self.logger.error(f"Raw: {data}")
             else:
-                logger.warning(f"⚠️  Failed to parse Socket.IO event: {data}")
+                self.logger.warning(f"⚠️  Failed to parse Socket.IO event: {data}")
 
     async def route_event(self, event: str, data: dict, namespace: str):
         """Роутинг событий к соответствующим обработчикам"""
@@ -567,41 +527,41 @@ class StarvellBot:
             if event == "sale_update":
                 await self.on_sale_update(data)
             else:
-                logger.info(f"📩 [/user-notifications] {event}")
+                self.logger.info(f"📩 [/user-notifications] {event}")
 
         # События из /orders
         elif namespace == "/orders":
             if event == "order_subscribe":
-                logger.debug(f"🔔 Subscribed to order: {data.get('orderId')}")
+                self.logger.debug(f"🔔 Subscribed to order: {data.get('orderId')}")
             elif event == "order_refunded":
                 await self.on_order_refunded(data)
             else:
-                logger.info(f"📩 [/orders] {event}: {data}")
+                self.logger.info(f"📩 [/orders] {event}: {data}")
 
         # События из /chats
         elif namespace == "/chats":
             if event == "message_created":
                 await self.on_message_created(data)
             elif event == "chat_read":
-                logger.debug(f"✓ Chat read: {data.get('chatId')}")
+                self.logger.debug(f"✓ Chat read: {data.get('chatId')}")
             elif event == "typing_subscribe":
-                logger.debug(f"⌨️  Typing subscribe: {data.get('chatId')}")
+                self.logger.debug(f"⌨️  Typing subscribe: {data.get('chatId')}")
             elif event == "typing_unsubscribe":
-                logger.debug(f"⌨️  Typing unsubscribe: {data.get('chatId')}")
+                self.logger.debug(f"⌨️  Typing unsubscribe: {data.get('chatId')}")
             else:
-                logger.info(f"📩 [/chats] {event}")
+                self.logger.info(f"📩 [/chats] {event}")
 
         # События из /user-presence
         elif namespace == "/user-presence":
             if event == "user_presence_update":
                 user_id = data.get("userId")
                 is_online = data.get("isOnline")
-                logger.debug(f"👤 User {user_id}: {'🟢 online' if is_online else '🔴 offline'}")
+                self.logger.debug(f"👤 User {user_id}: {'🟢 online' if is_online else '🔴 offline'}")
             else:
-                logger.debug(f"[/user-presence] {event}")
+                self.logger.debug(f"[/user-presence] {event}")
 
         else:
-            logger.info(f"📩 [{namespace}] {event}: {data}")
+            self.logger.info(f"📩 [{namespace}] {event}: {data}")
 
     # ========== ОБРАБОТЧИКИ ЗАКАЗОВ ==========
 
@@ -611,25 +571,25 @@ class StarvellBot:
         delta = data.get("delta")
 
         if delta > 0:
-            logger.info("🛒 NEW ORDER!")
-            logger.info(f"Order ID: {order_id}")
+            self.logger.info("🛒 NEW ORDER!")
+            self.logger.info(f"Order ID: {order_id}")
             #ДОБАВИМ В БАЗУ ДАННЫХ - ДЛЯ БЕЗОПАСНОСТИ
             conn = await aiosqlite.connect("orders.db")
             cursor = await conn.cursor()
             await cursor.execute('insert or ignore into orders(id, status) values (?, ?)', (order_id, 'оплачен',))
             await conn.commit()
             await conn.close()
-
+            print(f'дата {order_id}: {data}')
             if order_id not in self.orders:
                 await self.process_new_order(order_id)
 
         elif delta < 0:
-            logger.warning(f"💸 Order refunded: {order_id} (delta: {delta})")
+            self.logger.warning(f"💸 Order refunded: {order_id} (delta: {delta})")
 
     async def on_order_refunded(self, data: dict):
         """Обработка возврата заказа"""
         order_id = data.get("orderId")
-        logger.warning(f"🔙 Order {order_id} has been refunded")
+        self.logger.warning(f"🔙 Order {order_id} has been refunded")
 
     async def get_order_details(self, order_id: str):
         """Получить детали заказа включая reviewId"""
@@ -643,21 +603,27 @@ class StarvellBot:
                     async with session.get(url) as resp:
                         if resp.status != 200:
                             build_id = await self.get_build_id()
-                            logger.error(f"❌ Failed to get order details: HTTP {resp.status}. Пробуем снова")
+                            self.logger.error(f"❌ Failed to get order details: HTTP {resp.status}. Пробуем снова")
                             continue
 
                         data = await resp.json()
                         return data
 
             except Exception as e:
-                logger.error(f"❌ Error getting order details: {e}")
+                self.logger.error(f"❌ Error getting order details: {e}")
                 traceback.print_exc()
                 return None
 
         return None
+
+
     async def on_message_created(self, data: dict):
         try:
             msg_type = data.get("type")
+            universal = cc.get('universal')
+            refund_msg = cc.get('refund_msg')
+            my_id = cc.get("my_id")
+            hello = cc.get('hello')
 
             if msg_type == "NOTIFICATION":
                 metadata = data.get("metadata", {})
@@ -665,50 +631,50 @@ class StarvellBot:
                 order_id = metadata.get("orderId")
 
                 if notification_type == "REVIEW_CREATED":
-                    logger.info(f"📝 Новый отзыв для заказа {order_id}")
+                    self.logger.info(f"📝 Новый отзыв для заказа {order_id}")
 
                     # Получаем детали заказа чтобы найти reviewId
                     order_details = await self.get_order_details(order_id)
 
                     if not order_details:
-                        logger.error(f"❌ Не удалось получить детали заказа {order_id}")
+                        self.logger.error(f"❌ Не удалось получить детали заказа {order_id}")
                         return
 
                     # reviewId находится в pageProps.review.id
                     review_data = order_details.get('pageProps', {}).get('review')
 
                     if not review_data:
-                        logger.error(f"❌ reviewId не найден в деталях заказа {order_id}")
+                        self.logger.error(f"❌ reviewId не найден в деталях заказа {order_id}")
                         return
 
                     review_id = review_data.get('id')
 
                     if not review_id:
-                        logger.error(f"❌ review.id отсутствует")
+                        self.logger.error(f"❌ review.id отсутствует")
                         return
 
-                    logger.info(f"✅ Найден reviewId: {review_id}")
+                    self.logger.info(f"✅ Найден reviewId: {review_id}")
 
                     # Ответить на отзыв
                     res = await self.answer_review(review_id, universal)
 
                     if res:
-                        logger.info(f'✅ Ответили на отзыв {review_id}')
+                        self.logger.info(f'✅ Ответили на отзыв {review_id}')
                     else:
-                        logger.warning(f'❌ Не удалось ответить, повтор...')
+                        self.logger.warning(f'❌ Не удалось ответить, повтор...')
                         await asyncio.sleep(1)
                         res = await self.answer_review(review_id, universal)
                         if res:
-                            logger.info(f'✅ Ответили на отзыв {review_id} (попытка 2)')
+                            self.logger.info(f'✅ Ответили на отзыв {review_id} (попытка 2)')
                         else:
-                            logger.error(f'❌ Не удалось ответить после 2 попыток')
+                            self.logger.error(f'❌ Не удалось ответить после 2 попыток')
 
                 if notification_type == "ORDER_REFUND":
                     try:
 
                         await self.send_chat_message(data.get("chatId"), refund_msg)
                     except Exception as e:
-                        logger.error(f'Ошибка при отправке уведомления о возврате {order_id}')
+                        self.logger.error(f'Ошибка при отправке уведомления о возврате {order_id}')
 
             elif msg_type == "DEFAULT":
                 author = data.get("author")
@@ -780,80 +746,159 @@ class StarvellBot:
                                     await self.send_chat_message(chat_id, hello)
 
                             elif self.users[user_id]['state'] == 'CHOOSING_FINALE':
-
                                 order_id = self.users[user_id]['order'].order_id
-                                if 'да' in content.lower() or '+' in content.lower():
-                                    await self.send_chat_message(chat_id,
-                                                                 '🐬 Ваш заказ был добавлен в очередь, ожидайте')
-                                    self.users[user_id]['state'] = 'FREE'
-                                    self.users[user_id]['order'] = None
-                                    self.users[user_id]['hello'] = False
+                                game = self.orders[order_id].game
 
-                                    # await self.fragment_giver(order)
-                                    self.orders[order_id].mark_completed()
-
-                                    res = None
-                                    for _ in range(self.orders[order_id].quantity):
-                                        res = await self.fragment_giver(self.orders[order_id])
-
-                                    if res:
+                                if game in ['stars', 'advgifts', 'stargifts', 'advstars', 'giftsapi']:
+                                    if 'да' in content.lower() or '+' in content.lower():
                                         await self.send_chat_message(chat_id,
-                                                                     '✅ Звезды отправлены на ваш аккаунт, оставьте отзыв')
-                                        self.users[user_id]['active'] = False
-                                        self.users[user_id]['limit'] = 0
-                                        return
-                                    else:
-                                        await self.send_chat_message(chat_id,
-                                                                     '❌ Произошла ошибка, напишите /вызов и скоро подключится администратор')
-                                        self.users[user_id]['active'] = False
-                                        self.users[user_id]['limit'] = 0
-                                        return
+                                                                     '🐬 Ваш заказ был добавлен в очередь, ожидайте')
+                                        self.users[user_id]['state'] = 'FREE'
+                                        self.users[user_id]['order'] = None
+                                        self.users[user_id]['hello'] = False
 
-                                elif 'нет' in content.lower() or '-' in content.lower():
-                                    await self.send_chat_message(chat_id,
-                                                                 'Начинаем заново..\n'
-                                                                 '👤 Введите актуальный @username')
-                                    self.users[user_id]['state'] = 'CHOOSING_USERNAME'
+                                        # await self.fragment_giver(order)
+                                        self.orders[order_id].mark_completed()
+
+                                        if game in ['stars', 'advstars']:
+                                            res = await self.fragment_giver(self.orders[order_id])
+                                        elif game in ['advgifts', 'stargifts', 'giftsapi']:
+                                            res = await self.stars_giver(self.orders[order_id])
+                                        else:
+                                            res = None
+
+                                        if res:
+                                            await self.send_complete(order_id)
+                                            await self.send_chat_message(chat_id,
+                                                                         '✅ Звезды отправлены на ваш аккаунт.🙏 Не забудьте подтвердить заказ.🙂 Мне было бы очень приятно получить отзыв <3')
+                                            self.users[user_id]['active'] = False
+                                            self.users[user_id]['limit'] = 0
+                                            return
+                                        else:
+                                            await self.send_chat_message(chat_id,
+                                                                         '❌ Произошла ошибка, напишите /вызов и скоро подключится администратор')
+                                            self.users[user_id]['active'] = False
+                                            self.users[user_id]['limit'] = 0
+                                            return
+
+                                    elif 'нет' in content.lower() or '-' in content.lower():
+                                        await self.send_chat_message(chat_id,
+                                                                     'Начинаем заново..\n'
+                                                                     '👤 Введите актуальный @username')
+                                        self.users[user_id]['state'] = 'CHOOSING_USERNAME'
+                                        return
 
 
                             elif self.users[user_id]['state'] == 'CHOOSING_USERNAME':
                                 order_id = self.users[user_id]['order'].order_id
-                                username = self.extract_username(content)
+                                game = self.orders[order_id].game
 
-                                if not username:
-                                    await self.send_chat_message(chat_id,
-                                                                 '❌ Недопустимый формат юзернейма!\nВнимательно проверьте правильность написания и попробуйте еще раз ⬇️')
-                                    return
+                                if game in ['stars', 'advgifts', 'stargifts', 'advstars', 'giftsapi']:
+                                    username = self.extract_username(content)
 
-                                self.orders[order_id].username = username
+                                    if not username:
+                                        await self.send_chat_message(chat_id,
+                                                                     '❌ Недопустимый формат юзернейма!\nВнимательно проверьте правильность написания и попробуйте еще раз ⬇️')
+                                        return
 
-                                conn = await aiosqlite.connect("orders.db")
-                                cursor = await conn.cursor()
-                                await cursor.execute('update orders set username=? where id=?', (username, order_id,))
-                                await conn.commit()
-                                await conn.close()
+                                    self.orders[order_id].username = username
 
-                                order = self.orders[order_id]
+                                    conn = await aiosqlite.connect("orders.db")
+                                    cursor = await conn.cursor()
+                                    await cursor.execute('update orders set username=? where id=?', (username, order_id,))
+                                    await conn.commit()
+                                    await conn.close()
 
-                                self.users[user_id]['state'] = 'CHOOSING_FINALE'
-                                start_order_msg = (
-                                    f"🧾 Ваш заказ:\n"
-                                    f"#️⃣ ID: {order.order_id}\n"
-                                    f"👤 Username: {order.username}\n"
-                                    f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
-                                    f"\n"
-                                    f"Все верно?\n"
-                                    f"✅ Да (+) | Нет (-) ❌"
-                                )
+                                    order = self.orders[order_id]
 
-                                await self.send_chat_message(chat_id, start_order_msg)
+                                    self.users[user_id]['state'] = 'CHOOSING_FINALE'
+
+                                    if game in ['stargifts']:
+
+                                        start_order_msg = (
+                                            f"🧾 Ваш заказ:\n"
+                                            f"#️⃣ ID: {order.order_id}\n"
+                                            f"👤 Username: {order.username}\n"
+                                            f"🎁 Подарок: {order.gift_name} | {order.quantity} шт.\n"
+                                            f"\n"
+                                            f"Все верно?\n"
+                                            f"✅ Да (+) | Нет (-) ❌"
+                                        )
+                                    else:
+                                        start_order_msg = (
+                                            f"🧾 Ваш заказ:\n"
+                                            f"#️⃣ ID: {order.order_id}\n"
+                                            f"👤 Username: {order.username}\n"
+                                            f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                                            f"\n"
+                                            f"Все верно?\n"
+                                            f"✅ Да (+) | Нет (-) ❌"
+                                        )
+
+                                    await self.send_chat_message(chat_id, start_order_msg)
 
 
 
 
         except Exception as e:
-            logger.error(f"❌ Error in on_message_created: {e}")
+            self.logger.error(f"❌ Error in on_message_created: {e}")
             traceback.print_exc()
+
+    async def stars_giver(self, order):
+        res, ok = await self.api_giver.do_order(order)
+
+        if not ok:
+            traceback.print_exc()
+
+            # Ошибка - вернуть деньги
+            await self.send_chat_message(
+                order.chat_id,
+                f"❌ Ошибка {res}, возвращаем деньги на баланс StarVell"
+            )
+            await self.refund_order(order.order_id)
+
+        return ok
+
+    async def fragment_giver(self, order):
+        '''Выдача Stars (НОВАЯ РЕАЛИЗАЦИЯ)'''
+
+        amount = order.quantity * order.amount
+        success = False
+
+        for attempt in range(3):
+            success, error, tx_data = await self.stars_distributor.distribute_stars(
+                username=order.username,
+                quantity=amount,
+                order_id=order.order_id
+            )
+
+            if success:
+                # Успех
+                try:
+
+                    await self.send_chat_message(
+                        order.chat_id,
+                        f"✅ Заказ выполнен!\n"
+                        f"🔗 {tx_data['tonviewer_url']}\n"
+                        f"⭐️ Stars: {order.amount * order.quantity}\n"
+                        f"🔑 Ref ID: {tx_data['ref_id']}"
+                    )
+                    order.mark_completed()
+                    return True
+
+                except:
+                    return True
+
+        if not success:
+            traceback.print_exc()
+
+            # Ошибка - вернуть деньги
+            await self.send_chat_message(
+                order.chat_id,
+                f"❌ Ошибка, возвращаем деньги на баланс StarVell"
+            )
+            await self.refund_order(order.order_id)
+            return False
 
     def extract_username(self, text: str) -> str | None:
         m = self.USER_RE.findall(text)  # вытягиваем ВСЕ совпадения
@@ -881,138 +926,150 @@ class StarvellBot:
                 async with aiohttp.ClientSession() as session:
                     async with session.get(f"https://starvell.com/_next/data/{id}/account/sells.json", headers=self.headers) as resp:
                         if not 200 <= resp.status < 300:
-                            logger.warning(f'Попытка {attempt} - пробуем еще раз')
+                            self.logger.warning(f'Попытка {attempt} - пробуем еще раз')
                             id = await self.get_build_id()
                         else:
                             json_data = await resp.json()
                             return json_data
             except:
-                logger.error(f'Попытка {attempt} - пробуем еще раз')
+                self.logger.error(f'Попытка {attempt} - пробуем еще раз')
         return
 
 
     async def check_balance_and_cancel(self):
-
+        await asyncio.sleep(15)
         while True:
             try:
-                from config import fragment_cookie
+                exchange = ccxt.binance()  # или bybit(), okx(), huobi()
+                ticker = exchange.fetch_ticker('TON/USDT')
+                price = ticker['last']
 
                 ton_balance = await self.stars_distributor.check_wallet_balance()
                 ton_balance = float(ton_balance)
 
-                headers = {
-                    "Accept": "application/json, text/javascript, */*; q=0.01",
-                    "Accept-Encoding": "gzip, deflate, br, zstd",
-                    "Accept-Language": "ru,en;q=0.9",
-                    "Connection": "keep-alive",
-                    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                    "Cookie": fragment_cookie,
-                    "Host": "fragment.com",
-                    "Origin": "https://fragment.com",
-                    "Referer": "https://fragment.com/stars/buy",
-                    "Sec-Fetch-Dest": "empty",
-                    "Sec-Fetch-Mode": "cors",
-                    "Sec-Fetch-Site": "same-origin",
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                    "X-Requested-With": "XMLHttpRequest"
-                }
+                usdt_balance = float(price) * ton_balance
 
-                async with aiohttp.ClientSession(headers=headers) as session:
-                    async with session.get("https://fragment.com/stars/buy", headers=headers) as resp:
+                star_balance = self.api_giver.get_max()
+                sessions = self.api_giver.get_session_status()
 
-                        json_response = await resp.text()
-                        prices = self.extract_stars_prices(json_response)
-                        my_offers = await self.get_my_offers()
-                        my_offers = my_offers['pageProps']['offers']
+            except CancelledError:
+                raise
 
-                        stars_offers = {}
-                        for offer in my_offers:
+            try:
+                my_offers = await self.get_my_offers()
+                my_offers = my_offers['pageProps']['offers']
 
-                            if not offer.get('isActive'):
-                                continue
+                stars_offers = {}
 
-                            id = offer.get('id')
-                            category_obj = offer.get('subCategory')
-                            sub_category_name = category_obj.get("name", "")
+                for offer in my_offers:
 
-                            stars_match = re.search(r'(\d+)', sub_category_name)
-                            if not stars_match:
-                                logger.warning(f"⚠️ Не удалось извлечь количество звёзд из '{sub_category_name}'")
-                                continue
+                    if not offer.get('isActive'):
+                        continue
 
-                            stars_count = int(stars_match.group(1))
-                            stars_offers[stars_count] = id
+                    offer_id = offer.get('id')
 
-                        if prices:
-                            for count, price in prices.items():
-                                if count in stars_offers:
-                                    if price + 0.1 >= ton_balance:
-                                        await self.update_order_status(stars_offers[count], False)
+                    description = offer['descriptions']['rus']['description']
+
+                    id = self.get_id(description)
+                    if id is None:
+                        self.logger.error('Отсутствует айди в описании предложения при демпинге')
+                        continue
+
+                    game = cc.get_parent(id)
+                    if game is None:
+                        self.logger.error('отсутствует категория демпинге')
+                        continue
+
+                    # Извлекаем количество звёзд из названия подкатегории
+                    data = cc.find_by_key(id)['data']['special_data']
+                    stars_count = int(data['stars'])
+                    stars_offers[stars_count] = [offer_id, game]
+
+                if stars_offers:
+                    for count, data in stars_offers.items():
+                        id, game = data
+
+                        if game in ['advstars', 'stars']:
+                            if count / 100 * 1.5 * 1.1 >= usdt_balance: #ЗАПАС x1.1
+                                await self.update_order_status(id, False)
+
+                        if game in ['advgifts', 'giftsapi', 'starsgifts']:
+
+                            if round(count * 1.20) > star_balance:
+                                await self.update_order_status(id, False)
+
+                            if sessions == 0:
+                                await self.update_order_status(id, False)
 
                 await asyncio.sleep(30)
+
+            except CancelledError:
+                raise
+
             except:
+                traceback.print_exc()
                 await asyncio.sleep(30)
                 continue
 
-    def extract_stars_prices(self, json_or_html_content):
-        try:
-            data = json.loads(json_or_html_content)
-            html_content = data.get('h', '')
-            if not html_content:
-                logger.warning("⚠️ HTML не найден в JSON ответе")
-                return {}
-        except json.JSONDecodeError:
-            # Если это не JSON, считаем что это уже HTML
-            html_content = json_or_html_content
-
-        parser = BeautifulSoup(html_content, 'html.parser')
-
-        # Найти все радио-кнопки с пакетами звёзд
-        radio_items = parser.find_all('input', {'type': 'radio', 'name': 'stars'})
-        stars_prices = {}
-
-        for radio in radio_items:
-            # Получить количество звёзд из value
-            stars_count = radio.get('value')
-
-            if not stars_count:
-                continue
-
-            # Найти родительский элемент с ценой
-            parent = radio.find_parent('label', {'class': 'tm-form-radio-item'})
-
-            if not parent:
-                continue
-
-            # Найти div с классом tm-value (цена в TON)
-            price_div = parent.find('div', {'class': 'tm-value'})
-
-            if not price_div:
-                continue
-
-            # Извлечь текст цены
-            price_text = price_div.get_text(strip=True)
-
-            # Убрать всё кроме цифр, точек и запятых
-            price_clean = price_text.replace(',', '')
-
-            # Найти число с помощью regex
-            match = re.search(r'[\d.]+', price_clean)
-
-            if match:
-                price_ton = float(match.group())
-                stars_prices[int(stars_count)] = price_ton
-        try:
-
-            stars_100 = stars_prices[100]
-
-            stars_prices[200] = stars_100 * 2
-            stars_prices[300] = stars_100 * 3
-
-        except:
-            pass
-
-        return stars_prices
+    # def extract_stars_prices(self, json_or_html_content):
+    #     try:
+    #         data = json.loads(json_or_html_content)
+    #         html_content = data.get('h', '')
+    #         if not html_content:
+    #             self.logger.warning("⚠️ HTML не найден в JSON ответе")
+    #             return {}
+    #     except json.JSONDecodeError:
+    #         # Если это не JSON, считаем что это уже HTML
+    #         html_content = json_or_html_content
+    #
+    #     parser = BeautifulSoup(html_content, 'html.parser')
+    #
+    #     # Найти все радио-кнопки с пакетами звёзд
+    #     radio_items = parser.find_all('input', {'type': 'radio', 'name': 'stars'})
+    #     stars_prices = {}
+    #
+    #     for radio in radio_items:
+    #         # Получить количество звёзд из value
+    #         stars_count = radio.get('value')
+    #
+    #         if not stars_count:
+    #             continue
+    #
+    #         # Найти родительский элемент с ценой
+    #         parent = radio.find_parent('label', {'class': 'tm-form-radio-item'})
+    #
+    #         if not parent:
+    #             continue
+    #
+    #         # Найти div с классом tm-value (цена в TON)
+    #         price_div = parent.find('div', {'class': 'tm-value'})
+    #
+    #         if not price_div:
+    #             continue
+    #
+    #         # Извлечь текст цены
+    #         price_text = price_div.get_text(strip=True)
+    #
+    #         # Убрать всё кроме цифр, точек и запятых
+    #         price_clean = price_text.replace(',', '')
+    #
+    #         # Найти число с помощью regex
+    #         match = re.search(r'[\d.]+', price_clean)
+    #
+    #         if match:
+    #             price_ton = float(match.group())
+    #             stars_prices[int(stars_count)] = price_ton
+    #     try:
+    #
+    #         stars_100 = stars_prices[100]
+    #
+    #         stars_prices[200] = stars_100 * 2
+    #         stars_prices[300] = stars_100 * 3
+    #
+    #     except:
+    #         pass
+    #
+    #     return stars_prices
 
     async def answer_review(self, review_id: str, content: str):
         """Ответить на отзыв"""
@@ -1030,20 +1087,20 @@ class StarvellBot:
                     response_text = await resp.text()
 
                     if resp.status >= 400:
-                        logger.error(f"❌ Ошибка при ответе: HTTP {resp.status}")
-                        logger.error(f" Ответ: {response_text}")
+                        self.logger.error(f"❌ Ошибка при ответе: HTTP {resp.status}")
+                        self.logger.error(f" Ответ: {response_text}")
                         return None
 
                     try:
                         json_data = json.loads(response_text)
-                        logger.info(f"✅ Успешно ответили: {review_id}")
+                        self.logger.info(f"✅ Успешно ответили: {review_id}")
                         return json_data
                     except json.JSONDecodeError as e:
-                        logger.error(f"❌ Invalid JSON response: {e}")
+                        self.logger.error(f"❌ Invalid JSON response: {e}")
                         return None
 
         except Exception as e:
-            logger.error(f"❌ Ошибка при ответе на отзыв: {e}")
+            self.logger.error(f"❌ Ошибка при ответе на отзыв: {e}")
             traceback.print_exc()
             return None
 
@@ -1051,6 +1108,21 @@ class StarvellBot:
 
         payload = {"chatId": chat_id, "content": content}
         url = "https://starvell.com/api/messages/send"
+
+        async with aiohttp.ClientSession(headers=self.headers) as session:
+            async with session.post(url, json=payload) as resp:
+                response_text = await resp.text()
+                if resp.status >= 400:
+                    raise RuntimeError(f"HTTP {resp.status}: {response_text}")
+                try:
+                    return json.loads(response_text)
+                except json.JSONDecodeError as exc:
+                    raise RuntimeError("Invalid response from server") from exc
+
+    async def send_complete(self, order_id: str):
+
+        payload = {"id": order_id}
+        url = "https://starvell.com/api/orders/complete"
 
         async with aiohttp.ClientSession(headers=self.headers) as session:
             async with session.post(url, json=payload) as resp:
@@ -1071,14 +1143,14 @@ class StarvellBot:
         start_time = datetime.now(UTC_TZ)
 
         await self.ws_connected.wait()
-        logger.info("✅ WebSocket готов, запускаем проверку заказов")
+        self.logger.info("✅ WebSocket готов, запускаем проверку заказов")
 
         while True:
             try:
                 data = await self.get_orders_info()
 
                 if not data:
-                    logger.warning("⚠️ Не удалось получить список заказов")
+                    self.logger.warning("⚠️ Не удалось получить список заказов")
                     await asyncio.sleep(100)
                     continue
 
@@ -1096,7 +1168,7 @@ class StarvellBot:
 
                     # Пропускаем если заказ уже обработан
                     if order_id in self.orders:
-                        logger.info('пропустили')
+                        self.logger.info('пропустили')
                         continue
 
                     UTC = timezone.utc  # или timezone(timedelta(hours=0))
@@ -1113,14 +1185,14 @@ class StarvellBot:
                             continue
 
                     except Exception as e:
-                        logger.error(f"❌ Ошибка парсинга времени заказа {order_id}: {e}")
+                        self.logger.error(f"❌ Ошибка парсинга времени заказа {order_id}: {e}")
                         continue
 
                     # Заказ пропущен! Обрабатываем
-                    logger.warning(f"⚠️ ПРОПУЩЕННЫЙ ЗАКАЗ ОБНАРУЖЕН: {order_id}")
-                    logger.warning(f"   Создан: {created_at_str}")
-                    logger.warning(f"   Статус: {order_status}")
-                    logger.warning(f"   Обрабатываем...")
+                    self.logger.warning(f"⚠️ ПРОПУЩЕННЫЙ ЗАКАЗ ОБНАРУЖЕН: {order_id}")
+                    self.logger.warning(f"   Создан: {created_at_str}")
+                    self.logger.warning(f"   Статус: {order_status}")
+                    self.logger.warning(f"   Обрабатываем...")
 
                     # Проверяем в БД
                     conn = await aiosqlite.connect("orders.db")
@@ -1133,10 +1205,10 @@ class StarvellBot:
                     # Обрабатываем как обычный заказ
                     await self.process_new_order(order_id)
 
-                    logger.info(f"✅ Пропущенный заказ {order_id} успешно обработан")
+                    self.logger.info(f"✅ Пропущенный заказ {order_id} успешно обработан")
 
             except Exception as e:
-                logger.error(f"❌ Ошибка в get_extra_orders: {e}")
+                self.logger.error(f"❌ Ошибка в get_extra_orders: {e}")
                 traceback.print_exc()
 
             # Проверяем каждые 100 секунд
@@ -1146,42 +1218,38 @@ class StarvellBot:
 
         try:
             """Обработка нового заказа"""
-            logger.info(f"⚙️  Processing order {order_id}...")
+            self.logger.info(f"⚙️  Processing order {order_id}...")
 
             details = await self.get_order_details(order_id)
 
             if not details:
-                logger.error(f"❌ Не удалось получить детали заказа {order_id}")
+                self.logger.error(f"❌ Не удалось получить детали заказа {order_id}")
                 return
 
             # Извлекаем данные из ответа API
             page_props = details.get("pageProps", {})
             order_data = page_props.get("order", {})
+            description = order_data['offerDetails']['descriptions']['rus']['description']
+
+            id = self.get_id(description)
+            if id is None:
+                self.logger.error('Отсутствует айди в описании предложения')
+                await self.refund_order(order_id)
+                return
+
+            game = cc.get_parent(id)
+            if game is None:
+                self.logger.error('отсутствует категория')
+                await self.refund_order(order_id)
+                return
+
+            data = cc.find_by_key(id)['data']['special_data']
 
             chat_data = page_props.get("chat", {})
 
             # === ОСНОВНЫЕ ДАННЫЕ ЗАКАЗА ===
             total_price = order_data.get("totalPrice")
             quantity = order_data.get("quantity")
-
-            # === КОЛИЧЕСТВО ЗВЁЗД ===
-            offer_details = order_data.get("offerDetails", {})
-            sub_category = offer_details.get("subCategory", {})
-            sub_category_name = sub_category.get("name", "")
-
-            stars_match = re.search(r'(\d+)', sub_category_name)
-            stars_amount = int(stars_match.group(1)) if stars_match else 0
-
-            logger.info(f"⭐ Звёзд в заказе: {stars_amount}")
-
-            # === USERNAME ИЗ ЗАКАЗА ===
-            order_args = order_data.get("orderArgs", [])
-            entered_username = None
-
-            if order_args:
-                entered_username = order_args[0].get("value", "").strip()
-
-            logger.info(f"📝 Введённый username: {entered_username}")
 
             # === ДАННЫЕ ПОКУПАТЕЛЯ ===
             buyer = order_data.get("buyer", {})
@@ -1190,94 +1258,208 @@ class StarvellBot:
             # === ID ЧАТА ===
             chat_id = chat_data.get("id")
 
-            # === ЛОГИРОВАНИЕ ===
-            logger.info("=" * 60)
-            logger.info(f"📦 Order ID: {order_id}")
-            logger.info(f"💰 Total Price: {total_price}")
-            logger.info(f"🔢 Quantity: {quantity}")
-            logger.info(f"⭐ Stars: {stars_amount}")
-            logger.info(f"👤 Buyer ID: {buyer_id}")
-            logger.info(f"📝 Telegram Username (entered): {entered_username}")
-            logger.info(f"💬 Chat ID: {chat_id}")
-            logger.info("=" * 60)
+            start_order_msg = 'К вашему заказу скоро подключится администратор 👤'
+            order = None
 
-            if buyer_id in self.users:
-                if self.users[buyer_id]['state'] != 'FREE':
-                    return
+            if game in ['stars', 'advgifts', 'stargifts', 'advstars', 'giftsapi']:
+                # === КОЛИЧЕСТВО ЗВЁЗД ===
+                offer_details = order_data.get("offerDetails", {})
+                sub_category = offer_details.get("subCategory", {})
+                sub_category_name = sub_category.get("name", "")
 
-            # === РАБОТА С БД ===
-            conn = await aiosqlite.connect("orders.db")
-            try:
-                cursor = await conn.cursor()
+                stars_amount = data['stars']
 
-                await cursor.execute(
-                    """
-                    UPDATE orders 
-                    SET amount = ?, quantity = ?, username = ?, user_id = ?, chat_id = ?
-                    WHERE id = ?
-                    """,
-                    (stars_amount, quantity, entered_username, buyer_id, chat_id, order_id,)
+                self.logger.info(f"⭐ Звёзд в заказе: {stars_amount}")
+
+                # === USERNAME ИЗ ЗАКАЗА ===
+                order_args = order_data.get("orderArgs", [])
+                entered_username = None
+
+                if order_args:
+                    entered_username = order_args[0].get("value", "").strip()
+
+                self.logger.info(f"📝 Введённый username: {entered_username}")
+
+                # === ЛОГИРОВАНИЕ ===
+                self.logger.info("=" * 60)
+                self.logger.info(f"📦 Order ID: {order_id}")
+                self.logger.info(f"💰 Total Price: {total_price}")
+                self.logger.info(f"🔢 Quantity: {quantity}")
+                self.logger.info(f"⭐ Stars: {stars_amount}")
+                self.logger.info(f"👤 Buyer ID: {buyer_id}")
+                self.logger.info(f"📝 Telegram Username (entered): {entered_username}")
+                self.logger.info(f"💬 Chat ID: {chat_id}")
+                self.logger.info("=" * 60)
+
+                if buyer_id in self.users:
+                    if self.users[buyer_id]['state'] != 'FREE':
+                        return
+
+                # === РАБОТА С БД ===
+                conn = await aiosqlite.connect("orders.db")
+                try:
+                    cursor = await conn.cursor()
+
+                    await cursor.execute(
+                        """
+                        UPDATE orders 
+                        SET amount = ?, quantity = ?, username = ?, chat_id = ?
+                        WHERE id = ?
+                        """,
+                        (stars_amount, quantity, entered_username, chat_id, order_id,)
+                    )
+
+                    await conn.commit()
+                    self.logger.info(f"✅ Order {order_id} updated in database")
+
+                except Exception as e:
+                    self.logger.error(f"❌ Ошибка ДБ: {e}")
+                    traceback.print_exc()
+                finally:
+                    await conn.close()
+
+                # === СОЗДАЁМ ОБЪЕКТ ЗАКАЗА ===
+                final_username = entered_username
+
+                if game in ['stars', 'advstars']:
+                    try:
+
+                        order = FragmentOrder(
+                            name=id,
+                            game=game,
+                            order_id=order_id,
+                            amount=stars_amount,
+                            quantity=quantity,
+                            user_id=buyer_id,
+                            username=final_username,
+                            chat_id=chat_id
+                        )
+                    except (IndexError, TypeError, KeyError):
+                        await self.refund_order(order_id)
+                        return
+
+                elif game in ['advgifts', 'stargifts', 'giftsapi']:
+
+                    balance = self.api_giver.get_max()
+
+                    true_amount = 0
+                    if stars_amount == 13:
+                        true_amount = 15
+                    elif stars_amount == 21:
+                        true_amount = 25
+                    elif stars_amount == 43:
+                        true_amount = 50
+                    elif stars_amount == 85:
+                        true_amount = 100
+
+                    if balance < true_amount * quantity:
+                        await self.send_chat_message(chat_id, '⭐ Недостаточно баланса, извините')
+                        await self.refund_order(order_id)
+                        await self.turn_off_orders(target_id=id)
+                        return
+
+                    try:
+
+                        mask = data['mask']
+                        ids = data['ids']
+
+                        if 'name' in data:
+                            gift_name = data['name']
+                        else:
+                            gift_name = 'Отсутствует'
+
+                        order = StarGiftOrder(
+                            name=id,
+                            game=game,
+                            gift_name=gift_name,
+                            order_id=order_id,
+                            amount=stars_amount,
+                            quantity=quantity,
+                            user_id=buyer_id,
+                            username=final_username,
+                            chat_id=chat_id,
+                            mask=StarGiftMask(
+                                order_id=order_id,
+                                mask=mask,
+                                ids=ids
+                            )
+                        )
+
+                    except (IndexError, TypeError, KeyError):
+                        await self.refund_order(order_id)
+                        return
+                else:
+                    order = None
+
+                try:
+                    await self.bot.send_message(chat_id=self.admin,
+                                                text=f"🧾 Пришел заказ:\n"
+                    f"#️⃣ ID: {order.order_id}\n"
+                    f"👤 Username: {order.username}\n"
+                    f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                    f"Ссылка на заказ: https://starvell.com/order/{order.order_id}\n", disable_web_page_preview=True
+                                                )
+                except:
+                    pass
+
+                # === ИНИЦИАЛИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ===
+                if buyer_id not in self.users:
+                    self.users[buyer_id] = {}
+
+                self.users[buyer_id]['order'] = order
+                self.users[buyer_id]['state'] = 'CHOOSING_FINALE'
+                self.users[buyer_id]['active'] = True
+                self.users[buyer_id]['hello'] = True
+
+                # === ОТПРАВКА СООБЩЕНИЯ ===
+                start_order_msg = (
+                    f"🧾 Ваш заказ:\n"
+                    f"#️⃣ ID: {order.order_id}\n"
+                    f"👤 Username: {order.username}\n"
+                    f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                    f"\n"
+                    f"Все верно?\n"
+                    f"✅ Да (+) | Нет (-) ❌"
                 )
 
-                await conn.commit()
-                logger.info(f"✅ Order {order_id} updated in database")
-
-            except Exception as e:
-                logger.error(f"❌ Ошибка ДБ: {e}")
-                traceback.print_exc()
-            finally:
-                await conn.close()
-
-            # === СОЗДАЁМ ОБЪЕКТ ЗАКАЗА ===
-            final_username = entered_username
-
-            order = Order(
-                order_id=order_id,
-                amount=stars_amount,
-                quantity=quantity,
-                user_id=buyer_id,
-                username=final_username,
-                chat_id=chat_id
-            )
-
+            await self.send_chat_message(chat_id, start_order_msg)
             self.orders[order_id] = order
 
-            try:
-                await self.bot.send_message(chat_id=self.admin,
-                                            text=f"🧾 Пришел заказ:\n"
-                f"#️⃣ ID: {order.order_id}\n"
-                f"👤 Username: {order.username}\n"
-                f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
-                f"Ссылка на заказ: https://starvell.com/order/{order.order_id}\n", disable_web_page_preview=True
-                                            )
-            except:
-                pass
-
-            # === ИНИЦИАЛИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ===
-            if buyer_id not in self.users:
-                self.users[buyer_id] = {}
-
-            self.users[buyer_id]['order'] = order
-            self.users[buyer_id]['state'] = 'CHOOSING_FINALE'
-            self.users[buyer_id]['active'] = True
-            self.users[buyer_id]['hello'] = True
-
-            # === ОТПРАВКА СООБЩЕНИЯ ===
-            start_order_msg = (
-                f"🧾 Ваш заказ:\n"
-                f"#️⃣ ID: {order.order_id}\n"
-                f"👤 Username: {order.username}\n"
-                f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
-                f"\n"
-                f"Все верно?\n"
-                f"✅ Да (+) | Нет (-) ❌"
-            )
-
-            await self.send_chat_message(chat_id, start_order_msg)
         except:
             traceback.print_exc()
-            logger.error(f'Ошибка при процессинге {order_id}')
+            self.logger.error(f'Ошибка при процессинге {order_id}')
             await self.refund_order(order_id)
+
+    async def turn_off_orders(self, categories=None, target_id=None):
+
+        my_offers = await self.get_my_offers()
+        my_offers = my_offers['pageProps']['offers']
+
+        for offer in my_offers:
+
+            if not offer.get('isActive'):
+                continue
+
+            offer_id = offer.get('id')
+
+            description = offer['descriptions']['rus']['description']
+            id = self.get_id(description)
+            if id is None:
+                self.logger.error('Отсутствует айди в описании предложения при демпинге')
+                continue
+
+            game = cc.get_parent(id)
+            if game is None:
+                self.logger.error('отсутствует категория демпинге')
+                continue
+
+            if categories:
+                if game in categories:
+                    await self.update_order_status(offer_id, False)
+
+            if target_id:
+                if id == target_id:
+                    await self.update_order_status(offer_id, False)
 
 
     async def refund_order(self, order_id):
@@ -1303,7 +1485,7 @@ class StarvellBot:
                         return {"status": resp.status, "text": text}
 
         except Exception as e:
-            logger.error(f'Ошибка при рефаунде заказа {order_id}: {e}')
+            self.logger.error(f'Ошибка при рефаунде заказа {order_id}: {e}')
             traceback.print_exc()
             return None
 
@@ -1404,32 +1586,33 @@ class StarvellBot:
                         else:
                             offers = []
 
-                        logger.info(f"📊 Получено {len(offers)} предложений конкурентов")
+                        print(offers)
+                        self.logger.info(f"📊 Получено {len(offers)} предложений конкурентов")
                         return offers
                     else:
                         resp_text = await response.text()
-                        logger.warning(f'⚠️ Не удалось получить предложения конкурентов: HTTP {response.status}')
-                        logger.debug(f"Response: {resp_text[:500]}")  # Первые 500 символов
+                        self.logger.warning(f'⚠️ Не удалось получить предложения конкурентов: HTTP {response.status}')
+                        self.logger.debug(f"Response: {resp_text[:500]}")  # Первые 500 символов
                         return []
 
         except Exception as e:
-            logger.error(f"❌ Ошибка получения предложений конкурентов: {e}")
+            self.logger.error(f"❌ Ошибка получения предложений конкурентов: {e}")
             traceback.print_exc()
             return []
 
-async def main():
-    bot = StarvellBot()
-
-    tasks = [
-        asyncio.create_task(bot.get_updates()),
-        asyncio.create_task(bot.get_extra_orders()),
-        asyncio.create_task(bot.dumper()),
-        asyncio.create_task(bot.bumper())
-    ]
-
-    try:
-        await asyncio.gather(*tasks)
-    except KeyboardInterrupt:
-        logger.info("🛑 Shutting down...")
-        for task in tasks:
-            task.cancel()
+# async def main():
+#     bot = StarvellBot()
+#
+#     tasks = [
+#         asyncio.create_task(bot.get_updates()),
+#         asyncio.create_task(bot.get_extra_orders()),
+#         asyncio.create_task(bot.dumper()),
+#         asyncio.create_task(bot.bumper())
+#     ]
+#
+#     try:
+#         await asyncio.gather(*tasks)
+#     except KeyboardInterrupt:
+#         self.logger.info("🛑 Shutting down...")
+#         for task in tasks:
+#             task.cancel()

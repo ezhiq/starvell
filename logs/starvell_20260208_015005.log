@@ -1,0 +1,22 @@
+01:50:05 - StarvellBot - INFO - ============================================================
+01:50:05 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+01:50:05 - StarvellBot - INFO - ============================================================
+01:50:05 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+01:50:05 - StarvellBot - INFO - 📱 Инициализация Telegram Manager...
+01:50:06 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+01:50:06 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+01:50:06 - StarvellBot - INFO - ============================================================
+01:50:06 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+01:50:06 - StarvellBot - INFO - ============================================================
+01:50:06 - StarvellBot - INFO - 
+01:50:06 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+01:50:06 - StarvellBot - INFO - 🎛️ Доступные команды:
+01:50:06 - StarvellBot - INFO -    /start - начать работу
+01:50:06 - StarvellBot - INFO -    /services - управление службами
+01:50:06 - StarvellBot - INFO -    /config - редактирование настроек
+01:50:06 - StarvellBot - INFO -    /status - статус служб
+01:50:06 - StarvellBot - INFO -    /help - справка
+01:50:06 - StarvellBot - INFO - 
+01:50:06 - StarvellBot - INFO - ============================================================
+01:51:29 - StarvellBot - INFO - 👋 Завершение работы...
+01:51:29 - StarvellBot - INFO - ⏸ Остановка по Ctrl+C

@@ -1,0 +1,529 @@
+16:56:17 - StarvellBot - INFO - ✅ Логирование настроено
+16:56:17 - StarvellBot - INFO - ============================================================
+16:56:17 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+16:56:17 - StarvellBot - INFO - ============================================================
+16:56:17 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+16:56:17 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+16:56:19 - pyrogram.crypto.aes - WARNING - TgCrypto is missing! Pyrogram will work the same, but at a much slower speed. More info: https://docs.pyrogram.org/topics/speedups
+16:56:19 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+16:56:19 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+16:56:19 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+16:56:19 - StarvellBot - INFO - ============================================================
+16:56:19 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+16:56:19 - StarvellBot - INFO - ============================================================
+16:56:19 - StarvellBot - INFO - 
+16:56:19 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+16:56:19 - StarvellBot - INFO - 🎛️ Доступные команды:
+16:56:19 - StarvellBot - INFO -    /start - начать работу
+16:56:19 - StarvellBot - INFO -    /services - управление службами
+16:56:19 - StarvellBot - INFO -    /config - редактирование настроек
+16:56:19 - StarvellBot - INFO -    /status - статус служб
+16:56:19 - StarvellBot - INFO -    /help - справка
+16:56:19 - StarvellBot - INFO - 
+16:56:19 - StarvellBot - INFO - ============================================================
+16:56:19 - aiogram.dispatcher - INFO - Start polling
+16:56:19 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+16:56:19 - pyrogram.connection.connection - INFO - Connecting...
+16:56:19 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+16:56:19 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+16:56:21 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+16:56:21 - pyrogram.connection.connection - INFO - Disconnected
+16:56:21 - pyrogram.connection.connection - INFO - Connecting...
+16:56:21 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+16:56:21 - pyrogram.session.session - INFO - NetworkTask started
+16:56:21 - pyrogram.client - INFO - Time synced: 2026-02-27 16:56:22.005512
+16:56:21 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+16:56:21 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+16:56:21 - pyrogram.session.session - INFO - System: Windows 10 (en)
+16:56:21 - pyrogram.session.session - INFO - Session started
+16:56:21 - pyrogram.session.session - INFO - PingTask started
+16:56:48 - aiogram.event - INFO - Update id=826344009 is not handled. Duration 0 ms by bot id=8298689795
+16:56:49 - aiogram.event - INFO - Update id=826344010 is handled. Duration 209 ms by bot id=8298689795
+16:56:51 - aiogram.event - INFO - Update id=826344011 is handled. Duration 152 ms by bot id=8298689795
+16:56:52 - aiogram.event - INFO - Update id=826344012 is handled. Duration 283 ms by bot id=8298689795
+16:56:53 - aiogram.event - INFO - Update id=826344013 is handled. Duration 153 ms by bot id=8298689795
+16:56:54 - aiogram.event - INFO - Update id=826344014 is handled. Duration 203 ms by bot id=8298689795
+16:56:55 - aiogram.event - INFO - Update id=826344015 is handled. Duration 252 ms by bot id=8298689795
+16:56:57 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:56:57 - aiogram.event - INFO - Update id=826344016 is handled. Duration 162 ms by bot id=8298689795
+16:56:58 - aiogram.event - INFO - Update id=826344017 is handled. Duration 163 ms by bot id=8298689795
+16:57:06 - aiogram.event - INFO - Update id=826344018 is handled. Duration 168 ms by bot id=8298689795
+16:57:10 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:57:10 - aiogram.event - INFO - Update id=826344019 is handled. Duration 165 ms by bot id=8298689795
+16:57:20 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:57:20 - aiogram.event - INFO - Update id=826344020 is handled. Duration 183 ms by bot id=8298689795
+16:57:21 - aiogram.event - INFO - Update id=826344021 is handled. Duration 180 ms by bot id=8298689795
+16:57:32 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:57:32 - aiogram.event - INFO - Update id=826344022 is handled. Duration 202 ms by bot id=8298689795
+16:57:54 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:57:54 - aiogram.event - INFO - Update id=826344023 is handled. Duration 169 ms by bot id=8298689795
+16:57:58 - aiogram.event - INFO - Update id=826344024 is handled. Duration 189 ms by bot id=8298689795
+16:58:02 - aiogram.event - INFO - Update id=826344025 is handled. Duration 167 ms by bot id=8298689795
+16:58:04 - aiogram.event - INFO - Update id=826344026 is handled. Duration 169 ms by bot id=8298689795
+16:58:05 - aiogram.event - INFO - Update id=826344027 is handled. Duration 155 ms by bot id=8298689795
+16:58:18 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:58:18 - aiogram.event - INFO - Update id=826344028 is handled. Duration 309 ms by bot id=8298689795
+16:58:34 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:58:35 - aiogram.event - INFO - Update id=826344029 is handled. Duration 192 ms by bot id=8298689795
+16:59:30 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:59:30 - aiogram.event - INFO - Update id=826344030 is handled. Duration 245 ms by bot id=8298689795
+16:59:41 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+16:59:41 - aiogram.event - INFO - Update id=826344031 is handled. Duration 171 ms by bot id=8298689795
+16:59:54 - aiogram.event - INFO - Update id=826344032 is handled. Duration 207 ms by bot id=8298689795
+17:00:03 - aiogram.event - INFO - Update id=826344033 is handled. Duration 192 ms by bot id=8298689795
+17:00:08 - aiogram.event - INFO - Update id=826344034 is handled. Duration 234 ms by bot id=8298689795
+17:00:13 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:00:13 - aiogram.event - INFO - Update id=826344035 is handled. Duration 265 ms by bot id=8298689795
+17:00:20 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:00:20 - aiogram.event - INFO - Update id=826344036 is handled. Duration 204 ms by bot id=8298689795
+17:00:24 - aiogram.event - INFO - Update id=826344037 is handled. Duration 215 ms by bot id=8298689795
+17:00:30 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:00:31 - aiogram.event - INFO - Update id=826344038 is handled. Duration 190 ms by bot id=8298689795
+17:00:40 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:00:40 - aiogram.event - INFO - Update id=826344039 is handled. Duration 204 ms by bot id=8298689795
+17:00:44 - aiogram.event - INFO - Update id=826344040 is handled. Duration 169 ms by bot id=8298689795
+17:00:49 - aiogram.event - INFO - Update id=826344041 is handled. Duration 201 ms by bot id=8298689795
+17:00:52 - aiogram.event - INFO - Update id=826344042 is handled. Duration 387 ms by bot id=8298689795
+17:00:54 - aiogram.event - INFO - Update id=826344043 is handled. Duration 541 ms by bot id=8298689795
+17:00:55 - aiogram.event - INFO - Update id=826344044 is handled. Duration 166 ms by bot id=8298689795
+17:00:57 - aiogram.event - INFO - Update id=826344045 is handled. Duration 168 ms by bot id=8298689795
+17:00:58 - aiogram.event - INFO - Update id=826344046 is handled. Duration 152 ms by bot id=8298689795
+17:01:03 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:01:03 - aiogram.event - INFO - Update id=826344047 is handled. Duration 181 ms by bot id=8298689795
+17:01:05 - aiogram.event - INFO - Update id=826344048 is handled. Duration 158 ms by bot id=8298689795
+17:01:09 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:01:09 - aiogram.event - INFO - Update id=826344049 is handled. Duration 187 ms by bot id=8298689795
+17:01:11 - aiogram.event - INFO - Update id=826344050 is handled. Duration 157 ms by bot id=8298689795
+17:01:22 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+17:01:23 - aiogram.event - INFO - Update id=826344051 is handled. Duration 179 ms by bot id=8298689795
+17:01:25 - aiogram.event - INFO - Update id=826344052 is handled. Duration 150 ms by bot id=8298689795
+18:20:02 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+18:20:02 - pyrogram.session.session - INFO - NetworkTask stopped
+18:20:02 - pyrogram.session.session - INFO - PingTask stopped
+18:20:02 - pyrogram.connection.connection - INFO - Disconnected
+18:20:02 - pyrogram.session.session - INFO - Session stopped
+18:20:02 - pyrogram.connection.connection - INFO - Connecting...
+18:20:02 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+18:20:02 - pyrogram.session.session - INFO - NetworkTask started
+18:20:02 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+18:20:02 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+18:20:02 - pyrogram.session.session - INFO - System: Windows 10 (en)
+18:20:02 - pyrogram.session.session - INFO - Session started
+18:20:02 - pyrogram.session.session - INFO - PingTask started
+19:18:11 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+19:18:11 - pyrogram.session.session - INFO - NetworkTask stopped
+19:18:11 - pyrogram.session.session - INFO - PingTask stopped
+19:18:11 - pyrogram.connection.connection - INFO - Disconnected
+19:18:11 - pyrogram.session.session - INFO - Session stopped
+19:18:11 - pyrogram.connection.connection - INFO - Connecting...
+19:18:11 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+19:18:11 - pyrogram.session.session - INFO - NetworkTask started
+19:18:11 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+19:18:11 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+19:18:11 - pyrogram.session.session - INFO - System: Windows 10 (en)
+19:18:11 - pyrogram.session.session - INFO - Session started
+19:18:11 - pyrogram.session.session - INFO - PingTask started
+20:22:03 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+20:22:03 - pyrogram.session.session - INFO - NetworkTask stopped
+20:22:03 - pyrogram.session.session - INFO - PingTask stopped
+20:22:03 - pyrogram.connection.connection - INFO - Disconnected
+20:22:03 - pyrogram.session.session - INFO - Session stopped
+20:22:03 - pyrogram.connection.connection - INFO - Connecting...
+20:22:06 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:22:06 - pyrogram.session.session - INFO - NetworkTask started
+20:22:06 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+20:22:06 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+20:22:06 - pyrogram.session.session - INFO - System: Windows 10 (en)
+20:22:06 - pyrogram.session.session - INFO - Session started
+20:22:06 - pyrogram.session.session - INFO - PingTask started
+20:33:17 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+20:33:17 - pyrogram.session.session - INFO - NetworkTask stopped
+20:33:17 - pyrogram.session.session - INFO - PingTask stopped
+20:33:17 - pyrogram.connection.connection - INFO - Disconnected
+20:33:17 - pyrogram.session.session - INFO - Session stopped
+20:33:17 - pyrogram.connection.connection - INFO - Connecting...
+20:33:22 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:33:22 - pyrogram.session.session - INFO - NetworkTask started
+20:33:23 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+20:33:23 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+20:33:23 - pyrogram.session.session - INFO - System: Windows 10 (en)
+20:33:23 - pyrogram.session.session - INFO - Session started
+20:33:23 - pyrogram.session.session - INFO - PingTask started
+20:58:25 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+20:58:25 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:25 - pyrogram.session.session - INFO - PingTask stopped
+20:58:25 - pyrogram.connection.connection - INFO - Disconnected
+20:58:25 - pyrogram.session.session - INFO - Session stopped
+20:58:25 - pyrogram.connection.connection - INFO - Connecting...
+20:58:25 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:25 - pyrogram.session.session - INFO - NetworkTask started
+20:58:27 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:27 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:27 - pyrogram.connection.connection - INFO - Disconnected
+20:58:27 - pyrogram.session.session - INFO - Session stopped
+20:58:27 - pyrogram.connection.connection - INFO - Connecting...
+20:58:27 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:27 - pyrogram.session.session - INFO - NetworkTask started
+20:58:29 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:29 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:29 - pyrogram.connection.connection - INFO - Disconnected
+20:58:29 - pyrogram.session.session - INFO - Session stopped
+20:58:29 - pyrogram.connection.connection - INFO - Connecting...
+20:58:30 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:30 - pyrogram.session.session - INFO - NetworkTask started
+20:58:32 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:32 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:32 - pyrogram.connection.connection - INFO - Disconnected
+20:58:32 - pyrogram.session.session - INFO - Session stopped
+20:58:32 - pyrogram.connection.connection - INFO - Connecting...
+20:58:32 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:32 - pyrogram.session.session - INFO - NetworkTask started
+20:58:34 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:34 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:34 - pyrogram.connection.connection - INFO - Disconnected
+20:58:34 - pyrogram.session.session - INFO - Session stopped
+20:58:34 - pyrogram.connection.connection - INFO - Connecting...
+20:58:34 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:34 - pyrogram.session.session - INFO - NetworkTask started
+20:58:36 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:36 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:36 - pyrogram.connection.connection - INFO - Disconnected
+20:58:36 - pyrogram.session.session - INFO - Session stopped
+20:58:36 - pyrogram.connection.connection - INFO - Connecting...
+20:58:36 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:36 - pyrogram.session.session - INFO - NetworkTask started
+20:58:38 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:38 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:38 - pyrogram.connection.connection - INFO - Disconnected
+20:58:38 - pyrogram.session.session - INFO - Session stopped
+20:58:38 - pyrogram.connection.connection - INFO - Connecting...
+20:58:38 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:38 - pyrogram.session.session - INFO - NetworkTask started
+20:58:40 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:40 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:40 - pyrogram.connection.connection - INFO - Disconnected
+20:58:40 - pyrogram.session.session - INFO - Session stopped
+20:58:40 - pyrogram.connection.connection - INFO - Connecting...
+20:58:40 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:40 - pyrogram.session.session - INFO - NetworkTask started
+20:58:42 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:42 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:42 - pyrogram.connection.connection - INFO - Disconnected
+20:58:42 - pyrogram.session.session - INFO - Session stopped
+20:58:42 - pyrogram.connection.connection - INFO - Connecting...
+20:58:42 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:42 - pyrogram.session.session - INFO - NetworkTask started
+20:58:44 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:44 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:44 - pyrogram.connection.connection - INFO - Disconnected
+20:58:44 - pyrogram.session.session - INFO - Session stopped
+20:58:44 - pyrogram.connection.connection - INFO - Connecting...
+20:58:44 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:44 - pyrogram.session.session - INFO - NetworkTask started
+20:58:46 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:46 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:46 - pyrogram.connection.connection - INFO - Disconnected
+20:58:46 - pyrogram.session.session - INFO - Session stopped
+20:58:46 - pyrogram.connection.connection - INFO - Connecting...
+20:58:46 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:46 - pyrogram.session.session - INFO - NetworkTask started
+20:58:48 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:48 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:48 - pyrogram.connection.connection - INFO - Disconnected
+20:58:48 - pyrogram.session.session - INFO - Session stopped
+20:58:48 - pyrogram.connection.connection - INFO - Connecting...
+20:58:48 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:48 - pyrogram.session.session - INFO - NetworkTask started
+20:58:50 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:50 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:50 - pyrogram.connection.connection - INFO - Disconnected
+20:58:50 - pyrogram.session.session - INFO - Session stopped
+20:58:50 - pyrogram.connection.connection - INFO - Connecting...
+20:58:50 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:50 - pyrogram.session.session - INFO - NetworkTask started
+20:58:52 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:52 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:52 - pyrogram.connection.connection - INFO - Disconnected
+20:58:52 - pyrogram.session.session - INFO - Session stopped
+20:58:52 - pyrogram.connection.connection - INFO - Connecting...
+20:58:52 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:52 - pyrogram.session.session - INFO - NetworkTask started
+20:58:54 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:54 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:54 - pyrogram.connection.connection - INFO - Disconnected
+20:58:54 - pyrogram.session.session - INFO - Session stopped
+20:58:54 - pyrogram.connection.connection - INFO - Connecting...
+20:58:54 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:54 - pyrogram.session.session - INFO - NetworkTask started
+20:58:56 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:56 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:56 - pyrogram.connection.connection - INFO - Disconnected
+20:58:56 - pyrogram.session.session - INFO - Session stopped
+20:58:56 - pyrogram.connection.connection - INFO - Connecting...
+20:58:56 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:56 - pyrogram.session.session - INFO - NetworkTask started
+20:58:58 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:58:58 - pyrogram.session.session - INFO - NetworkTask stopped
+20:58:58 - pyrogram.connection.connection - INFO - Disconnected
+20:58:58 - pyrogram.session.session - INFO - Session stopped
+20:58:58 - pyrogram.connection.connection - INFO - Connecting...
+20:58:59 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:58:59 - pyrogram.session.session - INFO - NetworkTask started
+20:59:01 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:01 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:01 - pyrogram.connection.connection - INFO - Disconnected
+20:59:01 - pyrogram.session.session - INFO - Session stopped
+20:59:01 - pyrogram.connection.connection - INFO - Connecting...
+20:59:01 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:01 - pyrogram.session.session - INFO - NetworkTask started
+20:59:03 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:03 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:03 - pyrogram.connection.connection - INFO - Disconnected
+20:59:03 - pyrogram.session.session - INFO - Session stopped
+20:59:03 - pyrogram.connection.connection - INFO - Connecting...
+20:59:03 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:03 - pyrogram.session.session - INFO - NetworkTask started
+20:59:05 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:05 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:05 - pyrogram.connection.connection - INFO - Disconnected
+20:59:05 - pyrogram.session.session - INFO - Session stopped
+20:59:05 - pyrogram.connection.connection - INFO - Connecting...
+20:59:05 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:05 - pyrogram.session.session - INFO - NetworkTask started
+20:59:07 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:07 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:07 - pyrogram.connection.connection - INFO - Disconnected
+20:59:07 - pyrogram.session.session - INFO - Session stopped
+20:59:07 - pyrogram.connection.connection - INFO - Connecting...
+20:59:07 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:07 - pyrogram.session.session - INFO - NetworkTask started
+20:59:09 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:09 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:09 - pyrogram.connection.connection - INFO - Disconnected
+20:59:09 - pyrogram.session.session - INFO - Session stopped
+20:59:09 - pyrogram.connection.connection - INFO - Connecting...
+20:59:09 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:09 - pyrogram.session.session - INFO - NetworkTask started
+20:59:11 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:11 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:11 - pyrogram.connection.connection - INFO - Disconnected
+20:59:11 - pyrogram.session.session - INFO - Session stopped
+20:59:11 - pyrogram.connection.connection - INFO - Connecting...
+20:59:11 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:11 - pyrogram.session.session - INFO - NetworkTask started
+20:59:13 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:13 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:13 - pyrogram.connection.connection - INFO - Disconnected
+20:59:13 - pyrogram.session.session - INFO - Session stopped
+20:59:13 - pyrogram.connection.connection - INFO - Connecting...
+20:59:13 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:13 - pyrogram.session.session - INFO - NetworkTask started
+20:59:15 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:15 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:15 - pyrogram.connection.connection - INFO - Disconnected
+20:59:15 - pyrogram.session.session - INFO - Session stopped
+20:59:15 - pyrogram.connection.connection - INFO - Connecting...
+20:59:15 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:15 - pyrogram.session.session - INFO - NetworkTask started
+20:59:17 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:17 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:17 - pyrogram.connection.connection - INFO - Disconnected
+20:59:17 - pyrogram.session.session - INFO - Session stopped
+20:59:17 - pyrogram.connection.connection - INFO - Connecting...
+20:59:17 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:17 - pyrogram.session.session - INFO - NetworkTask started
+20:59:19 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:19 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:19 - pyrogram.connection.connection - INFO - Disconnected
+20:59:19 - pyrogram.session.session - INFO - Session stopped
+20:59:19 - pyrogram.connection.connection - INFO - Connecting...
+20:59:19 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:19 - pyrogram.session.session - INFO - NetworkTask started
+20:59:21 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:21 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:21 - pyrogram.connection.connection - INFO - Disconnected
+20:59:21 - pyrogram.session.session - INFO - Session stopped
+20:59:21 - pyrogram.connection.connection - INFO - Connecting...
+20:59:21 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:21 - pyrogram.session.session - INFO - NetworkTask started
+20:59:23 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:23 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:23 - pyrogram.connection.connection - INFO - Disconnected
+20:59:23 - pyrogram.session.session - INFO - Session stopped
+20:59:23 - pyrogram.connection.connection - INFO - Connecting...
+20:59:23 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:23 - pyrogram.session.session - INFO - NetworkTask started
+20:59:25 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:25 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:25 - pyrogram.connection.connection - INFO - Disconnected
+20:59:25 - pyrogram.session.session - INFO - Session stopped
+20:59:25 - pyrogram.connection.connection - INFO - Connecting...
+20:59:25 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:25 - pyrogram.session.session - INFO - NetworkTask started
+20:59:27 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:27 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:27 - pyrogram.connection.connection - INFO - Disconnected
+20:59:27 - pyrogram.session.session - INFO - Session stopped
+20:59:27 - pyrogram.connection.connection - INFO - Connecting...
+20:59:28 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:28 - pyrogram.session.session - INFO - NetworkTask started
+20:59:30 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:30 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:30 - pyrogram.connection.connection - INFO - Disconnected
+20:59:30 - pyrogram.session.session - INFO - Session stopped
+20:59:30 - pyrogram.connection.connection - INFO - Connecting...
+20:59:30 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:30 - pyrogram.session.session - INFO - NetworkTask started
+20:59:32 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:32 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:32 - pyrogram.connection.connection - INFO - Disconnected
+20:59:32 - pyrogram.session.session - INFO - Session stopped
+20:59:32 - pyrogram.connection.connection - INFO - Connecting...
+20:59:32 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:32 - pyrogram.session.session - INFO - NetworkTask started
+20:59:34 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:34 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:34 - pyrogram.connection.connection - INFO - Disconnected
+20:59:34 - pyrogram.session.session - INFO - Session stopped
+20:59:34 - pyrogram.connection.connection - INFO - Connecting...
+20:59:34 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:34 - pyrogram.session.session - INFO - NetworkTask started
+20:59:36 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:36 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:36 - pyrogram.connection.connection - INFO - Disconnected
+20:59:36 - pyrogram.session.session - INFO - Session stopped
+20:59:36 - pyrogram.connection.connection - INFO - Connecting...
+20:59:36 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:36 - pyrogram.session.session - INFO - NetworkTask started
+20:59:38 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:38 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:38 - pyrogram.connection.connection - INFO - Disconnected
+20:59:38 - pyrogram.session.session - INFO - Session stopped
+20:59:38 - pyrogram.connection.connection - INFO - Connecting...
+20:59:38 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:38 - pyrogram.session.session - INFO - NetworkTask started
+20:59:40 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:40 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:40 - pyrogram.connection.connection - INFO - Disconnected
+20:59:40 - pyrogram.session.session - INFO - Session stopped
+20:59:40 - pyrogram.connection.connection - INFO - Connecting...
+20:59:40 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:40 - pyrogram.session.session - INFO - NetworkTask started
+20:59:42 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:42 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:42 - pyrogram.connection.connection - INFO - Disconnected
+20:59:42 - pyrogram.session.session - INFO - Session stopped
+20:59:42 - pyrogram.connection.connection - INFO - Connecting...
+20:59:42 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:42 - pyrogram.session.session - INFO - NetworkTask started
+20:59:44 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:44 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:44 - pyrogram.connection.connection - INFO - Disconnected
+20:59:44 - pyrogram.session.session - INFO - Session stopped
+20:59:44 - pyrogram.connection.connection - INFO - Connecting...
+20:59:44 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:44 - pyrogram.session.session - INFO - NetworkTask started
+20:59:46 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:46 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:46 - pyrogram.connection.connection - INFO - Disconnected
+20:59:46 - pyrogram.session.session - INFO - Session stopped
+20:59:46 - pyrogram.connection.connection - INFO - Connecting...
+20:59:46 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:46 - pyrogram.session.session - INFO - NetworkTask started
+20:59:48 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:48 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:48 - pyrogram.connection.connection - INFO - Disconnected
+20:59:48 - pyrogram.session.session - INFO - Session stopped
+20:59:48 - pyrogram.connection.connection - INFO - Connecting...
+20:59:48 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:48 - pyrogram.session.session - INFO - NetworkTask started
+20:59:50 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:50 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:50 - pyrogram.connection.connection - INFO - Disconnected
+20:59:50 - pyrogram.session.session - INFO - Session stopped
+20:59:50 - pyrogram.connection.connection - INFO - Connecting...
+20:59:50 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:50 - pyrogram.session.session - INFO - NetworkTask started
+20:59:52 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:52 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:52 - pyrogram.connection.connection - INFO - Disconnected
+20:59:52 - pyrogram.session.session - INFO - Session stopped
+20:59:52 - pyrogram.connection.connection - INFO - Connecting...
+20:59:52 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:52 - pyrogram.session.session - INFO - NetworkTask started
+20:59:54 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:54 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:54 - pyrogram.connection.connection - INFO - Disconnected
+20:59:54 - pyrogram.session.session - INFO - Session stopped
+20:59:54 - pyrogram.connection.connection - INFO - Connecting...
+20:59:54 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:54 - pyrogram.session.session - INFO - NetworkTask started
+20:59:56 - pyrogram.session.session - INFO - Restarting session due to - TimeoutError - Request timed out
+20:59:56 - pyrogram.session.session - INFO - NetworkTask stopped
+20:59:56 - pyrogram.connection.connection - INFO - Disconnected
+20:59:56 - pyrogram.session.session - INFO - Session stopped
+20:59:56 - pyrogram.connection.connection - INFO - Connecting...
+20:59:57 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+20:59:57 - pyrogram.session.session - INFO - NetworkTask started
+20:59:57 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+20:59:57 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+20:59:57 - pyrogram.session.session - INFO - System: Windows 10 (en)
+20:59:57 - pyrogram.session.session - INFO - Session started
+20:59:57 - pyrogram.session.session - INFO - PingTask started
+22:35:06 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+22:35:06 - pyrogram.session.session - INFO - NetworkTask stopped
+22:35:06 - pyrogram.session.session - INFO - PingTask stopped
+22:35:06 - pyrogram.connection.connection - INFO - Disconnected
+22:35:06 - pyrogram.session.session - INFO - Session stopped
+22:35:06 - pyrogram.connection.connection - INFO - Connecting...
+22:35:06 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+22:35:06 - pyrogram.session.session - INFO - NetworkTask started
+22:35:06 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+22:35:06 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+22:35:06 - pyrogram.session.session - INFO - System: Windows 10 (en)
+22:35:06 - pyrogram.session.session - INFO - Session started
+22:35:06 - pyrogram.session.session - INFO - PingTask started
+22:55:36 - aiogram.event - INFO - Update id=826344053 is handled. Duration 274 ms by bot id=8298689795
+22:55:38 - aiogram.event - INFO - Update id=826344054 is handled. Duration 240 ms by bot id=8298689795
+22:56:09 - aiogram.event - INFO - Update id=826344055 is handled. Duration 172 ms by bot id=8298689795
+22:56:11 - aiogram.event - INFO - Update id=826344056 is handled. Duration 156 ms by bot id=8298689795
+00:40:16 - pyrogram.session.session - INFO - Restarting session due to - Server sent a null packet.
+00:40:16 - pyrogram.session.session - INFO - NetworkTask stopped
+00:40:16 - pyrogram.session.session - INFO - PingTask stopped
+00:40:16 - pyrogram.connection.connection - INFO - Disconnected
+00:40:16 - pyrogram.session.session - INFO - Session stopped
+00:40:16 - pyrogram.connection.connection - INFO - Connecting...
+00:40:16 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+00:40:16 - pyrogram.session.session - INFO - NetworkTask started
+00:40:16 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+00:40:16 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+00:40:16 - pyrogram.session.session - INFO - System: Windows 10 (en)
+00:40:16 - pyrogram.session.session - INFO - Session started
+00:40:16 - pyrogram.session.session - INFO - PingTask started
+02:06:56 - aiogram.dispatcher - INFO - Polling stopped
+02:06:56 - pyrogram.session.session - INFO - PingTask stopped
+02:06:56 - pyrogram.session.session - INFO - NetworkTask stopped
+02:06:56 - pyrogram.connection.connection - INFO - Disconnected
+02:06:56 - pyrogram.session.session - INFO - Session stopped
+02:06:56 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<StarsAPIGiver.init_sessions() done, defined at C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py:23> exception=UnicodeDecodeError('utf-8', b'\xff', 0, 1, 'invalid start byte')>
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 27, in init_sessions
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 31, in get_star_balance
+    self.flags[session] = 0
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\client.py", line 441, in __aenter__
+    return await self.start()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\methods\utilities\start.py", line 89, in start
+    await self.authorize()
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\client.py", line 474, in authorize
+    value = await ainput("Enter phone number or bot token: ", loop=self.loop)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\utils.py", line 57, in ainput
+    return await loop.run_in_executor(executor, func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "<frozen codecs>", line 325, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte

@@ -1,0 +1,2260 @@
+19:18:16 - StarvellBot - INFO - ✅ Логирование настроено
+19:18:16 - StarvellBot - INFO - ============================================================
+19:18:16 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+19:18:16 - StarvellBot - INFO - ============================================================
+19:18:16 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+19:18:16 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+19:18:17 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+19:18:17 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+19:18:17 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+19:18:17 - StarvellBot - INFO - ============================================================
+19:18:17 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+19:18:17 - StarvellBot - INFO - ============================================================
+19:18:17 - StarvellBot - INFO - 
+19:18:17 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+19:18:17 - StarvellBot - INFO - 🎛️ Доступные команды:
+19:18:17 - StarvellBot - INFO -    /start - начать работу
+19:18:17 - StarvellBot - INFO -    /services - управление службами
+19:18:17 - StarvellBot - INFO -    /config - редактирование настроек
+19:18:17 - StarvellBot - INFO -    /status - статус служб
+19:18:17 - StarvellBot - INFO -    /help - справка
+19:18:17 - StarvellBot - INFO - 
+19:18:17 - StarvellBot - INFO - ============================================================
+19:18:17 - aiogram.dispatcher - INFO - Start polling
+19:18:17 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+19:18:17 - aiogram.event - INFO - Update id=826343659 is handled. Duration 237 ms by bot id=8298689795
+19:18:18 - aiogram.event - INFO - Update id=826343660 is handled. Duration 116 ms by bot id=8298689795
+19:18:19 - aiogram.event - INFO - Update id=826343661 is handled. Duration 168 ms by bot id=8298689795
+19:18:20 - aiogram.event - INFO - Update id=826343662 is handled. Duration 326 ms by bot id=8298689795
+19:18:20 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+19:18:21 - StarvellBot - INFO - 🟢 WebSocket connected
+19:18:21 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+19:18:21 - StarvellBot - INFO - ⬅️  0{"sid":"X6YPPW0FIsViT25VANSF","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+19:18:21 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+19:18:21 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+19:18:21 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+19:18:21 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+19:18:21 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+19:18:21 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"AzXgBanJkJJfZ3NtANSG"}
+19:18:21 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"GB7x4rsCSuuGZNG8ANSH"}
+19:18:21 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"-n7y_X-MpgQYDQhoANSI"}
+19:18:21 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"Lv7Nhv6hjwLjfkxQANSJ"}
+19:18:21 - StarvellBot - INFO - ⬅️  40/online,{"sid":"jL8i3IUz0Migk3fdANSK"}
+19:18:21 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+19:18:21 - aiogram.event - INFO - Update id=826343663 is handled. Duration 937 ms by bot id=8298689795
+19:18:46 - StarvellBot - INFO - ⬅️  2
+19:18:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:18:56 - StarvellBot - INFO - Успешно парсили ордеры
+19:19:04 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c","delta":1}]
+19:19:04 - StarvellBot - INFO - 🛒 NEW ORDER!
+19:19:04 - StarvellBot - INFO - Order ID: 019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c
+19:19:04 - StarvellBot - INFO - ⚙️  Processing order 019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c...
+19:19:05 - StarvellBot - INFO - ⭐ Звёзд в заказе: 50
+19:19:05 - StarvellBot - INFO - 📝 Введённый username: ezhiqq
+19:19:05 - StarvellBot - INFO - ============================================================
+19:19:05 - StarvellBot - INFO - 📦 Order ID: 019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c
+19:19:05 - StarvellBot - INFO - 💰 Total Price: 5600
+19:19:05 - StarvellBot - INFO - 🔢 Quantity: 1
+19:19:05 - StarvellBot - INFO - ⭐ Stars: 50
+19:19:05 - StarvellBot - INFO - 👤 Buyer ID: 152876
+19:19:05 - StarvellBot - INFO - 📝 Telegram Username (entered): ezhiqq
+19:19:05 - StarvellBot - INFO - 💬 Chat ID: 019c2109-ea20-da88-5085-3849eef57778
+19:19:05 - StarvellBot - INFO - ============================================================
+19:19:05 - StarvellBot - INFO - ✅ Order 019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c updated in database
+19:19:05 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019c9598-cd62-e203-5f84-01bc2a22febf","content":"","type":"NOTIFICATION","metadata":{"orderId":"019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c","notificationType":"ORDER_PAYMENT"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-02-25T16:19:05.138Z","updatedAt":"2026-02-25T16:19:05.138Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":null,"admin":null,"order":{"id":"019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c","quantity":1,"totalPrice":5600,"status":"CREATED","refundedAt":null,"refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"c08b9c8b-c7a3-4cb5-b853-ad20252e3dc2","nameRu":"По username"},"nameRu":"Способ получения"}],"subCategory":{"id":643,"name":"50 звёзд"},"availability":99999790,"deliveryTime":{"to":{"unit":"MINUTES","value":1},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"🔹 Отправка: Автоматически 24/7 🌟\n🔹 Комиссия: Нет — приходит ровно столько, сколько куплено\n🔹 Источник: Официально\n🔹 Надёжность: Бот не падает под нагрузкой 🍕\n\n⚠️ Обратите внимание:\n1️⃣ Не нужно писать «вы тут?», «можно купить?» — товар всегда в наличии. Создавайте заказ и оплачивайте сразу.\n2️⃣ Чтобы купить много звёзд, используйте кнопку «Купить несколько штук» (например: 50 ⭐ × 4 = 200 ⭐).\n3️⃣ Иногда бот может не ответить в чате из-за ограничений Starvell, но заказ всё равно выполняется автоматически. После получения — подтвердите выполнение.\n4️⃣ После создания заказа бот запросит ваш Telegram @username. Если у вас он не установлен — добавьте в настройках профиля.\n5️⃣ Звёзды приходят автоматически на указанный @username и сразу становятся доступными 🎉\n\n🐬Чтоб позвать меня используй команду /вызов *Ваше Сообщение*"}},"instantDelivery":false}}}]
+19:19:05 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-02-25T16:19:05.342Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+19:19:05 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019c9598-d179-1acc-1a87-3fc9bf3f49a1","content":"🧾 Ваш заказ:\n#️⃣ ID: 019c9594-81ad-a2a9-0ec6-bfbfe0a92c3c\n👤 Username: ezhiqq\n⭐ Stars: 50 | 1 шт.\n\nВсе верно?\n✅ Да (+) | Нет (-) ❌","type":"DEFAULT","metadata":null,"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-02-25T16:19:06.233Z","updatedAt":"2026-02-25T16:19:06.233Z","author":{"id":139527,"username":"Bronto","roles":[]},"buyer":null,"seller":null,"admin":null,"order":null}]
+19:19:05 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-02-25T16:19:06.353Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+19:19:06 - StarvellBot - INFO - пропустили
+19:19:11 - StarvellBot - INFO - ⬅️  2
+19:19:17 - StarvellBot - INFO - пропустили
+19:19:28 - StarvellBot - INFO - пропустили
+19:19:36 - StarvellBot - INFO - ⬅️  2
+19:19:38 - StarvellBot - INFO - пропустили
+19:19:49 - StarvellBot - INFO - пропустили
+19:20:02 - StarvellBot - INFO - ⬅️  2
+19:20:02 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:20:02 - StarvellBot - INFO - пропустили
+19:20:02 - StarvellBot - INFO - Успешно парсили ордеры
+19:20:13 - StarvellBot - INFO - пропустили
+19:20:23 - StarvellBot - INFO - пропустили
+19:20:27 - StarvellBot - INFO - ⬅️  2
+19:20:34 - StarvellBot - INFO - пропустили
+19:20:45 - StarvellBot - INFO - пропустили
+19:20:52 - StarvellBot - INFO - ⬅️  2
+19:20:55 - StarvellBot - INFO - пропустили
+19:21:08 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:21:08 - StarvellBot - INFO - пропустили
+19:21:08 - StarvellBot - INFO - Успешно парсили ордеры
+19:21:17 - StarvellBot - INFO - ⬅️  2
+19:21:19 - StarvellBot - INFO - пропустили
+19:21:29 - StarvellBot - INFO - пропустили
+19:21:40 - StarvellBot - INFO - пропустили
+19:21:42 - StarvellBot - INFO - ⬅️  2
+19:21:54 - StarvellBot - INFO - пропустили
+19:22:05 - StarvellBot - INFO - пропустили
+19:22:07 - StarvellBot - INFO - ⬅️  2
+19:22:14 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:22:15 - StarvellBot - INFO - Успешно парсили ордеры
+19:22:16 - StarvellBot - INFO - пропустили
+19:22:26 - StarvellBot - INFO - пропустили
+19:22:32 - StarvellBot - INFO - ⬅️  2
+19:22:37 - StarvellBot - INFO - пропустили
+19:22:48 - StarvellBot - INFO - пропустили
+19:22:57 - StarvellBot - INFO - ⬅️  2
+19:22:59 - StarvellBot - INFO - пропустили
+19:23:09 - StarvellBot - INFO - пропустили
+19:23:22 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:23:22 - StarvellBot - INFO - пропустили
+19:23:22 - StarvellBot - INFO - Успешно парсили ордеры
+19:23:22 - StarvellBot - INFO - ⬅️  2
+19:23:33 - StarvellBot - INFO - пропустили
+19:23:43 - StarvellBot - INFO - пропустили
+19:23:48 - StarvellBot - INFO - ⬅️  2
+19:23:54 - StarvellBot - INFO - пропустили
+19:24:04 - StarvellBot - INFO - пропустили
+19:24:13 - StarvellBot - INFO - ⬅️  2
+19:24:15 - StarvellBot - INFO - пропустили
+19:24:28 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:24:28 - StarvellBot - INFO - пропустили
+19:24:28 - StarvellBot - INFO - Успешно парсили ордеры
+19:24:38 - StarvellBot - INFO - ⬅️  2
+19:24:39 - StarvellBot - INFO - пропустили
+19:24:49 - StarvellBot - INFO - пропустили
+19:25:00 - StarvellBot - INFO - пропустили
+19:25:03 - StarvellBot - INFO - ⬅️  2
+19:25:11 - StarvellBot - INFO - пропустили
+19:25:21 - StarvellBot - INFO - пропустили
+19:25:28 - StarvellBot - INFO - ⬅️  2
+19:25:34 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:25:35 - StarvellBot - INFO - пропустили
+19:25:35 - StarvellBot - INFO - Успешно парсили ордеры
+19:25:45 - StarvellBot - INFO - пропустили
+19:25:53 - StarvellBot - INFO - ⬅️  2
+19:25:56 - StarvellBot - INFO - пропустили
+19:26:06 - StarvellBot - INFO - пропустили
+19:26:17 - StarvellBot - INFO - пропустили
+19:26:18 - StarvellBot - INFO - ⬅️  2
+19:26:28 - StarvellBot - INFO - пропустили
+19:26:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:26:41 - StarvellBot - INFO - пропустили
+19:26:41 - StarvellBot - INFO - Успешно парсили ордеры
+19:26:43 - StarvellBot - INFO - ⬅️  2
+19:26:52 - StarvellBot - INFO - пропустили
+19:27:02 - StarvellBot - INFO - пропустили
+19:27:08 - StarvellBot - INFO - ⬅️  2
+19:27:13 - StarvellBot - INFO - пропустили
+19:27:24 - StarvellBot - INFO - пропустили
+19:27:34 - StarvellBot - INFO - ⬅️  2
+19:27:34 - StarvellBot - INFO - пропустили
+19:27:47 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:27:48 - StarvellBot - INFO - пропустили
+19:27:48 - StarvellBot - INFO - Успешно парсили ордеры
+19:27:58 - StarvellBot - INFO - пропустили
+19:27:59 - StarvellBot - INFO - ⬅️  2
+19:28:09 - StarvellBot - INFO - пропустили
+19:28:20 - StarvellBot - INFO - пропустили
+19:28:24 - StarvellBot - INFO - ⬅️  2
+19:28:30 - StarvellBot - INFO - пропустили
+19:28:41 - StarvellBot - INFO - пропустили
+19:28:53 - StarvellBot - INFO - ⬅️  2
+19:28:54 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:28:54 - StarvellBot - INFO - пропустили
+19:28:54 - StarvellBot - INFO - Успешно парсили ордеры
+19:29:05 - StarvellBot - INFO - пропустили
+19:29:15 - StarvellBot - INFO - пропустили
+19:29:18 - StarvellBot - INFO - ⬅️  2
+19:29:26 - StarvellBot - INFO - пропустили
+19:29:37 - StarvellBot - INFO - пропустили
+19:29:43 - StarvellBot - INFO - ⬅️  2
+19:29:47 - StarvellBot - INFO - пропустили
+19:30:00 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:30:00 - StarvellBot - INFO - пропустили
+19:30:00 - StarvellBot - INFO - Успешно парсили ордеры
+19:30:09 - StarvellBot - INFO - ⬅️  2
+19:30:11 - StarvellBot - INFO - пропустили
+19:30:21 - StarvellBot - INFO - пропустили
+19:30:32 - StarvellBot - INFO - пропустили
+19:30:34 - StarvellBot - INFO - ⬅️  2
+19:30:43 - StarvellBot - INFO - пропустили
+19:30:53 - StarvellBot - INFO - пропустили
+19:30:56 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019c95a3-ab3b-deb0-5159-2ec88b3cae22","content":"50 руб поставил чтобы не агрилось все норм","type":"DEFAULT","metadata":null,"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c433e-4ba9-48ac-9cd6-03c93b0adfc4","visibleTo":null,"createdAt":"2026-02-25T16:30:57.338Z","updatedAt":"2026-02-25T16:30:57.338Z","author":{"id":139527,"username":"Bronto","roles":[]},"buyer":null,"seller":null,"admin":null,"order":null}]
+19:30:57 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-02-25T16:30:57.494Z","chatId":"019c433e-4ba9-48ac-9cd6-03c93b0adfc4"}]
+19:30:59 - StarvellBot - INFO - ⬅️  2
+19:31:07 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:31:07 - StarvellBot - INFO - пропустили
+19:31:07 - StarvellBot - INFO - Успешно парсили ордеры
+19:31:18 - StarvellBot - INFO - пропустили
+19:31:24 - StarvellBot - INFO - ⬅️  2
+19:31:28 - StarvellBot - INFO - пропустили
+19:31:39 - StarvellBot - INFO - пропустили
+19:31:49 - StarvellBot - INFO - ⬅️  2
+19:31:49 - StarvellBot - INFO - пропустили
+19:32:00 - StarvellBot - INFO - пропустили
+19:32:13 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:32:14 - StarvellBot - INFO - пропустили
+19:32:14 - StarvellBot - INFO - Успешно парсили ордеры
+19:32:14 - StarvellBot - INFO - ⬅️  2
+19:32:24 - StarvellBot - INFO - пропустили
+19:32:35 - StarvellBot - INFO - пропустили
+19:32:39 - StarvellBot - INFO - ⬅️  2
+19:32:45 - StarvellBot - INFO - пропустили
+19:32:56 - StarvellBot - INFO - пропустили
+19:33:04 - StarvellBot - INFO - ⬅️  2
+19:33:07 - StarvellBot - INFO - пропустили
+19:33:19 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:33:20 - StarvellBot - INFO - пропустили
+19:33:20 - StarvellBot - INFO - Успешно парсили ордеры
+19:33:29 - StarvellBot - INFO - ⬅️  2
+19:33:30 - StarvellBot - INFO - пропустили
+19:33:41 - StarvellBot - INFO - пропустили
+19:33:52 - StarvellBot - INFO - пропустили
+19:33:54 - StarvellBot - INFO - ⬅️  2
+19:34:02 - StarvellBot - INFO - пропустили
+19:34:13 - StarvellBot - INFO - пропустили
+19:34:19 - StarvellBot - INFO - ⬅️  2
+19:34:26 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:34:26 - StarvellBot - INFO - пропустили
+19:34:27 - StarvellBot - INFO - Успешно парсили ордеры
+19:34:37 - StarvellBot - INFO - пропустили
+19:34:44 - StarvellBot - INFO - ⬅️  2
+19:34:47 - StarvellBot - INFO - пропустили
+19:34:58 - StarvellBot - INFO - пропустили
+19:35:09 - StarvellBot - INFO - пропустили
+19:35:09 - StarvellBot - INFO - ⬅️  2
+19:35:19 - StarvellBot - INFO - пропустили
+19:35:33 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:35:34 - StarvellBot - INFO - пропустили
+19:35:34 - StarvellBot - INFO - Успешно парсили ордеры
+19:35:35 - StarvellBot - INFO - ⬅️  2
+19:35:45 - StarvellBot - INFO - пропустили
+19:35:55 - StarvellBot - INFO - пропустили
+19:36:00 - StarvellBot - INFO - ⬅️  2
+19:36:06 - StarvellBot - INFO - пропустили
+19:36:17 - StarvellBot - INFO - пропустили
+19:36:25 - StarvellBot - INFO - ⬅️  2
+19:36:28 - StarvellBot - INFO - пропустили
+19:36:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:36:42 - StarvellBot - INFO - пропустили
+19:36:42 - StarvellBot - INFO - Успешно парсили ордеры
+19:36:50 - StarvellBot - INFO - ⬅️  2
+19:36:52 - StarvellBot - INFO - пропустили
+19:37:03 - StarvellBot - INFO - пропустили
+19:37:15 - StarvellBot - INFO - ⬅️  2
+19:37:17 - StarvellBot - INFO - пропустили
+19:37:28 - StarvellBot - INFO - пропустили
+19:37:38 - StarvellBot - INFO - пропустили
+19:37:40 - StarvellBot - INFO - ⬅️  2
+19:37:48 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:37:49 - StarvellBot - INFO - пропустили
+19:37:49 - StarvellBot - INFO - Успешно парсили ордеры
+19:38:00 - StarvellBot - INFO - пропустили
+19:38:05 - StarvellBot - INFO - ⬅️  2
+19:38:10 - StarvellBot - INFO - пропустили
+19:38:21 - StarvellBot - INFO - пропустили
+19:38:30 - StarvellBot - INFO - ⬅️  2
+19:38:32 - StarvellBot - INFO - пропустили
+19:38:43 - StarvellBot - INFO - пропустили
+19:38:55 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:38:55 - StarvellBot - INFO - ⬅️  2
+19:38:55 - StarvellBot - INFO - пропустили
+19:38:56 - StarvellBot - INFO - Успешно парсили ордеры
+19:39:06 - StarvellBot - INFO - пропустили
+19:39:17 - StarvellBot - INFO - пропустили
+19:39:20 - StarvellBot - INFO - ⬅️  2
+19:39:28 - StarvellBot - INFO - пропустили
+19:39:38 - StarvellBot - INFO - пропустили
+19:39:46 - StarvellBot - INFO - ⬅️  2
+19:39:49 - StarvellBot - INFO - пропустили
+19:40:02 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:40:03 - StarvellBot - INFO - пропустили
+19:40:03 - StarvellBot - INFO - Успешно парсили ордеры
+19:40:11 - StarvellBot - INFO - ⬅️  2
+19:40:13 - StarvellBot - INFO - пропустили
+19:40:24 - StarvellBot - INFO - пропустили
+19:40:35 - StarvellBot - INFO - пропустили
+19:40:36 - StarvellBot - INFO - ⬅️  2
+19:40:45 - StarvellBot - INFO - пропустили
+19:40:56 - StarvellBot - INFO - пропустили
+19:41:01 - StarvellBot - INFO - ⬅️  2
+19:41:09 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:41:09 - StarvellBot - INFO - пропустили
+19:41:10 - StarvellBot - INFO - Успешно парсили ордеры
+19:41:21 - StarvellBot - INFO - пропустили
+19:41:26 - StarvellBot - INFO - ⬅️  2
+19:41:32 - StarvellBot - INFO - пропустили
+19:41:42 - StarvellBot - INFO - пропустили
+19:41:51 - StarvellBot - INFO - ⬅️  2
+19:41:53 - StarvellBot - INFO - пропустили
+19:42:04 - StarvellBot - INFO - пропустили
+19:42:15 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:42:16 - StarvellBot - INFO - пропустили
+19:42:16 - StarvellBot - INFO - Успешно парсили ордеры
+19:42:16 - StarvellBot - INFO - ⬅️  2
+19:42:26 - StarvellBot - INFO - пропустили
+19:42:37 - StarvellBot - INFO - пропустили
+19:42:41 - StarvellBot - INFO - ⬅️  2
+19:42:48 - StarvellBot - INFO - пропустили
+19:42:58 - StarvellBot - INFO - пропустили
+19:43:06 - StarvellBot - INFO - ⬅️  2
+19:43:09 - StarvellBot - INFO - пропустили
+19:43:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:43:24 - StarvellBot - INFO - пропустили
+19:43:24 - StarvellBot - INFO - Успешно парсили ордеры
+19:43:31 - StarvellBot - INFO - ⬅️  2
+19:43:34 - StarvellBot - INFO - пропустили
+19:43:45 - StarvellBot - INFO - пропустили
+19:43:56 - StarvellBot - INFO - пропустили
+19:43:56 - StarvellBot - INFO - ⬅️  2
+19:44:06 - StarvellBot - INFO - пропустили
+19:44:17 - StarvellBot - INFO - пропустили
+19:44:22 - StarvellBot - INFO - ⬅️  2
+19:44:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:44:31 - StarvellBot - INFO - пропустили
+19:44:31 - StarvellBot - INFO - Успешно парсили ордеры
+19:44:42 - StarvellBot - INFO - пропустили
+19:44:47 - StarvellBot - INFO - ⬅️  2
+19:44:52 - StarvellBot - INFO - пропустили
+19:45:03 - StarvellBot - INFO - пропустили
+19:45:12 - StarvellBot - INFO - ⬅️  2
+19:45:14 - StarvellBot - INFO - пропустили
+19:45:24 - StarvellBot - INFO - пропустили
+19:45:37 - StarvellBot - INFO - ⬅️  2
+19:45:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:45:38 - StarvellBot - INFO - пропустили
+19:45:38 - StarvellBot - INFO - Успешно парсили ордеры
+19:45:48 - StarvellBot - INFO - пропустили
+19:45:59 - StarvellBot - INFO - пропустили
+19:46:02 - StarvellBot - INFO - ⬅️  2
+19:46:10 - StarvellBot - INFO - пропустили
+19:46:20 - StarvellBot - INFO - пропустили
+19:46:27 - StarvellBot - INFO - ⬅️  2
+19:46:31 - StarvellBot - INFO - пропустили
+19:46:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:46:44 - StarvellBot - INFO - пропустили
+19:46:44 - StarvellBot - INFO - Успешно парсили ордеры
+19:46:52 - StarvellBot - INFO - ⬅️  2
+19:46:55 - StarvellBot - INFO - пропустили
+19:47:06 - StarvellBot - INFO - пропустили
+19:47:16 - StarvellBot - INFO - пропустили
+19:47:17 - StarvellBot - INFO - ⬅️  2
+19:47:27 - StarvellBot - INFO - пропустили
+19:47:38 - StarvellBot - INFO - пропустили
+19:47:42 - StarvellBot - INFO - ⬅️  2
+19:47:51 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:47:51 - StarvellBot - INFO - пропустили
+19:47:51 - StarvellBot - INFO - Успешно парсили ордеры
+19:48:02 - StarvellBot - INFO - пропустили
+19:48:07 - StarvellBot - INFO - ⬅️  2
+19:48:12 - StarvellBot - INFO - пропустили
+19:48:23 - StarvellBot - INFO - пропустили
+19:48:33 - StarvellBot - INFO - ⬅️  2
+19:48:34 - StarvellBot - INFO - пропустили
+19:48:45 - StarvellBot - INFO - пропустили
+19:48:58 - StarvellBot - INFO - ⬅️  2
+19:48:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:48:58 - StarvellBot - INFO - пропустили
+19:48:59 - StarvellBot - INFO - Успешно парсили ордеры
+19:49:09 - StarvellBot - INFO - пропустили
+19:49:20 - StarvellBot - INFO - пропустили
+19:49:23 - StarvellBot - INFO - ⬅️  2
+19:49:30 - StarvellBot - INFO - пропустили
+19:49:41 - StarvellBot - INFO - пропустили
+19:49:48 - StarvellBot - INFO - ⬅️  2
+19:49:52 - StarvellBot - INFO - пропустили
+19:50:04 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:50:04 - StarvellBot - INFO - пропустили
+19:50:05 - StarvellBot - INFO - Успешно парсили ордеры
+19:50:13 - StarvellBot - INFO - ⬅️  2
+19:50:15 - StarvellBot - INFO - пропустили
+19:50:26 - StarvellBot - INFO - пропустили
+19:50:36 - StarvellBot - INFO - пропустили
+19:50:38 - StarvellBot - INFO - ⬅️  2
+19:50:47 - StarvellBot - INFO - пропустили
+19:50:57 - StarvellBot - INFO - пропустили
+19:51:03 - StarvellBot - INFO - ⬅️  2
+19:51:10 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:51:11 - StarvellBot - INFO - пропустили
+19:51:11 - StarvellBot - INFO - Успешно парсили ордеры
+19:51:21 - StarvellBot - INFO - пропустили
+19:51:28 - StarvellBot - INFO - ⬅️  2
+19:51:32 - StarvellBot - INFO - пропустили
+19:51:43 - StarvellBot - INFO - пропустили
+19:51:53 - StarvellBot - INFO - ⬅️  2
+19:51:53 - StarvellBot - INFO - пропустили
+19:52:04 - StarvellBot - INFO - пропустили
+19:52:17 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:52:17 - StarvellBot - INFO - пропустили
+19:52:18 - StarvellBot - INFO - Успешно парсили ордеры
+19:52:18 - StarvellBot - INFO - ⬅️  2
+19:52:28 - StarvellBot - INFO - пропустили
+19:52:39 - StarvellBot - INFO - пропустили
+19:52:43 - StarvellBot - INFO - ⬅️  2
+19:52:49 - StarvellBot - INFO - пропустили
+19:53:00 - StarvellBot - INFO - пропустили
+19:53:08 - StarvellBot - INFO - ⬅️  2
+19:53:11 - StarvellBot - INFO - пропустили
+19:53:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:53:24 - StarvellBot - INFO - пропустили
+19:53:24 - StarvellBot - INFO - Успешно парсили ордеры
+19:53:34 - StarvellBot - INFO - ⬅️  2
+19:53:55 - StarvellBot - ERROR - ❌ Ошибка в get_extra_orders: Cannot connect to host starvell.com:443 ssl:default [Превышен таймаут семафора]
+19:54:00 - StarvellBot - INFO - ⬅️  2
+19:54:30 - StarvellBot - ERROR - ❌ Ошибка в get_extra_orders: Cannot connect to host starvell.com:443 ssl:default [Превышен таймаут семафора]
+19:54:30 - StarvellBot - INFO - ⬅️  2
+19:54:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:54:31 - StarvellBot - INFO - Успешно парсили ордеры
+19:54:40 - StarvellBot - INFO - пропустили
+19:54:51 - StarvellBot - INFO - пропустили
+19:54:55 - StarvellBot - INFO - ⬅️  2
+19:55:02 - StarvellBot - INFO - пропустили
+19:55:12 - StarvellBot - INFO - пропустили
+19:55:20 - StarvellBot - INFO - ⬅️  2
+19:55:23 - StarvellBot - INFO - пропустили
+19:55:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:55:37 - StarvellBot - INFO - пропустили
+19:55:38 - StarvellBot - INFO - Успешно парсили ордеры
+19:55:45 - StarvellBot - INFO - ⬅️  2
+19:55:48 - StarvellBot - INFO - пропустили
+19:55:59 - StarvellBot - INFO - пропустили
+19:56:09 - StarvellBot - INFO - пропустили
+19:56:10 - StarvellBot - INFO - ⬅️  2
+19:56:20 - StarvellBot - INFO - пропустили
+19:56:30 - StarvellBot - INFO - пропустили
+19:56:35 - StarvellBot - INFO - ⬅️  2
+19:56:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:56:44 - StarvellBot - INFO - пропустили
+19:56:44 - StarvellBot - INFO - Успешно парсили ордеры
+19:56:55 - StarvellBot - INFO - пропустили
+19:57:00 - StarvellBot - INFO - ⬅️  2
+19:57:05 - StarvellBot - INFO - пропустили
+19:57:16 - StarvellBot - INFO - пропустили
+19:57:25 - StarvellBot - INFO - ⬅️  2
+19:57:26 - StarvellBot - INFO - пропустили
+19:57:37 - StarvellBot - INFO - пропустили
+19:57:50 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:57:50 - StarvellBot - INFO - ⬅️  2
+19:57:50 - StarvellBot - INFO - пропустили
+19:57:51 - StarvellBot - INFO - Успешно парсили ордеры
+19:58:01 - StarvellBot - INFO - пропустили
+19:58:12 - StarvellBot - INFO - пропустили
+19:58:15 - StarvellBot - INFO - ⬅️  2
+19:58:22 - StarvellBot - INFO - пропустили
+19:58:33 - StarvellBot - INFO - пропустили
+19:58:41 - StarvellBot - INFO - ⬅️  2
+19:58:44 - StarvellBot - INFO - пропустили
+19:58:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:58:56 - StarvellBot - INFO - пропустили
+19:58:57 - StarvellBot - INFO - Успешно парсили ордеры
+19:59:06 - StarvellBot - INFO - ⬅️  2
+19:59:07 - StarvellBot - INFO - пропустили
+19:59:18 - StarvellBot - INFO - пропустили
+19:59:29 - StarvellBot - INFO - пропустили
+19:59:31 - StarvellBot - INFO - ⬅️  2
+19:59:39 - StarvellBot - INFO - пропустили
+19:59:50 - StarvellBot - INFO - пропустили
+19:59:56 - StarvellBot - INFO - ⬅️  2
+20:00:04 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:00:04 - StarvellBot - INFO - пропустили
+20:00:04 - StarvellBot - INFO - Успешно парсили ордеры
+20:00:15 - StarvellBot - INFO - пропустили
+20:00:21 - StarvellBot - INFO - ⬅️  2
+20:00:25 - StarvellBot - INFO - пропустили
+20:00:36 - StarvellBot - INFO - пропустили
+20:00:46 - StarvellBot - INFO - ⬅️  2
+20:00:47 - StarvellBot - INFO - пропустили
+20:00:57 - StarvellBot - INFO - пропустили
+20:01:10 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:01:11 - StarvellBot - INFO - пропустили
+20:01:11 - StarvellBot - INFO - Успешно парсили ордеры
+20:01:11 - StarvellBot - INFO - ⬅️  2
+20:01:21 - StarvellBot - INFO - пропустили
+20:01:32 - StarvellBot - INFO - пропустили
+20:01:36 - StarvellBot - INFO - ⬅️  2
+20:01:42 - StarvellBot - INFO - пропустили
+20:01:53 - StarvellBot - INFO - пропустили
+20:02:01 - StarvellBot - INFO - ⬅️  2
+20:02:04 - StarvellBot - INFO - пропустили
+20:02:17 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:02:17 - StarvellBot - INFO - пропустили
+20:02:17 - StarvellBot - INFO - Успешно парсили ордеры
+20:02:26 - StarvellBot - INFO - ⬅️  2
+20:02:28 - StarvellBot - INFO - пропустили
+20:02:38 - StarvellBot - INFO - пропустили
+20:02:49 - StarvellBot - INFO - пропустили
+20:02:51 - StarvellBot - INFO - ⬅️  2
+20:03:00 - StarvellBot - INFO - пропустили
+20:03:10 - StarvellBot - INFO - пропустили
+20:03:16 - StarvellBot - INFO - ⬅️  2
+20:03:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:03:24 - StarvellBot - INFO - пропустили
+20:03:24 - StarvellBot - INFO - Успешно парсили ордеры
+20:03:34 - StarvellBot - INFO - пропустили
+20:03:41 - StarvellBot - INFO - ⬅️  2
+20:03:45 - StarvellBot - INFO - пропустили
+20:03:56 - StarvellBot - INFO - пропустили
+20:04:06 - StarvellBot - INFO - пропустили
+20:04:06 - StarvellBot - INFO - ⬅️  2
+20:04:17 - StarvellBot - INFO - пропустили
+20:04:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:04:30 - StarvellBot - INFO - пропустили
+20:04:31 - StarvellBot - INFO - Успешно парсили ордеры
+20:04:32 - StarvellBot - INFO - ⬅️  2
+20:04:41 - StarvellBot - INFO - пропустили
+20:04:51 - StarvellBot - INFO - пропустили
+20:04:57 - StarvellBot - INFO - ⬅️  2
+20:05:02 - StarvellBot - INFO - пропустили
+20:05:13 - StarvellBot - INFO - пропустили
+20:05:22 - StarvellBot - INFO - ⬅️  2
+20:05:23 - StarvellBot - INFO - пропустили
+20:05:36 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:05:37 - StarvellBot - INFO - пропустили
+20:05:37 - StarvellBot - INFO - Успешно парсили ордеры
+20:05:47 - StarvellBot - INFO - ⬅️  2
+20:05:47 - StarvellBot - INFO - пропустили
+20:05:58 - StarvellBot - INFO - пропустили
+20:06:09 - StarvellBot - INFO - пропустили
+20:06:12 - StarvellBot - INFO - ⬅️  2
+20:06:19 - StarvellBot - INFO - пропустили
+20:06:30 - StarvellBot - INFO - пропустили
+20:06:44 - StarvellBot - INFO - ⬅️  2
+20:06:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:06:44 - StarvellBot - INFO - пропустили
+20:06:44 - StarvellBot - INFO - Успешно парсили ордеры
+20:06:55 - StarvellBot - INFO - пропустили
+20:07:05 - StarvellBot - INFO - пропустили
+20:07:09 - StarvellBot - INFO - ⬅️  2
+20:07:16 - StarvellBot - INFO - пропустили
+20:07:27 - StarvellBot - INFO - пропустили
+20:07:34 - StarvellBot - INFO - ⬅️  2
+20:07:38 - StarvellBot - INFO - пропустили
+20:07:51 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:07:51 - StarvellBot - INFO - пропустили
+20:07:51 - StarvellBot - INFO - Успешно парсили ордеры
+20:07:59 - StarvellBot - INFO - ⬅️  2
+20:08:01 - StarvellBot - INFO - пропустили
+20:08:12 - StarvellBot - INFO - пропустили
+20:08:23 - StarvellBot - INFO - пропустили
+20:08:24 - StarvellBot - INFO - ⬅️  2
+20:08:33 - StarvellBot - INFO - пропустили
+20:08:44 - StarvellBot - INFO - пропустили
+20:08:49 - StarvellBot - INFO - ⬅️  2
+20:08:57 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:08:57 - StarvellBot - INFO - пропустили
+20:08:57 - StarvellBot - INFO - Успешно парсили ордеры
+20:09:08 - StarvellBot - INFO - пропустили
+20:09:14 - StarvellBot - INFO - ⬅️  2
+20:09:18 - StarvellBot - INFO - пропустили
+20:09:29 - StarvellBot - INFO - пропустили
+20:09:39 - StarvellBot - INFO - ⬅️  2
+20:09:40 - StarvellBot - INFO - пропустили
+20:09:50 - StarvellBot - INFO - пропустили
+20:10:03 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:10:04 - StarvellBot - INFO - пропустили
+20:10:04 - StarvellBot - INFO - Успешно парсили ордеры
+20:10:04 - StarvellBot - INFO - ⬅️  2
+20:10:14 - StarvellBot - INFO - пропустили
+20:10:25 - StarvellBot - INFO - пропустили
+20:10:29 - StarvellBot - INFO - ⬅️  2
+20:10:36 - StarvellBot - INFO - пропустили
+20:10:46 - StarvellBot - INFO - пропустили
+20:10:54 - StarvellBot - INFO - ⬅️  2
+20:10:57 - StarvellBot - INFO - пропустили
+20:11:11 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:11:11 - StarvellBot - INFO - пропустили
+20:11:11 - StarvellBot - INFO - Успешно парсили ордеры
+20:11:19 - StarvellBot - INFO - ⬅️  2
+20:11:22 - StarvellBot - INFO - пропустили
+20:11:32 - StarvellBot - INFO - пропустили
+20:11:43 - StarvellBot - INFO - пропустили
+20:11:45 - StarvellBot - INFO - ⬅️  2
+20:11:53 - StarvellBot - INFO - пропустили
+20:12:04 - StarvellBot - INFO - пропустили
+20:12:10 - StarvellBot - INFO - ⬅️  2
+20:12:18 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:12:18 - StarvellBot - INFO - пропустили
+20:12:19 - StarvellBot - INFO - Успешно парсили ордеры
+20:12:29 - StarvellBot - INFO - пропустили
+20:12:35 - StarvellBot - INFO - ⬅️  2
+20:12:40 - StarvellBot - INFO - пропустили
+20:12:50 - StarvellBot - INFO - пропустили
+20:13:00 - StarvellBot - INFO - ⬅️  2
+20:13:01 - StarvellBot - INFO - пропустили
+20:13:12 - StarvellBot - INFO - пропустили
+20:13:26 - StarvellBot - INFO - ⬅️  2
+20:13:26 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:13:26 - StarvellBot - INFO - пропустили
+20:13:27 - StarvellBot - INFO - Успешно парсили ордеры
+20:13:37 - StarvellBot - INFO - пропустили
+20:13:48 - StarvellBot - INFO - пропустили
+20:13:51 - StarvellBot - INFO - ⬅️  2
+20:13:58 - StarvellBot - INFO - пропустили
+20:14:09 - StarvellBot - INFO - пропустили
+20:14:16 - StarvellBot - INFO - ⬅️  2
+20:14:20 - StarvellBot - INFO - пропустили
+20:14:33 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:14:33 - StarvellBot - INFO - пропустили
+20:14:33 - StarvellBot - INFO - Успешно парсили ордеры
+20:14:41 - StarvellBot - INFO - ⬅️  2
+20:14:44 - StarvellBot - INFO - пропустили
+20:14:55 - StarvellBot - INFO - пропустили
+20:15:05 - StarvellBot - INFO - пропустили
+20:15:06 - StarvellBot - INFO - ⬅️  2
+20:15:16 - StarvellBot - INFO - пропустили
+20:15:26 - StarvellBot - INFO - пропустили
+20:15:31 - StarvellBot - INFO - ⬅️  2
+20:15:39 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:15:40 - StarvellBot - INFO - пропустили
+20:15:40 - StarvellBot - INFO - Успешно парсили ордеры
+20:15:50 - StarvellBot - INFO - пропустили
+20:15:56 - StarvellBot - INFO - ⬅️  2
+20:16:01 - StarvellBot - INFO - пропустили
+20:16:12 - StarvellBot - INFO - пропустили
+20:16:21 - StarvellBot - INFO - ⬅️  2
+20:16:22 - StarvellBot - INFO - пропустили
+20:16:33 - StarvellBot - INFO - пропустили
+20:16:46 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:16:46 - StarvellBot - INFO - пропустили
+20:16:47 - StarvellBot - INFO - ⬅️  2
+20:16:47 - StarvellBot - INFO - Успешно парсили ордеры
+20:16:57 - StarvellBot - INFO - пропустили
+20:17:08 - StarvellBot - INFO - пропустили
+20:17:12 - StarvellBot - INFO - ⬅️  2
+20:17:18 - StarvellBot - INFO - пропустили
+20:17:29 - StarvellBot - INFO - пропустили
+20:17:37 - StarvellBot - INFO - ⬅️  2
+20:17:40 - StarvellBot - INFO - пропустили
+20:17:52 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:17:52 - StarvellBot - INFO - пропустили
+20:17:53 - StarvellBot - INFO - Успешно парсили ордеры
+20:18:02 - StarvellBot - INFO - ⬅️  2
+20:18:03 - StarvellBot - INFO - пропустили
+20:18:14 - StarvellBot - INFO - пропустили
+20:18:24 - StarvellBot - INFO - пропустили
+20:18:27 - StarvellBot - INFO - ⬅️  2
+20:18:35 - StarvellBot - INFO - пропустили
+20:18:46 - StarvellBot - INFO - пропустили
+20:18:52 - StarvellBot - INFO - ⬅️  2
+20:18:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:18:59 - StarvellBot - INFO - пропустили
+20:18:59 - StarvellBot - INFO - Успешно парсили ордеры
+20:19:09 - StarvellBot - INFO - пропустили
+20:19:17 - StarvellBot - INFO - ⬅️  2
+20:19:20 - StarvellBot - INFO - пропустили
+20:19:31 - StarvellBot - INFO - пропустили
+20:19:41 - StarvellBot - INFO - пропустили
+20:19:42 - StarvellBot - INFO - ⬅️  2
+20:19:52 - StarvellBot - INFO - пропустили
+20:20:05 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:20:05 - StarvellBot - INFO - пропустили
+20:20:05 - StarvellBot - INFO - Успешно парсили ордеры
+20:20:07 - StarvellBot - INFO - ⬅️  2
+20:20:16 - StarvellBot - INFO - пропустили
+20:20:27 - StarvellBot - INFO - пропустили
+20:20:32 - StarvellBot - INFO - ⬅️  2
+20:20:37 - StarvellBot - INFO - пропустили
+20:20:48 - StarvellBot - INFO - пропустили
+20:20:58 - StarvellBot - INFO - ⬅️  2
+20:20:59 - StarvellBot - INFO - пропустили
+20:21:12 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:21:12 - StarvellBot - INFO - пропустили
+20:21:12 - StarvellBot - INFO - Успешно парсили ордеры
+20:21:23 - StarvellBot - INFO - ⬅️  2
+20:21:23 - StarvellBot - INFO - пропустили
+20:21:34 - StarvellBot - INFO - пропустили
+20:21:44 - StarvellBot - INFO - пропустили
+20:21:48 - StarvellBot - INFO - ⬅️  2
+20:21:55 - StarvellBot - INFO - пропустили
+20:22:06 - StarvellBot - INFO - пропустили
+20:22:18 - StarvellBot - INFO - ⬅️  2
+20:22:18 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:22:18 - StarvellBot - INFO - пропустили
+20:22:19 - StarvellBot - INFO - Успешно парсили ордеры
+20:22:29 - StarvellBot - INFO - пропустили
+20:22:40 - StarvellBot - INFO - пропустили
+20:22:43 - StarvellBot - INFO - ⬅️  2
+20:22:50 - StarvellBot - INFO - пропустили
+20:23:01 - StarvellBot - INFO - пропустили
+20:23:08 - StarvellBot - INFO - ⬅️  2
+20:23:12 - StarvellBot - INFO - пропустили
+20:23:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:23:26 - StarvellBot - INFO - пропустили
+20:23:26 - StarvellBot - INFO - Успешно парсили ордеры
+20:23:33 - StarvellBot - INFO - ⬅️  2
+20:23:36 - StarvellBot - INFO - пропустили
+20:23:47 - StarvellBot - INFO - пропустили
+20:23:57 - StarvellBot - INFO - пропустили
+20:23:58 - StarvellBot - INFO - ⬅️  2
+20:24:08 - StarvellBot - INFO - пропустили
+20:24:19 - StarvellBot - INFO - пропустили
+20:24:23 - StarvellBot - INFO - ⬅️  2
+20:24:32 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:24:32 - StarvellBot - INFO - пропустили
+20:24:32 - StarvellBot - INFO - Успешно парсили ордеры
+20:24:42 - StarvellBot - INFO - пропустили
+20:24:48 - StarvellBot - INFO - ⬅️  2
+20:24:53 - StarvellBot - INFO - пропустили
+20:25:04 - StarvellBot - INFO - пропустили
+20:25:13 - StarvellBot - INFO - ⬅️  2
+20:25:14 - StarvellBot - INFO - пропустили
+20:25:25 - StarvellBot - INFO - пропустили
+20:25:38 - StarvellBot - INFO - ⬅️  2
+20:25:38 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:25:39 - StarvellBot - INFO - пропустили
+20:25:39 - StarvellBot - INFO - Успешно парсили ордеры
+20:25:49 - StarvellBot - INFO - пропустили
+20:26:00 - StarvellBot - INFO - пропустили
+20:26:03 - StarvellBot - INFO - ⬅️  2
+20:26:11 - StarvellBot - INFO - пропустили
+20:26:21 - StarvellBot - INFO - пропустили
+20:26:28 - StarvellBot - INFO - ⬅️  2
+20:26:32 - StarvellBot - INFO - пропустили
+20:26:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:26:44 - StarvellBot - INFO - пропустили
+20:26:44 - StarvellBot - INFO - Успешно парсили ордеры
+20:26:54 - StarvellBot - INFO - ⬅️  2
+20:26:55 - StarvellBot - INFO - пропустили
+20:27:05 - StarvellBot - INFO - пропустили
+20:27:16 - StarvellBot - INFO - пропустили
+20:27:19 - StarvellBot - INFO - ⬅️  2
+20:27:27 - StarvellBot - INFO - пропустили
+20:27:37 - StarvellBot - INFO - пропустили
+20:27:44 - StarvellBot - INFO - ⬅️  2
+20:27:50 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:27:50 - StarvellBot - INFO - пропустили
+20:27:51 - StarvellBot - INFO - Успешно парсили ордеры
+20:28:01 - StarvellBot - INFO - пропустили
+20:28:09 - StarvellBot - INFO - ⬅️  2
+20:28:12 - StarvellBot - INFO - пропустили
+20:28:23 - StarvellBot - INFO - пропустили
+20:28:34 - StarvellBot - INFO - пропустили
+20:28:34 - StarvellBot - INFO - ⬅️  2
+20:28:44 - StarvellBot - INFO - пропустили
+20:28:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:28:57 - StarvellBot - INFO - пропустили
+20:28:57 - StarvellBot - INFO - Успешно парсили ордеры
+20:28:59 - StarvellBot - INFO - ⬅️  2
+20:29:07 - StarvellBot - INFO - пропустили
+20:29:18 - StarvellBot - INFO - пропустили
+20:29:24 - StarvellBot - INFO - ⬅️  2
+20:29:28 - StarvellBot - INFO - пропустили
+20:29:39 - StarvellBot - INFO - пропустили
+20:29:49 - StarvellBot - INFO - ⬅️  2
+20:29:49 - StarvellBot - INFO - пропустили
+20:30:03 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:30:03 - StarvellBot - INFO - пропустили
+20:30:04 - StarvellBot - INFO - Успешно парсили ордеры
+20:30:14 - StarvellBot - INFO - пропустили
+20:30:14 - StarvellBot - INFO - ⬅️  2
+20:30:25 - StarvellBot - INFO - пропустили
+20:30:35 - StarvellBot - INFO - пропустили
+20:30:39 - StarvellBot - INFO - ⬅️  2
+20:30:46 - StarvellBot - INFO - пропустили
+20:30:57 - StarvellBot - INFO - пропустили
+20:31:09 - StarvellBot - INFO - ⬅️  2
+20:31:09 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:31:09 - StarvellBot - INFO - пропустили
+20:31:10 - StarvellBot - INFO - Успешно парсили ордеры
+20:31:20 - StarvellBot - INFO - пропустили
+20:31:31 - StarvellBot - INFO - пропустили
+20:31:34 - StarvellBot - INFO - ⬅️  2
+20:31:41 - StarvellBot - INFO - пропустили
+20:31:52 - StarvellBot - INFO - пропустили
+20:31:59 - StarvellBot - INFO - ⬅️  2
+20:32:02 - StarvellBot - INFO - пропустили
+20:32:15 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:32:16 - StarvellBot - INFO - пропустили
+20:32:16 - StarvellBot - INFO - Успешно парсили ордеры
+20:32:24 - StarvellBot - INFO - ⬅️  2
+20:32:26 - StarvellBot - INFO - пропустили
+20:32:37 - StarvellBot - INFO - пропустили
+20:32:47 - StarvellBot - INFO - пропустили
+20:32:49 - StarvellBot - INFO - ⬅️  2
+20:32:58 - StarvellBot - INFO - пропустили
+20:33:09 - StarvellBot - INFO - пропустили
+20:33:14 - StarvellBot - INFO - ⬅️  2
+20:33:20 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:33:21 - StarvellBot - INFO - пропустили
+20:33:21 - StarvellBot - INFO - Успешно парсили ордеры
+20:33:31 - StarvellBot - INFO - пропустили
+20:33:39 - StarvellBot - INFO - ⬅️  2
+20:33:42 - StarvellBot - INFO - пропустили
+20:33:53 - StarvellBot - INFO - пропустили
+20:34:03 - StarvellBot - INFO - пропустили
+20:34:04 - StarvellBot - INFO - ⬅️  2
+20:34:14 - StarvellBot - INFO - пропустили
+20:34:26 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:34:27 - StarvellBot - INFO - пропустили
+20:34:27 - StarvellBot - INFO - Успешно парсили ордеры
+20:34:29 - StarvellBot - INFO - ⬅️  2
+20:34:37 - StarvellBot - INFO - пропустили
+20:34:48 - StarvellBot - INFO - пропустили
+20:34:54 - StarvellBot - INFO - ⬅️  2
+20:34:59 - StarvellBot - INFO - пропустили
+20:35:09 - StarvellBot - INFO - пропустили
+20:35:20 - StarvellBot - INFO - ⬅️  2
+20:35:20 - StarvellBot - INFO - пропустили
+20:35:32 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:35:32 - StarvellBot - INFO - пропустили
+20:35:33 - StarvellBot - INFO - Успешно парсили ордеры
+20:35:43 - StarvellBot - INFO - пропустили
+20:35:45 - StarvellBot - INFO - ⬅️  2
+20:35:53 - StarvellBot - INFO - пропустили
+20:36:04 - StarvellBot - INFO - пропустили
+20:36:10 - StarvellBot - INFO - ⬅️  2
+20:36:15 - StarvellBot - INFO - пропустили
+20:36:26 - StarvellBot - INFO - пропустили
+20:36:38 - StarvellBot - INFO - ⬅️  2
+20:36:38 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:36:38 - StarvellBot - INFO - пропустили
+20:36:38 - StarvellBot - INFO - Успешно парсили ордеры
+20:36:49 - StarvellBot - INFO - пропустили
+20:36:59 - StarvellBot - INFO - пропустили
+20:37:03 - StarvellBot - INFO - ⬅️  2
+20:37:10 - StarvellBot - INFO - пропустили
+20:37:21 - StarvellBot - INFO - пропустили
+20:37:28 - StarvellBot - INFO - ⬅️  2
+20:37:31 - StarvellBot - INFO - пропустили
+20:37:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:37:45 - StarvellBot - INFO - пропустили
+20:37:45 - StarvellBot - INFO - Успешно парсили ордеры
+20:37:53 - StarvellBot - INFO - ⬅️  2
+20:37:55 - StarvellBot - INFO - пропустили
+20:38:06 - StarvellBot - INFO - пропустили
+20:38:16 - StarvellBot - INFO - пропустили
+20:38:18 - StarvellBot - INFO - ⬅️  2
+20:38:27 - StarvellBot - INFO - пропустили
+20:38:38 - StarvellBot - INFO - пропустили
+20:38:43 - StarvellBot - INFO - ⬅️  2
+20:38:50 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:38:50 - StarvellBot - INFO - пропустили
+20:38:50 - StarvellBot - INFO - Успешно парсили ордеры
+20:39:01 - StarvellBot - INFO - пропустили
+20:39:08 - StarvellBot - INFO - ⬅️  2
+20:39:11 - StarvellBot - INFO - пропустили
+20:39:22 - StarvellBot - INFO - пропустили
+20:39:33 - StarvellBot - INFO - пропустили
+20:39:33 - StarvellBot - INFO - ⬅️  2
+20:39:43 - StarvellBot - INFO - пропустили
+20:39:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:39:56 - StarvellBot - INFO - пропустили
+20:39:56 - StarvellBot - INFO - Успешно парсили ордеры
+20:39:58 - StarvellBot - INFO - ⬅️  2
+20:40:07 - StarvellBot - INFO - пропустили
+20:40:17 - StarvellBot - INFO - пропустили
+20:40:23 - StarvellBot - INFO - ⬅️  2
+20:40:28 - StarvellBot - INFO - пропустили
+20:40:39 - StarvellBot - INFO - пропустили
+20:40:48 - StarvellBot - INFO - ⬅️  2
+20:40:50 - StarvellBot - INFO - пропустили
+20:41:02 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:41:03 - StarvellBot - INFO - пропустили
+20:41:04 - StarvellBot - INFO - Успешно парсили ордеры
+20:41:14 - StarvellBot - INFO - ⬅️  2
+20:41:15 - StarvellBot - INFO - пропустили
+20:41:27 - StarvellBot - INFO - пропустили
+20:41:38 - StarvellBot - INFO - пропустили
+20:41:39 - StarvellBot - INFO - ⬅️  2
+20:41:49 - StarvellBot - INFO - пропустили
+20:42:01 - StarvellBot - INFO - пропустили
+20:42:08 - StarvellBot - INFO - ⬅️  2
+20:42:08 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:42:09 - StarvellBot - INFO - Успешно парсили ордеры
+20:42:12 - StarvellBot - INFO - пропустили
+20:42:24 - StarvellBot - INFO - пропустили
+20:42:33 - StarvellBot - INFO - ⬅️  2
+20:42:35 - StarvellBot - INFO - пропустили
+20:42:46 - StarvellBot - INFO - пропустили
+20:42:57 - StarvellBot - INFO - пропустили
+20:42:58 - StarvellBot - INFO - ⬅️  2
+20:43:07 - StarvellBot - INFO - пропустили
+20:43:15 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:43:15 - StarvellBot - INFO - Успешно парсили ордеры
+20:43:18 - StarvellBot - INFO - пропустили
+20:43:23 - StarvellBot - INFO - ⬅️  2
+20:43:28 - StarvellBot - INFO - пропустили
+20:43:39 - StarvellBot - INFO - пропустили
+20:43:48 - StarvellBot - INFO - ⬅️  2
+20:43:50 - StarvellBot - INFO - пропустили
+20:44:00 - StarvellBot - INFO - пропустили
+20:44:11 - StarvellBot - INFO - пропустили
+20:44:13 - StarvellBot - INFO - ⬅️  2
+20:44:21 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:44:22 - StarvellBot - INFO - Успешно парсили ордеры
+20:44:22 - StarvellBot - INFO - пропустили
+20:44:32 - StarvellBot - INFO - пропустили
+20:44:39 - StarvellBot - INFO - ⬅️  2
+20:44:43 - StarvellBot - INFO - пропустили
+20:44:53 - StarvellBot - INFO - пропустили
+20:45:04 - StarvellBot - INFO - пропустили
+20:45:04 - StarvellBot - INFO - ⬅️  2
+20:45:14 - StarvellBot - INFO - пропустили
+20:45:27 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:45:28 - StarvellBot - INFO - пропустили
+20:45:28 - StarvellBot - INFO - Успешно парсили ордеры
+20:45:29 - StarvellBot - INFO - ⬅️  2
+20:45:38 - StarvellBot - INFO - пропустили
+20:45:49 - StarvellBot - INFO - пропустили
+20:45:54 - StarvellBot - INFO - ⬅️  2
+20:45:59 - StarvellBot - INFO - пропустили
+20:46:10 - StarvellBot - INFO - пропустили
+20:46:19 - StarvellBot - INFO - ⬅️  2
+20:46:21 - StarvellBot - INFO - пропустили
+20:46:33 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:46:33 - StarvellBot - INFO - пропустили
+20:46:34 - StarvellBot - INFO - Успешно парсили ордеры
+20:46:44 - StarvellBot - INFO - пропустили
+20:46:44 - StarvellBot - INFO - ⬅️  2
+20:46:55 - StarvellBot - INFO - пропустили
+20:47:05 - StarvellBot - INFO - пропустили
+20:47:09 - StarvellBot - INFO - ⬅️  2
+20:47:16 - StarvellBot - INFO - пропустили
+20:47:26 - StarvellBot - INFO - пропустили
+20:47:39 - StarvellBot - INFO - ⬅️  2
+20:47:39 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:47:39 - StarvellBot - INFO - пропустили
+20:47:40 - StarvellBot - INFO - Успешно парсили ордеры
+20:47:50 - StarvellBot - INFO - пропустили
+20:48:01 - StarvellBot - INFO - пропустили
+20:48:04 - StarvellBot - INFO - ⬅️  2
+20:48:11 - StarvellBot - INFO - пропустили
+20:48:22 - StarvellBot - INFO - пропустили
+20:48:29 - StarvellBot - INFO - ⬅️  2
+20:48:33 - StarvellBot - INFO - пропустили
+20:48:45 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:48:45 - StarvellBot - INFO - пропустили
+20:48:45 - StarvellBot - INFO - Успешно парсили ордеры
+20:48:54 - StarvellBot - INFO - ⬅️  2
+20:48:56 - StarvellBot - INFO - пропустили
+20:49:06 - StarvellBot - INFO - пропустили
+20:49:17 - StarvellBot - INFO - пропустили
+20:49:19 - StarvellBot - INFO - ⬅️  2
+20:49:22 - aiogram.event - INFO - Update id=826343664 is handled. Duration 215 ms by bot id=8298689795
+20:49:27 - aiogram.event - INFO - Update id=826343665 is handled. Duration 107 ms by bot id=8298689795
+20:49:27 - StarvellBot - INFO - пропустили
+20:49:28 - aiogram.event - INFO - Update id=826343666 is handled. Duration 157 ms by bot id=8298689795
+20:49:29 - aiogram.event - INFO - Update id=826343667 is handled. Duration 148 ms by bot id=8298689795
+20:49:38 - StarvellBot - INFO - пропустили
+20:49:44 - StarvellBot - INFO - ⬅️  2
+20:49:51 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:49:51 - StarvellBot - INFO - пропустили
+20:49:51 - StarvellBot - INFO - Успешно парсили ордеры
+20:50:02 - StarvellBot - INFO - пропустили
+20:50:09 - StarvellBot - INFO - ⬅️  2
+20:50:12 - StarvellBot - INFO - пропустили
+20:50:23 - StarvellBot - INFO - пропустили
+20:50:34 - StarvellBot - INFO - пропустили
+20:50:34 - StarvellBot - INFO - ⬅️  2
+20:50:44 - StarvellBot - INFO - пропустили
+20:50:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:50:59 - StarvellBot - INFO - ⬅️  2
+20:51:25 - StarvellBot - INFO - ⬅️  2
+20:51:47 - StarvellBot - INFO - 🟢 WebSocket connected
+20:51:47 - StarvellBot - INFO - ⬅️  0{"sid":"e_l75qXimcJiARSEAOea","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+20:51:47 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+20:51:47 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+20:51:47 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+20:51:47 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+20:51:47 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+20:51:50 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"x97qiABTdN7T5YUpAOeb"}
+20:51:50 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"_zT7EQy23N2ZICQwAOec"}
+20:52:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:52:38 - StarvellBot - INFO - 🟢 WebSocket connected
+20:52:38 - StarvellBot - INFO - ⬅️  0{"sid":"sFvc2PatudTunTvrAObk","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+20:52:38 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+20:52:38 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+20:52:38 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+20:52:38 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+20:52:38 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+20:52:40 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"e4fVLSnVFsqeJjRNAObr"}
+20:52:42 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"Xd-0MGpz_kOjvUFSAObs"}
+20:52:42 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"-PwRn36OlnAgLpTuAObt"}
+20:52:42 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"2QbGdp-4EnuLaG9mAObu"}
+20:52:42 - StarvellBot - INFO - ⬅️  40/online,{"sid":"zyKVp4FU5_47Df2QAObv"}
+20:52:55 - StarvellBot - INFO - Успешно парсили ордеры
+20:53:03 - StarvellBot - INFO - ⬅️  2
+20:53:28 - StarvellBot - INFO - ⬅️  2
+20:53:53 - StarvellBot - INFO - ⬅️  2
+20:54:01 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:54:01 - StarvellBot - INFO - Успешно парсили ордеры
+20:54:18 - StarvellBot - INFO - ⬅️  2
+20:54:43 - StarvellBot - INFO - ⬅️  2
+20:54:59 - StarvellBot - INFO - пропустили
+20:55:07 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:55:08 - StarvellBot - INFO - Успешно парсили ордеры
+20:55:08 - StarvellBot - INFO - ⬅️  2
+20:55:09 - StarvellBot - INFO - пропустили
+20:55:20 - StarvellBot - INFO - пропустили
+20:55:30 - StarvellBot - INFO - пропустили
+20:55:33 - StarvellBot - INFO - ⬅️  2
+20:55:41 - StarvellBot - INFO - пропустили
+20:55:51 - StarvellBot - INFO - пропустили
+20:55:59 - StarvellBot - INFO - ⬅️  2
+20:56:02 - StarvellBot - INFO - пропустили
+20:56:13 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:56:14 - StarvellBot - INFO - пропустили
+20:56:14 - StarvellBot - INFO - Успешно парсили ордеры
+20:56:24 - StarvellBot - INFO - ⬅️  2
+20:56:24 - StarvellBot - INFO - пропустили
+20:56:35 - StarvellBot - INFO - пропустили
+20:56:46 - StarvellBot - INFO - пропустили
+20:56:49 - StarvellBot - INFO - ⬅️  2
+20:56:56 - StarvellBot - INFO - пропустили
+20:57:07 - StarvellBot - INFO - пропустили
+20:57:14 - StarvellBot - INFO - ⬅️  2
+20:57:19 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:57:20 - StarvellBot - INFO - пропустили
+20:57:20 - StarvellBot - INFO - Успешно парсили ордеры
+20:57:30 - StarvellBot - INFO - пропустили
+20:57:39 - StarvellBot - INFO - ⬅️  2
+20:57:41 - StarvellBot - INFO - пропустили
+20:57:52 - StarvellBot - INFO - пропустили
+20:58:02 - StarvellBot - INFO - пропустили
+20:58:04 - StarvellBot - INFO - ⬅️  2
+20:58:13 - StarvellBot - INFO - пропустили
+20:58:27 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:58:27 - StarvellBot - INFO - пропустили
+20:58:27 - StarvellBot - INFO - Успешно парсили ордеры
+20:58:29 - StarvellBot - INFO - ⬅️  2
+20:58:38 - StarvellBot - INFO - пропустили
+20:58:48 - StarvellBot - INFO - пропустили
+20:58:54 - StarvellBot - INFO - ⬅️  2
+20:58:59 - StarvellBot - INFO - пропустили
+20:59:10 - StarvellBot - INFO - пропустили
+20:59:19 - StarvellBot - INFO - ⬅️  2
+20:59:20 - StarvellBot - INFO - пропустили
+20:59:33 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+20:59:33 - StarvellBot - INFO - пропустили
+20:59:33 - StarvellBot - INFO - Успешно парсили ордеры
+20:59:44 - StarvellBot - INFO - пропустили
+20:59:44 - StarvellBot - INFO - ⬅️  2
+20:59:55 - StarvellBot - INFO - пропустили
+21:00:05 - StarvellBot - INFO - пропустили
+21:00:09 - StarvellBot - INFO - ⬅️  2
+21:00:16 - StarvellBot - INFO - пропустили
+21:00:26 - StarvellBot - INFO - пропустили
+21:00:39 - StarvellBot - INFO - ⬅️  2
+21:00:39 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:00:39 - StarvellBot - INFO - пропустили
+21:00:39 - StarvellBot - INFO - Успешно парсили ордеры
+21:00:50 - StarvellBot - INFO - пропустили
+21:01:01 - StarvellBot - INFO - пропустили
+21:01:04 - StarvellBot - INFO - ⬅️  2
+21:01:11 - StarvellBot - INFO - пропустили
+21:01:22 - StarvellBot - INFO - пропустили
+21:01:29 - StarvellBot - INFO - ⬅️  2
+21:01:32 - StarvellBot - INFO - пропустили
+21:01:45 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:01:45 - StarvellBot - INFO - пропустили
+21:01:46 - StarvellBot - INFO - Успешно парсили ордеры
+21:01:54 - StarvellBot - INFO - ⬅️  2
+21:01:56 - StarvellBot - INFO - пропустили
+21:02:07 - StarvellBot - INFO - пропустили
+21:02:17 - StarvellBot - INFO - пропустили
+21:02:19 - StarvellBot - INFO - ⬅️  2
+21:02:28 - StarvellBot - INFO - пропустили
+21:02:38 - StarvellBot - INFO - пропустили
+21:02:44 - StarvellBot - INFO - ⬅️  2
+21:02:51 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:02:51 - StarvellBot - INFO - пропустили
+21:02:51 - StarvellBot - INFO - Успешно парсили ордеры
+21:03:02 - StarvellBot - INFO - пропустили
+21:03:09 - StarvellBot - INFO - ⬅️  2
+21:03:12 - StarvellBot - INFO - пропустили
+21:03:23 - StarvellBot - INFO - пропустили
+21:03:34 - StarvellBot - INFO - пропустили
+21:03:34 - StarvellBot - INFO - ⬅️  2
+21:03:44 - StarvellBot - INFO - пропустили
+21:03:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:03:56 - StarvellBot - INFO - пропустили
+21:03:57 - StarvellBot - INFO - Успешно парсили ордеры
+21:03:59 - StarvellBot - INFO - ⬅️  2
+21:04:07 - StarvellBot - INFO - пропустили
+21:04:17 - StarvellBot - INFO - пропустили
+21:04:24 - StarvellBot - INFO - ⬅️  2
+21:04:28 - StarvellBot - INFO - пропустили
+21:04:39 - StarvellBot - INFO - пропустили
+21:04:49 - StarvellBot - INFO - пропустили
+21:04:50 - StarvellBot - INFO - ⬅️  2
+21:05:04 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:05:04 - StarvellBot - INFO - пропустили
+21:05:05 - StarvellBot - INFO - Успешно парсили ордеры
+21:05:15 - StarvellBot - INFO - ⬅️  2
+21:05:15 - StarvellBot - INFO - пропустили
+21:05:26 - StarvellBot - INFO - пропустили
+21:05:36 - StarvellBot - INFO - пропустили
+21:05:40 - StarvellBot - INFO - ⬅️  2
+21:05:47 - StarvellBot - INFO - пропустили
+21:05:57 - StarvellBot - INFO - пропустили
+21:06:10 - StarvellBot - INFO - ⬅️  2
+21:06:10 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:06:11 - StarvellBot - INFO - пропустили
+21:06:11 - StarvellBot - INFO - Успешно парсили ордеры
+21:06:21 - StarvellBot - INFO - пропустили
+21:06:32 - StarvellBot - INFO - пропустили
+21:06:35 - StarvellBot - INFO - ⬅️  2
+21:06:42 - StarvellBot - INFO - пропустили
+21:06:53 - StarvellBot - INFO - пропустили
+21:07:00 - StarvellBot - INFO - ⬅️  2
+21:07:03 - StarvellBot - INFO - пропустили
+21:07:16 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:07:16 - StarvellBot - INFO - пропустили
+21:07:17 - StarvellBot - INFO - Успешно парсили ордеры
+21:07:25 - StarvellBot - INFO - ⬅️  2
+21:07:27 - StarvellBot - INFO - пропустили
+21:07:38 - StarvellBot - INFO - пропустили
+21:07:48 - StarvellBot - INFO - пропустили
+21:07:50 - StarvellBot - INFO - ⬅️  2
+21:07:59 - StarvellBot - INFO - пропустили
+21:08:09 - StarvellBot - INFO - пропустили
+21:08:15 - StarvellBot - INFO - ⬅️  2
+21:08:22 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:08:23 - StarvellBot - INFO - пропустили
+21:08:23 - StarvellBot - INFO - Успешно парсили ордеры
+21:08:33 - StarvellBot - INFO - пропустили
+21:08:40 - StarvellBot - INFO - ⬅️  2
+21:08:44 - StarvellBot - INFO - пропустили
+21:08:55 - StarvellBot - INFO - пропустили
+21:09:05 - StarvellBot - INFO - пропустили
+21:09:05 - StarvellBot - INFO - ⬅️  2
+21:09:16 - StarvellBot - INFO - пропустили
+21:09:29 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:09:29 - StarvellBot - INFO - пропустили
+21:09:29 - StarvellBot - INFO - Успешно парсили ордеры
+21:09:31 - StarvellBot - INFO - ⬅️  2
+21:09:39 - StarvellBot - INFO - пропустили
+21:09:50 - StarvellBot - INFO - пропустили
+21:09:56 - StarvellBot - INFO - ⬅️  2
+21:10:01 - StarvellBot - INFO - пропустили
+21:10:12 - StarvellBot - INFO - пропустили
+21:10:21 - StarvellBot - INFO - ⬅️  2
+21:10:22 - StarvellBot - INFO - пропустили
+21:10:35 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:10:35 - StarvellBot - INFO - пропустили
+21:10:36 - StarvellBot - INFO - Успешно парсили ордеры
+21:10:46 - StarvellBot - INFO - ⬅️  2
+21:10:46 - StarvellBot - INFO - пропустили
+21:10:56 - StarvellBot - INFO - пропустили
+21:11:07 - StarvellBot - INFO - пропустили
+21:11:11 - StarvellBot - INFO - ⬅️  2
+21:11:17 - StarvellBot - INFO - пропустили
+21:11:28 - StarvellBot - INFO - пропустили
+21:11:41 - StarvellBot - INFO - ⬅️  2
+21:11:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:11:41 - StarvellBot - INFO - пропустили
+21:11:41 - StarvellBot - INFO - Успешно парсили ордеры
+21:11:52 - StarvellBot - INFO - пропустили
+21:12:02 - StarvellBot - INFO - пропустили
+21:12:06 - StarvellBot - INFO - ⬅️  2
+21:12:13 - StarvellBot - INFO - пропустили
+21:12:23 - StarvellBot - INFO - пропустили
+21:12:31 - StarvellBot - INFO - ⬅️  2
+21:12:34 - StarvellBot - INFO - пропустили
+21:12:47 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:12:47 - StarvellBot - INFO - пропустили
+21:12:48 - StarvellBot - INFO - Успешно парсили ордеры
+21:12:56 - StarvellBot - INFO - ⬅️  2
+21:12:58 - StarvellBot - INFO - пропустили
+21:13:09 - StarvellBot - INFO - пропустили
+21:13:20 - StarvellBot - INFO - пропустили
+21:13:21 - StarvellBot - INFO - ⬅️  2
+21:13:30 - StarvellBot - INFO - пропустили
+21:13:41 - StarvellBot - INFO - пропустили
+21:13:46 - StarvellBot - INFO - ⬅️  2
+21:13:52 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:13:53 - StarvellBot - INFO - пропустили
+21:13:53 - StarvellBot - INFO - Успешно парсили ордеры
+21:14:03 - StarvellBot - INFO - пропустили
+21:14:11 - StarvellBot - INFO - ⬅️  2
+21:14:14 - StarvellBot - INFO - пропустили
+21:14:24 - StarvellBot - INFO - пропустили
+21:14:35 - StarvellBot - INFO - пропустили
+21:14:36 - StarvellBot - INFO - ⬅️  2
+21:14:46 - StarvellBot - INFO - пропустили
+21:14:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:14:58 - StarvellBot - INFO - пропустили
+21:14:59 - StarvellBot - INFO - Успешно парсили ордеры
+21:15:01 - StarvellBot - INFO - ⬅️  2
+21:15:09 - StarvellBot - INFO - пропустили
+21:15:20 - StarvellBot - INFO - пропустили
+21:15:26 - StarvellBot - INFO - ⬅️  2
+21:15:30 - StarvellBot - INFO - пропустили
+21:15:41 - StarvellBot - INFO - пропустили
+21:15:51 - StarvellBot - INFO - ⬅️  2
+21:15:51 - StarvellBot - INFO - пропустили
+21:16:03 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:16:03 - StarvellBot - INFO - пропустили
+21:16:04 - StarvellBot - INFO - Успешно парсили ордеры
+21:16:14 - StarvellBot - INFO - пропустили
+21:16:16 - StarvellBot - INFO - ⬅️  2
+21:16:24 - StarvellBot - INFO - пропустили
+21:16:35 - StarvellBot - INFO - пропустили
+21:16:41 - StarvellBot - INFO - ⬅️  2
+21:16:46 - StarvellBot - INFO - пропустили
+21:16:56 - StarvellBot - INFO - пропустили
+21:17:09 - StarvellBot - INFO - ⬅️  2
+21:17:09 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:17:10 - StarvellBot - INFO - пропустили
+21:17:10 - StarvellBot - INFO - Успешно парсили ордеры
+21:17:21 - StarvellBot - INFO - пропустили
+21:17:31 - StarvellBot - INFO - пропустили
+21:17:34 - StarvellBot - INFO - ⬅️  2
+21:17:42 - StarvellBot - INFO - пропустили
+21:17:52 - StarvellBot - INFO - пропустили
+21:17:59 - StarvellBot - INFO - ⬅️  2
+21:18:03 - StarvellBot - INFO - пропустили
+21:18:15 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:18:16 - StarvellBot - INFO - пропустили
+21:18:16 - StarvellBot - INFO - Успешно парсили ордеры
+21:18:24 - StarvellBot - INFO - ⬅️  2
+21:18:26 - StarvellBot - INFO - пропустили
+21:18:37 - StarvellBot - INFO - пропустили
+21:18:48 - StarvellBot - INFO - пропустили
+21:18:49 - StarvellBot - INFO - ⬅️  2
+21:18:59 - StarvellBot - INFO - пропустили
+21:19:09 - StarvellBot - INFO - пропустили
+21:19:15 - StarvellBot - INFO - ⬅️  2
+21:19:20 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:19:21 - StarvellBot - INFO - пропустили
+21:19:21 - StarvellBot - INFO - Успешно парсили ордеры
+21:19:31 - StarvellBot - INFO - пропустили
+21:19:40 - StarvellBot - INFO - ⬅️  2
+21:19:42 - StarvellBot - INFO - пропустили
+21:19:52 - StarvellBot - INFO - пропустили
+21:20:03 - StarvellBot - INFO - пропустили
+21:20:05 - StarvellBot - INFO - ⬅️  2
+21:20:14 - StarvellBot - INFO - пропустили
+21:20:26 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:20:26 - StarvellBot - INFO - пропустили
+21:20:27 - StarvellBot - INFO - Успешно парсили ордеры
+21:20:30 - StarvellBot - INFO - ⬅️  2
+21:20:37 - StarvellBot - INFO - пропустили
+21:20:49 - StarvellBot - INFO - пропустили
+21:20:55 - StarvellBot - INFO - ⬅️  2
+21:21:04 - StarvellBot - INFO - пропустили
+21:21:20 - StarvellBot - INFO - пропустили
+21:21:21 - StarvellBot - INFO - ⬅️  2
+21:21:32 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:21:39 - StarvellBot - INFO - Успешно парсили ордеры
+21:21:40 - StarvellBot - INFO - пропустили
+21:21:46 - StarvellBot - INFO - ⬅️  2
+21:21:51 - StarvellBot - INFO - пропустили
+21:22:02 - StarvellBot - INFO - пропустили
+21:22:12 - StarvellBot - INFO - ⬅️  2
+21:22:13 - StarvellBot - INFO - пропустили
+21:22:23 - StarvellBot - INFO - пропустили
+21:22:34 - StarvellBot - INFO - пропустили
+21:22:37 - StarvellBot - INFO - ⬅️  2
+21:22:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:22:44 - StarvellBot - INFO - пропустили
+21:22:44 - StarvellBot - INFO - Успешно парсили ордеры
+21:22:55 - StarvellBot - INFO - пропустили
+21:23:02 - StarvellBot - INFO - ⬅️  2
+21:23:06 - StarvellBot - INFO - пропустили
+21:23:16 - StarvellBot - INFO - пропустили
+21:23:27 - StarvellBot - INFO - ⬅️  2
+21:23:27 - StarvellBot - INFO - пропустили
+21:23:37 - StarvellBot - INFO - пропустили
+21:23:50 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:23:50 - StarvellBot - INFO - пропустили
+21:23:50 - StarvellBot - INFO - Успешно парсили ордеры
+21:23:52 - StarvellBot - INFO - ⬅️  2
+21:24:01 - StarvellBot - INFO - пропустили
+21:24:11 - StarvellBot - INFO - пропустили
+21:24:17 - StarvellBot - INFO - ⬅️  2
+21:24:22 - StarvellBot - INFO - пропустили
+21:24:33 - StarvellBot - INFO - пропустили
+21:24:42 - StarvellBot - INFO - ⬅️  2
+21:24:43 - StarvellBot - INFO - пропустили
+21:24:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:24:56 - StarvellBot - INFO - пропустили
+21:24:57 - StarvellBot - INFO - Успешно парсили ордеры
+21:25:07 - StarvellBot - INFO - пропустили
+21:25:07 - StarvellBot - INFO - ⬅️  2
+21:25:17 - StarvellBot - INFO - пропустили
+21:25:28 - StarvellBot - INFO - пропустили
+21:25:32 - StarvellBot - INFO - ⬅️  2
+21:25:39 - StarvellBot - INFO - пропустили
+21:25:49 - StarvellBot - INFO - пропустили
+21:26:01 - StarvellBot - INFO - ⬅️  2
+21:26:01 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:26:01 - StarvellBot - INFO - пропустили
+21:26:02 - StarvellBot - INFO - Успешно парсили ордеры
+21:26:12 - StarvellBot - INFO - пропустили
+21:26:22 - StarvellBot - INFO - пропустили
+21:26:26 - StarvellBot - INFO - ⬅️  2
+21:26:33 - StarvellBot - INFO - пропустили
+21:26:44 - StarvellBot - INFO - пропустили
+21:26:51 - StarvellBot - INFO - ⬅️  2
+21:26:55 - StarvellBot - INFO - пропустили
+21:27:07 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:27:07 - StarvellBot - INFO - пропустили
+21:27:08 - StarvellBot - INFO - Успешно парсили ордеры
+21:27:16 - StarvellBot - INFO - ⬅️  2
+21:27:18 - StarvellBot - INFO - пропустили
+21:27:28 - StarvellBot - INFO - пропустили
+21:27:39 - StarvellBot - INFO - пропустили
+21:27:41 - StarvellBot - INFO - ⬅️  2
+21:27:50 - StarvellBot - INFO - пропустили
+21:28:00 - StarvellBot - INFO - пропустили
+21:28:06 - StarvellBot - INFO - ⬅️  2
+21:28:13 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:28:13 - StarvellBot - INFO - пропустили
+21:28:13 - StarvellBot - INFO - Успешно парсили ордеры
+21:28:24 - StarvellBot - INFO - пропустили
+21:28:31 - StarvellBot - INFO - ⬅️  2
+21:28:34 - StarvellBot - INFO - пропустили
+21:28:45 - StarvellBot - INFO - пропустили
+21:28:56 - StarvellBot - INFO - пропустили
+21:28:56 - StarvellBot - INFO - ⬅️  2
+21:29:06 - StarvellBot - INFO - пропустили
+21:29:18 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:29:19 - StarvellBot - INFO - пропустили
+21:29:19 - StarvellBot - INFO - Успешно парсили ордеры
+21:29:21 - StarvellBot - INFO - ⬅️  2
+21:29:29 - StarvellBot - INFO - пропустили
+21:29:40 - StarvellBot - INFO - пропустили
+21:29:46 - StarvellBot - INFO - ⬅️  2
+21:29:51 - StarvellBot - INFO - пропустили
+21:30:01 - StarvellBot - INFO - пропустили
+21:30:11 - StarvellBot - INFO - ⬅️  2
+21:30:12 - StarvellBot - INFO - пропустили
+21:30:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:30:25 - StarvellBot - INFO - пропустили
+21:30:25 - StarvellBot - INFO - Успешно парсили ордеры
+21:30:36 - StarvellBot - INFO - пропустили
+21:30:36 - StarvellBot - INFO - ⬅️  2
+21:30:46 - StarvellBot - INFO - пропустили
+21:30:57 - StarvellBot - INFO - пропустили
+21:31:02 - StarvellBot - INFO - ⬅️  2
+21:31:07 - StarvellBot - INFO - пропустили
+21:31:18 - StarvellBot - INFO - пропустили
+21:31:30 - StarvellBot - INFO - ⬅️  2
+21:31:31 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:31:31 - StarvellBot - INFO - пропустили
+21:31:31 - StarvellBot - INFO - Успешно парсили ордеры
+21:31:42 - StarvellBot - INFO - пропустили
+21:31:52 - StarvellBot - INFO - пропустили
+21:31:55 - StarvellBot - INFO - ⬅️  2
+21:32:03 - StarvellBot - INFO - пропустили
+21:32:13 - StarvellBot - INFO - пропустили
+21:32:21 - StarvellBot - INFO - ⬅️  2
+21:32:24 - StarvellBot - INFO - пропустили
+21:32:38 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:32:38 - StarvellBot - INFO - пропустили
+21:32:39 - StarvellBot - INFO - Успешно парсили ордеры
+21:32:46 - StarvellBot - INFO - ⬅️  2
+21:32:49 - StarvellBot - INFO - пропустили
+21:33:00 - StarvellBot - INFO - пропустили
+21:33:10 - StarvellBot - INFO - пропустили
+21:33:11 - StarvellBot - INFO - ⬅️  2
+21:33:21 - StarvellBot - INFO - пропустили
+21:33:31 - StarvellBot - INFO - пропустили
+21:33:36 - StarvellBot - INFO - ⬅️  2
+21:33:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:33:44 - StarvellBot - INFO - пропустили
+21:33:44 - StarvellBot - INFO - Успешно парсили ордеры
+21:33:55 - StarvellBot - INFO - пропустили
+21:34:01 - StarvellBot - INFO - ⬅️  2
+21:34:06 - StarvellBot - INFO - пропустили
+21:34:17 - StarvellBot - INFO - пропустили
+21:34:26 - StarvellBot - INFO - ⬅️  2
+21:34:27 - StarvellBot - INFO - пропустили
+21:34:38 - StarvellBot - INFO - пропустили
+21:34:50 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:34:50 - StarvellBot - INFO - пропустили
+21:34:51 - StarvellBot - INFO - Успешно парсили ордеры
+21:34:51 - StarvellBot - INFO - ⬅️  2
+21:35:01 - StarvellBot - INFO - пропустили
+21:35:12 - StarvellBot - INFO - пропустили
+21:35:16 - StarvellBot - INFO - ⬅️  2
+21:35:22 - StarvellBot - INFO - пропустили
+21:35:33 - StarvellBot - INFO - пропустили
+21:35:41 - StarvellBot - INFO - ⬅️  2
+21:35:43 - StarvellBot - INFO - пропустили
+21:35:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:35:57 - StarvellBot - INFO - пропустили
+21:35:57 - StarvellBot - INFO - Успешно парсили ордеры
+21:36:06 - StarvellBot - INFO - ⬅️  2
+21:36:07 - StarvellBot - INFO - пропустили
+21:36:18 - StarvellBot - INFO - пропустили
+21:36:28 - StarvellBot - INFO - пропустили
+21:36:31 - StarvellBot - INFO - ⬅️  2
+21:36:39 - StarvellBot - INFO - пропустили
+21:36:50 - StarvellBot - INFO - пропустили
+21:36:56 - StarvellBot - INFO - ⬅️  2
+21:37:02 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:37:03 - StarvellBot - INFO - пропустили
+21:37:03 - StarvellBot - INFO - Успешно парсили ордеры
+21:37:13 - StarvellBot - INFO - пропустили
+21:37:21 - StarvellBot - INFO - ⬅️  2
+21:37:24 - StarvellBot - INFO - пропустили
+21:37:34 - StarvellBot - INFO - пропустили
+21:37:45 - StarvellBot - INFO - пропустили
+21:37:46 - StarvellBot - INFO - ⬅️  2
+21:37:55 - StarvellBot - INFO - пропустили
+21:38:08 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:38:08 - StarvellBot - INFO - пропустили
+21:38:09 - StarvellBot - INFO - Успешно парсили ордеры
+21:38:11 - StarvellBot - INFO - ⬅️  2
+21:38:19 - StarvellBot - INFO - пропустили
+21:38:30 - StarvellBot - INFO - пропустили
+21:38:37 - StarvellBot - INFO - ⬅️  2
+21:38:40 - StarvellBot - INFO - пропустили
+21:38:51 - StarvellBot - INFO - пропустили
+21:39:01 - StarvellBot - INFO - пропустили
+21:39:02 - StarvellBot - INFO - ⬅️  2
+21:39:14 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:39:14 - StarvellBot - INFO - пропустили
+21:39:14 - StarvellBot - INFO - Успешно парсили ордеры
+21:39:25 - StarvellBot - INFO - пропустили
+21:39:27 - StarvellBot - INFO - ⬅️  2
+21:39:35 - StarvellBot - INFO - пропустили
+21:39:46 - StarvellBot - INFO - пропустили
+21:39:52 - StarvellBot - INFO - ⬅️  2
+21:39:56 - StarvellBot - INFO - пропустили
+21:40:07 - StarvellBot - INFO - пропустили
+21:40:18 - StarvellBot - INFO - ⬅️  2
+21:40:19 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:40:19 - StarvellBot - INFO - пропустили
+21:40:19 - StarvellBot - INFO - Успешно парсили ордеры
+21:40:30 - StarvellBot - INFO - пропустили
+21:40:40 - StarvellBot - INFO - пропустили
+21:40:44 - StarvellBot - INFO - ⬅️  2
+21:40:51 - StarvellBot - INFO - пропустили
+21:41:01 - StarvellBot - INFO - пропустили
+21:41:09 - StarvellBot - INFO - ⬅️  2
+21:41:12 - StarvellBot - INFO - пропустили
+21:41:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:41:25 - StarvellBot - INFO - пропустили
+21:41:26 - StarvellBot - INFO - Успешно парсили ордеры
+21:41:34 - StarvellBot - INFO - ⬅️  2
+21:41:36 - StarvellBot - INFO - пропустили
+21:41:47 - StarvellBot - INFO - пропустили
+21:41:57 - StarvellBot - INFO - пропустили
+21:41:59 - StarvellBot - INFO - ⬅️  2
+21:42:08 - StarvellBot - INFO - пропустили
+21:42:18 - StarvellBot - INFO - пропустили
+21:42:24 - StarvellBot - INFO - ⬅️  2
+21:42:31 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:42:31 - StarvellBot - INFO - пропустили
+21:42:31 - StarvellBot - INFO - Успешно парсили ордеры
+21:42:42 - StarvellBot - INFO - пропустили
+21:42:49 - StarvellBot - INFO - ⬅️  2
+21:42:52 - StarvellBot - INFO - пропустили
+21:43:03 - StarvellBot - INFO - пропустили
+21:43:14 - StarvellBot - INFO - пропустили
+21:43:14 - StarvellBot - INFO - ⬅️  2
+21:43:24 - StarvellBot - INFO - пропустили
+21:43:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:43:37 - StarvellBot - INFO - пропустили
+21:43:38 - StarvellBot - INFO - Успешно парсили ордеры
+21:43:39 - StarvellBot - INFO - ⬅️  2
+21:43:48 - StarvellBot - INFO - пропустили
+21:43:58 - StarvellBot - INFO - пропустили
+21:44:04 - StarvellBot - INFO - ⬅️  2
+21:44:09 - StarvellBot - INFO - пропустили
+21:44:20 - StarvellBot - INFO - пропустили
+21:44:29 - StarvellBot - INFO - ⬅️  2
+21:44:30 - StarvellBot - INFO - пропустили
+21:44:44 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:44:44 - StarvellBot - INFO - пропустили
+21:44:45 - StarvellBot - INFO - Успешно парсили ордеры
+21:44:54 - StarvellBot - INFO - ⬅️  2
+21:44:55 - StarvellBot - INFO - пропустили
+21:45:05 - StarvellBot - INFO - пропустили
+21:45:16 - StarvellBot - INFO - пропустили
+21:45:19 - StarvellBot - INFO - ⬅️  2
+21:45:27 - StarvellBot - INFO - пропустили
+21:45:37 - StarvellBot - INFO - пропустили
+21:45:44 - StarvellBot - INFO - ⬅️  2
+21:45:50 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:46:10 - StarvellBot - INFO - ⬅️  2
+21:46:40 - StarvellBot - INFO - ⬅️  2
+21:47:04 - StarvellBot - INFO - пропустили
+21:47:08 - StarvellBot - INFO - ⬅️  2
+21:47:24 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:47:50 - StarvellBot - INFO - Успешно парсили ордеры
+21:47:51 - StarvellBot - INFO - пропустили
+21:47:51 - StarvellBot - INFO - 🟢 WebSocket connected
+21:47:51 - StarvellBot - INFO - ⬅️  0{"sid":"5VSeCsvlMVzbAHtJAO5N","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+21:47:51 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+21:47:51 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+21:47:51 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+21:47:51 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+21:47:51 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+21:47:51 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"ibRIASHi23_LTOBbAO5O"}
+21:47:51 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"UuvCGEbKII-5Z1k6AO5P"}
+21:47:51 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"-Pa7fDk-O3SZXpYcAO5Q"}
+21:47:51 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"KsRrWVPaPzGEyfvDAO5R"}
+21:47:51 - StarvellBot - INFO - ⬅️  40/online,{"sid":"d-m3BedvMPZ0JH2zAO5S"}
+21:48:02 - StarvellBot - INFO - пропустили
+21:48:12 - StarvellBot - INFO - пропустили
+21:48:16 - StarvellBot - INFO - ⬅️  2
+21:48:23 - StarvellBot - INFO - пропустили
+21:48:34 - StarvellBot - INFO - пропустили
+21:48:41 - StarvellBot - INFO - ⬅️  2
+21:48:44 - StarvellBot - INFO - пропустили
+21:48:56 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:48:56 - StarvellBot - INFO - пропустили
+21:48:57 - StarvellBot - INFO - Успешно парсили ордеры
+21:49:06 - StarvellBot - INFO - ⬅️  2
+21:49:07 - StarvellBot - INFO - пропустили
+21:49:17 - StarvellBot - INFO - пропустили
+21:49:28 - StarvellBot - INFO - пропустили
+21:49:31 - StarvellBot - INFO - ⬅️  2
+21:49:39 - StarvellBot - INFO - пропустили
+21:49:49 - StarvellBot - INFO - пропустили
+21:49:57 - StarvellBot - INFO - ⬅️  2
+21:50:03 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:50:03 - StarvellBot - INFO - пропустили
+21:50:03 - StarvellBot - INFO - Успешно парсили ордеры
+21:50:14 - StarvellBot - INFO - пропустили
+21:50:22 - StarvellBot - INFO - ⬅️  2
+21:50:24 - StarvellBot - INFO - пропустили
+21:50:35 - StarvellBot - INFO - пропустили
+21:50:45 - StarvellBot - INFO - пропустили
+21:50:47 - StarvellBot - INFO - ⬅️  2
+21:50:56 - StarvellBot - INFO - пропустили
+21:51:09 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:51:09 - StarvellBot - INFO - пропустили
+21:51:10 - StarvellBot - INFO - Успешно парсили ордеры
+21:51:12 - StarvellBot - INFO - ⬅️  2
+21:51:20 - StarvellBot - INFO - пропустили
+21:51:31 - StarvellBot - INFO - пропустили
+21:51:37 - StarvellBot - INFO - ⬅️  2
+21:51:41 - StarvellBot - INFO - пропустили
+21:51:52 - StarvellBot - INFO - пропустили
+21:52:02 - StarvellBot - INFO - ⬅️  2
+21:52:02 - StarvellBot - INFO - пропустили
+21:52:15 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:52:16 - StarvellBot - INFO - пропустили
+21:52:16 - StarvellBot - INFO - Успешно парсили ордеры
+21:52:26 - StarvellBot - INFO - пропустили
+21:52:27 - StarvellBot - INFO - ⬅️  2
+21:52:37 - StarvellBot - INFO - пропустили
+21:52:48 - StarvellBot - INFO - пропустили
+21:52:52 - StarvellBot - INFO - ⬅️  2
+21:52:58 - StarvellBot - INFO - пропустили
+21:53:09 - StarvellBot - INFO - пропустили
+21:53:22 - StarvellBot - INFO - ⬅️  2
+21:53:22 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:53:22 - StarvellBot - INFO - пропустили
+21:53:23 - StarvellBot - INFO - Успешно парсили ордеры
+21:53:33 - StarvellBot - INFO - пропустили
+21:53:44 - StarvellBot - INFO - пропустили
+21:53:47 - StarvellBot - INFO - ⬅️  2
+21:53:54 - StarvellBot - INFO - пропустили
+21:54:05 - StarvellBot - INFO - пропустили
+21:54:12 - StarvellBot - INFO - ⬅️  2
+21:54:16 - StarvellBot - INFO - пропустили
+21:54:28 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:54:29 - StarvellBot - INFO - пропустили
+21:54:29 - StarvellBot - INFO - Успешно парсили ордеры
+21:54:37 - StarvellBot - INFO - ⬅️  2
+21:54:39 - StarvellBot - INFO - пропустили
+21:54:50 - StarvellBot - INFO - пропустили
+21:55:00 - StarvellBot - INFO - пропустили
+21:55:02 - StarvellBot - INFO - ⬅️  2
+21:55:11 - StarvellBot - INFO - пропустили
+21:55:22 - StarvellBot - INFO - пропустили
+21:55:27 - StarvellBot - INFO - ⬅️  2
+21:55:34 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:55:35 - StarvellBot - INFO - пропустили
+21:55:35 - StarvellBot - INFO - Успешно парсили ордеры
+21:55:45 - StarvellBot - INFO - пропустили
+21:55:52 - StarvellBot - INFO - ⬅️  2
+21:55:56 - StarvellBot - INFO - пропустили
+21:56:06 - StarvellBot - INFO - пропустили
+21:56:17 - StarvellBot - INFO - пропустили
+21:56:17 - StarvellBot - INFO - ⬅️  2
+21:56:27 - StarvellBot - INFO - пропустили
+21:56:40 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:56:40 - StarvellBot - INFO - пропустили
+21:56:40 - StarvellBot - INFO - Успешно парсили ордеры
+21:56:42 - StarvellBot - INFO - ⬅️  2
+21:56:51 - StarvellBot - INFO - пропустили
+21:57:01 - StarvellBot - INFO - пропустили
+21:57:08 - StarvellBot - INFO - ⬅️  2
+21:57:12 - StarvellBot - INFO - пропустили
+21:57:23 - StarvellBot - INFO - пропустили
+21:57:33 - StarvellBot - INFO - ⬅️  2
+21:57:33 - StarvellBot - INFO - пропустили
+21:57:45 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:57:46 - StarvellBot - INFO - пропустили
+21:57:46 - StarvellBot - INFO - Успешно парсили ордеры
+21:57:56 - StarvellBot - INFO - пропустили
+21:57:58 - StarvellBot - INFO - ⬅️  2
+21:58:07 - StarvellBot - INFO - пропустили
+21:58:18 - StarvellBot - INFO - пропустили
+21:58:23 - StarvellBot - INFO - ⬅️  2
+21:58:28 - StarvellBot - INFO - пропустили
+21:58:39 - StarvellBot - INFO - пропустили
+21:58:51 - StarvellBot - INFO - ⬅️  2
+21:58:52 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:58:52 - StarvellBot - INFO - пропустили
+21:58:52 - StarvellBot - INFO - Успешно парсили ордеры
+21:59:03 - StarvellBot - INFO - пропустили
+21:59:13 - StarvellBot - INFO - пропустили
+21:59:16 - StarvellBot - INFO - ⬅️  2
+21:59:24 - StarvellBot - INFO - пропустили
+21:59:34 - StarvellBot - INFO - пропустили
+21:59:42 - StarvellBot - INFO - ⬅️  2
+21:59:45 - StarvellBot - INFO - пропустили
+21:59:59 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+21:59:59 - StarvellBot - INFO - пропустили
+21:59:59 - StarvellBot - INFO - Успешно парсили ордеры
+22:00:07 - StarvellBot - INFO - ⬅️  2
+22:00:10 - StarvellBot - INFO - пропустили
+22:00:20 - StarvellBot - INFO - пропустили
+22:00:31 - StarvellBot - INFO - пропустили
+22:00:32 - StarvellBot - INFO - ⬅️  2
+22:00:42 - StarvellBot - INFO - пропустили
+22:00:52 - StarvellBot - INFO - пропустили
+22:00:57 - StarvellBot - INFO - ⬅️  2
+22:01:04 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:01:05 - StarvellBot - INFO - пропустили
+22:01:05 - StarvellBot - INFO - Успешно парсили ордеры
+22:01:15 - StarvellBot - INFO - пропустили
+22:01:22 - StarvellBot - INFO - ⬅️  2
+22:01:26 - StarvellBot - INFO - пропустили
+22:01:36 - StarvellBot - INFO - пропустили
+22:01:47 - StarvellBot - INFO - пропустили
+22:01:47 - StarvellBot - INFO - ⬅️  2
+22:01:57 - StarvellBot - INFO - пропустили
+22:02:10 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:02:11 - StarvellBot - INFO - пропустили
+22:02:11 - StarvellBot - INFO - Успешно парсили ордеры
+22:02:12 - StarvellBot - INFO - ⬅️  2
+22:02:21 - StarvellBot - INFO - пропустили
+22:02:32 - StarvellBot - INFO - пропустили
+22:02:37 - StarvellBot - INFO - ⬅️  2
+22:02:42 - StarvellBot - INFO - пропустили
+22:02:53 - StarvellBot - INFO - пропустили
+22:03:02 - StarvellBot - INFO - ⬅️  2
+22:03:04 - StarvellBot - INFO - пропустили
+22:03:17 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:03:17 - StarvellBot - INFO - пропустили
+22:03:17 - StarvellBot - INFO - Успешно парсили ордеры
+22:03:27 - StarvellBot - INFO - ⬅️  2
+22:03:28 - StarvellBot - INFO - пропустили
+22:03:38 - StarvellBot - INFO - пропустили
+22:03:49 - StarvellBot - INFO - пропустили
+22:03:52 - StarvellBot - INFO - ⬅️  2
+22:04:00 - StarvellBot - INFO - пропустили
+22:04:10 - StarvellBot - INFO - пропустили
+22:04:17 - StarvellBot - INFO - ⬅️  2
+22:04:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:04:23 - StarvellBot - INFO - пропустили
+22:04:23 - StarvellBot - INFO - Успешно парсили ордеры
+22:04:34 - StarvellBot - INFO - пропустили
+22:04:42 - StarvellBot - INFO - ⬅️  2
+22:04:44 - StarvellBot - INFO - пропустили
+22:04:55 - StarvellBot - INFO - пропустили
+22:05:05 - StarvellBot - INFO - пропустили
+22:05:07 - StarvellBot - INFO - ⬅️  2
+22:05:16 - StarvellBot - INFO - пропустили
+22:05:29 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:05:29 - StarvellBot - INFO - пропустили
+22:05:29 - StarvellBot - INFO - Успешно парсили ордеры
+22:05:33 - StarvellBot - INFO - ⬅️  2
+22:05:40 - StarvellBot - INFO - пропустили
+22:05:50 - StarvellBot - INFO - пропустили
+22:05:58 - StarvellBot - INFO - ⬅️  2
+22:06:01 - StarvellBot - INFO - пропустили
+22:06:11 - StarvellBot - INFO - пропустили
+22:06:22 - StarvellBot - INFO - пропустили
+22:06:23 - StarvellBot - INFO - ⬅️  2
+22:06:35 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:06:35 - StarvellBot - INFO - пропустили
+22:06:35 - StarvellBot - INFO - Успешно парсили ордеры
+22:06:46 - StarvellBot - INFO - пропустили
+22:06:48 - StarvellBot - INFO - ⬅️  2
+22:06:56 - StarvellBot - INFO - пропустили
+22:07:07 - StarvellBot - INFO - пропустили
+22:07:13 - StarvellBot - INFO - ⬅️  2
+22:07:17 - StarvellBot - INFO - пропустили
+22:07:28 - StarvellBot - INFO - пропустили
+22:07:41 - StarvellBot - INFO - ⬅️  2
+22:07:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:07:41 - StarvellBot - INFO - пропустили
+22:07:42 - StarvellBot - INFO - Успешно парсили ордеры
+22:07:52 - StarvellBot - INFO - пропустили
+22:08:03 - StarvellBot - INFO - пропустили
+22:08:06 - StarvellBot - INFO - ⬅️  2
+22:08:14 - StarvellBot - INFO - пропустили
+22:08:24 - StarvellBot - INFO - пропустили
+22:08:31 - StarvellBot - INFO - ⬅️  2
+22:08:35 - StarvellBot - INFO - пропустили
+22:08:48 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:08:48 - StarvellBot - INFO - пропустили
+22:08:48 - StarvellBot - INFO - Успешно парсили ордеры
+22:08:56 - StarvellBot - INFO - ⬅️  2
+22:08:59 - StarvellBot - INFO - пропустили
+22:09:09 - StarvellBot - INFO - пропустили
+22:09:20 - StarvellBot - INFO - пропустили
+22:09:21 - StarvellBot - INFO - ⬅️  2
+22:09:30 - StarvellBot - INFO - пропустили
+22:09:41 - StarvellBot - INFO - пропустили
+22:09:46 - StarvellBot - INFO - ⬅️  2
+22:09:53 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:09:54 - StarvellBot - INFO - пропустили
+22:09:54 - StarvellBot - INFO - Успешно парсили ордеры
+22:10:04 - StarvellBot - INFO - пропустили
+22:10:11 - StarvellBot - INFO - ⬅️  2
+22:10:15 - StarvellBot - INFO - пропустили
+22:10:25 - StarvellBot - INFO - пропустили
+22:10:36 - StarvellBot - INFO - пропустили
+22:10:36 - StarvellBot - INFO - ⬅️  2
+22:10:47 - StarvellBot - INFO - пропустили
+22:10:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:10:59 - StarvellBot - INFO - пропустили
+22:10:59 - StarvellBot - INFO - Успешно парсили ордеры
+22:11:01 - StarvellBot - INFO - ⬅️  2
+22:11:09 - StarvellBot - INFO - пропустили
+22:11:20 - StarvellBot - INFO - пропустили
+22:11:27 - StarvellBot - INFO - ⬅️  2
+22:11:30 - StarvellBot - INFO - пропустили
+22:11:41 - StarvellBot - INFO - пропустили
+22:11:51 - StarvellBot - INFO - пропустили
+22:11:52 - StarvellBot - INFO - ⬅️  2
+22:12:04 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:12:05 - StarvellBot - INFO - пропустили
+22:12:05 - StarvellBot - INFO - Успешно парсили ордеры
+22:12:15 - StarvellBot - INFO - пропустили
+22:12:17 - StarvellBot - INFO - ⬅️  2
+22:12:26 - StarvellBot - INFO - пропустили
+22:12:36 - StarvellBot - INFO - пропустили
+22:12:42 - StarvellBot - INFO - ⬅️  2
+22:12:47 - StarvellBot - INFO - пропустили
+22:12:58 - StarvellBot - INFO - пропустили
+22:13:11 - StarvellBot - INFO - ⬅️  2
+22:13:11 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:13:11 - StarvellBot - INFO - пропустили
+22:13:12 - StarvellBot - INFO - Успешно парсили ордеры
+22:13:22 - StarvellBot - INFO - пропустили
+22:13:33 - StarvellBot - INFO - пропустили
+22:13:36 - StarvellBot - INFO - ⬅️  2
+22:13:43 - StarvellBot - INFO - пропустили
+22:13:54 - StarvellBot - INFO - пропустили
+22:14:01 - StarvellBot - INFO - ⬅️  2
+22:14:04 - StarvellBot - INFO - пропустили
+22:14:17 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:14:17 - StarvellBot - INFO - пропустили
+22:14:17 - StarvellBot - INFO - Успешно парсили ордеры
+22:14:26 - StarvellBot - INFO - ⬅️  2
+22:14:28 - StarvellBot - INFO - пропустили
+22:14:38 - StarvellBot - INFO - пропустили
+22:14:49 - StarvellBot - INFO - пропустили
+22:14:51 - StarvellBot - INFO - ⬅️  2
+22:14:59 - StarvellBot - INFO - пропустили
+22:15:10 - StarvellBot - INFO - пропустили
+22:15:16 - StarvellBot - INFO - ⬅️  2
+22:15:24 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:15:24 - StarvellBot - INFO - пропустили
+22:15:24 - StarvellBot - INFO - Успешно парсили ордеры
+22:15:35 - StarvellBot - INFO - пропустили
+22:15:41 - StarvellBot - INFO - ⬅️  2
+22:15:45 - StarvellBot - INFO - пропустили
+22:15:56 - StarvellBot - INFO - пропустили
+22:16:06 - StarvellBot - INFO - пропустили
+22:16:06 - StarvellBot - INFO - ⬅️  2
+22:16:17 - StarvellBot - INFO - пропустили
+22:16:31 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:16:31 - StarvellBot - INFO - пропустили
+22:16:31 - StarvellBot - INFO - Успешно парсили ордеры
+22:16:31 - StarvellBot - INFO - ⬅️  2
+22:16:42 - StarvellBot - INFO - пропустили
+22:16:52 - StarvellBot - INFO - пропустили
+22:16:56 - StarvellBot - INFO - ⬅️  2
+22:17:03 - StarvellBot - INFO - пропустили
+22:17:14 - StarvellBot - INFO - пропустили
+22:17:22 - StarvellBot - INFO - ⬅️  2
+22:17:24 - StarvellBot - INFO - пропустили
+22:17:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:17:37 - StarvellBot - INFO - пропустили
+22:17:37 - StarvellBot - INFO - Успешно парсили ордеры
+22:17:47 - StarvellBot - INFO - ⬅️  2
+22:17:47 - StarvellBot - INFO - пропустили
+22:17:58 - StarvellBot - INFO - пропустили
+22:18:09 - StarvellBot - INFO - пропустили
+22:18:12 - StarvellBot - INFO - ⬅️  2
+22:18:19 - StarvellBot - INFO - пропустили
+22:18:30 - StarvellBot - INFO - пропустили
+22:18:37 - StarvellBot - INFO - ⬅️  2
+22:18:43 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:18:43 - StarvellBot - INFO - пропустили
+22:18:44 - StarvellBot - INFO - Успешно парсили ордеры
+22:18:54 - StarvellBot - INFO - пропустили
+22:19:02 - StarvellBot - INFO - ⬅️  2
+22:19:04 - StarvellBot - INFO - пропустили
+22:19:15 - StarvellBot - INFO - пропустили
+22:19:26 - StarvellBot - INFO - пропустили
+22:19:27 - StarvellBot - INFO - ⬅️  2
+22:19:36 - StarvellBot - INFO - пропустили
+22:19:48 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:19:48 - StarvellBot - INFO - пропустили
+22:19:48 - StarvellBot - INFO - Успешно парсили ордеры
+22:19:52 - StarvellBot - INFO - ⬅️  2
+22:19:59 - StarvellBot - INFO - пропустили
+22:20:09 - StarvellBot - INFO - пропустили
+22:20:17 - StarvellBot - INFO - ⬅️  2
+22:20:20 - StarvellBot - INFO - пропустили
+22:20:30 - StarvellBot - INFO - пропустили
+22:20:41 - StarvellBot - INFO - пропустили
+22:20:42 - StarvellBot - INFO - ⬅️  2
+22:20:54 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:20:54 - StarvellBot - INFO - пропустили
+22:20:54 - StarvellBot - INFO - Успешно парсили ордеры
+22:21:05 - StarvellBot - INFO - пропустили
+22:21:07 - StarvellBot - INFO - ⬅️  2
+22:21:15 - StarvellBot - INFO - пропустили
+22:21:26 - StarvellBot - INFO - пропустили
+22:21:32 - StarvellBot - INFO - ⬅️  2
+22:21:36 - StarvellBot - INFO - пропустили
+22:21:47 - StarvellBot - INFO - пропустили
+22:22:00 - StarvellBot - INFO - ⬅️  2
+22:22:00 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:22:00 - StarvellBot - INFO - пропустили
+22:22:01 - StarvellBot - INFO - Успешно парсили ордеры
+22:22:11 - StarvellBot - INFO - пропустили
+22:22:21 - StarvellBot - INFO - пропустили
+22:22:25 - StarvellBot - INFO - ⬅️  2
+22:22:32 - StarvellBot - INFO - пропустили
+22:22:43 - StarvellBot - INFO - пропустили
+22:22:50 - StarvellBot - INFO - ⬅️  2
+22:22:53 - StarvellBot - INFO - пропустили
+22:23:06 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:23:06 - StarvellBot - INFO - пропустили
+22:23:07 - StarvellBot - INFO - Успешно парсили ордеры
+22:23:15 - StarvellBot - INFO - ⬅️  2
+22:23:17 - StarvellBot - INFO - пропустили
+22:23:27 - StarvellBot - INFO - пропустили
+22:23:38 - StarvellBot - INFO - пропустили
+22:23:40 - StarvellBot - INFO - ⬅️  2
+22:23:49 - StarvellBot - INFO - пропустили
+22:23:59 - StarvellBot - INFO - пропустили
+22:24:05 - StarvellBot - INFO - ⬅️  2
+22:24:12 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:24:12 - StarvellBot - INFO - пропустили
+22:24:13 - StarvellBot - INFO - Успешно парсили ордеры
+22:24:23 - StarvellBot - INFO - пропустили
+22:24:30 - StarvellBot - INFO - ⬅️  2
+22:24:34 - StarvellBot - INFO - пропустили
+22:24:44 - StarvellBot - INFO - пропустили
+22:24:55 - StarvellBot - INFO - пропустили
+22:24:55 - StarvellBot - INFO - ⬅️  2
+22:25:06 - StarvellBot - INFO - пропустили
+22:25:18 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:25:19 - StarvellBot - INFO - пропустили
+22:25:19 - StarvellBot - INFO - Успешно парсили ордеры
+22:25:20 - StarvellBot - INFO - ⬅️  2
+22:25:29 - StarvellBot - INFO - пропустили
+22:25:40 - StarvellBot - INFO - пропустили
+22:25:45 - StarvellBot - INFO - ⬅️  2
+22:25:50 - StarvellBot - INFO - пропустили
+22:26:01 - StarvellBot - INFO - пропустили
+22:26:10 - StarvellBot - INFO - ⬅️  2
+22:26:12 - StarvellBot - INFO - пропустили
+22:26:24 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:26:24 - StarvellBot - INFO - пропустили
+22:26:25 - StarvellBot - INFO - Успешно парсили ордеры
+22:26:35 - StarvellBot - INFO - пропустили
+22:26:35 - StarvellBot - INFO - ⬅️  2
+22:26:46 - StarvellBot - INFO - пропустили
+22:26:56 - StarvellBot - INFO - пропустили
+22:27:00 - StarvellBot - INFO - ⬅️  2
+22:27:07 - StarvellBot - INFO - пропустили
+22:27:17 - StarvellBot - INFO - пропустили
+22:27:30 - StarvellBot - INFO - ⬅️  2
+22:27:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:27:31 - StarvellBot - INFO - пропустили
+22:27:31 - StarvellBot - INFO - Успешно парсили ордеры
+22:27:41 - StarvellBot - INFO - пропустили
+22:27:52 - StarvellBot - INFO - пропустили
+22:27:55 - StarvellBot - INFO - ⬅️  2
+22:28:02 - StarvellBot - INFO - пропустили
+22:28:13 - StarvellBot - INFO - пропустили
+22:28:20 - StarvellBot - INFO - ⬅️  2
+22:28:24 - StarvellBot - INFO - пропустили
+22:28:36 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:28:37 - StarvellBot - INFO - пропустили
+22:28:37 - StarvellBot - INFO - Успешно парсили ордеры
+22:28:45 - StarvellBot - INFO - ⬅️  2
+22:28:47 - StarvellBot - INFO - пропустили
+22:28:58 - StarvellBot - INFO - пропустили
+22:29:09 - StarvellBot - INFO - пропустили
+22:29:10 - StarvellBot - INFO - ⬅️  2
+22:29:19 - StarvellBot - INFO - пропустили
+22:29:30 - StarvellBot - INFO - пропустили
+22:29:35 - StarvellBot - INFO - ⬅️  2
+22:29:42 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:29:42 - StarvellBot - INFO - пропустили
+22:29:43 - StarvellBot - INFO - Успешно парсили ордеры
+22:29:53 - StarvellBot - INFO - пропустили
+22:30:00 - StarvellBot - INFO - ⬅️  2
+22:30:04 - StarvellBot - INFO - пропустили
+22:30:15 - StarvellBot - INFO - пропустили
+22:30:25 - StarvellBot - INFO - пропустили
+22:30:25 - StarvellBot - INFO - ⬅️  2
+22:30:36 - StarvellBot - INFO - пропустили
+22:30:48 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:30:48 - StarvellBot - INFO - пропустили
+22:30:48 - StarvellBot - INFO - Успешно парсили ордеры
+22:30:51 - StarvellBot - INFO - ⬅️  2
+22:30:59 - StarvellBot - INFO - пропустили
+22:31:09 - StarvellBot - INFO - пропустили
+22:31:16 - StarvellBot - INFO - ⬅️  2
+22:31:20 - StarvellBot - INFO - пропустили
+22:31:30 - StarvellBot - INFO - пропустили
+22:31:41 - StarvellBot - INFO - ⬅️  2
+22:31:41 - StarvellBot - INFO - пропустили
+22:31:54 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:31:54 - StarvellBot - INFO - пропустили
+22:31:54 - StarvellBot - INFO - Успешно парсили ордеры
+22:32:05 - StarvellBot - INFO - пропустили
+22:32:06 - StarvellBot - INFO - ⬅️  2
+22:32:15 - StarvellBot - INFO - пропустили
+22:32:26 - StarvellBot - INFO - пропустили
+22:32:31 - StarvellBot - INFO - ⬅️  2
+22:32:37 - StarvellBot - INFO - пропустили
+22:32:47 - StarvellBot - INFO - пропустили
+22:32:59 - StarvellBot - INFO - ⬅️  2
+22:33:00 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:33:00 - StarvellBot - INFO - пропустили
+22:33:00 - StarvellBot - INFO - Успешно парсили ордеры
+22:33:11 - StarvellBot - INFO - пропустили
+22:33:21 - StarvellBot - INFO - пропустили
+22:33:24 - StarvellBot - INFO - ⬅️  2
+22:33:32 - StarvellBot - INFO - пропустили
+22:33:43 - StarvellBot - INFO - пропустили
+22:33:49 - StarvellBot - INFO - ⬅️  2
+22:33:53 - StarvellBot - INFO - пропустили
+22:34:06 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:34:06 - StarvellBot - INFO - пропустили
+22:34:06 - StarvellBot - INFO - Успешно парсили ордеры
+22:34:15 - StarvellBot - INFO - ⬅️  2
+22:34:17 - StarvellBot - INFO - пропустили
+22:34:27 - StarvellBot - INFO - пропустили
+22:34:38 - StarvellBot - INFO - пропустили
+22:34:40 - StarvellBot - INFO - ⬅️  2
+22:34:48 - StarvellBot - INFO - пропустили
+22:34:59 - StarvellBot - INFO - пропустили
+22:35:05 - StarvellBot - INFO - ⬅️  2
+22:35:12 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:35:12 - StarvellBot - INFO - пропустили
+22:35:13 - StarvellBot - INFO - Успешно парсили ордеры
+22:35:23 - StarvellBot - INFO - пропустили
+22:35:30 - StarvellBot - INFO - ⬅️  2
+22:35:34 - StarvellBot - INFO - пропустили
+22:35:44 - StarvellBot - INFO - пропустили
+22:35:55 - StarvellBot - INFO - пропустили
+22:35:55 - StarvellBot - INFO - ⬅️  2
+22:36:05 - StarvellBot - INFO - пропустили
+22:36:18 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:36:18 - StarvellBot - INFO - пропустили
+22:36:18 - StarvellBot - INFO - Успешно парсили ордеры
+22:36:20 - StarvellBot - INFO - ⬅️  2
+22:36:29 - StarvellBot - INFO - пропустили
+22:36:40 - StarvellBot - INFO - пропустили
+22:36:45 - StarvellBot - INFO - ⬅️  2
+22:36:50 - StarvellBot - INFO - пропустили
+22:37:01 - StarvellBot - INFO - пропустили
+22:37:10 - StarvellBot - INFO - ⬅️  2
+22:37:12 - StarvellBot - INFO - пропустили
+22:37:24 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:37:24 - StarvellBot - INFO - пропустили
+22:37:24 - StarvellBot - INFO - Успешно парсили ордеры
+22:37:35 - StarvellBot - INFO - пропустили
+22:37:35 - StarvellBot - INFO - ⬅️  2
+22:37:45 - StarvellBot - INFO - пропустили
+22:37:56 - StarvellBot - INFO - пропустили
+22:38:00 - StarvellBot - INFO - ⬅️  2
+22:38:06 - StarvellBot - INFO - пропустили
+22:38:17 - StarvellBot - INFO - пропустили
+22:38:28 - StarvellBot - INFO - ⬅️  2
+22:38:28 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:38:29 - StarvellBot - INFO - пропустили
+22:38:29 - StarvellBot - INFO - Успешно парсили ордеры
+22:38:39 - StarvellBot - INFO - пропустили
+22:38:50 - StarvellBot - INFO - пропустили
+22:38:53 - StarvellBot - INFO - ⬅️  2
+22:39:01 - StarvellBot - INFO - пропустили
+22:39:11 - StarvellBot - INFO - пропустили
+22:39:18 - StarvellBot - INFO - ⬅️  2
+22:39:22 - StarvellBot - INFO - пропустили
+22:39:35 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:39:36 - StarvellBot - INFO - пропустили
+22:39:36 - StarvellBot - INFO - Успешно парсили ордеры
+22:39:43 - StarvellBot - INFO - ⬅️  2
+22:39:46 - StarvellBot - INFO - пропустили
+22:39:57 - StarvellBot - INFO - пропустили
+22:40:07 - StarvellBot - INFO - пропустили
+22:40:08 - StarvellBot - INFO - ⬅️  2
+22:40:18 - StarvellBot - INFO - пропустили
+22:40:29 - StarvellBot - INFO - пропустили
+22:40:34 - StarvellBot - INFO - ⬅️  2
+22:40:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:40:42 - StarvellBot - INFO - пропустили
+22:40:42 - StarvellBot - INFO - Успешно парсили ордеры
+22:40:52 - StarvellBot - INFO - пропустили
+22:40:59 - StarvellBot - INFO - ⬅️  2
+22:41:03 - StarvellBot - INFO - пропустили
+22:41:13 - StarvellBot - INFO - пропустили
+22:41:24 - StarvellBot - INFO - ⬅️  2
+22:41:24 - StarvellBot - INFO - пропустили
+22:41:34 - StarvellBot - INFO - пропустили
+22:41:46 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:41:47 - StarvellBot - INFO - пропустили
+22:41:47 - StarvellBot - INFO - Успешно парсили ордеры
+22:41:49 - StarvellBot - INFO - ⬅️  2
+22:41:57 - StarvellBot - INFO - пропустили
+22:42:08 - StarvellBot - INFO - пропустили
+22:42:14 - StarvellBot - INFO - ⬅️  2
+22:42:18 - StarvellBot - INFO - пропустили
+22:42:29 - StarvellBot - INFO - пропустили
+22:42:39 - StarvellBot - INFO - ⬅️  2
+22:42:40 - StarvellBot - INFO - пропустили
+22:42:52 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:42:53 - StarvellBot - INFO - пропустили
+22:42:53 - StarvellBot - INFO - Успешно парсили ордеры
+22:43:03 - StarvellBot - INFO - пропустили
+22:43:04 - StarvellBot - INFO - ⬅️  2
+22:43:14 - StarvellBot - INFO - пропустили
+22:43:24 - StarvellBot - INFO - пропустили
+22:43:29 - StarvellBot - INFO - ⬅️  2
+22:43:35 - StarvellBot - INFO - пропустили
+22:43:45 - StarvellBot - INFO - пропустили
+22:43:58 - StarvellBot - INFO - ⬅️  2
+22:43:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:43:59 - StarvellBot - INFO - пропустили
+22:43:59 - StarvellBot - INFO - Успешно парсили ордеры
+22:44:09 - StarvellBot - INFO - пропустили
+22:44:20 - StarvellBot - INFO - пропустили
+22:44:23 - StarvellBot - INFO - ⬅️  2
+22:44:30 - StarvellBot - INFO - пропустили
+22:44:41 - StarvellBot - INFO - пропустили
+22:44:48 - StarvellBot - INFO - ⬅️  2
+22:44:52 - StarvellBot - INFO - пропустили
+22:45:05 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:45:05 - StarvellBot - INFO - пропустили
+22:45:05 - StarvellBot - INFO - Успешно парсили ордеры
+22:45:13 - StarvellBot - INFO - ⬅️  2
+22:45:16 - StarvellBot - INFO - пропустили
+22:45:26 - StarvellBot - INFO - пропустили
+22:45:37 - StarvellBot - INFO - пропустили
+22:45:38 - StarvellBot - INFO - ⬅️  2
+22:45:47 - StarvellBot - INFO - пропустили
+22:45:58 - StarvellBot - INFO - пропустили
+22:46:03 - StarvellBot - INFO - ⬅️  2
+22:46:11 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:46:11 - StarvellBot - INFO - пропустили
+22:46:11 - StarvellBot - INFO - Успешно парсили ордеры
+22:46:22 - StarvellBot - INFO - пропустили
+22:46:29 - StarvellBot - INFO - ⬅️  2
+22:46:32 - StarvellBot - INFO - пропустили
+22:46:43 - StarvellBot - INFO - пропустили
+22:46:54 - StarvellBot - INFO - пропустили
+22:46:54 - StarvellBot - INFO - ⬅️  2
+22:47:04 - StarvellBot - INFO - пропустили
+22:47:17 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:47:18 - StarvellBot - INFO - пропустили
+22:47:18 - StarvellBot - INFO - Успешно парсили ордеры
+22:47:19 - StarvellBot - INFO - ⬅️  2
+22:47:28 - StarvellBot - INFO - пропустили
+22:47:39 - StarvellBot - INFO - пропустили
+22:47:44 - StarvellBot - INFO - ⬅️  2
+22:47:50 - StarvellBot - INFO - пропустили
+22:48:00 - StarvellBot - INFO - пропустили
+22:48:09 - StarvellBot - INFO - ⬅️  2
+22:48:11 - StarvellBot - INFO - пропустили
+22:48:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:48:24 - StarvellBot - INFO - пропустили
+22:48:24 - StarvellBot - INFO - Успешно парсили ордеры
+22:48:34 - StarvellBot - INFO - ⬅️  2
+22:48:34 - StarvellBot - INFO - пропустили
+22:48:45 - StarvellBot - INFO - пропустили
+22:48:56 - StarvellBot - INFO - пропустили
+22:48:59 - StarvellBot - INFO - ⬅️  2
+22:49:06 - StarvellBot - INFO - пропустили
+22:49:17 - StarvellBot - INFO - пропустили
+22:49:24 - StarvellBot - INFO - ⬅️  2
+22:49:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:49:30 - StarvellBot - INFO - пропустили
+22:49:30 - StarvellBot - INFO - Успешно парсили ордеры
+22:49:41 - StarvellBot - INFO - пропустили
+22:49:49 - StarvellBot - INFO - ⬅️  2
+22:49:51 - StarvellBot - INFO - пропустили
+22:50:02 - StarvellBot - INFO - пропустили
+22:50:13 - StarvellBot - INFO - пропустили
+22:50:14 - StarvellBot - INFO - ⬅️  2
+22:50:23 - StarvellBot - INFO - пропустили
+22:50:36 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:50:36 - StarvellBot - INFO - пропустили
+22:50:36 - StarvellBot - INFO - Успешно парсили ордеры
+22:50:39 - StarvellBot - INFO - ⬅️  2
+22:50:47 - StarvellBot - INFO - пропустили
+22:50:57 - StarvellBot - INFO - пропустили
+22:51:04 - StarvellBot - INFO - ⬅️  2
+22:51:08 - StarvellBot - INFO - пропустили
+22:51:19 - StarvellBot - INFO - пропустили
+22:51:29 - StarvellBot - INFO - пропустили
+22:51:30 - StarvellBot - INFO - ⬅️  2
+22:51:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:51:42 - StarvellBot - INFO - пропустили
+22:51:42 - StarvellBot - INFO - Успешно парсили ордеры
+22:51:52 - StarvellBot - INFO - пропустили
+22:51:55 - StarvellBot - INFO - ⬅️  2
+22:52:03 - StarvellBot - INFO - пропустили
+22:52:13 - StarvellBot - INFO - пропустили
+22:52:20 - StarvellBot - INFO - ⬅️  2
+22:52:24 - StarvellBot - INFO - пропустили
+22:52:34 - StarvellBot - INFO - пропустили
+22:52:47 - StarvellBot - INFO - ⬅️  2
+22:52:47 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:52:47 - StarvellBot - INFO - пропустили
+22:52:48 - StarvellBot - INFO - Успешно парсили ордеры
+22:52:58 - StarvellBot - INFO - пропустили
+22:53:08 - StarvellBot - INFO - пропустили
+22:53:12 - StarvellBot - INFO - ⬅️  2
+22:53:19 - StarvellBot - INFO - пропустили
+22:53:30 - StarvellBot - INFO - пропустили
+22:53:37 - StarvellBot - INFO - ⬅️  2
+22:53:40 - StarvellBot - INFO - пропустили
+22:53:53 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:53:54 - StarvellBot - INFO - пропустили
+22:53:54 - StarvellBot - INFO - Успешно парсили ордеры
+22:54:02 - StarvellBot - INFO - ⬅️  2
+22:54:04 - StarvellBot - INFO - пропустили
+22:54:15 - StarvellBot - INFO - пропустили
+22:54:26 - StarvellBot - INFO - пропустили
+22:54:27 - StarvellBot - INFO - ⬅️  2
+22:54:36 - StarvellBot - INFO - пропустили
+22:54:47 - StarvellBot - INFO - пропустили
+22:54:52 - StarvellBot - INFO - ⬅️  2
+22:54:59 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:55:00 - StarvellBot - INFO - пропустили
+22:55:00 - StarvellBot - INFO - Успешно парсили ордеры
+22:55:10 - StarvellBot - INFO - пропустили
+22:55:17 - StarvellBot - INFO - ⬅️  2
+22:55:21 - StarvellBot - INFO - пропустили
+22:55:31 - StarvellBot - INFO - пропустили
+22:55:42 - StarvellBot - INFO - пропустили
+22:55:42 - StarvellBot - INFO - ⬅️  2
+22:55:53 - StarvellBot - INFO - пропустили
+22:56:05 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:56:05 - StarvellBot - INFO - пропустили
+22:56:05 - StarvellBot - INFO - Успешно парсили ордеры
+22:56:07 - StarvellBot - INFO - ⬅️  2
+22:56:16 - StarvellBot - INFO - пропустили
+22:56:26 - StarvellBot - INFO - пропустили
+22:56:32 - StarvellBot - INFO - ⬅️  2
+22:56:37 - StarvellBot - INFO - пропустили
+22:56:47 - StarvellBot - INFO - пропустили
+22:56:57 - StarvellBot - INFO - ⬅️  2
+22:56:58 - StarvellBot - INFO - пропустили
+22:57:11 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:57:11 - StarvellBot - INFO - пропустили
+22:57:11 - StarvellBot - INFO - Успешно парсили ордеры
+22:57:21 - StarvellBot - INFO - пропустили
+22:57:22 - StarvellBot - INFO - ⬅️  2
+22:57:32 - StarvellBot - INFO - пропустили
+22:57:43 - StarvellBot - INFO - пропустили
+22:57:47 - StarvellBot - INFO - ⬅️  2
+22:57:53 - StarvellBot - INFO - пропустили
+22:58:04 - StarvellBot - INFO - пропустили
+22:58:15 - StarvellBot - INFO - ⬅️  2
+22:58:16 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:58:16 - StarvellBot - INFO - пропустили
+22:58:16 - StarvellBot - INFO - Успешно парсили ордеры
+22:58:27 - StarvellBot - INFO - пропустили
+22:58:37 - StarvellBot - INFO - пропустили
+22:58:40 - StarvellBot - INFO - ⬅️  2
+22:58:48 - StarvellBot - INFO - пропустили
+22:58:58 - StarvellBot - INFO - пропустили
+22:59:06 - StarvellBot - INFO - ⬅️  2
+22:59:09 - StarvellBot - INFO - пропустили
+22:59:22 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+22:59:22 - StarvellBot - INFO - пропустили
+22:59:23 - StarvellBot - INFO - Успешно парсили ордеры
+22:59:31 - StarvellBot - INFO - ⬅️  2
+22:59:33 - StarvellBot - INFO - пропустили
+22:59:43 - StarvellBot - INFO - пропустили
+22:59:54 - StarvellBot - INFO - пропустили
+22:59:56 - StarvellBot - INFO - ⬅️  2
+23:00:05 - StarvellBot - INFO - пропустили
+23:00:15 - StarvellBot - INFO - пропустили
+23:00:21 - StarvellBot - INFO - ⬅️  2
+23:00:29 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+23:00:29 - StarvellBot - INFO - пропустили
+23:00:29 - StarvellBot - INFO - Успешно парсили ордеры
+23:00:39 - StarvellBot - INFO - пропустили
+23:00:46 - StarvellBot - INFO - ⬅️  2
+23:00:50 - StarvellBot - INFO - пропустили
+23:01:01 - StarvellBot - INFO - пропустили
+23:01:11 - StarvellBot - INFO - ⬅️  2
+23:01:11 - StarvellBot - INFO - пропустили
+23:01:22 - StarvellBot - INFO - пропустили
+23:01:35 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+23:01:35 - StarvellBot - INFO - пропустили
+23:01:35 - StarvellBot - INFO - Успешно парсили ордеры
+23:01:36 - StarvellBot - INFO - ⬅️  2
+23:01:46 - StarvellBot - INFO - пропустили
+23:01:56 - StarvellBot - INFO - пропустили
+23:02:01 - StarvellBot - INFO - ⬅️  2
+23:02:07 - StarvellBot - INFO - пропустили
+23:02:17 - StarvellBot - INFO - пропустили
+23:02:26 - StarvellBot - INFO - ⬅️  2
+23:02:28 - StarvellBot - INFO - пропустили
+23:02:41 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+23:02:41 - StarvellBot - INFO - пропустили
+23:02:42 - StarvellBot - INFO - Успешно парсили ордеры
+23:02:51 - StarvellBot - INFO - ⬅️  2
+23:02:52 - StarvellBot - INFO - пропустили
+23:03:02 - StarvellBot - INFO - пропустили
+23:03:13 - StarvellBot - INFO - пропустили
+23:03:16 - StarvellBot - INFO - ⬅️  2
+23:03:24 - StarvellBot - INFO - пропустили
+23:03:34 - StarvellBot - INFO - пропустили
+23:03:41 - StarvellBot - INFO - ⬅️  2
+23:03:46 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+23:03:47 - StarvellBot - INFO - пропустили
+23:03:47 - StarvellBot - INFO - Успешно парсили ордеры
+23:03:57 - StarvellBot - INFO - пропустили
+23:04:07 - StarvellBot - INFO - ⬅️  2
+23:04:08 - StarvellBot - INFO - пропустили
+23:04:19 - StarvellBot - INFO - пропустили
+23:04:29 - StarvellBot - INFO - пропустили
+23:04:32 - StarvellBot - INFO - ⬅️  2
+23:04:40 - StarvellBot - INFO - пропустили
+23:04:52 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+23:04:52 - StarvellBot - INFO - пропустили
+23:04:53 - StarvellBot - INFO - Успешно парсили ордеры
+23:04:57 - StarvellBot - INFO - ⬅️  2
+23:05:03 - StarvellBot - INFO - ⬅️  42/user-notifications,["balance_update",{"balance":809735}]
+23:05:03 - StarvellBot - INFO - 📩 [/user-notifications] balance_update
+23:05:03 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019c851d-55be-39dc-7ecf-6a45aeafa688","delta":-1}]
+23:05:03 - StarvellBot - WARNING - 💸 Order refunded: 019c851d-55be-39dc-7ecf-6a45aeafa688 (delta: -1)
+23:05:04 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019c9667-aa30-f5bb-e1b3-face8724ac33","content":"","type":"NOTIFICATION","metadata":{"orderId":"019c851d-55be-39dc-7ecf-6a45aeafa688","notificationType":"ORDER_COMPLETED"},"isHidden":false,"images":[],"authorId":null,"buyerId":166413,"sellerId":139527,"adminId":null,"chatId":"019c851d-d590-fb84-e121-e0108d509557","visibleTo":null,"createdAt":"2026-02-25T20:05:02.111Z","updatedAt":"2026-02-25T20:05:02.111Z","author":null,"buyer":{"id":166413,"username":"Igor105"},"seller":{"id":139527,"username":"Bronto"},"admin":null,"order":{"id":"019c851d-55be-39dc-7ecf-6a45aeafa688","quantity":1,"totalPrice":13877,"status":"COMPLETED","refundedAt":null,"refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"@Google_PLr","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"c08b9c8b-c7a3-4cb5-b853-ad20252e3dc2","nameRu":"По username"},"nameRu":"Способ получения"}],"subCategory":{"id":645,"name":"100 звёзд"},"availability":999999843,"deliveryTime":{"to":{"unit":"MINUTES","value":1},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"🔹 Отправка: Автоматически 24/7 🌟\n🔹 Комиссия: Нет — приходит ровно столько, сколько куплено\n🔹 Источник: Официально\n🔹 Надёжность: Бот не падает под нагрузкой 🍕\n\n⚠️ Обратите внимание:\n1️⃣ Не нужно писать «вы тут?», «можно купить?» — товар всегда в наличии. Создавайте заказ и оплачивайте сразу.\n2️⃣ Чтобы купить много звёзд, используйте кнопку «Купить несколько штук» (например: 50 ⭐ × 4 = 200 ⭐).\n3️⃣ Иногда бот может не ответить в чате из-за ограничений Starvell, но заказ всё равно выполняется автоматически. После получения — подтвердите выполнение.\n4️⃣ После создания заказа бот запросит ваш Telegram @username. Если у вас он не установлен — добавьте в настройках профиля.\n5️⃣ Звёзды приходят автоматически на указанный @username и сразу становятся доступными 🎉\n\n🐬Чтоб позвать меня используй команду /вызов *Ваше Сообщение*"}},"instantDelivery":false}}}]
+23:05:04 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-02-25T20:05:02.326Z","chatId":"019c851d-d590-fb84-e121-e0108d509557"}]
+23:05:30 - StarvellBot - INFO - ⬅️  2
+23:05:35 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+23:05:35 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8298689795)
+23:05:35 - StarvellBot - INFO - 🟢 WebSocket connected
+23:05:35 - StarvellBot - INFO - ⬅️  0{"sid":"gO6kQJLkrGNnQgO6APgc","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+23:05:35 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+23:05:35 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+23:05:35 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+23:05:35 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+23:05:35 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+23:05:35 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"px5YnLmL5VxQSLz4APgd"}
+23:05:35 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"XST-EsuvUl2IfaRXAPge"}
+23:05:35 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"x2_OpWVH3uDXVpCfAPgf"}
+23:05:35 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"mYjGX8YeO1zOSBWyAPgg"}
+23:05:35 - StarvellBot - INFO - ⬅️  40/online,{"sid":"1F7GWWobkUQ7mLAbAPgh"}
+23:05:35 - StarvellBot - INFO - пропустили
+23:05:46 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8298689795)
+23:05:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+23:06:00 - StarvellBot - INFO - ⬅️  2
+23:06:25 - StarvellBot - INFO - ⬅️  2
+23:06:28 - aiogram.dispatcher - INFO - Polling stopped

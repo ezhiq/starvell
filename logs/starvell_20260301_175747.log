@@ -1,0 +1,546 @@
+17:57:47 - StarvellBot - INFO - ✅ Логирование настроено
+17:57:47 - StarvellBot - INFO - ============================================================
+17:57:47 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+17:57:47 - StarvellBot - INFO - ============================================================
+17:57:47 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+17:57:47 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+17:57:48 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+17:57:48 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+17:57:48 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+17:57:48 - StarvellBot - INFO - ============================================================
+17:57:48 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+17:57:48 - StarvellBot - INFO - ============================================================
+17:57:48 - StarvellBot - INFO - 
+17:57:48 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+17:57:48 - StarvellBot - INFO - 🎛️ Доступные команды:
+17:57:48 - StarvellBot - INFO -    /start - начать работу
+17:57:48 - StarvellBot - INFO -    /services - управление службами
+17:57:48 - StarvellBot - INFO -    /config - редактирование настроек
+17:57:48 - StarvellBot - INFO -    /status - статус служб
+17:57:48 - StarvellBot - INFO -    /help - справка
+17:57:48 - StarvellBot - INFO - 
+17:57:48 - StarvellBot - INFO - ============================================================
+17:57:48 - aiogram.dispatcher - INFO - Start polling
+17:57:48 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+17:57:49 - aiogram.event - INFO - Update id=826344608 is handled. Duration 236 ms by bot id=8298689795
+17:57:49 - aiogram.event - INFO - Update id=826344607 is handled. Duration 307 ms by bot id=8298689795
+17:57:50 - aiogram.event - INFO - Update id=826344609 is handled. Duration 185 ms by bot id=8298689795
+17:57:50 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+17:57:50 - StarvellBot - INFO - 🟢 WebSocket connected
+17:57:50 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+17:57:50 - StarvellBot - INFO - ⬅️  0{"sid":"OSvYmVc0x9JN417hAc8b","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+17:57:50 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+17:57:50 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+17:57:50 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+17:57:50 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+17:57:50 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+17:57:51 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"8HVGviSSKjex8GoCAc8c"}
+17:57:51 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"Fi2JporFqEYAgOcgAc8d"}
+17:57:51 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"B1a9dw53_WKL9A8RAc8e"}
+17:57:51 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"LlLJDqLm2htUPDenAc8f"}
+17:57:51 - StarvellBot - INFO - ⬅️  40/online,{"sid":"6XDq8BuGf_87paA9Ac8g"}
+17:57:51 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+17:57:51 - aiogram.event - INFO - Update id=826344610 is handled. Duration 792 ms by bot id=8298689795
+17:57:52 - aiogram.event - INFO - Update id=826344611 is handled. Duration 175 ms by bot id=8298689795
+17:57:53 - aiogram.event - INFO - Update id=826344612 is handled. Duration 183 ms by bot id=8298689795
+17:57:53 - service_manager - INFO - ▶️ Запуск службы Price Dumper...
+17:57:53 - StarvellBot - INFO - ✅ WebSocket готов, запускаем автопонижение цен
+17:57:53 - StarvellBot - INFO - 🔄 Проверяем цены...
+17:57:54 - service_manager - INFO - ✅ Служба Price Dumper запущена
+17:57:54 - StarvellBot - INFO - Успешно парсили ордеры
+17:57:54 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+17:57:54 - aiogram.event - INFO - Update id=826344613 is handled. Duration 903 ms by bot id=8298689795
+17:57:54 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:57:54 - StarvellBot - INFO - ✅ Проверка цен завершена
+17:58:15 - StarvellBot - INFO - ⬅️  2
+17:58:25 - StarvellBot - INFO - 🔄 Проверяем цены...
+17:58:26 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+17:58:26 - StarvellBot - INFO - Успешно парсили ордеры
+17:58:26 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+17:58:26 - StarvellBot - INFO - Успешно парсили ордеры
+17:58:26 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:26 - StarvellBot - INFO - ✅ Проверка цен завершена
+17:58:40 - StarvellBot - INFO - ⬅️  2
+17:58:56 - StarvellBot - INFO - 🔄 Проверяем цены...
+17:58:57 - StarvellBot - INFO - Успешно парсили ордеры
+17:58:57 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+17:58:57 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:58:57 - StarvellBot - INFO - ✅ Проверка цен завершена
+17:59:06 - StarvellBot - INFO - ⬅️  2
+17:59:31 - StarvellBot - INFO - ⬅️  2
+17:59:31 - StarvellBot - INFO - 🔄 Проверяем цены...
+17:59:32 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+17:59:32 - StarvellBot - INFO - Успешно парсили ордеры
+17:59:32 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+17:59:32 - StarvellBot - INFO - Успешно парсили ордеры
+17:59:32 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+17:59:32 - StarvellBot - INFO - ✅ Проверка цен завершена
+17:59:57 - StarvellBot - INFO - ⬅️  2
+18:00:02 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:00:03 - StarvellBot - INFO - Успешно парсили ордеры
+18:00:03 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+18:00:03 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:03 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:00:22 - StarvellBot - INFO - ⬅️  2
+18:00:24 - aiogram.event - INFO - Update id=826344614 is handled. Duration 95 ms by bot id=8298689795
+18:00:27 - aiogram.event - INFO - Update id=826344615 is not handled. Duration 0 ms by bot id=8298689795
+18:00:29 - aiogram.event - INFO - Update id=826344616 is handled. Duration 146 ms by bot id=8298689795
+18:00:31 - aiogram.event - INFO - Update id=826344617 is handled. Duration 184 ms by bot id=8298689795
+18:00:38 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:00:38 - aiogram.event - INFO - Update id=826344618 is handled. Duration 179 ms by bot id=8298689795
+18:00:38 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:00:39 - aiogram.event - INFO - Update id=826344619 is handled. Duration 211 ms by bot id=8298689795
+18:00:39 - StarvellBot - INFO - Успешно парсили ордеры
+18:00:39 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+18:00:39 - StarvellBot - INFO - Успешно парсили ордеры
+18:00:39 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:00:39 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:00:43 - aiogram.event - INFO - Update id=826344620 is handled. Duration 199 ms by bot id=8298689795
+18:00:44 - aiogram.event - INFO - Update id=826344621 is handled. Duration 300 ms by bot id=8298689795
+18:00:45 - aiogram.event - INFO - Update id=826344622 is handled. Duration 226 ms by bot id=8298689795
+18:00:46 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:00:46 - aiogram.event - INFO - Update id=826344623 is handled. Duration 161 ms by bot id=8298689795
+18:00:47 - StarvellBot - INFO - ⬅️  2
+18:00:47 - aiogram.event - INFO - Update id=826344624 is handled. Duration 185 ms by bot id=8298689795
+18:00:51 - aiogram.event - INFO - Update id=826344625 is handled. Duration 407 ms by bot id=8298689795
+18:01:09 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:01:10 - StarvellBot - INFO - Успешно парсили ордеры
+18:01:10 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+18:01:10 - StarvellBot - INFO - 📊 Получено 14 предложений конкурентов
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:10 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:01:12 - StarvellBot - INFO - ⬅️  2
+18:01:37 - StarvellBot - INFO - ⬅️  2
+18:01:45 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:01:45 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:01:46 - StarvellBot - INFO - Успешно парсили ордеры
+18:01:46 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+18:01:46 - StarvellBot - INFO - Успешно парсили ордеры
+18:01:46 - StarvellBot - INFO - 📊 Получено 13 предложений конкурентов
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:01:46 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:02:02 - StarvellBot - INFO - ⬅️  2
+18:02:16 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:02:17 - StarvellBot - INFO - Успешно парсили ордеры
+18:02:17 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+18:02:17 - StarvellBot - INFO - 📊 Получено 13 предложений конкурентов
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:17 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:02:27 - StarvellBot - INFO - ⬅️  2
+18:02:51 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:02:51 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:02:51 - StarvellBot - INFO - Успешно парсили ордеры
+18:02:51 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:02:51 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:51 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 25 звёзд по 32.5₽
+18:02:51 - StarvellBot - INFO - Успешно парсили ордеры
+18:02:52 - StarvellBot - INFO - 📊 Получено 13 предложений конкурентов
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:02:52 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:02:52 - StarvellBot - INFO - ⬅️  2
+18:03:15 - aiogram.event - INFO - Update id=826344626 is handled. Duration 282 ms by bot id=8298689795
+18:03:16 - aiogram.event - INFO - Update id=826344627 is handled. Duration 179 ms by bot id=8298689795
+18:03:17 - StarvellBot - INFO - ⬅️  2
+18:03:17 - aiogram.event - INFO - Update id=826344628 is handled. Duration 204 ms by bot id=8298689795
+18:03:20 - aiogram.event - INFO - Update id=826344629 is handled. Duration 148 ms by bot id=8298689795
+18:03:21 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:03:21 - aiogram.event - INFO - Update id=826344630 is handled. Duration 161 ms by bot id=8298689795
+18:03:22 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:03:22 - aiogram.event - INFO - Update id=826344631 is handled. Duration 165 ms by bot id=8298689795
+18:03:22 - StarvellBot - INFO - Успешно парсили ордеры
+18:03:22 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - отсутствует категория демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:22 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:03:23 - aiogram.event - INFO - Update id=826344632 is handled. Duration 160 ms by bot id=8298689795
+18:03:28 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:03:29 - aiogram.event - INFO - Update id=826344633 is handled. Duration 88 ms by bot id=8298689795
+18:03:42 - StarvellBot - INFO - ⬅️  2
+18:03:57 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:03:58 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:03:58 - StarvellBot - INFO - Успешно парсили ордеры
+18:03:58 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - отсутствует категория демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:03:58 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:03:58 - StarvellBot - INFO - Успешно парсили ордеры
+18:04:04 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:04:05 - aiogram.event - INFO - Update id=826344634 is handled. Duration 103 ms by bot id=8298689795
+18:04:07 - StarvellBot - INFO - ⬅️  2
+18:04:09 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:04:09 - aiogram.event - INFO - Update id=826344635 is handled. Duration 181 ms by bot id=8298689795
+18:04:18 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:04:18 - aiogram.event - INFO - Update id=826344636 is handled. Duration 89 ms by bot id=8298689795
+18:04:26 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:04:27 - aiogram.event - INFO - Update id=826344637 is handled. Duration 172 ms by bot id=8298689795
+18:04:28 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:04:28 - StarvellBot - INFO - Успешно парсили ордеры
+18:04:28 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - отсутствует категория демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:04:28 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:04:32 - aiogram.event - INFO - Update id=826344638 is handled. Duration 289 ms by bot id=8298689795
+18:04:32 - StarvellBot - INFO - ⬅️  2
+18:04:34 - aiogram.event - INFO - Update id=826344639 is handled. Duration 412 ms by bot id=8298689795
+18:04:35 - aiogram.event - INFO - Update id=826344640 is handled. Duration 162 ms by bot id=8298689795
+18:04:47 - aiogram.event - INFO - Update id=826344641 is handled. Duration 149 ms by bot id=8298689795
+18:04:49 - aiogram.event - INFO - Update id=826344642 is handled. Duration 190 ms by bot id=8298689795
+18:04:50 - aiogram.event - INFO - Update id=826344643 is handled. Duration 172 ms by bot id=8298689795
+18:04:52 - aiogram.event - INFO - Update id=826344644 is handled. Duration 194 ms by bot id=8298689795
+18:04:57 - StarvellBot - INFO - ⬅️  2
+18:05:04 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:05:04 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:05:05 - StarvellBot - INFO - Успешно парсили ордеры
+18:05:05 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - отсутствует категория демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:05 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:05:05 - StarvellBot - INFO - Успешно парсили ордеры
+18:05:13 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:05:13 - aiogram.event - INFO - Update id=826344645 is handled. Duration 105 ms by bot id=8298689795
+18:05:23 - StarvellBot - INFO - ⬅️  2
+18:05:35 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:05:35 - StarvellBot - INFO - Успешно парсили ордеры
+18:05:35 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - отсутствует категория демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:05:35 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:05:48 - StarvellBot - INFO - ⬅️  2
+18:05:58 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:05:58 - aiogram.event - INFO - Update id=826344646 is handled. Duration 98 ms by bot id=8298689795
+18:06:10 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:06:11 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:06:11 - StarvellBot - INFO - Успешно парсили ордеры
+18:06:11 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - отсутствует категория демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:11 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:06:11 - StarvellBot - INFO - Успешно парсили ордеры
+18:06:13 - StarvellBot - INFO - ⬅️  2
+18:06:13 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:06:13 - aiogram.event - INFO - Update id=826344647 is handled. Duration 99 ms by bot id=8298689795
+18:06:18 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:06:18 - aiogram.event - INFO - Update id=826344648 is handled. Duration 100 ms by bot id=8298689795
+18:06:23 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:06:23 - aiogram.event - INFO - Update id=826344649 is handled. Duration 118 ms by bot id=8298689795
+18:06:25 - aiogram.event - INFO - Update id=826344650 is handled. Duration 381 ms by bot id=8298689795
+18:06:26 - aiogram.event - INFO - Update id=826344651 is handled. Duration 173 ms by bot id=8298689795
+18:06:31 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:06:31 - aiogram.event - INFO - Update id=826344652 is handled. Duration 87 ms by bot id=8298689795
+18:06:38 - StarvellBot - INFO - ⬅️  2
+18:06:39 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:06:39 - aiogram.event - INFO - Update id=826344653 is handled. Duration 126 ms by bot id=8298689795
+18:06:40 - aiogram.event - INFO - Update id=826344654 is handled. Duration 94 ms by bot id=8298689795
+18:06:41 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:06:42 - StarvellBot - INFO - Успешно парсили ордеры
+18:06:42 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:06:42 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:06:45 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:06:45 - aiogram.event - INFO - Update id=826344655 is handled. Duration 90 ms by bot id=8298689795
+18:07:03 - StarvellBot - INFO - ⬅️  2
+18:07:10 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+18:07:10 - aiogram.event - INFO - Update id=826344656 is handled. Duration 107 ms by bot id=8298689795
+18:07:17 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:07:17 - aiogram.event - INFO - Update id=826344657 is handled. Duration 178 ms by bot id=8298689795
+18:07:17 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:07:18 - StarvellBot - INFO - Успешно парсили ордеры
+18:07:18 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:18 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:07:18 - StarvellBot - INFO - Успешно парсили ордеры
+18:07:19 - aiogram.event - INFO - Update id=826344658 is handled. Duration 152 ms by bot id=8298689795
+18:07:24 - aiogram.event - INFO - Update id=826344659 is handled. Duration 160 ms by bot id=8298689795
+18:07:25 - aiogram.event - INFO - Update id=826344660 is handled. Duration 197 ms by bot id=8298689795
+18:07:26 - aiogram.event - INFO - Update id=826344661 is handled. Duration 336 ms by bot id=8298689795
+18:07:28 - StarvellBot - INFO - ⬅️  2
+18:07:48 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:07:48 - StarvellBot - INFO - Успешно парсили ордеры
+18:07:48 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:07:48 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:07:53 - StarvellBot - INFO - ⬅️  2
+18:08:23 - StarvellBot - INFO - ⬅️  2
+18:08:23 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:08:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:08:24 - StarvellBot - INFO - Успешно парсили ордеры
+18:08:24 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:24 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:08:24 - StarvellBot - INFO - Успешно парсили ордеры
+18:08:48 - StarvellBot - INFO - ⬅️  2
+18:08:54 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:08:54 - StarvellBot - INFO - Успешно парсили ордеры
+18:08:54 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:08:54 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:09:08 - aiogram.event - INFO - Update id=826344662 is handled. Duration 193 ms by bot id=8298689795
+18:09:09 - aiogram.event - INFO - Update id=826344663 is handled. Duration 151 ms by bot id=8298689795
+18:09:10 - aiogram.event - INFO - Update id=826344664 is handled. Duration 148 ms by bot id=8298689795
+18:09:13 - StarvellBot - INFO - ⬅️  2
+18:09:16 - aiogram.event - INFO - Update id=826344665 is handled. Duration 212 ms by bot id=8298689795
+18:09:18 - aiogram.event - INFO - Update id=826344666 is handled. Duration 245 ms by bot id=8298689795
+18:09:29 - StarvellBot - INFO - 🔄 Проверяем цены...
+18:09:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+18:09:30 - StarvellBot - INFO - Успешно парсили ордеры
+18:09:30 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - ERROR - Отсутствует айди в описании предложения при демпинге
+18:09:30 - StarvellBot - INFO - ✅ Проверка цен завершена
+18:09:30 - StarvellBot - INFO - Успешно парсили ордеры
+18:09:37 - aiogram.dispatcher - INFO - Polling stopped

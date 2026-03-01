@@ -1,0 +1,40 @@
+22:14:21 - StarvellBot - INFO - ✅ Логирование настроено
+22:14:21 - StarvellBot - INFO - ============================================================
+22:14:21 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+22:14:21 - StarvellBot - INFO - ============================================================
+22:14:21 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+22:14:21 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+22:14:22 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+22:14:22 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+22:14:22 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+22:14:22 - StarvellBot - INFO - ============================================================
+22:14:22 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+22:14:22 - StarvellBot - INFO - ============================================================
+22:14:22 - StarvellBot - INFO - 
+22:14:22 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+22:14:22 - StarvellBot - INFO - 🎛️ Доступные команды:
+22:14:22 - StarvellBot - INFO -    /start - начать работу
+22:14:22 - StarvellBot - INFO -    /services - управление службами
+22:14:22 - StarvellBot - INFO -    /config - редактирование настроек
+22:14:22 - StarvellBot - INFO -    /status - статус служб
+22:14:22 - StarvellBot - INFO -    /help - справка
+22:14:22 - StarvellBot - INFO - 
+22:14:22 - StarvellBot - INFO - ============================================================
+22:14:22 - aiogram.dispatcher - INFO - Start polling
+22:14:22 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+22:14:23 - aiogram.event - INFO - Update id=826344924 is handled. Duration 224 ms by bot id=8298689795
+22:14:23 - aiogram.event - INFO - Update id=826344923 is handled. Duration 250 ms by bot id=8298689795
+22:14:24 - aiogram.event - INFO - Update id=826344925 is handled. Duration 172 ms by bot id=8298689795
+22:14:32 - aiogram.event - INFO - Update id=826344926 is handled. Duration 385 ms by bot id=8298689795
+22:14:34 - aiogram.event - INFO - Update id=826344927 is handled. Duration 171 ms by bot id=8298689795
+22:14:36 - aiogram.event - INFO - Update id=826344928 is handled. Duration 168 ms by bot id=8298689795
+22:14:37 - aiogram.event - INFO - Update id=826344929 is handled. Duration 157 ms by bot id=8298689795
+22:14:39 - aiogram.event - INFO - Update id=826344930 is handled. Duration 176 ms by bot id=8298689795
+22:14:41 - aiogram.event - INFO - Update id=826344931 is handled. Duration 163 ms by bot id=8298689795
+22:14:42 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+22:14:42 - aiogram.event - INFO - Update id=826344932 is handled. Duration 153 ms by bot id=8298689795
+22:14:43 - aiogram.event - INFO - Update id=826344933 is handled. Duration 234 ms by bot id=8298689795
+22:14:44 - aiogram.event - INFO - Update id=826344934 is handled. Duration 159 ms by bot id=8298689795
+23:11:14 - aiogram.event - INFO - Update id=826344935 is handled. Duration 280 ms by bot id=8298689795
+23:11:15 - aiogram.event - INFO - Update id=826344936 is handled. Duration 342 ms by bot id=8298689795
+23:30:29 - aiogram.dispatcher - INFO - Polling stopped

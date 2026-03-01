@@ -1,0 +1,86 @@
+19:16:49 - StarvellBot - INFO - ✅ Логирование настроено
+19:16:49 - StarvellBot - INFO - ============================================================
+19:16:49 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+19:16:49 - StarvellBot - INFO - ============================================================
+19:16:49 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+19:16:49 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+19:16:51 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+19:16:51 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+19:16:51 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+19:16:51 - StarvellBot - INFO - ============================================================
+19:16:51 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+19:16:51 - StarvellBot - INFO - ============================================================
+19:16:51 - StarvellBot - INFO - 
+19:16:51 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+19:16:51 - StarvellBot - INFO - 🎛️ Доступные команды:
+19:16:51 - StarvellBot - INFO -    /start - начать работу
+19:16:51 - StarvellBot - INFO -    /services - управление службами
+19:16:51 - StarvellBot - INFO -    /config - редактирование настроек
+19:16:51 - StarvellBot - INFO -    /status - статус служб
+19:16:51 - StarvellBot - INFO -    /help - справка
+19:16:51 - StarvellBot - INFO - 
+19:16:51 - StarvellBot - INFO - ============================================================
+19:16:51 - aiogram.dispatcher - INFO - Start polling
+19:16:51 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+19:16:52 - aiogram.event - INFO - Update id=826343647 is handled. Duration 471 ms by bot id=8298689795
+19:16:52 - aiogram.event - INFO - Update id=826343648 is handled. Duration 186 ms by bot id=8298689795
+19:16:53 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+19:16:53 - StarvellBot - INFO - 🟢 WebSocket connected
+19:16:53 - StarvellBot - INFO - ⬅️  0{"sid":"lIunx43ZMavKOk93ANS1","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+19:16:53 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+19:16:53 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+19:16:53 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+19:16:53 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+19:16:53 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+19:16:53 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+19:16:53 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"U8YIa--AbeTo6WzUANS2"}
+19:16:53 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"6qymeIIjz1-JPKAjANS3"}
+19:16:53 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"ddO_92uDPGeHeVbEANS4"}
+19:16:53 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"ZRXF0f3QcWc0ukalANS5"}
+19:16:53 - StarvellBot - INFO - ⬅️  40/online,{"sid":"Q7xweFo0YitnLLXqANS6"}
+19:16:54 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+19:16:54 - aiogram.event - INFO - Update id=826343649 is handled. Duration 814 ms by bot id=8298689795
+19:16:55 - aiogram.event - INFO - Update id=826343650 is handled. Duration 170 ms by bot id=8298689795
+19:16:56 - aiogram.event - INFO - Update id=826343651 is handled. Duration 171 ms by bot id=8298689795
+19:17:14 - service_manager - INFO - ▶️ Запуск службы Price Dumper...
+19:17:14 - StarvellBot - INFO - ✅ WebSocket готов, запускаем автопонижение цен
+19:17:14 - StarvellBot - INFO - 🔄 Проверяем цены...
+19:17:15 - service_manager - INFO - ✅ Служба Price Dumper запущена
+19:17:15 - StarvellBot - INFO - Успешно парсили ордеры
+19:17:15 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+19:17:15 - aiogram.event - INFO - Update id=826343652 is handled. Duration 754 ms by bot id=8298689795
+19:17:15 - StarvellBot - INFO - ✅ Цена обновлена: 59.6₽ (ID: 158554)
+19:17:16 - aiogram.event - INFO - Update id=826343653 is handled. Duration 160 ms by bot id=8298689795
+19:17:16 - StarvellBot - INFO - 📊 Обрабатываем предложение 158555: 75 звёзд по 89.4₽
+19:17:16 - StarvellBot - INFO - 📊 Получено 15 предложений конкурентов
+19:17:16 - StarvellBot - INFO - 💰 Оптимизируем первое место: 89.4₽ → 87.9₽
+19:17:16 - StarvellBot - INFO - ✅ Цена обновлена: 87.9₽ (ID: 158555)
+19:17:17 - StarvellBot - INFO - ✅ Проверка цен завершена
+19:17:18 - StarvellBot - INFO - ⬅️  2
+19:17:23 - aiogram.event - INFO - Update id=826343654 is handled. Duration 97 ms by bot id=8298689795
+19:17:30 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+19:17:30 - aiogram.event - INFO - Update id=826343655 is handled. Duration 350 ms by bot id=8298689795
+19:17:30 - aiogram.event - INFO - Update id=826343656 is handled. Duration 309 ms by bot id=8298689795
+19:17:31 - StarvellBot - INFO - Успешно парсили ордеры
+19:17:43 - StarvellBot - INFO - ⬅️  2
+19:17:47 - StarvellBot - INFO - 🔄 Проверяем цены...
+19:17:48 - StarvellBot - INFO - Успешно парсили ордеры
+19:17:48 - StarvellBot - INFO - 📦 Найдено 2 наших предложений
+19:17:48 - StarvellBot - INFO - 📊 Обрабатываем предложение 158554: 50 звёзд по 59.6₽
+19:17:48 - StarvellBot - INFO - 📊 Получено 19 предложений конкурентов
+19:17:48 - StarvellBot - INFO - 💰 Оптимизируем первое место: 59.6₽ → 61.9₽
+19:17:49 - StarvellBot - INFO - ✅ Цена обновлена: 61.9₽ (ID: 158554)
+19:17:50 - StarvellBot - INFO - ✅ Цена обновлена: 89.4₽ (ID: 158555)
+19:17:51 - StarvellBot - INFO - ✅ Проверка цен завершена
+19:17:54 - aiogram.event - INFO - Update id=826343657 is handled. Duration 176 ms by bot id=8298689795
+19:17:55 - service_manager - INFO - ⏸ Служба Price Dumper остановлена
+19:17:55 - service_manager - INFO - ⏸ Служба Price Dumper остановлена
+19:17:55 - aiogram.event - INFO - Update id=826343658 is handled. Duration 171 ms by bot id=8298689795
+19:18:08 - StarvellBot - INFO - ⬅️  2
+19:18:12 - aiogram.dispatcher - INFO - Polling stopped
+19:18:12 - StarvellBot - INFO - 👋 Завершение работы...
+19:18:12 - service_manager - INFO - Orders Monitor cancelled
+19:18:12 - service_manager - INFO - ⏸ Служба Orders Monitor остановлена
+19:18:12 - service_manager - INFO - ⏸ Служба Orders Monitor остановлена
+19:18:12 - aiogram.dispatcher - INFO - Polling stopped for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+19:18:12 - StarvellBot - INFO - ⏸ Остановка по Ctrl+C

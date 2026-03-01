@@ -1,0 +1,100 @@
+13:52:00 - StarvellBot - INFO - ✅ Логирование настроено
+13:52:00 - StarvellBot - INFO - ============================================================
+13:52:00 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+13:52:00 - StarvellBot - INFO - ============================================================
+13:52:00 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+13:52:00 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+13:52:02 - pyrogram.crypto.aes - WARNING - TgCrypto is missing! Pyrogram will work the same, but at a much slower speed. More info: https://docs.pyrogram.org/topics/speedups
+13:52:02 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+13:52:02 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+13:52:02 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+13:52:02 - StarvellBot - INFO - ============================================================
+13:52:02 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+13:52:02 - StarvellBot - INFO - ============================================================
+13:52:02 - StarvellBot - INFO - 
+13:52:02 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+13:52:02 - StarvellBot - INFO - 🎛️ Доступные команды:
+13:52:02 - StarvellBot - INFO -    /start - начать работу
+13:52:02 - StarvellBot - INFO -    /services - управление службами
+13:52:02 - StarvellBot - INFO -    /config - редактирование настроек
+13:52:02 - StarvellBot - INFO -    /status - статус служб
+13:52:02 - StarvellBot - INFO -    /help - справка
+13:52:02 - StarvellBot - INFO - 
+13:52:02 - StarvellBot - INFO - ============================================================
+13:52:02 - aiogram.dispatcher - INFO - Start polling
+13:52:02 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<StarsAPIGiver.init_sessions() done, defined at C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py:23> exception=TypeError("'NoneType' object is not iterable")>
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 25, in init_sessions
+    for session in sessions:
+                   ^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+13:52:02 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+13:52:03 - aiogram.event - INFO - Update id=826343683 is handled. Duration 205 ms by bot id=8298689795
+13:52:03 - aiogram.event - INFO - Update id=826343682 is handled. Duration 231 ms by bot id=8298689795
+13:52:04 - aiogram.event - INFO - Update id=826343684 is not handled. Duration 98 ms by bot id=8298689795
+13:52:04 - aiogram.event - ERROR - Cause exception while process update id=826343684 by bot id=8298689795
+ValueError: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\telegram_manager.py", line 499, in cb_config_edit
+    action, keys = data.split("_")
+    ^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+13:52:24 - aiogram.dispatcher - INFO - Polling stopped

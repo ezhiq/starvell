@@ -197,17 +197,20 @@ class FragmentClient:
             raise FragmentAPIError("Session not initialized. Use 'async with' context manager.")
 
         url = f"{self.config.url}?hash={self.config.hash}"
+        logger.info(f"POST URL: {url}")
 
         try:
             async with self.session.post(url, data=payload) as response:
                 response.raise_for_status()
-
+                logger.info(f"POST RESPONSE: {response.status}")
                 response_text = await response.text()
+                logger.info(f"POST RESPONSE TEXT: {response_text}")
                 if not response_text:
                     raise FragmentAPIError("Empty response from Fragment API")
 
                 try:
                     data = await response.json()
+                    logger.warning(f'Response from Fragment API - {data}')
                     return data
                 except aiohttp.ContentTypeError:
                     logger.error(f"Invalid JSON response: {response_text}")

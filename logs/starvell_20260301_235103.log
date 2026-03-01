@@ -1,0 +1,124 @@
+23:51:03 - StarvellBot - INFO - ✅ Логирование настроено
+23:51:03 - StarvellBot - INFO - ============================================================
+23:51:03 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+23:51:03 - StarvellBot - INFO - ============================================================
+23:51:03 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+23:51:03 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+23:51:04 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+23:51:04 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+23:51:04 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+23:51:04 - StarvellBot - INFO - ============================================================
+23:51:04 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+23:51:04 - StarvellBot - INFO - ============================================================
+23:51:04 - StarvellBot - INFO - 
+23:51:04 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+23:51:04 - StarvellBot - INFO - 🎛️ Доступные команды:
+23:51:04 - StarvellBot - INFO -    /start - начать работу
+23:51:04 - StarvellBot - INFO -    /services - управление службами
+23:51:04 - StarvellBot - INFO -    /config - редактирование настроек
+23:51:04 - StarvellBot - INFO -    /status - статус служб
+23:51:04 - StarvellBot - INFO -    /help - справка
+23:51:04 - StarvellBot - INFO - 
+23:51:04 - StarvellBot - INFO - ============================================================
+23:51:04 - aiogram.dispatcher - INFO - Start polling
+23:51:05 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+23:51:05 - aiogram.event - INFO - Update id=826345007 is handled. Duration 204 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345005 is not handled. Duration 212 ms by bot id=8298689795
+23:51:05 - aiogram.event - ERROR - Cause exception while process update id=826345005 by bot id=8298689795
+TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 189, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 161, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 153, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 181, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\telegram_manager.py", line 559, in cb_config_edit
+    await callback.answer()
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\methods\base.py", line 82, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\client\bot.py", line 484, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\client\session\base.py", line 259, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\client\session\aiohttp.py", line 177, in make_request
+    response = self.check_response(
+        bot=bot,
+    ...<2 lines>...
+        content=raw_result,
+    )
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\aiogram\client\session\base.py", line 121, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: query is too old and response timeout expired or query ID is invalid
+23:51:05 - aiogram.event - INFO - Update id=826345011 is handled. Duration 223 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345010 is handled. Duration 248 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345009 is handled. Duration 273 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345006 is handled. Duration 299 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345012 is handled. Duration 314 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345008 is handled. Duration 343 ms by bot id=8298689795
+23:51:05 - aiogram.event - INFO - Update id=826345013 is handled. Duration 354 ms by bot id=8298689795
+23:51:06 - aiogram.event - INFO - Update id=826345014 is handled. Duration 142 ms by bot id=8298689795
+23:51:07 - aiogram.event - INFO - Update id=826345015 is handled. Duration 151 ms by bot id=8298689795
+23:51:09 - aiogram.event - INFO - Update id=826345016 is handled. Duration 355 ms by bot id=8298689795
+23:51:11 - aiogram.event - INFO - Update id=826345017 is handled. Duration 148 ms by bot id=8298689795
+23:51:14 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+23:51:15 - aiogram.event - INFO - Update id=826345018 is handled. Duration 96 ms by bot id=8298689795
+23:51:23 - aiogram.event - INFO - Update id=826345019 is handled. Duration 159 ms by bot id=8298689795
+23:51:24 - aiogram.event - INFO - Update id=826345020 is handled. Duration 78 ms by bot id=8298689795
+23:51:27 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+23:51:27 - aiogram.event - INFO - Update id=826345021 is handled. Duration 104 ms by bot id=8298689795
+23:51:56 - aiogram.dispatcher - INFO - Polling stopped

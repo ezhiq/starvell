@@ -1,0 +1,41 @@
+12:24:16 - StarvellBot - INFO - ✅ Логирование настроено
+12:24:16 - StarvellBot - INFO - ============================================================
+12:24:16 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+12:24:16 - StarvellBot - INFO - ============================================================
+12:24:16 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+12:24:16 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+12:24:16 - config_manager - INFO - ✅ config.py сгенерирован: config.py
+12:24:17 - StarvellBot - INFO - 📱 Инициализация Telegram Manager...
+12:24:17 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+12:24:17 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+12:24:17 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+12:24:17 - StarvellBot - INFO - ============================================================
+12:24:17 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+12:24:17 - StarvellBot - INFO - ============================================================
+12:24:17 - StarvellBot - INFO - 
+12:24:17 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+12:24:17 - StarvellBot - INFO - 🎛️ Доступные команды:
+12:24:17 - StarvellBot - INFO -    /start - начать работу
+12:24:17 - StarvellBot - INFO -    /services - управление службами
+12:24:17 - StarvellBot - INFO -    /config - редактирование настроек
+12:24:17 - StarvellBot - INFO -    /status - статус служб
+12:24:17 - StarvellBot - INFO -    /help - справка
+12:24:17 - StarvellBot - INFO - 
+12:24:17 - StarvellBot - INFO - ============================================================
+12:24:17 - telegram_manager - INFO - 🚀 Запуск Telegram Manager...
+12:24:17 - aiogram.dispatcher - INFO - Start polling
+12:24:17 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+12:24:21 - aiogram.event - INFO - Update id=826343418 is handled. Duration 227 ms by bot id=8298689795
+18:46:07 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+18:46:07 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8298689795)
+18:46:18 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8298689795)
+21:15:24 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+21:15:24 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8298689795)
+21:15:36 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8298689795)
+22:41:23 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+22:41:23 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8298689795)
+22:41:35 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8298689795)
+14:38:11 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+14:38:11 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8298689795)
+14:38:22 - aiogram.dispatcher - INFO - Connection established (tryings = 1, bot id = 8298689795)
+17:22:08 - aiogram.dispatcher - INFO - Polling stopped

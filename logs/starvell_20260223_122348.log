@@ -1,0 +1,29 @@
+12:23:48 - StarvellBot - INFO - ✅ Логирование настроено
+12:23:48 - StarvellBot - INFO - ============================================================
+12:23:48 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+12:23:48 - StarvellBot - INFO - ============================================================
+12:23:48 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+12:23:48 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+12:23:48 - config_manager - INFO - ✅ config.py сгенерирован: config.py
+12:23:50 - StarvellBot - INFO - 📱 Инициализация Telegram Manager...
+12:23:50 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+12:23:50 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+12:23:50 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+12:23:50 - StarvellBot - INFO - ============================================================
+12:23:50 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+12:23:50 - StarvellBot - INFO - ============================================================
+12:23:50 - StarvellBot - INFO - 
+12:23:50 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+12:23:50 - StarvellBot - INFO - 🎛️ Доступные команды:
+12:23:50 - StarvellBot - INFO -    /start - начать работу
+12:23:50 - StarvellBot - INFO -    /services - управление службами
+12:23:50 - StarvellBot - INFO -    /config - редактирование настроек
+12:23:50 - StarvellBot - INFO -    /status - статус служб
+12:23:50 - StarvellBot - INFO -    /help - справка
+12:23:50 - StarvellBot - INFO - 
+12:23:50 - StarvellBot - INFO - ============================================================
+12:23:50 - telegram_manager - INFO - 🚀 Запуск Telegram Manager...
+12:23:50 - aiogram.dispatcher - INFO - Start polling
+12:23:50 - aiogram.dispatcher - INFO - Polling stopped
+12:23:51 - telegram_manager - ERROR - Ошибка при запуске бота: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [Could not contact DNS servers]
+12:23:51 - StarvellBot - INFO - 👋 Завершение работы...

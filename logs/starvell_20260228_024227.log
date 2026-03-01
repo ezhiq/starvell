@@ -1,0 +1,87 @@
+02:42:27 - StarvellBot - INFO - ✅ Логирование настроено
+02:42:27 - StarvellBot - INFO - ============================================================
+02:42:27 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+02:42:27 - StarvellBot - INFO - ============================================================
+02:42:27 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+02:42:27 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+02:42:27 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+02:42:27 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+02:42:27 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+02:42:27 - StarvellBot - INFO - ============================================================
+02:42:27 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+02:42:27 - StarvellBot - INFO - ============================================================
+02:42:27 - StarvellBot - INFO - 
+02:42:27 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+02:42:27 - StarvellBot - INFO - 🎛️ Доступные команды:
+02:42:27 - StarvellBot - INFO -    /start - начать работу
+02:42:27 - StarvellBot - INFO -    /services - управление службами
+02:42:27 - StarvellBot - INFO -    /config - редактирование настроек
+02:42:27 - StarvellBot - INFO -    /status - статус служб
+02:42:27 - StarvellBot - INFO -    /help - справка
+02:42:27 - StarvellBot - INFO - 
+02:42:27 - StarvellBot - INFO - ============================================================
+02:42:27 - aiogram.dispatcher - INFO - Start polling
+02:42:28 - pyrogram.session.auth - INFO - Start creating a new auth key on DC2
+02:42:28 - pyrogram.connection.connection - INFO - Connecting...
+02:42:28 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+02:42:28 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+02:42:29 - pyrogram.session.auth - INFO - Done auth key exchange: DhGenOk
+02:42:29 - pyrogram.connection.connection - INFO - Disconnected
+02:42:29 - pyrogram.connection.connection - INFO - Connecting...
+02:42:29 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+02:42:29 - pyrogram.session.session - INFO - NetworkTask started
+02:42:29 - pyrogram.client - INFO - Time synced: 2026-02-28 02:42:30.222662
+02:42:29 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+02:42:29 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+02:42:29 - pyrogram.session.session - INFO - System: Windows 10 (en)
+02:42:29 - pyrogram.session.session - INFO - Session started
+02:42:29 - pyrogram.session.session - INFO - PingTask started
+02:43:13 - aiogram.event - INFO - Update id=826344157 is handled. Duration 270 ms by bot id=8298689795
+02:43:21 - aiogram.event - INFO - Update id=826344158 is handled. Duration 79 ms by bot id=8298689795
+02:43:23 - aiogram.event - INFO - Update id=826344159 is handled. Duration 141 ms by bot id=8298689795
+02:43:24 - aiogram.event - INFO - Update id=826344160 is handled. Duration 142 ms by bot id=8298689795
+02:43:26 - aiogram.event - INFO - Update id=826344161 is handled. Duration 142 ms by bot id=8298689795
+02:43:29 - aiogram.event - INFO - Update id=826344162 is handled. Duration 142 ms by bot id=8298689795
+02:43:30 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+02:43:30 - aiogram.event - INFO - Update id=826344163 is handled. Duration 141 ms by bot id=8298689795
+02:43:31 - aiogram.event - INFO - Update id=826344164 is handled. Duration 146 ms by bot id=8298689795
+02:43:32 - aiogram.event - INFO - Update id=826344165 is handled. Duration 140 ms by bot id=8298689795
+02:43:37 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+02:43:37 - aiogram.event - INFO - Update id=826344166 is handled. Duration 274 ms by bot id=8298689795
+02:43:40 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+02:43:40 - aiogram.event - INFO - Update id=826344167 is handled. Duration 156 ms by bot id=8298689795
+02:43:43 - aiogram.event - INFO - Update id=826344168 is handled. Duration 155 ms by bot id=8298689795
+02:43:45 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+02:43:45 - aiogram.event - INFO - Update id=826344169 is handled. Duration 157 ms by bot id=8298689795
+02:43:48 - config_manager - INFO - ✅ Конфигурация сохранена в config_data.json
+02:43:48 - aiogram.event - INFO - Update id=826344170 is handled. Duration 165 ms by bot id=8298689795
+02:43:50 - aiogram.event - INFO - Update id=826344171 is handled. Duration 172 ms by bot id=8298689795
+02:45:36 - aiogram.dispatcher - INFO - Polling stopped
+02:45:36 - pyrogram.session.session - INFO - PingTask stopped
+02:45:36 - pyrogram.session.session - INFO - NetworkTask stopped
+02:45:36 - pyrogram.connection.connection - INFO - Disconnected
+02:45:36 - pyrogram.session.session - INFO - Session stopped
+02:45:36 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-2' coro=<StarsAPIGiver.init_sessions() done, defined at C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py:28> exception=UnicodeDecodeError('utf-8', b'\xff', 0, 1, 'invalid start byte')>
+Traceback (most recent call last):
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 32, in init_sessions
+    self.balances[session] = await self.get_star_balance(session)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\stars_api_giver.py", line 36, in get_star_balance
+    async with Client(session, self.api_id, self.api_hash) as app:
+               ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\client.py", line 441, in __aenter__
+    return await self.start()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\methods\utilities\start.py", line 89, in start
+    await self.authorize()
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\client.py", line 474, in authorize
+    value = await ainput("Enter phone number or bot token: ", loop=self.loop)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\PycharmProjects\PythonProject5\.venv\Lib\site-packages\pyrogram\utils.py", line 57, in ainput
+    return await loop.run_in_executor(executor, func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ezhik\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "<frozen codecs>", line 325, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte

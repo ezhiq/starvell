@@ -1,0 +1,47 @@
+22:02:14 - StarvellBot - INFO - ✅ Логирование настроено
+22:02:14 - StarvellBot - INFO - ============================================================
+22:02:14 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+22:02:14 - StarvellBot - INFO - ============================================================
+22:02:14 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+22:02:14 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+22:02:16 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+22:02:16 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+22:02:16 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+22:02:16 - StarvellBot - INFO - ============================================================
+22:02:16 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+22:02:16 - StarvellBot - INFO - ============================================================
+22:02:16 - StarvellBot - INFO - 
+22:02:16 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+22:02:16 - StarvellBot - INFO - 🎛️ Доступные команды:
+22:02:16 - StarvellBot - INFO -    /start - начать работу
+22:02:16 - StarvellBot - INFO -    /services - управление службами
+22:02:16 - StarvellBot - INFO -    /config - редактирование настроек
+22:02:16 - StarvellBot - INFO -    /status - статус служб
+22:02:16 - StarvellBot - INFO -    /help - справка
+22:02:16 - StarvellBot - INFO - 
+22:02:16 - StarvellBot - INFO - ============================================================
+22:02:16 - aiogram.dispatcher - INFO - Start polling
+22:02:16 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+22:02:16 - aiogram.event - INFO - Update id=826344908 is handled. Duration 270 ms by bot id=8298689795
+22:02:16 - aiogram.event - INFO - Update id=826344907 is handled. Duration 382 ms by bot id=8298689795
+22:02:17 - aiogram.event - INFO - Update id=826344909 is handled. Duration 174 ms by bot id=8298689795
+22:02:18 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+22:02:18 - pyrogram.connection.connection - INFO - Connecting...
+22:02:18 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+22:02:18 - pyrogram.session.session - INFO - NetworkTask started
+22:02:18 - pyrogram.client - INFO - Time synced: 2026-03-01 22:02:19.461984
+22:02:18 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+22:02:18 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+22:02:18 - pyrogram.session.session - INFO - System: Windows 10 (en)
+22:02:18 - pyrogram.session.session - INFO - Session started
+22:02:18 - pyrogram.session.session - INFO - PingTask started
+22:02:18 - pyrogram.session.session - INFO - PingTask stopped
+22:02:18 - pyrogram.session.session - INFO - NetworkTask stopped
+22:02:18 - pyrogram.connection.connection - INFO - Disconnected
+22:02:18 - pyrogram.session.session - INFO - Session stopped
+22:02:18 - service_manager - ERROR - ❌ Ошибка в службе Orders Monitor: AuthKeyUnregistered: Telegram says: [401 AUTH_KEY_UNREGISTERED] - The specified authorization key is not registered in the system (for example, a PFS temporary key has expired). Delete your session file and login again. (caused by "updates.GetState")
+22:02:18 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+22:02:19 - aiogram.event - INFO - Update id=826344910 is handled. Duration 727 ms by bot id=8298689795
+22:07:07 - aiogram.event - INFO - Update id=826344911 is handled. Duration 162 ms by bot id=8298689795
+22:07:08 - aiogram.event - INFO - Update id=826344912 is handled. Duration 149 ms by bot id=8298689795
+22:10:34 - aiogram.dispatcher - INFO - Polling stopped

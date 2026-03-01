@@ -1,0 +1,77 @@
+21:35:29 - StarvellBot - INFO - ✅ Логирование настроено
+21:35:29 - StarvellBot - INFO - ============================================================
+21:35:29 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+21:35:29 - StarvellBot - INFO - ============================================================
+21:35:29 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+21:35:29 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+21:35:30 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+21:35:30 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+21:35:30 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+21:35:30 - StarvellBot - INFO - ============================================================
+21:35:30 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+21:35:30 - StarvellBot - INFO - ============================================================
+21:35:30 - StarvellBot - INFO - 
+21:35:30 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+21:35:30 - StarvellBot - INFO - 🎛️ Доступные команды:
+21:35:30 - StarvellBot - INFO -    /start - начать работу
+21:35:30 - StarvellBot - INFO -    /services - управление службами
+21:35:30 - StarvellBot - INFO -    /config - редактирование настроек
+21:35:30 - StarvellBot - INFO -    /status - статус служб
+21:35:30 - StarvellBot - INFO -    /help - справка
+21:35:30 - StarvellBot - INFO - 
+21:35:30 - StarvellBot - INFO - ============================================================
+21:35:30 - aiogram.dispatcher - INFO - Start polling
+21:35:30 - aiogram.dispatcher - INFO - Run polling for bot @testzabwinobotsfadsgdsbot id=8298689795 - 'test'
+21:35:31 - aiogram.event - INFO - Update id=826344886 is handled. Duration 287 ms by bot id=8298689795
+21:38:15 - aiogram.event - INFO - Update id=826344887 is handled. Duration 185 ms by bot id=8298689795
+21:38:16 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+21:38:16 - StarvellBot - INFO - 🟢 WebSocket connected
+21:38:16 - StarvellBot - INFO - ⬅️  0{"sid":"JKMGYcwG5Gx3WjqxAfVp","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+21:38:16 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+21:38:16 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+21:38:16 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+21:38:16 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+21:38:16 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+21:38:16 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+21:38:16 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"u7TuhIK166gLWPhNAfVq"}
+21:38:16 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"VDmK1L-eTwCoV8zKAfVr"}
+21:38:16 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"x0fkHWFff1B0wFjRAfVs"}
+21:38:16 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"J-NaYHAm4xL0hBd5AfVt"}
+21:38:16 - StarvellBot - INFO - ⬅️  40/online,{"sid":"FV7FQRU0YgX1u_E8AfVu"}
+21:38:16 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+21:38:16 - aiogram.event - INFO - Update id=826344888 is handled. Duration 674 ms by bot id=8298689795
+21:38:41 - StarvellBot - INFO - ⬅️  2
+21:38:55 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab2-4917-547f-3317-78bc3d3ff5c3","content":"","type":"NOTIFICATION","metadata":{"orderId":"019caab0-61af-25e5-2e0d-0dd7843b45f1","notificationType":"ORDER_REFUND"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":139527,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:38:56.773Z","updatedAt":"2026-03-01T18:38:56.773Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":{"id":139527,"username":"Bronto"},"admin":null,"order":{"id":"019caab0-61af-25e5-2e0d-0dd7843b45f1","quantity":1,"totalPrice":4021,"status":"REFUND","refundedAt":"2026-03-01T18:38:56.785Z","refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[{"id":"ef9a8163-b1a9-4558-bd04-362b1dfe43e1","width":289,"height":291,"extension":"jpg"},{"id":"18da3a42-7827-426c-9e23-27e70f5a8203","width":248,"height":294,"extension":"jpg"}],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"9abe5573-3184-401c-8bec-de0d8dd38529","nameRu":"Подарком"},"nameRu":"Способ получения"}],"subCategory":{"id":642,"name":"21 звезда"},"availability":99999981,"deliveryTime":{"to":{"unit":"MINUTES","value":5},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"⭐Вы получаете любой подарок за 25 звёзд на ваш выбор (Подарок или Розу)\n\nПроцесс выполнения:\n1️⃣ Оплачиваете заказ\n2️⃣ Пишите ваш юзернейм @username в чат и какой подарок вы хотите\n3️⃣ Я выполняю пополнение\n4️⃣ Проверяете → Подтверждаете\n\n⚠️ Важно: Проверьте правильность введённого @username. Ошибки могут привести к зачислению звёзд на другой аккаунт, и возврат средств будет невозможен.\n\nid: 21stars"}},"instantDelivery":false}},"dispute":null}]
+21:38:56 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019caab0-61af-25e5-2e0d-0dd7843b45f1","delta":-1}]
+21:38:56 - StarvellBot - WARNING - 💸 Order refunded: 019caab0-61af-25e5-2e0d-0dd7843b45f1 (delta: -1)
+21:38:56 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab2-4a41-5232-6c99-877aafdb8f23","content":"❌ К сожалению, ваш заказ был отменен и средства возвращены.\n\nЕсли у вас возникли вопросы, пожалуйста, свяжитесь с поддержкой.","type":"DEFAULT","metadata":null,"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:38:57.089Z","updatedAt":"2026-03-01T18:38:57.089Z","author":{"id":139527,"username":"Bronto","roles":[]},"buyer":null,"seller":null,"admin":null,"order":null,"dispute":null}]
+21:38:56 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:38:57.163Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:38:56 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:38:57.197Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:38:56 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:38:57.230Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:39:06 - StarvellBot - INFO - ⬅️  2
+21:39:21 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019caab2-ac15-08ab-bad6-3694b3a52ea3","delta":1}]
+21:39:21 - StarvellBot - INFO - 🛒 NEW ORDER!
+21:39:21 - StarvellBot - INFO - Order ID: 019caab2-ac15-08ab-bad6-3694b3a52ea3
+21:39:21 - StarvellBot - INFO - ⚙️  Processing order 019caab2-ac15-08ab-bad6-3694b3a52ea3...
+21:39:21 - StarvellBot - ERROR - Ошибка при процессинге 019caab2-ac15-08ab-bad6-3694b3a52ea3
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab2-ac27-1a79-d560-b486c0885743","content":"","type":"NOTIFICATION","metadata":{"orderId":"019caab2-ac15-08ab-bad6-3694b3a52ea3","notificationType":"ORDER_PAYMENT"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:39:22.114Z","updatedAt":"2026-03-01T18:39:22.114Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":null,"admin":null,"order":{"id":"019caab2-ac15-08ab-bad6-3694b3a52ea3","quantity":1,"totalPrice":4021,"status":"CREATED","refundedAt":null,"refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[{"id":"ef9a8163-b1a9-4558-bd04-362b1dfe43e1","width":289,"height":291,"extension":"jpg"},{"id":"18da3a42-7827-426c-9e23-27e70f5a8203","width":248,"height":294,"extension":"jpg"}],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"9abe5573-3184-401c-8bec-de0d8dd38529","nameRu":"Подарком"},"nameRu":"Способ получения"}],"subCategory":{"id":642,"name":"21 звезда"},"availability":99999980,"deliveryTime":{"to":{"unit":"MINUTES","value":5},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"⭐Вы получаете любой подарок за 25 звёзд на ваш выбор (Подарок или Розу)\n\nПроцесс выполнения:\n1️⃣ Оплачиваете заказ\n2️⃣ Пишите ваш юзернейм @username в чат и какой подарок вы хотите\n3️⃣ Я выполняю пополнение\n4️⃣ Проверяете → Подтверждаете\n\n⚠️ Важно: Проверьте правильность введённого @username. Ошибки могут привести к зачислению звёзд на другой аккаунт, и возврат средств будет невозможен.\n\nid: 21stars"}},"instantDelivery":false}},"dispute":null}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab2-ac3a-7cc0-f1fb-5de541729b0f","content":"е","type":"DEFAULT","metadata":{"isAutoResponse":true},"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:39:22.170Z","updatedAt":"2026-03-01T18:39:22.114Z","author":{"id":139527,"username":"Bronto","roles":[]}}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:39:22.534Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab2-afe5-8738-a30e-6ce11a95ce0f","content":"","type":"NOTIFICATION","metadata":{"orderId":"019caab2-ac15-08ab-bad6-3694b3a52ea3","notificationType":"ORDER_REFUND"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":139527,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:39:23.098Z","updatedAt":"2026-03-01T18:39:23.098Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":{"id":139527,"username":"Bronto"},"admin":null,"order":{"id":"019caab2-ac15-08ab-bad6-3694b3a52ea3","quantity":1,"totalPrice":4021,"status":"REFUND","refundedAt":"2026-03-01T18:39:23.106Z","refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[{"id":"ef9a8163-b1a9-4558-bd04-362b1dfe43e1","width":289,"height":291,"extension":"jpg"},{"id":"18da3a42-7827-426c-9e23-27e70f5a8203","width":248,"height":294,"extension":"jpg"}],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"9abe5573-3184-401c-8bec-de0d8dd38529","nameRu":"Подарком"},"nameRu":"Способ получения"}],"subCategory":{"id":642,"name":"21 звезда"},"availability":99999980,"deliveryTime":{"to":{"unit":"MINUTES","value":5},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"⭐Вы получаете любой подарок за 25 звёзд на ваш выбор (Подарок или Розу)\n\nПроцесс выполнения:\n1️⃣ Оплачиваете заказ\n2️⃣ Пишите ваш юзернейм @username в чат и какой подарок вы хотите\n3️⃣ Я выполняю пополнение\n4️⃣ Проверяете → Подтверждаете\n\n⚠️ Важно: Проверьте правильность введённого @username. Ошибки могут привести к зачислению звёзд на другой аккаунт, и возврат средств будет невозможен.\n\nid: 21stars"}},"instantDelivery":false}},"dispute":null}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019caab2-ac15-08ab-bad6-3694b3a52ea3","delta":-1}]
+21:39:22 - StarvellBot - WARNING - 💸 Order refunded: 019caab2-ac15-08ab-bad6-3694b3a52ea3 (delta: -1)
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:39:23.241Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:39:23.270Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019caab2-b0ee-e9a8-0f62-4859e013d5a6","content":"❌ К сожалению, ваш заказ был отменен и средства возвращены.\n\nЕсли у вас возникли вопросы, пожалуйста, свяжитесь с поддержкой.","type":"DEFAULT","metadata":null,"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-01T18:39:23.371Z","updatedAt":"2026-03-01T18:39:23.371Z","author":{"id":139527,"username":"Bronto","roles":[]},"buyer":null,"seller":null,"admin":null,"order":null,"dispute":null}]
+21:39:22 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-01T18:39:23.468Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+21:39:31 - StarvellBot - INFO - ⬅️  2
+21:39:56 - StarvellBot - INFO - ⬅️  2
+21:40:22 - StarvellBot - INFO - ⬅️  2
+21:40:47 - StarvellBot - INFO - ⬅️  2
+21:41:12 - StarvellBot - INFO - ⬅️  2
+21:41:37 - StarvellBot - INFO - ⬅️  2
+21:42:02 - StarvellBot - INFO - ⬅️  2
+21:42:27 - StarvellBot - INFO - ⬅️  2
+21:42:27 - aiogram.dispatcher - INFO - Polling stopped
+21:42:28 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2775)
+21:42:28 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8298689795)
