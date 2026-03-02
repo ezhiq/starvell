@@ -105,7 +105,7 @@ class StarvellBot:
 
         while True:
             game_id = 14
-            categories = 182
+            categories = [181, 182]
             await self.bumping(game_id, categories)
             await asyncio.sleep(300)
 
@@ -126,6 +126,53 @@ class StarvellBot:
     #                 self.logger.error('ошибочка')
     #                 traceback.print_exc()
     #                 return None
+
+    async def get_orders(self):
+        url = "https://starvell.com/api/orders/list"
+        payload = {
+            "filter": {
+                "status": "CREATED",
+                "userType": "seller"
+            },
+            "limit": 20,
+            "offset": 0,
+            "orderBy": {
+                "field": "createdAt",
+                "order": "DESC"
+            },
+            "with": {
+                "buyer": True
+            }
+        }
+
+        async with aiohttp.ClientSession() as session:
+            async with session.post(url, headers=self.headers, json=payload) as response:
+                if response.status == 200:
+                    return await response.json()
+                return None
+
+    async def get_all_orders_12h(self):
+        from datetime import datetime
+        resp = await self.get_orders()
+
+        if not resp:
+            return "❌ Не удалось получить заказы"
+
+        now = datetime.now(timezone.utc)
+        old_orders = []
+
+        for order in resp:
+            created_at = datetime.fromisoformat(order['createdAt'].replace('Z', '+00:00'))
+            age = now - created_at
+
+            if age.total_seconds() > 12 * 3600:
+                old_orders.append(f"#{order['id'].split('-')[-1][-8:].upper()}")
+
+        if old_orders:
+            return "⚠️ Заказы старше 12 часов:\n\n" + "\n".join(old_orders)
+        else:
+            return "✅ Нет зависших заказов"
+
 
     async def dumping(self, queue):
         """Автопонижение цен на наши предложения"""
@@ -579,7 +626,6 @@ class StarvellBot:
             await cursor.execute('insert or ignore into orders(id, status) values (?, ?)', (order_id, 'оплачен',))
             await conn.commit()
             await conn.close()
-            print(f'дата {order_id}: {data}')
             if order_id not in self.orders:
                 await self.process_new_order(order_id)
 
@@ -622,6 +668,7 @@ class StarvellBot:
             msg_type = data.get("type")
             universal = cc.get('universal')
             refund_msg = cc.get('refund_msg')
+            thx_msg = cc.get('thx_msg')
             my_id = cc.get("my_id")
             hello = cc.get('hello')
 
@@ -671,10 +718,36 @@ class StarvellBot:
 
                 if notification_type == "ORDER_REFUND":
                     try:
-
                         await self.send_chat_message(data.get("chatId"), refund_msg)
                     except Exception as e:
                         self.logger.error(f'Ошибка при отправке уведомления о возврате {order_id}')
+
+                if notification_type == "ORDER_COMPLETED":
+                    # === РАБОТА С БД ===
+                    conn = await aiosqlite.connect("orders.db")
+                    try:
+                        cursor = await conn.cursor()
+
+                        await cursor.execute(
+                            """
+                            UPDATE orders 
+                            SET status = ?
+                            WHERE id = ?
+                            """,
+                            ("закрыт", order_id,)
+                        )
+
+                        await conn.commit()
+                        self.logger.info(f"✅ Order {order_id} updated in database")
+
+                        await self.send_chat_message(data.get("chatId"), thx_msg)
+                    except Exception as e:
+                        self.logger.error(f"❌ Ошибка ДБ: {e}")
+                        traceback.print_exc()
+                    finally:
+                        await conn.close()
+
+
 
             elif msg_type == "DEFAULT":
                 author = data.get("author")
@@ -1011,65 +1084,6 @@ class StarvellBot:
                 await asyncio.sleep(30)
                 continue
 
-    # def extract_stars_prices(self, json_or_html_content):
-    #     try:
-    #         data = json.loads(json_or_html_content)
-    #         html_content = data.get('h', '')
-    #         if not html_content:
-    #             self.logger.warning("⚠️ HTML не найден в JSON ответе")
-    #             return {}
-    #     except json.JSONDecodeError:
-    #         # Если это не JSON, считаем что это уже HTML
-    #         html_content = json_or_html_content
-    #
-    #     parser = BeautifulSoup(html_content, 'html.parser')
-    #
-    #     # Найти все радио-кнопки с пакетами звёзд
-    #     radio_items = parser.find_all('input', {'type': 'radio', 'name': 'stars'})
-    #     stars_prices = {}
-    #
-    #     for radio in radio_items:
-    #         # Получить количество звёзд из value
-    #         stars_count = radio.get('value')
-    #
-    #         if not stars_count:
-    #             continue
-    #
-    #         # Найти родительский элемент с ценой
-    #         parent = radio.find_parent('label', {'class': 'tm-form-radio-item'})
-    #
-    #         if not parent:
-    #             continue
-    #
-    #         # Найти div с классом tm-value (цена в TON)
-    #         price_div = parent.find('div', {'class': 'tm-value'})
-    #
-    #         if not price_div:
-    #             continue
-    #
-    #         # Извлечь текст цены
-    #         price_text = price_div.get_text(strip=True)
-    #
-    #         # Убрать всё кроме цифр, точек и запятых
-    #         price_clean = price_text.replace(',', '')
-    #
-    #         # Найти число с помощью regex
-    #         match = re.search(r'[\d.]+', price_clean)
-    #
-    #         if match:
-    #             price_ton = float(match.group())
-    #             stars_prices[int(stars_count)] = price_ton
-    #     try:
-    #
-    #         stars_100 = stars_prices[100]
-    #
-    #         stars_prices[200] = stars_100 * 2
-    #         stars_prices[300] = stars_100 * 3
-    #
-    #     except:
-    #         pass
-    #
-    #     return stars_prices
 
     async def answer_review(self, review_id: str, content: str):
         """Ответить на отзыв"""
@@ -1122,17 +1136,11 @@ class StarvellBot:
     async def send_complete(self, order_id: str):
 
         payload = {"id": order_id}
-        url = "https://starvell.com/api/orders/complete"
+        url = f"https://starvell.com/api/orders/{order_id}/mark-seller-completed"
 
         async with aiohttp.ClientSession(headers=self.headers) as session:
             async with session.post(url, json=payload) as resp:
-                response_text = await resp.text()
-                if resp.status >= 400:
-                    raise RuntimeError(f"HTTP {resp.status}: {response_text}")
-                try:
-                    return json.loads(response_text)
-                except json.JSONDecodeError as exc:
-                    raise RuntimeError("Invalid response from server") from exc
+                return True
 
     async def get_extra_orders(self):
         """Резервная проверка заказов на случай пропуска через WebSocket"""
@@ -1300,13 +1308,18 @@ class StarvellBot:
                 try:
                     cursor = await conn.cursor()
 
+                    if game in ['giftsapi', 'advgifts', 'stargifts']:
+                        way = 'api'
+                    else:
+                        way = 'fragment'
+
                     await cursor.execute(
                         """
                         UPDATE orders 
-                        SET amount = ?, quantity = ?, username = ?, chat_id = ?
+                        SET amount = ?, quantity = ?, username = ?, chat_id = ?, name = ?, game = ?, way = ?
                         WHERE id = ?
                         """,
-                        (stars_amount, quantity, entered_username, chat_id, order_id,)
+                        (stars_amount, quantity, entered_username, chat_id, id, game, way, order_id,)
                     )
 
                     await conn.commit()

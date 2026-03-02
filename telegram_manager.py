@@ -320,6 +320,60 @@ async def cmd_start(message: Message):
         parse_mode="HTML"
     )
 
+@router.message(Command("stats"))
+async def cmd_stats(message: Message):
+    import sqlite3
+
+    try:
+        conn = sqlite3.connect("orders.db")
+        cursor = conn.cursor()
+
+        cursor.execute("SELECT COALESCE(SUM(amount), 0) FROM orders WHERE way = 'fragment' AND status = 'закрыт'")
+        fragment_stars = cursor.fetchone()[0]
+
+        cursor.execute("SELECT COALESCE(SUM(amount), 0) FROM orders WHERE way = 'api' AND status = 'закрыт'")
+        api_stars = cursor.fetchone()[0]
+
+        conn.close()
+    except Exception as e:
+        await message.answer(f"❌ Ошибка базы данных: {e}", parse_mode="HTML")
+        return
+
+    text = "📊 <b>Статистика</b>\n\n"
+    text += "⭐ <b>Выдано звёзд:</b>\n"
+    text += f"   Fragment: <b>{fragment_stars}</b>\n"
+    text += f"   API: <b>{api_stars}</b>\n"
+    text += f"   Итого: <b>{fragment_stars + api_stars}</b>\n\n"
+
+    api_giver = getattr(gi, 'api_giver', None)
+    if api_giver:
+        text += "🔌 <b>Сессии выдачи:</b>\n"
+        for session, is_active in api_giver.is_active.items():
+            emoji = "🟢" if is_active else "🔴"
+            balance = api_giver.balances.get(session, "?")
+            floodwait = api_giver.floodwaits.get(session)
+            fw_text = f" | ⏳ FloodWait: {floodwait}s" if floodwait else ""
+            text += f"   {emoji} <code>{session}</code> — {balance}⭐{fw_text}\n"
+
+        active = sum(1 for v in api_giver.is_active.values() if v)
+        total = len(api_giver.is_active)
+        text += f"\nАктивных: <b>{active}/{total}</b>\n"
+
+        floodwaits = {s: fw for s, fw in api_giver.floodwaits.items() if fw}
+        if floodwaits:
+            text += "\n⚠️ <b>Флудвейты:</b>\n"
+            for session, fw in floodwaits.items():
+                text += f"   <code>{session}</code>: {fw}s\n"
+    else:
+        text += "🔌 <b>Сессии:</b> API Giver не инициализирован\n"
+
+    await message.answer(text, parse_mode="HTML")
+
+@router.message(Command("list"))
+async def cmd_list(message: Message):
+    text = await gi.service_manager.bot_instance.get_all_orders_12h()
+    await message.answer(text)
+
 @router.message(Command("help"))
 async def cmd_help(message: Message):
     await message.answer(

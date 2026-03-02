@@ -1,0 +1,306 @@
+01:31:01 - StarvellBot - INFO - ✅ Логирование настроено
+01:31:01 - StarvellBot - INFO - ============================================================
+01:31:01 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+01:31:01 - StarvellBot - INFO - ============================================================
+01:31:01 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+01:31:01 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+01:31:02 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+01:31:02 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+01:31:02 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+01:31:02 - StarvellBot - INFO - ============================================================
+01:31:02 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+01:31:02 - StarvellBot - INFO - ============================================================
+01:31:02 - StarvellBot - INFO - 
+01:31:02 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+01:31:02 - StarvellBot - INFO - 🎛️ Доступные команды:
+01:31:02 - StarvellBot - INFO -    /start - начать работу
+01:31:02 - StarvellBot - INFO -    /services - управление службами
+01:31:02 - StarvellBot - INFO -    /config - редактирование настроек
+01:31:02 - StarvellBot - INFO -    /status - статус служб
+01:31:02 - StarvellBot - INFO -    /help - справка
+01:31:02 - StarvellBot - INFO - 
+01:31:02 - StarvellBot - INFO - ============================================================
+01:31:02 - aiogram.dispatcher - INFO - Start polling
+01:31:02 - aiogram.dispatcher - INFO - Run polling for bot @starvellbrontobot id=8278054066 - 'StarvellBronto'
+01:31:03 - aiogram.event - INFO - Update id=750237858 is handled. Duration 202 ms by bot id=8278054066
+01:31:03 - aiogram.event - INFO - Update id=750237857 is handled. Duration 222 ms by bot id=8278054066
+01:31:05 - aiogram.event - INFO - Update id=750237859 is handled. Duration 144 ms by bot id=8278054066
+01:31:06 - aiogram.event - INFO - Update id=750237860 is handled. Duration 140 ms by bot id=8278054066
+01:31:09 - aiogram.event - INFO - Update id=750237861 is handled. Duration 120 ms by bot id=8278054066
+01:31:12 - aiogram.event - INFO - Update id=750237862 is handled. Duration 144 ms by bot id=8278054066
+01:31:15 - aiogram.event - INFO - Update id=750237863 is handled. Duration 142 ms by bot id=8278054066
+01:31:16 - service_manager - INFO - ▶️ Запуск службы Orders Monitor...
+01:31:16 - pyrogram.connection.connection - INFO - Connecting...
+01:31:16 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+01:31:16 - pyrogram.session.session - INFO - NetworkTask started
+01:31:16 - pyrogram.client - INFO - Time synced: 2026-03-03 01:31:18.285966
+01:31:16 - service_manager - INFO - ✅ Служба Orders Monitor запущена
+01:31:16 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+01:31:16 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+01:31:16 - pyrogram.session.session - INFO - System: Windows 10 (en)
+01:31:16 - pyrogram.session.session - INFO - Session started
+01:31:16 - pyrogram.session.session - INFO - PingTask started
+01:31:16 - aiogram.event - INFO - Update id=750237864 is handled. Duration 677 ms by bot id=8278054066
+01:31:17 - pyrogram.dispatcher - INFO - Started 20 HandlerTasks
+01:31:17 - pyrogram.dispatcher - INFO - Stopped 20 HandlerTasks
+01:31:17 - pyrogram.session.session - INFO - PingTask stopped
+01:31:17 - pyrogram.session.session - INFO - NetworkTask stopped
+01:31:17 - pyrogram.connection.connection - INFO - Disconnected
+01:31:17 - pyrogram.session.session - INFO - Session stopped
+01:31:17 - TelegramApiGiver - INFO - ✅ Сессии инициализированы: ['my_account']
+01:31:17 - pyrogram.connection.connection - INFO - Connecting...
+01:31:17 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+01:31:17 - pyrogram.session.session - INFO - NetworkTask started
+01:31:17 - pyrogram.client - INFO - Time synced: 2026-03-03 01:31:19.341431
+01:31:17 - StarvellBot - INFO - 🟢 WebSocket connected
+01:31:17 - StarvellBot - INFO - ⬅️  0{"sid":"NpIuOtiEmYqOvSP_AAG9","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+01:31:17 - StarvellBot - WARNING - ➡️  Connecting to namespace: /chats
+01:31:17 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-notifications
+01:31:17 - StarvellBot - WARNING - ➡️  Connecting to namespace: /orders
+01:31:17 - StarvellBot - WARNING - ➡️  Connecting to namespace: /user-presence
+01:31:17 - StarvellBot - WARNING - ➡️  Connecting to namespace: /online
+01:31:17 - StarvellBot - INFO - ✅ WebSocket готов, запускаем проверку заказов
+01:31:17 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+01:31:17 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+01:31:17 - pyrogram.session.session - INFO - System: Windows 10 (en)
+01:31:17 - pyrogram.session.session - INFO - Session started
+01:31:17 - pyrogram.session.session - INFO - PingTask started
+01:31:17 - StarvellBot - INFO - ⬅️  40/chats,{"sid":"arehfvPXqWaIPECIAAG-"}
+01:31:17 - StarvellBot - INFO - ⬅️  40/user-notifications,{"sid":"Br4EH6GkH6NIh8pkAAG_"}
+01:31:17 - StarvellBot - INFO - ⬅️  40/orders,{"sid":"FIv-b5x44im-Kic3AAHA"}
+01:31:17 - StarvellBot - INFO - ⬅️  40/user-presence,{"sid":"tokiiqv4i3Wx7SoaAAHB"}
+01:31:17 - StarvellBot - INFO - ⬅️  40/online,{"sid":"MNgRQ3rdkzpxSf0TAAHC"}
+01:31:18 - pyrogram.dispatcher - INFO - Started 20 HandlerTasks
+01:31:18 - pyrogram.dispatcher - INFO - Stopped 20 HandlerTasks
+01:31:18 - pyrogram.session.session - INFO - PingTask stopped
+01:31:18 - pyrogram.session.session - INFO - NetworkTask stopped
+01:31:18 - pyrogram.connection.connection - INFO - Disconnected
+01:31:18 - pyrogram.session.session - INFO - Session stopped
+01:31:36 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:31:37 - StarvellBot - INFO - Успешно парсили ордеры
+01:31:37 - StarvellBot - ERROR - отсутствует категория демпинге
+01:31:37 - StarvellBot - ERROR - отсутствует категория демпинге
+01:31:37 - StarvellBot - ERROR - отсутствует категория демпинге
+01:31:42 - StarvellBot - INFO - ⬅️  2
+01:32:12 - StarvellBot - INFO - ⬅️  2
+01:32:12 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:32:13 - StarvellBot - INFO - Успешно парсили ордеры
+01:32:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:32:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:32:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:32:23 - StarvellBot - INFO - ⬅️  42/user-notifications,["balance_update",{"balance":828265}]
+01:32:23 - StarvellBot - INFO - 📩 [/user-notifications] balance_update
+01:32:23 - StarvellBot - INFO - ⬅️  42/user-notifications,["sale_update",{"orderId":"019cabc3-bfdb-d87f-9e65-5300653529ae","delta":-1}]
+01:32:23 - StarvellBot - WARNING - 💸 Order refunded: 019cabc3-bfdb-d87f-9e65-5300653529ae (delta: -1)
+01:32:23 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019cb0ae-64e9-81f7-abec-77cf23d6cf61","content":"","type":"NOTIFICATION","metadata":{"orderId":"019cabc3-bfdb-d87f-9e65-5300653529ae","notificationType":"ORDER_COMPLETED"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":139527,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-02T22:32:25.047Z","updatedAt":"2026-03-02T22:32:25.047Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":{"id":139527,"username":"Bronto"},"admin":null,"order":{"id":"019cabc3-bfdb-d87f-9e65-5300653529ae","quantity":1,"totalPrice":6160,"status":"COMPLETED","refundedAt":null,"refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"c08b9c8b-c7a3-4cb5-b853-ad20252e3dc2","nameRu":"По username"},"nameRu":"Способ получения"}],"subCategory":{"id":643,"name":"50 звёзд"},"availability":99999788,"deliveryTime":{"to":{"unit":"MINUTES","value":1},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"🔹 Отправка: Автоматически 24/7 🌟\n🔹 Комиссия: Нет — приходит ровно столько, сколько куплено\n🔹 Источник: Официально\n🔹 Надёжность: Бот не падает под нагрузкой 🍕\n\n⚠️ Обратите внимание:\n1️⃣ Не нужно писать «вы тут?», «можно купить?» — товар всегда в наличии. Создавайте заказ и оплачивайте сразу.\n2️⃣ Чтобы купить много звёзд, используйте кнопку «Купить несколько штук» (например: 50 ⭐ × 4 = 200 ⭐).\n3️⃣ Иногда бот может не ответить в чате из-за ограничений Starvell, но заказ всё равно выполняется автоматически. После получения — подтвердите выполнение.\n4️⃣ После создания заказа бот запросит ваш Telegram @username. Если у вас он не установлен — добавьте в настройках профиля.\n5️⃣ Звёзды приходят автоматически на указанный @username и сразу становятся доступными 🎉\n\n🐬Чтоб позвать меня используй команду /вызов *Ваше Сообщение*\n\nid: 50stars"}},"instantDelivery":false}},"dispute":null}]
+01:32:23 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019cb0ae-64fb-9803-ac29-d16941d1eea6","content":"","type":"NOTIFICATION","metadata":{"notificationType":"LEAVE_SERVICE_REVIEW"},"isHidden":false,"images":[],"authorId":null,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-02T22:32:25.084Z","updatedAt":"2026-03-02T22:32:25.084Z","author":null,"buyer":null,"seller":null,"admin":null,"order":null,"dispute":null}]
+01:32:23 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-02T22:32:25.184Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+01:32:23 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-02T22:32:25.206Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+01:32:37 - StarvellBot - INFO - ⬅️  2
+01:32:49 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:32:49 - StarvellBot - INFO - Успешно парсили ордеры
+01:32:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:32:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:32:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:33:02 - StarvellBot - INFO - ⬅️  2
+01:33:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:33:25 - StarvellBot - INFO - Успешно парсили ордеры
+01:33:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:33:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:33:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:33:27 - StarvellBot - INFO - ⬅️  2
+01:33:52 - StarvellBot - INFO - ⬅️  2
+01:34:01 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:34:02 - StarvellBot - INFO - Успешно парсили ордеры
+01:34:02 - StarvellBot - ERROR - отсутствует категория демпинге
+01:34:02 - StarvellBot - ERROR - отсутствует категория демпинге
+01:34:02 - StarvellBot - ERROR - отсутствует категория демпинге
+01:34:17 - StarvellBot - INFO - ⬅️  2
+01:34:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:34:38 - StarvellBot - INFO - Успешно парсили ордеры
+01:34:38 - StarvellBot - ERROR - отсутствует категория демпинге
+01:34:38 - StarvellBot - ERROR - отсутствует категория демпинге
+01:34:38 - StarvellBot - ERROR - отсутствует категория демпинге
+01:34:43 - StarvellBot - INFO - ⬅️  2
+01:35:08 - StarvellBot - INFO - ⬅️  2
+01:35:13 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:35:13 - StarvellBot - INFO - Успешно парсили ордеры
+01:35:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:35:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:35:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:35:33 - StarvellBot - INFO - ⬅️  2
+01:35:49 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:35:49 - StarvellBot - INFO - Успешно парсили ордеры
+01:35:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:35:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:35:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:35:58 - StarvellBot - INFO - ⬅️  2
+01:36:25 - StarvellBot - INFO - ⬅️  2
+01:36:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:36:25 - StarvellBot - INFO - Успешно парсили ордеры
+01:36:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:36:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:36:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:36:50 - StarvellBot - INFO - ⬅️  2
+01:37:00 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:37:01 - StarvellBot - INFO - Успешно парсили ордеры
+01:37:01 - StarvellBot - ERROR - отсутствует категория демпинге
+01:37:01 - StarvellBot - ERROR - отсутствует категория демпинге
+01:37:01 - StarvellBot - ERROR - отсутствует категория демпинге
+01:37:15 - StarvellBot - INFO - ⬅️  2
+01:37:36 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:37:36 - StarvellBot - INFO - Успешно парсили ордеры
+01:37:36 - StarvellBot - ERROR - отсутствует категория демпинге
+01:37:36 - StarvellBot - ERROR - отсутствует категория демпинге
+01:37:36 - StarvellBot - ERROR - отсутствует категория демпинге
+01:37:40 - StarvellBot - INFO - ⬅️  2
+01:38:05 - StarvellBot - INFO - ⬅️  2
+01:38:12 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:38:12 - StarvellBot - INFO - Успешно парсили ордеры
+01:38:12 - StarvellBot - ERROR - отсутствует категория демпинге
+01:38:12 - StarvellBot - ERROR - отсутствует категория демпинге
+01:38:12 - StarvellBot - ERROR - отсутствует категория демпинге
+01:38:30 - StarvellBot - INFO - ⬅️  2
+01:38:49 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:38:49 - StarvellBot - INFO - Успешно парсили ордеры
+01:38:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:38:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:38:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:38:55 - StarvellBot - INFO - ⬅️  2
+01:39:25 - StarvellBot - INFO - ⬅️  2
+01:39:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:39:26 - StarvellBot - INFO - Успешно парсили ордеры
+01:39:26 - StarvellBot - ERROR - отсутствует категория демпинге
+01:39:26 - StarvellBot - ERROR - отсутствует категория демпинге
+01:39:26 - StarvellBot - ERROR - отсутствует категория демпинге
+01:39:50 - StarvellBot - INFO - ⬅️  2
+01:40:02 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:40:03 - StarvellBot - INFO - Успешно парсили ордеры
+01:40:03 - StarvellBot - ERROR - отсутствует категория демпинге
+01:40:03 - StarvellBot - ERROR - отсутствует категория демпинге
+01:40:03 - StarvellBot - ERROR - отсутствует категория демпинге
+01:40:15 - StarvellBot - INFO - ⬅️  2
+01:40:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:40:38 - StarvellBot - INFO - Успешно парсили ордеры
+01:40:38 - StarvellBot - ERROR - отсутствует категория демпинге
+01:40:38 - StarvellBot - ERROR - отсутствует категория демпинге
+01:40:38 - StarvellBot - ERROR - отсутствует категория демпинге
+01:40:40 - StarvellBot - INFO - ⬅️  2
+01:41:05 - StarvellBot - INFO - ⬅️  2
+01:41:14 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:41:14 - StarvellBot - INFO - Успешно парсили ордеры
+01:41:14 - StarvellBot - ERROR - отсутствует категория демпинге
+01:41:14 - StarvellBot - ERROR - отсутствует категория демпинге
+01:41:14 - StarvellBot - ERROR - отсутствует категория демпинге
+01:41:30 - StarvellBot - INFO - ⬅️  2
+01:41:49 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:41:50 - StarvellBot - INFO - Успешно парсили ордеры
+01:41:50 - StarvellBot - ERROR - отсутствует категория демпинге
+01:41:50 - StarvellBot - ERROR - отсутствует категория демпинге
+01:41:50 - StarvellBot - ERROR - отсутствует категория демпинге
+01:41:55 - StarvellBot - INFO - ⬅️  2
+01:42:25 - StarvellBot - INFO - ⬅️  2
+01:42:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:42:26 - StarvellBot - INFO - Успешно парсили ордеры
+01:42:26 - StarvellBot - ERROR - отсутствует категория демпинге
+01:42:26 - StarvellBot - ERROR - отсутствует категория демпинге
+01:42:26 - StarvellBot - ERROR - отсутствует категория демпинге
+01:42:50 - StarvellBot - INFO - ⬅️  2
+01:43:01 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:43:02 - StarvellBot - INFO - Успешно парсили ордеры
+01:43:02 - StarvellBot - ERROR - отсутствует категория демпинге
+01:43:02 - StarvellBot - ERROR - отсутствует категория демпинге
+01:43:02 - StarvellBot - ERROR - отсутствует категория демпинге
+01:43:15 - StarvellBot - INFO - ⬅️  2
+01:43:37 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:43:37 - StarvellBot - INFO - Успешно парсили ордеры
+01:43:37 - StarvellBot - ERROR - отсутствует категория демпинге
+01:43:37 - StarvellBot - ERROR - отсутствует категория демпинге
+01:43:37 - StarvellBot - ERROR - отсутствует категория демпинге
+01:43:40 - StarvellBot - INFO - ⬅️  2
+01:44:05 - StarvellBot - INFO - ⬅️  2
+01:44:13 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:44:13 - StarvellBot - INFO - Успешно парсили ордеры
+01:44:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:44:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:44:13 - StarvellBot - ERROR - отсутствует категория демпинге
+01:44:30 - StarvellBot - INFO - ⬅️  2
+01:44:48 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:44:49 - StarvellBot - INFO - Успешно парсили ордеры
+01:44:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:44:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:44:49 - StarvellBot - ERROR - отсутствует категория демпинге
+01:44:55 - StarvellBot - INFO - ⬅️  2
+01:45:24 - StarvellBot - INFO - ⬅️  2
+01:45:25 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:45:25 - StarvellBot - INFO - Успешно парсили ордеры
+01:45:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:45:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:45:25 - StarvellBot - ERROR - отсутствует категория демпинге
+01:45:49 - StarvellBot - INFO - ⬅️  2
+01:46:00 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:46:00 - StarvellBot - INFO - Успешно парсили ордеры
+01:46:00 - StarvellBot - ERROR - отсутствует категория демпинге
+01:46:00 - StarvellBot - ERROR - отсутствует категория демпинге
+01:46:00 - StarvellBot - ERROR - отсутствует категория демпинге
+01:46:14 - StarvellBot - INFO - ⬅️  2
+01:46:36 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:46:36 - StarvellBot - INFO - Успешно парсили ордеры
+01:46:36 - StarvellBot - ERROR - отсутствует категория демпинге
+01:46:36 - StarvellBot - ERROR - отсутствует категория демпинге
+01:46:36 - StarvellBot - ERROR - отсутствует категория демпинге
+01:46:40 - StarvellBot - INFO - ⬅️  2
+01:47:05 - StarvellBot - INFO - ⬅️  2
+01:47:12 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:47:12 - StarvellBot - INFO - Успешно парсили ордеры
+01:47:12 - StarvellBot - ERROR - отсутствует категория демпинге
+01:47:12 - StarvellBot - ERROR - отсутствует категория демпинге
+01:47:12 - StarvellBot - ERROR - отсутствует категория демпинге
+01:47:30 - StarvellBot - INFO - ⬅️  2
+01:47:47 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:47:48 - StarvellBot - INFO - Успешно парсили ордеры
+01:47:48 - StarvellBot - ERROR - отсутствует категория демпинге
+01:47:48 - StarvellBot - ERROR - отсутствует категория демпинге
+01:47:48 - StarvellBot - ERROR - отсутствует категория демпинге
+01:47:55 - StarvellBot - INFO - ⬅️  42/user-notifications,["balance_update",{"balance":822765}]
+01:47:55 - StarvellBot - INFO - 📩 [/user-notifications] balance_update
+01:47:55 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019cb0bc-9bc5-316e-a251-2f9ccc42520d","content":"","type":"NOTIFICATION","metadata":{"orderId":"019cabc3-bfdb-d87f-9e65-5300653529ae","notificationType":"ORDER_REFUND"},"isHidden":false,"images":[],"authorId":null,"buyerId":152876,"sellerId":139527,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-02T22:47:56.590Z","updatedAt":"2026-03-02T22:47:56.590Z","author":null,"buyer":{"id":152876,"username":"xezz"},"seller":{"id":139527,"username":"Bronto"},"admin":null,"order":{"id":"019cabc3-bfdb-d87f-9e65-5300653529ae","quantity":1,"totalPrice":6160,"status":"REFUND","refundedAt":"2026-03-02T22:47:56.610Z","refundReasonCode":null,"orderArgs":[{"id":"959d1d7b-1a35-429c-98a1-c9a753579a43","value":"ezhiqq","nameRu":"Telegram Username"}],"offerDetails":{"game":{"id":14,"name":"Telegram","slug":"telegram"},"type":"LOT","images":[],"category":{"id":182,"name":"Звёзды","slug":"stars","currencyDisplayUnits":null},"attributes":[{"id":"2c2c2dc0-93fd-4cdc-8bb6-c3fb0e79612a","value":{"id":"c08b9c8b-c7a3-4cb5-b853-ad20252e3dc2","nameRu":"По username"},"nameRu":"Способ получения"}],"subCategory":{"id":643,"name":"50 звёзд"},"availability":99999788,"deliveryTime":{"to":{"unit":"MINUTES","value":1},"from":{"unit":"MINUTES","value":1}},"descriptions":{"rus":{"description":"🔹 Отправка: Автоматически 24/7 🌟\n🔹 Комиссия: Нет — приходит ровно столько, сколько куплено\n🔹 Источник: Официально\n🔹 Надёжность: Бот не падает под нагрузкой 🍕\n\n⚠️ Обратите внимание:\n1️⃣ Не нужно писать «вы тут?», «можно купить?» — товар всегда в наличии. Создавайте заказ и оплачивайте сразу.\n2️⃣ Чтобы купить много звёзд, используйте кнопку «Купить несколько штук» (например: 50 ⭐ × 4 = 200 ⭐).\n3️⃣ Иногда бот может не ответить в чате из-за ограничений Starvell, но заказ всё равно выполняется автоматически. После получения — подтвердите выполнение.\n4️⃣ После создания заказа бот запросит ваш Telegram @username. Если у вас он не установлен — добавьте в настройках профиля.\n5️⃣ Звёзды приходят автоматически на указанный @username и сразу становятся доступными 🎉\n\n🐬Чтоб позвать меня используй команду /вызов *Ваше Сообщение*\n\nid: 50stars"}},"instantDelivery":false}},"dispute":null}]
+01:47:55 - StarvellBot - INFO - ⬅️  2
+01:47:55 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-02T22:47:56.926Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+01:47:55 - StarvellBot - INFO - ⬅️  42/chats,["message_created",{"id":"019cb0bc-9cf6-6b91-a51e-92b7ed8da954","content":"❌ К сожалению, ваш заказ был отменен и средства возвращены.\n\nЕсли у вас возникли вопросы, пожалуйста, свяжитесь с поддержкой.","type":"DEFAULT","metadata":null,"isHidden":false,"images":[],"authorId":139527,"buyerId":null,"sellerId":null,"adminId":null,"chatId":"019c2109-ea20-da88-5085-3849eef57778","visibleTo":null,"createdAt":"2026-03-02T22:47:56.917Z","updatedAt":"2026-03-02T22:47:56.917Z","author":{"id":139527,"username":"Bronto","roles":[]},"buyer":null,"seller":null,"admin":null,"order":null,"dispute":null}]
+01:47:55 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-02T22:47:56.941Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+01:47:55 - StarvellBot - INFO - ⬅️  42/chats,["chat_read",{"lastReadAt":"2026-03-02T22:47:57.052Z","chatId":"019c2109-ea20-da88-5085-3849eef57778"}]
+01:47:58 - pyrogram.connection.connection - INFO - Connecting...
+01:47:58 - pyrogram.connection.connection - INFO - Connected! Production DC2 - IPv4
+01:47:58 - pyrogram.session.session - INFO - NetworkTask started
+01:47:58 - pyrogram.client - INFO - Time synced: 2026-03-03 01:48:00.341766
+01:47:58 - pyrogram.session.session - INFO - Session initialized: Pyrogram v2.2.19 (Layer 222)
+01:47:58 - pyrogram.session.session - INFO - Device: CPython 3.13.5 - Pyrogram 2.2.19
+01:47:58 - pyrogram.session.session - INFO - System: Windows 10 (en)
+01:47:58 - pyrogram.session.session - INFO - Session started
+01:47:58 - pyrogram.session.session - INFO - PingTask started
+01:47:59 - pyrogram.dispatcher - INFO - Started 20 HandlerTasks
+01:47:59 - pyrogram.dispatcher - INFO - Stopped 20 HandlerTasks
+01:47:59 - pyrogram.session.session - INFO - PingTask stopped
+01:47:59 - pyrogram.session.session - INFO - NetworkTask stopped
+01:47:59 - pyrogram.connection.connection - INFO - Disconnected
+01:47:59 - pyrogram.session.session - INFO - Session stopped
+01:48:23 - StarvellBot - INFO - ⬅️  2
+01:48:23 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:48:23 - StarvellBot - INFO - Успешно парсили ордеры
+01:48:23 - StarvellBot - ERROR - отсутствует категория демпинге
+01:48:23 - StarvellBot - ERROR - отсутствует категория демпинге
+01:48:23 - StarvellBot - ERROR - отсутствует категория демпинге
+01:48:48 - StarvellBot - INFO - ⬅️  2
+01:48:59 - StarvellBot.Fragment - INFO - Wallet balance: 1.104038 TON
+01:48:59 - StarvellBot - INFO - Успешно парсили ордеры
+01:48:59 - StarvellBot - ERROR - отсутствует категория демпинге
+01:48:59 - StarvellBot - ERROR - отсутствует категория демпинге
+01:48:59 - StarvellBot - ERROR - отсутствует категория демпинге
+01:49:07 - aiogram.dispatcher - INFO - Polling stopped
+01:49:07 - StarvellBot - INFO - 👋 Завершение работы...
+01:49:07 - service_manager - INFO - Orders Monitor cancelled
+01:49:07 - service_manager - INFO - ⏸ Служба Orders Monitor остановлена
+01:49:07 - service_manager - INFO - ⏸ Служба Orders Monitor остановлена
+01:49:07 - aiogram.dispatcher - INFO - Polling stopped for bot @starvellbrontobot id=8278054066 - 'StarvellBronto'
+01:49:07 - StarvellBot - INFO - ⏸ Остановка по Ctrl+C

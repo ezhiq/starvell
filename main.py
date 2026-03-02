@@ -11,6 +11,7 @@ import traceback
 from aiogram import Bot, Dispatcher
 
 from logger import setup_logging
+from middleware import AdminMiddleware
 from service_manager import ServiceManager
 from config_manager import ConfigManager
 from stars_api_giver import StarsAPIGiver
@@ -31,10 +32,13 @@ async def main():
     # ========================================
     
     # Токен бота (получить у @BotFather)
-    BOT_TOKEN = "8298689795:AAEuT7KxgcxPPKfYBE2JFkup_yNj-0gfH6k"
+    BOT_TOKEN = "8278054066:AAEVmDP9jHXUK1jt91ConISe-SX-JTowLog"
     
     # ID администраторов (получить у @userinfobot)
-    ADMIN_IDS = [1094682920]  # Замените на ваши Telegram ID
+    # ADMIN_IDS = [946218255]
+    # Замените на ваши Telegram ID
+
+    ADMIN_IDS = [1094682920]
     
     # ========================================
     # ПРОВЕРКА НАСТРОЕК
@@ -70,6 +74,9 @@ async def main():
         bot = Bot(token=BOT_TOKEN)
         dp = Dispatcher()
         dp.include_router(router)
+
+        dp.message.middleware(AdminMiddleware(ADMIN_IDS))
+        dp.callback_query.middleware(AdminMiddleware(ADMIN_IDS))
 
         gi.bot = bot
         gi.dp = dp

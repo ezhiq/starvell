@@ -42,6 +42,7 @@ FIELDS: dict[str, dict] = {
     "universal"            : {"section": "messages",    "type": str,   "label": "Универсальный ответ",        "hint": "Текст ответа на отзывы"},
     "refund_msg"           : {"section": "messages",    "type": str,   "label": "Сообщение о возврате",       "hint": "Текст при возврате средств"},
     "hello"                : {"section": "messages",    "type": str,   "label": "Приветствие",                "hint": "Приветственное сообщение для клиентов"},
+    "thx_msg"              : {"section": "messages",    "type": str,   "label": "Благодарность",              "hint": "Благодарность за подтверждение заказа"},
 
     # --- Performance ---
     "min_star_rate"        : {"section": "performance", "type": float, "label": "Минимальный курс звезды",    "hint": "Например: 1.15"},

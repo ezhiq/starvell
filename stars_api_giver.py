@@ -20,7 +20,7 @@ class StarsAPIGiver:
         self.flags = {}
         self.balances = {}
         self.is_active = {}
-
+        self.floodwaits = {}
         self.warnings = {}
 
         self.api_id = 2040
@@ -39,6 +39,7 @@ class StarsAPIGiver:
         self.sessions = sessions
         for session in sessions:
             self.flags[session] = 0
+            self.floodwaits[session] = None
             self.balances[session] = await self.get_star_balance(session)
             self.is_active[session] = True
 
@@ -162,6 +163,7 @@ class StarsAPIGiver:
     async def wait_for_floodwait(self, session, x):
         await asyncio.sleep(x)
         self.is_active[session] = True
+        self.floodwaits[session] = None
 
     async def send_gifts(self, session, cur, success, ids, username):
         logger.info(f"   🎁 send_gifts: сессия={session} цель={username}")
@@ -193,6 +195,7 @@ class StarsAPIGiver:
                         logger.error(f"   ❌ FloodWait на сессию при выдаче типа {item}[{idx}]: {e}")
                         self.flags[session] = 0
                         self.is_active[session] = False
+                        self.floodwaits[session] = e.value
                         asyncio.create_task(self.wait_for_floodwait(session, e.value))
                         return f'Флудвейт при выдаче {e}', False, success
 
