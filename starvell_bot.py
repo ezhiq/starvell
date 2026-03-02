@@ -80,6 +80,10 @@ class StarvellBot:
     def _init_gift_distributor(self):
         self.api_giver = StarsAPIGiver()
 
+        stars_api = self.api_giver
+        gi.api_giver = stars_api
+
+
     async def bumping(self, game_id, categories):
 
         try:

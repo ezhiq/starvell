@@ -1,0 +1,25 @@
+02:20:27 - StarvellBot - INFO - ✅ Логирование настроено
+02:20:27 - StarvellBot - INFO - ============================================================
+02:20:27 - StarvellBot - INFO - 🚀 StarvellBot Manager Starting...
+02:20:27 - StarvellBot - INFO - ============================================================
+02:20:27 - StarvellBot - INFO - 📋 Загрузка конфигурации...
+02:20:27 - config_manager - INFO - ✅ Конфигурация загружена из config_data.json
+02:20:28 - StarvellBot - INFO - 🚀 Запуск Telegram Manager...
+02:20:28 - StarvellBot - INFO - 🤖 Инициализация StarvellBot...
+02:20:28 - StarvellBot - INFO - ⚙️ Инициализация Service Manager...
+02:20:28 - StarvellBot - INFO - ============================================================
+02:20:28 - StarvellBot - INFO - ✅ Все компоненты инициализированы успешно!
+02:20:28 - StarvellBot - INFO - ============================================================
+02:20:28 - StarvellBot - INFO - 
+02:20:28 - StarvellBot - INFO - 📱 Откройте Telegram бота для управления
+02:20:28 - StarvellBot - INFO - 🎛️ Доступные команды:
+02:20:28 - StarvellBot - INFO -    /start - начать работу
+02:20:28 - StarvellBot - INFO -    /services - управление службами
+02:20:28 - StarvellBot - INFO -    /config - редактирование настроек
+02:20:28 - StarvellBot - INFO -    /status - статус служб
+02:20:28 - StarvellBot - INFO -    /help - справка
+02:20:28 - StarvellBot - INFO - 
+02:20:28 - StarvellBot - INFO - ============================================================
+02:20:28 - aiogram.dispatcher - INFO - Start polling
+02:20:29 - aiogram.dispatcher - INFO - Run polling for bot @starvellbrontobot id=8278054066 - 'StarvellBronto'
+02:20:29 - aiogram.event - INFO - Update id=750237884 is handled. Duration 202 ms by bot id=8278054066

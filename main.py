@@ -35,10 +35,10 @@ async def main():
     BOT_TOKEN = "8278054066:AAEVmDP9jHXUK1jt91ConISe-SX-JTowLog"
     
     # ID администраторов (получить у @userinfobot)
-    # ADMIN_IDS = [946218255]
+    ADMIN_IDS = [946218255]
     # Замените на ваши Telegram ID
 
-    ADMIN_IDS = [1094682920]
+
     
     # ========================================
     # ПРОВЕРКА НАСТРОЕК
@@ -82,11 +82,12 @@ async def main():
         gi.dp = dp
 
         logger.info("🚀 Запуск Telegram Manager...")
+        gi.api_giver = None
 
         # Создаём экземпляр бота
         logger.info("🤖 Инициализация StarvellBot...")
         starvell_bot = StarvellBot(ADMIN_IDS[0])
-        
+
         # Менеджер служб
         logger.info("⚙️ Инициализация Service Manager...")
         service_manager = ServiceManager()

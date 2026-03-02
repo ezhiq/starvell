@@ -359,6 +359,14 @@ async def cmd_stats(message: Message):
         total = len(api_giver.is_active)
         text += f"\nАктивных: <b>{active}/{total}</b>\n"
 
+        if api_giver.balances:
+            total_balance = sum(api_giver.balances.values())
+            max_balance = max(api_giver.balances.values())
+            min_balance = min(api_giver.balances.values())
+            text += f"\n💰 <b>Балансы сессий:</b>\n"
+            text += f"   Суммарно: <b>{total_balance}⭐</b>\n"
+            text += f"   Макс: <b>{max_balance}⭐</b> | Мин: <b>{min_balance}⭐</b>\n"
+
         floodwaits = {s: fw for s, fw in api_giver.floodwaits.items() if fw}
         if floodwaits:
             text += "\n⚠️ <b>Флудвейты:</b>\n"
