@@ -1428,16 +1428,27 @@ class StarvellBot:
                 self.users[buyer_id]['active'] = True
                 self.users[buyer_id]['hello'] = True
 
-                # === ОТПРАВКА СООБЩЕНИЯ ===
-                start_order_msg = (
+                if game in ['giftsapi']:
+                    start_order_msg = (
                     f"🧾 Ваш заказ:\n"
                     f"#️⃣ ID: {order.order_id}\n"
                     f"👤 Username: {order.username}\n"
-                    f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                    f"🎁 Подарок : {order.gift_name} | {order.quantity} шт.\n"
                     f"\n"
                     f"Все верно?\n"
                     f"✅ Да (+) | Нет (-) ❌"
                 )
+                else:
+                    # === ОТПРАВКА СООБЩЕНИЯ ===
+                    start_order_msg = (
+                        f"🧾 Ваш заказ:\n"
+                        f"#️⃣ ID: {order.order_id}\n"
+                        f"👤 Username: {order.username}\n"
+                        f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                        f"\n"
+                        f"Все верно?\n"
+                        f"✅ Да (+) | Нет (-) ❌"
+                    )
 
             await self.send_chat_message(chat_id, start_order_msg)
             self.orders[order_id] = order
