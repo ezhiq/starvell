@@ -1428,7 +1428,7 @@ class StarvellBot:
                 self.users[buyer_id]['active'] = True
                 self.users[buyer_id]['hello'] = True
 
-                if game in ['giftsapi']:
+                if game in ['stargifts']:
                     start_order_msg = (
                     f"🧾 Ваш заказ:\n"
                     f"#️⃣ ID: {order.order_id}\n"
