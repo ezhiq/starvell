@@ -1,0 +1,491 @@
+{
+    "starvell": {
+        "cookie_session": "",
+        "my_id": 0,
+        "friends": [
+            139527
+        ]
+    },
+    "advanced": {
+        "data": {
+            "type": [
+                [
+                    "string"
+                ],
+                [
+                    "dict"
+                ]
+            ],
+            "label": "Все ордеры",
+            "hint": "Выбери опцию ниже",
+            "actions": [
+                [
+                    "add",
+                    "Введите название нового раздела (игры) (лучше через код всё это делать)"
+                ],
+                [
+                    "remove",
+                    "Удалить"
+                ]
+            ],
+            "special_data": {}
+        },
+        "starsorders": {
+            "data": {
+                "type": [
+                    [
+                        "string"
+                    ],
+                    [
+                        "dict"
+                    ]
+                ],
+                "label": "Все разделы, связанные с выдачей звезд",
+                "hint": "",
+                "actions": [
+                    [
+                        "add",
+                        "добавить новое"
+                    ]
+                ],
+                "special_data": {},
+                "schema": {
+                    "dumping": "str"
+                }
+            },
+            "stars": {
+                "data": {
+                    "type": [
+                        [
+                            "string"
+                        ],
+                        [
+                            "dict"
+                        ]
+                    ],
+                    "label": "Выдача звезд фрагментом от 50 до 100000 в разделах",
+                    "hint": "",
+                    "actions": [
+                        [
+                            "add",
+                            "добавить"
+                        ]
+                    ],
+                    "special_data": {
+                        "dumping": "on"
+                    },
+                    "schema": {
+                        "stars": "int"
+                    }
+                },
+                "50stars": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "Выдача 50 звезд",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "remove",
+                                "f"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 50
+                        }
+                    }
+                }
+            },
+            "advgifts": {
+                "data": {
+                    "type": [
+                        [
+                            "string"
+                        ],
+                        [
+                            "dict"
+                        ]
+                    ],
+                    "label": "Выдаем подарками В РАЗДЕЛЕ ДРУГОЕ КОЛИЧЕСТВО!",
+                    "hint": "",
+                    "actions": [
+                        [
+                            "add",
+                            "добавить новое"
+                        ],
+                        [
+                            "remove",
+                            "удалить само себя"
+                        ]
+                    ],
+                    "special_data": {
+                        "dumping": "on"
+                    },
+                    "schema": {
+                        "stars": "int",
+                        "mask": "list[int]",
+                        "ids": "list[list]"
+                    }
+                },
+                "34stars": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "Выдача 34 звезд дефолтными подарками",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "remove",
+                                "удалить"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 34,
+                            "mask": [
+                                1,
+                                1,
+                                0,
+                                0
+                            ],
+                            "ids": [
+                                [
+                                    "def"
+                                ],
+                                [
+                                    "def"
+                                ],
+                                [],
+                                []
+                            ]
+                        }
+                    }
+                },
+                "39stars": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "Выдача 3 подарков по 15",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "remove",
+                                "удалитьф"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 39,
+                            "mask": [
+                                3,
+                                0,
+                                0,
+                                0
+                            ],
+                            "ids": [
+                                [
+                                    5170145012310081615,
+                                    5170233102089322756,
+                                    5170145012310081615
+                                ],
+                                [],
+                                [],
+                                []
+                            ]
+                        }
+                    }
+                },
+                "26stars": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "26 старок мишками",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "remove",
+                                "e"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 26,
+                            "mask": [
+                                2,
+                                0,
+                                0,
+                                0
+                            ],
+                            "ids": [
+                                [
+                                    5170233102089322756
+                                ],
+                                [],
+                                [],
+                                []
+                            ]
+                        }
+                    }
+                }
+            },
+            "advstars": {
+                "data": {
+                    "type": [
+                        [
+                            "string"
+                        ],
+                        [
+                            "dict"
+                        ]
+                    ],
+                    "label": "Выдача фрагментом значений от 50 до 100000 В КАТЕГОРИИ ДРУГОЕ КОЛИЧЕСТВО",
+                    "hint": "",
+                    "actions": [
+                        [
+                            "add",
+                            "добавить новое"
+                        ],
+                        [
+                            "remove",
+                            "удалить само себя"
+                        ]
+                    ],
+                    "special_data": {
+                        "dumping": "\"on\""
+                    },
+                    "schema": {
+                        "stars": "int"
+                    }
+                }
+            },
+            "giftsapi": {
+                "data": {
+                    "type": [
+                        [
+                            "string"
+                        ],
+                        [
+                            "dict"
+                        ]
+                    ],
+                    "label": "Выдача звезд в категориях 13, 21, 43 подарками",
+                    "hint": "",
+                    "actions": [
+                        [
+                            "add",
+                            "add"
+                        ],
+                        [
+                            "remove",
+                            "remove"
+                        ]
+                    ],
+                    "special_data": {
+                        "dumping": "on"
+                    },
+                    "schema": {
+                        "stars": "int",
+                        "mask": "list[int]",
+                        "ids": "list[list]"
+                    }
+                },
+                "43stars": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "Выдача 43 звезд дефолтным подарком",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "add",
+                                "добавить"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 43,
+                            "mask": [
+                                0,
+                                0,
+                                1,
+                                0
+                            ],
+                            "ids": [
+                                [],
+                                [],
+                                [
+                                    "def"
+                                ],
+                                []
+                            ]
+                        }
+                    }
+                },
+                "21stars": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "Выдача 21 старок дефолт",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "remove",
+                                "удалить"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 21,
+                            "mask": [
+                                0,
+                                1,
+                                0,
+                                0
+                            ],
+                            "ids": [
+                                [],
+                                [
+                                    "def"
+                                ],
+                                [],
+                                []
+                            ]
+                        }
+                    }
+                }
+            },
+            "stargifts": {
+                "data": {
+                    "type": [
+                        [
+                            "string"
+                        ],
+                        [
+                            "dict"
+                        ]
+                    ],
+                    "label": "Выдача подарков В РАЗДЕЛЕ ПОДАРКИ",
+                    "hint": "",
+                    "actions": [
+                        [
+                            "add",
+                            "добавить"
+                        ],
+                        [
+                            "remove",
+                            "удалить"
+                        ]
+                    ],
+                    "special_data": {
+                        "dumping": "off"
+                    },
+                    "schema": {
+                        "stars": "int",
+                        "mask": "list[int]",
+                        "ids": "list[list]",
+                        "name": "str"
+                    }
+                },
+                "heart": {
+                    "data": {
+                        "type": [
+                            [
+                                "string"
+                            ],
+                            [
+                                "dict"
+                            ]
+                        ],
+                        "label": "Сердечко",
+                        "hint": "",
+                        "actions": [
+                            [
+                                "remove",
+                                "удалить"
+                            ]
+                        ],
+                        "special_data": {
+                            "stars": 13,
+                            "mask": [
+                                1,
+                                0,
+                                0,
+                                0
+                            ],
+                            "ids": [
+                                [
+                                    "def"
+                                ],
+                                [],
+                                [],
+                                []
+                            ],
+                            "name": "💝 Сердце"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "fragment": {
+        "fragment_hash": "",
+        "fragment_cookie": "",
+        "fragment_show_sender": ""
+    },
+    "ton": {
+        "ton_api_key": "",
+        "mnemonic": [
+        ],
+        "destination_address": null,
+        "is_testnet": false
+    },
+    "messages": {
+        "universal": "Спасибо за покупку! Буду рад видеть вас снова! 😊",
+        "refund_msg": "❌ К сожалению, ваш заказ был отменен и средства возвращены.\n\nЕсли у вас возникли вопросы, пожалуйста, свяжитесь с поддержкой.",
+        "hello": "👋 Здравствуйте! Добро пожаловать!\n\nЯ бот для автоматической выдачи Telegram Stars.\nВаш заказ обрабатывается, пожалуйста, подождите.\n\nЕсли у вас есть вопросы, используйте команду /help",
+        "thx_msg": "✅ Спасибо за подтверждение заказа, ждём вас вновь :)"
+    },
+    "performance": {
+        "min_star_rate": 1.18,
+        "max_concurrent_orders": 50,
+        "is_online": 1
+    },
+    "tg_api": {
+        "sessions": []
+    },
+    "tgapi": {
+        "sessions": [
+        ]
+    }
+}
