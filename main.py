@@ -32,10 +32,10 @@ async def main():
     # ========================================
     
     # Токен бота (получить у @BotFather)
-    BOT_TOKEN = "8278054066:AAEVmDP9jHXUK1jt91ConISe-SX-JTowLog"
+    BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
     
     # ID администраторов (получить у @userinfobot)
-    ADMIN_IDS = [946218255]
+    ADMIN_IDS = [123456789]
     # Замените на ваши Telegram ID
 
 
