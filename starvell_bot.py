@@ -237,10 +237,6 @@ class StarvellBot:
                     my_course = my_price / stars_count
                 #СЕЙВИМ ПРЕДЛОЖЕНИЕ
 
-                print(stars_count, my_course)
-                print(id)
-                print(my_offer)
-
                 if my_course < min_star_rate:
                     await self.update_order_price(my_offer, round(min_star_rate * stars_count * 1.01, 1))
                     await asyncio.sleep(1)
@@ -859,6 +855,9 @@ class StarvellBot:
                                                                          '❌ Произошла ошибка, напишите /вызов и скоро подключится администратор')
                                             self.users[user_id]['active'] = False
                                             self.users[user_id]['limit'] = 0
+                                            self.users[user_id]['order'] = None
+                                            self.users[user_id]['state'] = 'FREE'
+                                            self.users[user_id]['hello'] = True
                                             return
 
                                     elif 'нет' in content.lower() or '-' in content.lower():
@@ -936,6 +935,7 @@ class StarvellBot:
                 f"❌ Ошибка {res}, возвращаем деньги на баланс StarVell"
             )
             await self.refund_order(order.order_id)
+            return False
 
         return ok
 
@@ -1281,185 +1281,198 @@ class StarvellBot:
             start_order_msg = 'К вашему заказу скоро подключится администратор 👤'
             order = None
 
-            if game in ['stars', 'advgifts', 'stargifts', 'advstars', 'giftsapi']:
-                # === КОЛИЧЕСТВО ЗВЁЗД ===
-                offer_details = order_data.get("offerDetails", {})
-                sub_category = offer_details.get("subCategory", {})
-                sub_category_name = sub_category.get("name", "")
+            try:
+                if game in ['stars', 'advgifts', 'stargifts', 'advstars', 'giftsapi']:
+                    # === КОЛИЧЕСТВО ЗВЁЗД ===
+                    offer_details = order_data.get("offerDetails", {})
+                    sub_category = offer_details.get("subCategory", {})
+                    sub_category_name = sub_category.get("name", "")
 
-                stars_amount = data['stars']
+                    stars_amount = data['stars']
 
-                self.logger.info(f"⭐ Звёзд в заказе: {stars_amount}")
+                    self.logger.info(f"⭐ Звёзд в заказе: {stars_amount}")
 
-                # === USERNAME ИЗ ЗАКАЗА ===
-                order_args = order_data.get("orderArgs", [])
-                entered_username = None
+                    # === USERNAME ИЗ ЗАКАЗА ===
+                    order_args = order_data.get("orderArgs", [])
+                    entered_username = None
 
-                if order_args:
-                    entered_username = order_args[0].get("value", "").strip()
+                    if order_args:
+                        entered_username = order_args[0].get("value", "").strip()
 
-                self.logger.info(f"📝 Введённый username: {entered_username}")
+                    self.logger.info(f"📝 Введённый username: {entered_username}")
 
-                # === ЛОГИРОВАНИЕ ===
-                self.logger.info("=" * 60)
-                self.logger.info(f"📦 Order ID: {order_id}")
-                self.logger.info(f"💰 Total Price: {total_price}")
-                self.logger.info(f"🔢 Quantity: {quantity}")
-                self.logger.info(f"⭐ Stars: {stars_amount}")
-                self.logger.info(f"👤 Buyer ID: {buyer_id}")
-                self.logger.info(f"📝 Telegram Username (entered): {entered_username}")
-                self.logger.info(f"💬 Chat ID: {chat_id}")
-                self.logger.info("=" * 60)
+                    # === ЛОГИРОВАНИЕ ===
+                    self.logger.info("=" * 60)
+                    self.logger.info(f"📦 Order ID: {order_id}")
+                    self.logger.info(f"💰 Total Price: {total_price}")
+                    self.logger.info(f"🔢 Quantity: {quantity}")
+                    self.logger.info(f"⭐ Stars: {stars_amount}")
+                    self.logger.info(f"👤 Buyer ID: {buyer_id}")
+                    self.logger.info(f"📝 Telegram Username (entered): {entered_username}")
+                    self.logger.info(f"💬 Chat ID: {chat_id}")
+                    self.logger.info("=" * 60)
 
-                if buyer_id in self.users:
-                    if self.users[buyer_id]['state'] != 'FREE':
-                        return
+                    if buyer_id in self.users:
+                        if self.users[buyer_id]['state'] != 'FREE':
+                            return
 
-                # === РАБОТА С БД ===
-                conn = await aiosqlite.connect("orders.db")
-                try:
-                    cursor = await conn.cursor()
-
-                    if game in ['giftsapi', 'advgifts', 'stargifts']:
-                        way = 'api'
-                    else:
-                        way = 'fragment'
-
-                    await cursor.execute(
-                        """
-                        UPDATE orders 
-                        SET amount = ?, quantity = ?, username = ?, chat_id = ?, name = ?, game = ?, way = ?
-                        WHERE id = ?
-                        """,
-                        (stars_amount, quantity, entered_username, chat_id, id, game, way, order_id,)
-                    )
-
-                    await conn.commit()
-                    self.logger.info(f"✅ Order {order_id} updated in database")
-
-                except Exception as e:
-                    self.logger.error(f"❌ Ошибка ДБ: {e}")
-                    traceback.print_exc()
-                finally:
-                    await conn.close()
-
-                # === СОЗДАЁМ ОБЪЕКТ ЗАКАЗА ===
-                final_username = entered_username
-
-                if game in ['stars', 'advstars']:
+                    # === РАБОТА С БД ===
+                    conn = await aiosqlite.connect("orders.db")
                     try:
+                        cursor = await conn.cursor()
 
-                        order = FragmentOrder(
-                            name=id,
-                            game=game,
-                            order_id=order_id,
-                            amount=stars_amount,
-                            quantity=quantity,
-                            user_id=buyer_id,
-                            username=final_username,
-                            chat_id=chat_id
-                        )
-                    except (IndexError, TypeError, KeyError):
-                        await self.refund_order(order_id)
-                        return
-
-                elif game in ['advgifts', 'stargifts', 'giftsapi']:
-
-                    balance = self.api_giver.get_max()
-
-                    true_amount = 0
-                    if stars_amount == 13:
-                        true_amount = 15
-                    elif stars_amount == 21:
-                        true_amount = 25
-                    elif stars_amount == 43:
-                        true_amount = 50
-                    elif stars_amount == 85:
-                        true_amount = 100
-
-                    if balance < true_amount * quantity:
-                        await self.send_chat_message(chat_id, '⭐ Недостаточно баланса, извините')
-                        await self.refund_order(order_id)
-                        await self.turn_off_orders(target_id=id)
-                        return
-
-                    try:
-
-                        mask = data['mask']
-                        ids = data['ids']
-
-                        if 'name' in data:
-                            gift_name = data['name']
+                        if game in ['giftsapi', 'advgifts', 'stargifts']:
+                            way = 'api'
                         else:
-                            gift_name = 'Отсутствует'
+                            way = 'fragment'
 
-                        order = StarGiftOrder(
-                            name=id,
-                            game=game,
-                            gift_name=gift_name,
-                            order_id=order_id,
-                            amount=stars_amount,
-                            quantity=quantity,
-                            user_id=buyer_id,
-                            username=final_username,
-                            chat_id=chat_id,
-                            mask=StarGiftMask(
-                                order_id=order_id,
-                                mask=mask,
-                                ids=ids
-                            )
+                        await cursor.execute(
+                            """
+                            UPDATE orders 
+                            SET amount = ?, quantity = ?, username = ?, chat_id = ?, name = ?, game = ?, way = ?
+                            WHERE id = ?
+                            """,
+                            (stars_amount, quantity, entered_username, chat_id, id, game, way, order_id,)
                         )
 
-                    except (IndexError, TypeError, KeyError):
-                        await self.refund_order(order_id)
-                        return
-                else:
-                    order = None
+                        await conn.commit()
+                        self.logger.info(f"✅ Order {order_id} updated in database")
 
-                try:
-                    await self.bot.send_message(chat_id=self.admin,
-                                                text=f"🧾 Пришел заказ:\n"
-                    f"#️⃣ ID: {order.order_id}\n"
-                    f"👤 Username: {order.username}\n"
-                    f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
-                    f"Ссылка на заказ: https://starvell.com/order/{order.order_id}\n", disable_web_page_preview=True
-                                                )
-                except:
-                    pass
+                    except Exception as e:
+                        self.logger.error(f"❌ Ошибка ДБ: {e}")
+                        traceback.print_exc()
+                    finally:
+                        await conn.close()
 
-                # === ИНИЦИАЛИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ===
-                if buyer_id not in self.users:
-                    self.users[buyer_id] = {}
+                    # === СОЗДАЁМ ОБЪЕКТ ЗАКАЗА ===
+                    final_username = entered_username
 
-                self.users[buyer_id]['order'] = order
-                self.users[buyer_id]['state'] = 'CHOOSING_FINALE'
-                self.users[buyer_id]['active'] = True
-                self.users[buyer_id]['hello'] = True
+                    if game in ['stars', 'advstars']:
+                        try:
 
-                if game in ['stargifts']:
-                    start_order_msg = (
-                    f"🧾 Ваш заказ:\n"
-                    f"#️⃣ ID: {order.order_id}\n"
-                    f"👤 Username: {order.username}\n"
-                    f"🎁 Подарок : {order.gift_name} | {order.quantity} шт.\n"
-                    f"\n"
-                    f"Все верно?\n"
-                    f"✅ Да (+) | Нет (-) ❌"
-                )
-                else:
-                    # === ОТПРАВКА СООБЩЕНИЯ ===
-                    start_order_msg = (
-                        f"🧾 Ваш заказ:\n"
+                            order = FragmentOrder(
+                                name=id,
+                                game=game,
+                                order_id=order_id,
+                                amount=stars_amount,
+                                quantity=quantity,
+                                user_id=buyer_id,
+                                username=final_username,
+                                chat_id=chat_id
+                            )
+                        except (IndexError, TypeError, KeyError):
+                            await self.refund_order(order_id)
+                            return
+
+                    elif game in ['advgifts', 'stargifts', 'giftsapi']:
+
+                        balance = self.api_giver.get_max()
+
+                        true_amount = 0
+                        if stars_amount == 13:
+                            true_amount = 15
+                        elif stars_amount == 21:
+                            true_amount = 25
+                        elif stars_amount == 43:
+                            true_amount = 50
+                        elif stars_amount == 85:
+                            true_amount = 100
+
+                        if balance < true_amount * quantity:
+                            await self.send_chat_message(chat_id, '⭐ Недостаточно баланса, извините')
+                            await self.refund_order(order_id)
+                            await self.turn_off_orders(target_id=id)
+
+                        try:
+
+                            mask = data['mask']
+                            ids = data['ids']
+
+                            if 'name' in data:
+                                gift_name = data['name']
+                            else:
+                                gift_name = 'Отсутствует'
+
+                            order = StarGiftOrder(
+                                name=id,
+                                game=game,
+                                gift_name=gift_name,
+                                order_id=order_id,
+                                amount=stars_amount,
+                                quantity=quantity,
+                                user_id=buyer_id,
+                                username=final_username,
+                                chat_id=chat_id,
+                                mask=StarGiftMask(
+                                    order_id=order_id,
+                                    mask=mask,
+                                    ids=ids
+                                )
+                            )
+
+                        except (IndexError, TypeError, KeyError):
+                            await self.refund_order(order_id)
+                            return
+                    else:
+                        order = None
+
+                    try:
+                        await self.bot.send_message(chat_id=self.admin,
+                                                    text=f"🧾 Пришел заказ:\n"
                         f"#️⃣ ID: {order.order_id}\n"
                         f"👤 Username: {order.username}\n"
                         f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                        f"Ссылка на заказ: https://starvell.com/order/{order.order_id}\n", disable_web_page_preview=True
+                                                    )
+                    except:
+                        pass
+
+                    # === ИНИЦИАЛИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ===
+                    if buyer_id not in self.users:
+                        self.users[buyer_id] = {}
+
+                    self.users[buyer_id]['order'] = order
+                    self.users[buyer_id]['state'] = 'CHOOSING_FINALE'
+                    self.users[buyer_id]['active'] = True
+                    self.users[buyer_id]['hello'] = True
+
+                    if game in ['stargifts']:
+                        start_order_msg = (
+                        f"🧾 Ваш заказ:\n"
+                        f"#️⃣ ID: {order.order_id}\n"
+                        f"👤 Username: {order.username}\n"
+                        f"🎁 Подарок : {order.gift_name} | {order.quantity} шт.\n"
                         f"\n"
                         f"Все верно?\n"
                         f"✅ Да (+) | Нет (-) ❌"
                     )
+                    else:
+                        # === ОТПРАВКА СООБЩЕНИЯ ===
+                        start_order_msg = (
+                            f"🧾 Ваш заказ:\n"
+                            f"#️⃣ ID: {order.order_id}\n"
+                            f"👤 Username: {order.username}\n"
+                            f"⭐ Stars: {order.amount} | {order.quantity} шт.\n"
+                            f"\n"
+                            f"Все верно?\n"
+                            f"✅ Да (+) | Нет (-) ❌"
+                        )
 
-            await self.send_chat_message(chat_id, start_order_msg)
-            self.orders[order_id] = order
+                await self.send_chat_message(chat_id, start_order_msg)
+                self.orders[order_id] = order
+
+            except:
+                await self.refund_order(order_id)
+                # === ИНИЦИАЛИЗАЦИЯ ПОЛЬЗОВАТЕЛЯ ===
+                if buyer_id not in self.users:
+                    self.users[buyer_id] = {}
+
+                self.users[buyer_id]['active'] = False
+                self.users[buyer_id]['limit'] = 0
+                self.users[buyer_id]['order'] = None
+                self.users[buyer_id]['state'] = 'FREE'
+                self.users[buyer_id]['hello'] = True
+                return
 
         except:
             traceback.print_exc()
