@@ -229,7 +229,7 @@ class StarvellBot:
 
                 courses = {
                     "advgifts" : min_star_rate_gifts,
-                    "gifts" : min_star_rate_gifts,
+                    "giftsapi" : min_star_rate_gifts,
                     "stars" : min_star_rate_fragment,
                     "advstars" : min_star_rate_fragment,
                 }
