@@ -234,7 +234,7 @@ class StarvellBot:
                     "advstars" : min_star_rate_fragment,
                 }
 
-                min_star_rate = courses.get(game_id)
+                min_star_rate = courses.get(game)
 
                 # Извлекаем количество звёзд из названия подкатегории
                 data = cc.find_by_key(id)['data']['special_data']
