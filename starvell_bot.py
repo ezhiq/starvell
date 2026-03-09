@@ -222,9 +222,19 @@ class StarvellBot:
                 not_raised = True
 
             if game in ['stars', 'advstars', 'advgifts', 'giftsapi']:
-                min_star_rate = cc.get('min_star_rate')
+                min_star_rate_fragment = cc.get('min_star_rate')
+                min_star_rate_gifts = cc.get('min_star_rate_gifts')
                 is_online = cc.get('is_online')
                 my_id = cc.get('my_id')
+
+                courses = {
+                    "advgifts" : min_star_rate_gifts,
+                    "gifts" : min_star_rate_gifts,
+                    "stars" : min_star_rate_fragment,
+                    "advstars" : min_star_rate_fragment,
+                }
+
+                min_star_rate = courses.get(game_id)
 
                 # Извлекаем количество звёзд из названия подкатегории
                 data = cc.find_by_key(id)['data']['special_data']
@@ -833,7 +843,7 @@ class StarvellBot:
                                                                      '🐬 Ваш заказ был добавлен в очередь, ожидайте')
                                         self.users[user_id]['state'] = 'FREE'
                                         self.users[user_id]['order'] = None
-                                        self.users[user_id]['hello'] = False
+                                        asyncio.create_task(self.countdown_hello(user_id))
 
                                         # await self.fragment_giver(order)
                                         self.orders[order_id].mark_completed()
@@ -924,6 +934,14 @@ class StarvellBot:
         except Exception as e:
             self.logger.error(f"❌ Error in on_message_created: {e}")
             traceback.print_exc()
+
+    async def countdown_hello(self, user_id):
+        cd = cc.get("hello_cooldown")
+        await asyncio.sleep(cd)
+        try:
+            self.users[user_id]['hello'] = False
+        except:
+            pass
 
     async def stars_giver(self, order):
         res, ok = await self.api_giver.do_order(order)
