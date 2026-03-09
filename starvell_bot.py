@@ -232,18 +232,20 @@ class StarvellBot:
                 stars_count = int(data['stars'])
 
                 if stars_count in converted:
+                    formal = converted[stars_count]
                     my_course = my_price / converted[stars_count]
                 else:
+                    formal = stars_count
                     my_course = my_price / stars_count
                 #СЕЙВИМ ПРЕДЛОЖЕНИЕ
 
                 if my_course < min_star_rate:
-                    await self.update_order_price(my_offer, round(min_star_rate * stars_count * 1.01, 1))
+                    await self.update_order_price(my_offer, round(min_star_rate * formal * 1.01, 1))
                     await asyncio.sleep(1)
                     continue
 
                 if my_course > min_star_rate*1.5:
-                    await self.update_order_price(my_offer, round(min_star_rate * stars_count * 1.1, 1))
+                    await self.update_order_price(my_offer, round(min_star_rate * formal * 1.1, 1))
                     await asyncio.sleep(1)
                     continue
 
@@ -351,7 +353,7 @@ class StarvellBot:
                                 continue
 
                             # Проверяем курс
-                            star_rate = convert_price / stars_count
+                            star_rate = convert_price / formal
 
                             if star_rate < min_star_rate:
                                 self.logger.warning(f"⚠️ Не перебиваем {seller}: курс {star_rate:.2f}₽ < минимум {min_star_rate}₽")
@@ -928,12 +930,6 @@ class StarvellBot:
 
         if not ok:
             traceback.print_exc()
-
-            # Ошибка - вернуть деньги
-            await self.send_chat_message(
-                order.chat_id,
-                f"❌ Ошибка {res}, возвращаем деньги на баланс StarVell"
-            )
             await self.refund_order(order.order_id)
             return False
 
